@@ -21,7 +21,7 @@ pub fn open_sample(s: &mut Session) -> Result<()> {
     let sub = st.current_slide().and_then(|x| x.shapes.get(1)).map(|x| x.id.0).unwrap_or(0);
     run(s, "text.set", json!({"id": title, "text": "Northern Lights"}))?;
     run(s, "text.set", json!({"id": sub, "text": "A short tour of the aurora — where it comes from, when to look, and how to photograph it"}))?;
-    run(s, "slide.notes", json!({"text": "Welcome everyone. This deck was made in DeckCraft."}))?;
+    run(s, "slide.notes", json!({"text": format!("Welcome everyone. This deck was made in {}.", crate::brand::NAME)}))?;
     // Decorative bands on the title slide.
     let b = run(s, "shape.insert", json!({"preset": "rect", "rect": [0, 470, 960, 70]}))?;
     run(s, "shape.fill", json!({"id": last_id(&b), "gradient": {"stops": [[0, "accent1"], [0.5, "accent4"], [1, "accent2"]], "angle": 0}}))?;
@@ -114,7 +114,11 @@ pub fn open_sample(s: &mut Session) -> Result<()> {
     run(s, "transition.set", json!({"kind": "split"}))?;
 
     // Closing.
-    run(s, "slide.new", json!({"layout": "title", "title": "Clear skies!", "body": "Made with DeckCraft — free and open source"}))?;
+    run(
+        s,
+        "slide.new",
+        json!({"layout": "title", "title": "Clear skies!", "body": format!("Made with {} — free and open source", crate::brand::NAME)}),
+    )?;
     let moon = run(s, "shape.insert", json!({"preset": "moon", "rect": [820, 40, 80, 120]}))?;
     run(s, "shape.fill", json!({"id": last_id(&moon), "color": "accent6"}))?;
     run(s, "shape.line", json!({"id": last_id(&moon), "none": true}))?;

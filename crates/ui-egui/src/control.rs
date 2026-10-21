@@ -80,7 +80,7 @@ fn wrap(r: Result<Value, String>) -> Outcome {
 pub fn all_commands(app: &SlideApp) -> Value {
     let mut v: Vec<Value> = app.session.commands().into_iter().map(|c| serde_json::to_value(c).unwrap_or_default()).collect();
     for (id, label, sc, params) in crate::UI_COMMANDS {
-        v.push(json!({"id": id, "label": label, "shortcut": sc, "params": params, "enabled": true, "ui": true}));
+        v.push(json!({"id": id, "label": deckcraft_engine::brand::rebrand(label), "shortcut": sc, "params": params, "enabled": true, "ui": true}));
     }
     Value::Array(v)
 }

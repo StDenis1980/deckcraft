@@ -12,6 +12,7 @@ repository = "https://github.com/storytold/deckcraft"
 
 [workspace.dependencies]
 # internal
+deckcraft-brand = { path = "crates/brand" }
 deckcraft-geom = { path = "crates/geom" }
 deckcraft-color = { path = "crates/color" }
 deckcraft-metafile = { path = "crates/metafile" }

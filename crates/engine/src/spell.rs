@@ -485,14 +485,14 @@ pub fn search_dirs() -> Vec<PathBuf> {
     }
     let home = std::env::var_os("HOME").map(PathBuf::from);
     if cfg!(target_os = "macos") {
-        out.extend(home.iter().map(|h| h.join("Library/Application Support/DeckCraft/Dictionaries")));
+        out.extend(home.iter().map(|h| h.join("Library/Application Support").join(crate::brand::NAME).join("Dictionaries")));
         out.extend(home.iter().map(|h| h.join("Library/Spelling")));
         out.push("/Library/Spelling".into());
     } else if cfg!(target_os = "windows") {
-        out.extend(std::env::var_os("APPDATA").map(|a| PathBuf::from(a).join("DeckCraft").join("Dictionaries")));
+        out.extend(std::env::var_os("APPDATA").map(|a| PathBuf::from(a).join(crate::brand::NAME).join("Dictionaries")));
     } else {
         let data = std::env::var_os("XDG_DATA_HOME").map(PathBuf::from).or_else(|| home.as_ref().map(|h| h.join(".local/share")));
-        out.extend(data.iter().map(|d| d.join("deckcraft/dictionaries")));
+        out.extend(data.iter().map(|d| d.join(crate::brand::SLUG).join("dictionaries")));
         out.extend(data.iter().map(|d| d.join("hunspell")));
         for d in ["/usr/share/hunspell", "/usr/share/myspell", "/usr/share/myspell/dicts", "/usr/local/share/hunspell", "/app/share/hunspell"] {
             out.push(d.into());
@@ -586,14 +586,14 @@ pub fn user_dictionary_path() -> Option<PathBuf> {
     }
     let home = std::env::var_os("HOME").map(PathBuf::from);
     let dir = if cfg!(target_os = "macos") {
-        home.map(|h| h.join("Library/Application Support/DeckCraft/Dictionaries"))
+        home.map(|h| h.join("Library/Application Support").join(crate::brand::NAME).join("Dictionaries"))
     } else if cfg!(target_os = "windows") {
-        std::env::var_os("APPDATA").map(|a| PathBuf::from(a).join("DeckCraft").join("Dictionaries"))
+        std::env::var_os("APPDATA").map(|a| PathBuf::from(a).join(crate::brand::NAME).join("Dictionaries"))
     } else {
         std::env::var_os("XDG_DATA_HOME")
             .map(PathBuf::from)
             .or_else(|| home.map(|h| h.join(".local/share")))
-            .map(|d| d.join("deckcraft/dictionaries"))
+            .map(|d| d.join(crate::brand::SLUG).join("dictionaries"))
     };
     dir.map(|d| d.join("user.dic"))
 }
