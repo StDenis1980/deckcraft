@@ -2,6 +2,14 @@
 # (build.rs warns and continues without it). CI and releases set CRAFT_FONTS_DIR explicitly.
 [env]
 CRAFT_FONTS_DIR = { value = "../craft-fonts", relative = true }
+# IberOffice: this fork's builds are "Iber Presenta" (see crates/brand). The ArtCraft
+# marks may not be used by redistributed builds (docs/brand/LICENSE-brand.txt).
+DECKCRAFT_BRAND_NAME = "Iber Presenta"
+DECKCRAFT_BRAND_SLUG = "iber-presenta"
+DECKCRAFT_BRAND_APP_ID = "io.github.stdenis1980.iberpresenta"
+DECKCRAFT_BRAND_PUBLISHER = "IberOffice"
+DECKCRAFT_BRAND_WEBSITE = "https://github.com/StDenis1980/deckcraft"
+DECKCRAFT_BRAND_GITHUB = "https://github.com/StDenis1980/deckcraft"
 
 [alias]
 xtask = "run --package xtask --"
