@@ -7,13 +7,13 @@
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
   <key>CFBundleDisplayName</key>
-  <string>DeckCraft</string>
+  <string>Iber Presenta</string>
   <key>CFBundleName</key>
-  <string>DeckCraft</string>
+  <string>Iber Presenta</string>
   <key>CFBundleExecutable</key>
-  <string>DeckCraft</string>
+  <string>Iber Presenta</string>
   <key>CFBundleIdentifier</key>
-  <string>ai.storyteller.deckcraft</string>
+  <string>io.github.stdenis1980.iberpresenta</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundlePackageType</key>
@@ -29,7 +29,7 @@
   <key>DeckCraftBuildCommit</key>
   <string>@BUILD_SHA@</string>
   <key>CFBundleIconFile</key>
-  <string>DeckCraft</string>
+  <string>Iber Presenta</string>
   <key>LSApplicationCategoryType</key>
   <string>public.app-category.productivity</string>
   <!-- Must match MACOSX_DEPLOYMENT_TARGET in package.sh. Big Sur is the first release on
@@ -43,7 +43,7 @@
   <key>NSRequiresAquaSystemAppearance</key>
   <false/>
   <key>NSHumanReadableCopyright</key>
-  <string>Copyright © the DeckCraft authors. MIT OR Apache-2.0.</string>
+  <string>Copyright © the IberOffice and DeckCraft authors. MIT OR Apache-2.0.</string>
 
   <!-- DeckCraft's own format: a zip of a JSON manifest plus media. -->
   <key>UTExportedTypeDeclarations</key>
@@ -59,7 +59,7 @@
         <string>public.presentation</string>
       </array>
       <key>UTTypeIconFile</key>
-      <string>DeckCraft</string>
+      <string>Iber Presenta</string>
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.filename-extension</key>
