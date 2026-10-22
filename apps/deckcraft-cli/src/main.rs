@@ -74,7 +74,8 @@ fn main() -> ExitCode {
         Some("mcp") => report(mcp(rest)),
         Some("links") => {
             use deckcraft_engine::links::*;
-            outln!("Discord   {DISCORD}\nWebsite   {WEBSITE}\nApp page  {APP_PAGE}\nGitHub    {GITHUB}");
+            let community = if deckcraft_engine::brand::REBRANDED { "Support " } else { "Discord " };
+            outln!("{community}  {DISCORD}\nWebsite   {WEBSITE}\nApp page  {APP_PAGE}\nGitHub    {GITHUB}");
             ExitCode::SUCCESS
         }
         Some(other) => unknown(other),
@@ -588,7 +589,7 @@ fn app(args: &[String]) -> Result<(), String> {
         }
     }
     let mut r = Remote::connect(&control_addr(&port))
-        .map_err(|e| format!("no DeckCraft app on port {port} ({e}); start it with `deckcraft --control {port}`"))?;
+        .map_err(|e| format!("no {} app on port {port} ({e}); start it with `deckcraft --control {port}`", deckcraft_engine::brand::NAME))?;
     let parse = |s: Option<&String>| -> Result<Value, String> {
         s.map(|j| serde_json::from_str(j).map_err(|e| format!("bad JSON: {e}"))).transpose().map(|v| v.unwrap_or(json!({})))
     };

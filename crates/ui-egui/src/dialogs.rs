@@ -30,7 +30,7 @@ impl Dialog {
 }
 
 fn title(id: &str) -> &'static str {
-    match id {
+    deckcraft_engine::brand::rebrand_static(match id {
         "table" => "Insert Table",
         "slideSize" => "Slide Size",
         "sizePosition" => "Size and Position",
@@ -72,7 +72,7 @@ fn title(id: &str) -> &'static str {
         "themeColors" => "Create New Theme Colors",
         "themeFonts" => "Create New Theme Fonts",
         _ => "DeckCraft",
-    }
+    })
 }
 
 pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
@@ -2621,14 +2621,25 @@ pub fn about(_app: &mut SlideApp, ui: &mut Ui) {
     ui.vertical_centered(|ui| {
         let (r, _) = ui.allocate_exact_size(vec2(64.0, 64.0), Sense::hover());
         paint_logo(ui.painter(), r);
-        ui.label(egui::RichText::new("DeckCraft").font(theme::bold(22.0)));
+        ui.label(egui::RichText::new(deckcraft_engine::brand::NAME).font(theme::bold(22.0)));
         ui.label(egui::RichText::new(version_line()).color(t.text_dim));
         ui.add_space(6.0);
         ui.label("Presentations and slide shows, rebuilt from scratch in pure Rust.");
         ui.label("An open-source, clean-room project. Not affiliated with Microsoft.");
         ui.add_space(6.0);
-        ui.hyperlink_to("Join our community on Discord", deckcraft_engine::links::DISCORD);
-        ui.hyperlink_to("getartcraft.com/apps/deckcraft", deckcraft_engine::links::APP_PAGE);
+        if deckcraft_engine::brand::REBRANDED {
+            // A redistributed build: its own links, and the credit the licence asks for without the ArtCraft marks.
+            if let Some(publisher) = deckcraft_engine::brand::PUBLISHER {
+                ui.label(format!("Published by {publisher}."));
+            }
+            ui.label("Based on DeckCraft by the ArtCraft team.");
+            ui.add_space(6.0);
+            ui.hyperlink_to("Get help and support", deckcraft_engine::brand::SUPPORT);
+            ui.hyperlink_to(deckcraft_engine::brand::APP_PAGE.trim_start_matches("https://"), deckcraft_engine::brand::APP_PAGE);
+        } else {
+            ui.hyperlink_to("Join our community on Discord", deckcraft_engine::links::DISCORD);
+            ui.hyperlink_to("getartcraft.com/apps/deckcraft", deckcraft_engine::links::APP_PAGE);
+        }
         ui.hyperlink_to("Source on GitHub", deckcraft_engine::links::GITHUB);
         ui.add_space(6.0);
         ui.label(egui::RichText::new("MIT OR Apache-2.0 · © 2026 ArtCraft Team and the DeckCraft contributors").size(11.0).color(t.text_faint));
@@ -3231,7 +3242,7 @@ fn find_dialog(app: &mut SlideApp, ui: &mut Ui, d: &mut Dialog) -> bool {
                 p["with"] = json!(d.get("with", ""));
                 let msg = match app.session.execute("text.replace", &p) {
                     Ok(v) => format!("Replaced {} occurrence(s).", v.get("replaced").and_then(Value::as_u64).unwrap_or(0)),
-                    Err(_) => format!("DeckCraft can't find “{text}”."),
+                    Err(_) => format!("{} can't find “{text}”.", deckcraft_engine::brand::NAME),
                 };
                 d.fields.insert("status".into(), msg);
                 d.fields.remove("cur");
@@ -3246,7 +3257,7 @@ fn find_dialog(app: &mut SlideApp, ui: &mut Ui, d: &mut Dialog) -> bool {
     if find_next {
         let list = app.session.execute("text.find", &q).ok().and_then(|v| v.as_array().cloned()).unwrap_or_default();
         if list.is_empty() {
-            d.fields.insert("status".into(), format!("DeckCraft can't find “{text}”."));
+            d.fields.insert("status".into(), format!("{} can't find “{text}”.", deckcraft_engine::brand::NAME));
             d.fields.remove("cur");
         } else {
             let n = d.get("next", "0").parse::<usize>().unwrap_or(0) % list.len();

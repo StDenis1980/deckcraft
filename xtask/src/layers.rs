@@ -33,6 +33,7 @@ impl Class {
 /// The layering table. Names are package names without the `deckcraft-`
 /// prefix.
 pub const TABLE: &[(&str, Class)] = &[
+    ("brand", Class::Standalone),
     ("geom", Class::Layer(0)),
     // Codecs and containers (ported from FilmCraft): L0 standalone leaves, L1 codecs over
     // `bitstream`, and `media` (probe, decode, playback mixer) at L2.

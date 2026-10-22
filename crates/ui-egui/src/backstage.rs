@@ -472,7 +472,7 @@ fn heading(ui: &mut Ui, text: &str) {
 
 fn dim(ui: &mut Ui, text: &str) {
     let t = Tokens::get(ui.ctx());
-    ui.label(RichText::new(text).font(theme::font(12.5)).color(t.text_dim));
+    ui.label(RichText::new(deckcraft_engine::brand::rebrand(text)).font(theme::font(12.5)).color(t.text_dim));
 }
 
 /// A link with an arrow (More themes →): true when clicked.
@@ -695,7 +695,7 @@ fn home(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: &mut Outcome) 
     ui.horizontal(|ui| {
         let (r, _) = ui.allocate_exact_size(vec2(36.0, 36.0), Sense::hover());
         crate::dialogs::paint_logo(ui.painter(), r);
-        ui.label(RichText::new("DeckCraft").font(theme::bold(24.0)).color(t.text));
+        ui.label(RichText::new(deckcraft_engine::brand::NAME).font(theme::bold(24.0)).color(t.text));
     });
     ui.add_space(18.0);
     ui.horizontal(|ui| {
@@ -737,7 +737,11 @@ fn home(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: &mut Outcome) 
         });
     }
     ui.add_space(30.0);
-    ui.hyperlink_to("Join the ArtCraft community on Discord", deckcraft_engine::links::DISCORD);
+    if deckcraft_engine::brand::REBRANDED {
+        ui.hyperlink_to("Get help and support", deckcraft_engine::brand::SUPPORT);
+    } else {
+        ui.hyperlink_to("Join the ArtCraft community on Discord", deckcraft_engine::links::DISCORD);
+    }
 }
 
 /// New: a blank presentation, then every theme and starter template, with a search box.
@@ -933,10 +937,11 @@ fn save_as(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: &mut Outcom
     dim(ui, path.as_deref().unwrap_or("Not saved yet"));
     ui.add_space(14.0);
     let current = SAVE_TYPES.iter().find(|s| s.0 == bs.file_type).map_or(SAVE_TYPES[0].1, |s| s.1);
+    let current = deckcraft_engine::brand::rebrand_static(current);
     ui.horizontal(|ui| {
         egui::ComboBox::from_id_salt("backstage_save_type").width(340.0).selected_text(current).show_ui(ui, |ui| {
             for (id, label, _) in SAVE_TYPES {
-                if ui.selectable_label(bs.file_type == id, label).clicked() {
+                if ui.selectable_label(bs.file_type == id, deckcraft_engine::brand::rebrand_static(label)).clicked() {
                     bs.file_type = id;
                 }
             }
@@ -1297,6 +1302,7 @@ fn export(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage) {
                     ui.label(RichText::new("Change File Type").font(theme::font(16.0)).color(t.text));
                     ui.add_space(8.0);
                     for (id, label, detail) in SAVE_TYPES.iter().filter(|s| s.0 != "pdf") {
+                        let (label, detail) = (&deckcraft_engine::brand::rebrand_static(label), &deckcraft_engine::brand::rebrand_static(detail));
                         let selected = bs.file_type == *id;
                         let (rect, resp) = ui.allocate_exact_size(vec2(520.0, 46.0), Sense::click());
                         resp.widget_info(|| egui::WidgetInfo::selected(egui::WidgetType::Button, true, selected, *label));
@@ -1366,7 +1372,7 @@ fn account(app: &mut SlideApp, ui: &mut Ui) {
             ui.horizontal(|ui| {
                 let (r, _) = ui.allocate_exact_size(vec2(40.0, 40.0), Sense::hover());
                 crate::dialogs::paint_logo(ui.painter(), r);
-                ui.label(RichText::new("DeckCraft").font(theme::bold(24.0)).color(t.text));
+                ui.label(RichText::new(deckcraft_engine::brand::NAME).font(theme::bold(24.0)).color(t.text));
             });
             dim(ui, &crate::dialogs::version_line());
             dim(ui, "Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.");
@@ -1374,14 +1380,18 @@ fn account(app: &mut SlideApp, ui: &mut Ui) {
             if task(
                 ui,
                 Icon::Help,
-                "About DeckCraft",
-                "About DeckCraft",
+                deckcraft_engine::brand::rebrand_static("About DeckCraft"),
+                deckcraft_engine::brand::rebrand_static("About DeckCraft"),
                 "The version, the people and models who built it, and where to find us.",
                 true,
             ) {
                 let _ = app.run("app.about", json!({}));
             }
-            ui.hyperlink_to("Join our community on Discord", deckcraft_engine::links::DISCORD);
+            if deckcraft_engine::brand::REBRANDED {
+                ui.hyperlink_to("Get help and support", deckcraft_engine::brand::SUPPORT);
+            } else {
+                ui.hyperlink_to("Join our community on Discord", deckcraft_engine::links::DISCORD);
+            }
             ui.hyperlink_to("Source on GitHub", deckcraft_engine::links::GITHUB);
         });
     });

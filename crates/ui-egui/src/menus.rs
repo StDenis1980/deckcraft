@@ -87,7 +87,12 @@ fn palette_items(session: &deckcraft_engine::Session, q: &str) -> Vec<(String, S
         // Commands that need a path or other value fail when the palette runs them with `{}`.
         .filter(|c| c.enabled && !crate::UI_COMMANDS.iter().any(|u| u.1 == c.label) && !deckcraft_engine::cmd::needs_arguments(c.params))
         .map(|c| (c.id.to_string(), c.label.to_string(), c.shortcut))
-        .chain(crate::UI_COMMANDS.iter().filter(|c| !deckcraft_engine::cmd::needs_arguments(c.3)).map(|c| (c.0.to_string(), c.1.to_string(), c.2)))
+        .chain(
+            crate::UI_COMMANDS
+                .iter()
+                .filter(|c| !deckcraft_engine::cmd::needs_arguments(c.3))
+                .map(|c| (c.0.to_string(), deckcraft_engine::brand::rebrand(c.1).into_owned(), c.2)),
+        )
         .filter(|(id, label, _)| q.is_empty() || label.to_lowercase().contains(q) || id.to_lowercase().contains(q))
         .collect();
     items.sort_by_key(|(_, l, _)| !l.to_lowercase().starts_with(q));
@@ -289,7 +294,7 @@ pub fn menu_tree() -> Vec<(&'static str, Vec<(&'static str, &'static str)>)> {
                 ("Set Up Show…", "show.setup"),
             ],
         ),
-        ("Help", vec![("About DeckCraft", "app.about"), ("Command Palette", "app.palette")]),
+        ("Help", vec![(deckcraft_engine::brand::rebrand_static("About DeckCraft"), "app.about"), ("Command Palette", "app.palette")]),
     ]
 }
 
@@ -312,7 +317,8 @@ mod tests {
             if deckcraft_engine::cmd::needs_arguments(params) {
                 continue;
             }
-            let same: Vec<_> = palette_items(&session, &label.to_lowercase()).into_iter().filter(|(_, l, _)| l == label).collect();
+            let label = deckcraft_engine::brand::rebrand(label);
+            let same: Vec<_> = palette_items(&session, &label.to_lowercase()).into_iter().filter(|(_, l, _)| *l == label).collect();
             assert_eq!(same.len(), 1, "{label}");
             assert_eq!(same[0].0, *id, "{label}");
         }

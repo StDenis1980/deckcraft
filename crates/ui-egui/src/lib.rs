@@ -191,7 +191,7 @@ fn command_for(purpose: FilePurpose, name: &str, bytes: &[u8]) -> Result<&'stati
         FilePurpose::Open => open_command(name),
         FilePurpose::Infer => infer_command(name, bytes),
     };
-    cmd.ok_or_else(|| format!("{name}: DeckCraft can't open this kind of file"))
+    cmd.ok_or_else(|| format!("{name}: {} can't open this kind of file", deckcraft_engine::brand::NAME))
 }
 
 /// How long a transient status message stays visible.
@@ -354,6 +354,15 @@ impl UiState {
 
 /// How many recent files File › Open and Home list.
 pub const RECENT_MAX: usize = 12;
+
+/// A message for the status bar or a toast, with the release's name (engine errors say "DeckCraft
+/// can't…") replaced by this build's.
+fn branded(msg: String) -> String {
+    match deckcraft_engine::brand::rebrand(&msg) {
+        std::borrow::Cow::Owned(rebranded) => rebranded,
+        std::borrow::Cow::Borrowed(_) => msg,
+    }
+}
 
 /// UI-only commands (id, label, shortcut, params).
 pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
@@ -592,13 +601,13 @@ impl SlideApp {
     }
 
     pub fn set_status(&mut self, msg: impl Into<String>) {
-        self.status = Some((msg.into(), now_ms()));
+        self.status = Some((branded(msg.into()), now_ms()));
     }
 
     /// A message that must be seen wherever the user is: a toast, which also shows over the start
     /// screen and the File tab, where there is no status bar.
     pub fn notify(&mut self, msg: impl Into<String>) {
-        self.toast = Some(toast::Toast { text: msg.into(), at: now_ms() });
+        self.toast = Some(toast::Toast { text: branded(msg.into()), at: now_ms() });
     }
 
     /// The transient status message while it is fresh; clears it once stale. Both the status bar
@@ -747,7 +756,7 @@ impl SlideApp {
             "deckcraft" => ("deckcraft", "deckcraft", false),
             "gif" => ("gif", "gif", false),
             other => {
-                self.set_status(format!("DeckCraft can't export “{other}”"));
+                self.set_status(format!("{} can't export “{other}”", deckcraft_engine::brand::NAME));
                 return false;
             }
         };

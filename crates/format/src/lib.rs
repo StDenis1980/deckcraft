@@ -68,8 +68,12 @@ pub fn save(p: &Presentation) -> Result<Vec<u8>> {
         z.write_all(MIMETYPE.as_bytes()).map_err(|e| FormatError::Write(e.to_string()))?;
         let mut presentation = p.clone();
         let parts = chart_parts::separate(&mut presentation)?;
-        let m =
-            Manifest { format: "deckcraft".into(), version: VERSION, generator: format!("DeckCraft {}", env!("CARGO_PKG_VERSION")), presentation };
+        let m = Manifest {
+            format: "deckcraft".into(),
+            version: VERSION,
+            generator: format!("{} {}", deckcraft_brand::NAME, env!("CARGO_PKG_VERSION")),
+            presentation,
+        };
         let json = serde_json::to_vec(&finite::Finite(&m)).map_err(|e| FormatError::Write(e.to_string()))?;
         z.start_file("presentation.json", deflate).map_err(w)?;
         z.write_all(&json).map_err(|e| FormatError::Write(e.to_string()))?;
