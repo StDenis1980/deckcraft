@@ -1,0 +1,13 @@
+Iber Presenta app icon (deckcraft.svg and every file derived from it in this directory:
+the PNGs, deckcraft.icns, deckcraft.ico and hicolor/).
+
+Original artwork made for IberOffice by its contributors, drawn in code by
+packaging/iberoffice-icons.py. No third-party material. Licensed like the rest of the project,
+under either of
+
+  * Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+  * MIT license (https://opensource.org/licenses/MIT)
+
+at your option.
+
+Regenerate the derived files with packaging/icons.sh.
