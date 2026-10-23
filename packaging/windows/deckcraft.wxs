@@ -1,79 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  DeckCraft MSI (WiX Toolset v5: `dotnet tool install -g wix`). Built by package.ps1:
+  Iber Presenta MSI (WiX Toolset v5: `dotnet tool install -g wix`). Built by package.ps1:
 
     wix build deckcraft.wxs -arch x64 -d Version=1.2.3 -d BinDir=... -d IconPath=... -o out.msi
 
-  Per-machine install into Program Files, a Start Menu shortcut, `.deckcraft` owned by
-  DeckCraft, and DeckCraft offered under "Open with" for .pptx/.potx/.ppsx (without taking over
-  the user's default app for them).
+  IberOffice build of DeckCraft (keep the product identity in sync with package.ps1, sign.ps1 and
+  the brand values in .cargo/config.toml). Per-machine install into
+  Program Files\IberOffice\Iber Presenta, Start Menu and desktop shortcuts, `.deckcraft` owned by
+  Iber Presenta, and Iber Presenta offered under "Open with" for .pptx/.potx/.ppsx (without taking
+  over the user's default app for them).
 
-  UpgradeCode is fixed for DeckCraft forever (playbook §6); never change it.
+  The UpgradeCode and component GUIDs are this fork's own (not upstream DeckCraft's), so an
+  Iber Presenta install neither upgrades nor removes a DeckCraft install. The UpgradeCode is fixed
+  for Iber Presenta forever; never change it. ProgIDs are IberPresenta.*; the only keys shared
+  with a DeckCraft install are the ones Windows keys by executable name (Applications\deckcraft.exe,
+  App Paths\deckcraft.exe), since the executables keep their upstream names.
 -->
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Package
-      Name="DeckCraft"
-      Manufacturer="Learning Machines LLC"
+      Name="Iber Presenta"
+      Manufacturer="IberOffice"
       Version="$(var.Version)"
-      UpgradeCode="6F9C69E7-7825-40D2-BF26-C274DA676425"
+      UpgradeCode="34ACCD52-14F0-499D-892E-E2AEDC810328"
       Scope="perMachine"
       Compressed="yes"
       Language="1033">
-    <SummaryInformation Description="DeckCraft presentations and slide shows" Manufacturer="Learning Machines LLC" />
+    <SummaryInformation Description="Iber Presenta presentations and slide shows" Manufacturer="IberOffice" />
     <!-- Same-version upgrades let successive pre-releases of one X.Y.Z replace each other
          (MSI versions are numeric, so 1.2.3-rc.1 and 1.2.3-rc.2 are both 1.2.3). -->
     <MajorUpgrade AllowSameVersionUpgrades="yes"
-        DowngradeErrorMessage="A newer version of DeckCraft is already installed." />
+        DowngradeErrorMessage="A newer version of Iber Presenta is already installed." />
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
 
-    <Icon Id="DeckcraftIcon.ico" SourceFile="$(var.IconPath)" />
-    <Property Id="ARPPRODUCTICON" Value="DeckcraftIcon.ico" />
-    <Property Id="ARPURLINFOABOUT" Value="https://getartcraft.com/apps/deckcraft" />
-    <Property Id="ARPURLUPDATEINFO" Value="https://getartcraft.com/apps/deckcraft" />
-    <Property Id="ARPHELPLINK" Value="https://discord.gg/artcraft" />
+    <Icon Id="AppIcon.ico" SourceFile="$(var.IconPath)" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/StDenis1980/deckcraft" />
+    <Property Id="ARPURLUPDATEINFO" Value="https://github.com/StDenis1980/deckcraft/releases" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/StDenis1980/deckcraft/issues" />
 
     <StandardDirectory Id="ProgramFiles6432Folder">
-      <Directory Id="INSTALLFOLDER" Name="DeckCraft" />
+      <Directory Id="IberOfficeFolder" Name="IberOffice">
+        <Directory Id="INSTALLFOLDER" Name="Iber Presenta" />
+      </Directory>
     </StandardDirectory>
     <StandardDirectory Id="ProgramMenuFolder" />
+    <StandardDirectory Id="DesktopFolder" />
 
-    <Feature Id="Main" Title="DeckCraft" Level="1">
-      <ComponentGroupRef Id="DeckcraftFiles" />
+    <Feature Id="Main" Title="Iber Presenta" Level="1">
+      <ComponentGroupRef Id="AppFiles" />
     </Feature>
   </Package>
 
   <Fragment>
-    <ComponentGroup Id="DeckcraftFiles" Directory="INSTALLFOLDER">
-      <Component Id="DeckcraftApp" Guid="D87EA444-41A4-4C19-922E-66D1A29461FF">
-        <File Id="DeckcraftExe" Source="$(var.BinDir)\deckcraft.exe" KeyPath="yes">
-          <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="DeckCraft"
-              Description="DeckCraft presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
-              Icon="DeckcraftIcon.ico" IconIndex="0" />
+    <ComponentGroup Id="AppFiles" Directory="INSTALLFOLDER">
+      <Component Id="App" Guid="69F3CF79-9760-42F8-A78D-EFFDE20AB5F7">
+        <File Id="AppExe" Source="$(var.BinDir)\deckcraft.exe" KeyPath="yes">
+          <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Iber Presenta"
+              Description="Iber Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
+              Icon="AppIcon.ico" IconIndex="0" />
+          <Shortcut Id="DesktopShortcut" Directory="DesktopFolder" Name="Iber Presenta"
+              Description="Iber Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
+              Icon="AppIcon.ico" IconIndex="0" />
         </File>
 
-        <!-- .deckcraft: DeckCraft's own format. -->
-        <ProgId Id="DeckCraft.Presentation" Description="DeckCraft Presentation" Icon="DeckcraftExe" IconIndex="0">
+        <!-- .deckcraft: the app's own format. -->
+        <ProgId Id="IberPresenta.Presentation" Description="Iber Presenta Presentation" Icon="AppExe" IconIndex="0">
           <Extension Id="deckcraft" ContentType="application/x-deckcraft">
-            <Verb Id="open" Command="Open" TargetFile="DeckcraftExe" Argument="&quot;%1&quot;" />
+            <Verb Id="open" Command="Open" TargetFile="AppExe" Argument="&quot;%1&quot;" />
           </Extension>
         </ProgId>
 
         <!-- "Open with" for PowerPoint formats, without becoming the default. -->
-        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe" Name="FriendlyAppName" Value="DeckCraft" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\shell\open\command" Value="&quot;[#DeckcraftExe]&quot; &quot;%1&quot;" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe" Name="FriendlyAppName" Value="Iber Presenta" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\shell\open\command" Value="&quot;[#AppExe]&quot; &quot;%1&quot;" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".deckcraft" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".pptx" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".potx" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".ppsx" Value="" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Classes\.pptx\OpenWithProgids" Name="DeckCraft.Presentation" Value="" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Classes\.potx\OpenWithProgids" Name="DeckCraft.Presentation" Value="" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Classes\.ppsx\OpenWithProgids" Name="DeckCraft.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.pptx\OpenWithProgids" Name="IberPresenta.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.potx\OpenWithProgids" Name="IberPresenta.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.ppsx\OpenWithProgids" Name="IberPresenta.Presentation" Value="" Type="string" />
 
-        <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\deckcraft.exe" Value="[#DeckcraftExe]" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\deckcraft.exe" Value="[#AppExe]" Type="string" />
       </Component>
 
-      <Component Id="DeckcraftCli">
-        <File Id="DeckcraftCliExe" Source="$(var.BinDir)\deckcraft-cli.exe" KeyPath="yes" />
+      <Component Id="Cli" Guid="644AFBC5-6FD6-4DA3-B929-1B300E938A98">
+        <File Id="CliExe" Source="$(var.BinDir)\deckcraft-cli.exe" KeyPath="yes" />
       </Component>
     </ComponentGroup>
   </Fragment>

@@ -1,0 +1,82 @@
+# IberOffice: build the Iber Presenta Windows installer (x64 .msi + portable .zip) on demand.
+#
+# Unsigned for now: packaging/windows/sign.ps1 leaves the files unsigned when no signing secrets
+# (WINDOWS_CERTIFICATE or AZURE_*) are set, so Windows SmartScreen warns on first launch ("Windows
+# protected your PC" > More info > Run anyway). Signing needs a code-signing certificate;
+# release.yml (the upstream release pipeline) does that. Download the .msi / .zip from the run's
+# artifacts.
+name: Windows installer
+
+on:
+  workflow_dispatch:
+  # A test build on PRs that change the Windows packaging.
+  pull_request:
+    paths: ["packaging/windows/**", "assets/app-icon/**", ".github/workflows/windows-msi.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-msi-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  msi:
+    name: Windows x64 .msi
+    runs-on: windows-latest
+    timeout-minutes: 120
+    env:
+      CARGO_TERM_COLOR: always
+      CARGO_INCREMENTAL: 0
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check out craft-fonts
+        uses: storytold/craft-common-actions/actions/checkout-craft-fonts@main
+        with:
+          ref: 43913056ce82a3fdad0ef69f6b88d1dc922a8104
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # v1
+        with:
+          toolchain: stable
+          targets: x86_64-pc-windows-msvc
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          key: iber-windows-x64
+      - name: Install WiX
+        shell: pwsh
+        run: |
+          # The version package.ps1 documents; the .wxs uses no WiX extensions.
+          dotnet tool install --global wix --version 5.0.2
+          "$env:USERPROFILE\.dotnet\tools" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: Build the .msi and portable .zip (unsigned)
+        shell: pwsh
+        env:
+          CRAFT_FONTS_DIR: ${{ github.workspace }}/craft-fonts
+        run: pwsh packaging/windows/package.ps1 -Arch x64
+      - name: Install the MSI, check it, run it, uninstall it
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $msi = (Get-ChildItem dist/release/iber-presenta-*-windows-x64.msi | Select-Object -First 1).FullName
+          $p = Start-Process msiexec.exe -ArgumentList '/i', "`"$msi`"", '/qn', '/l*v', 'install.log' -Wait -PassThru
+          if ($p.ExitCode -ne 0) { Get-Content install.log -Tail 60; throw "msiexec /i exited $($p.ExitCode)" }
+          $dir = Join-Path $env:ProgramFiles 'IberOffice\Iber Presenta'
+          $startLnk = Join-Path ([Environment]::GetFolderPath('CommonPrograms')) 'Iber Presenta.lnk'
+          $deskLnk = Join-Path ([Environment]::GetFolderPath('CommonDesktopDirectory')) 'Iber Presenta.lnk'
+          foreach ($f in (Join-Path $dir 'deckcraft.exe'), (Join-Path $dir 'deckcraft-cli.exe'), $startLnk, $deskLnk) {
+            if (-not (Test-Path -LiteralPath $f)) { throw "missing after install: $f" }
+            Write-Output "ok $f"
+          }
+          if (-not (Test-Path -LiteralPath 'Registry::HKEY_LOCAL_MACHINE\Software\Classes\IberPresenta.Presentation')) { throw 'IberPresenta.Presentation ProgID not registered' }
+          & (Join-Path $dir 'deckcraft-cli.exe') --version
+          if ($LASTEXITCODE -ne 0) { throw "deckcraft-cli --version exited $LASTEXITCODE" }
+          $p = Start-Process msiexec.exe -ArgumentList '/x', "`"$msi`"", '/qn' -Wait -PassThru
+          if ($p.ExitCode -ne 0) { throw "msiexec /x exited $($p.ExitCode)" }
+          foreach ($f in (Join-Path $dir 'deckcraft.exe'), $startLnk, $deskLnk) {
+            if (Test-Path -LiteralPath $f) { throw "uninstall left $f behind" }
+          }
+          Write-Output 'ok uninstalled'
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: iber-presenta-windows
+          path: dist/release/*
+          if-no-files-found: error

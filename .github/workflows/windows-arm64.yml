@@ -3,15 +3,14 @@
 # binaries are ARM64, run the CLI natively, and uninstall.
 name: Windows ARM64
 
+# IberOffice: manual only. The shared upstream workflow below installs the MSI on an ARM64 runner
+# and expects it in "Program Files\<app-dir>", where app-dir must be a single folder name; the
+# Iber Presenta MSI installs into "Program Files\IberOffice\Iber Presenta", so the install check
+# can't pass for this fork as-is (it was written for upstream DeckCraft's "Program Files\DeckCraft").
+# The push/PR/schedule triggers are removed so it doesn't fail on every packaging change; the x64
+# installer build is covered by windows-msi.yml. Restore the triggers once the shared workflow
+# accepts a nested install folder (or this job is inlined for the fork).
 on:
-  push:
-    branches: [release]
-  pull_request:
-    paths:
-      - .github/workflows/windows-arm64.yml
-      - packaging/windows/**
-  schedule:
-    - cron: "41 3 * * 1"
   workflow_dispatch:
 
 concurrency:
