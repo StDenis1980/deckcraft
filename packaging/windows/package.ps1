@@ -1,14 +1,14 @@
 <#
 .SYNOPSIS
-  Build, sign and package Iber Presenta (the IberOffice build of DeckCraft) for Windows.
+  Build, sign and package Tinta Presenta (the Tinta Office build of DeckCraft) for Windows.
 
 .DESCRIPTION
   Produces, in $env:DIST (default: dist/release):
-    iber-presenta-<version>-windows-<arch>.msi            per-machine installer (WiX v5)
-    iber-presenta-<version>-windows-<arch>-portable.zip   deckcraft.exe + deckcraft-cli.exe
+    tinta-presenta-<version>-windows-<arch>.msi            per-machine installer (WiX v5)
+    tinta-presenta-<version>-windows-<arch>-portable.zip   deckcraft.exe + deckcraft-cli.exe
 
   The executables keep their upstream names (deckcraft.exe, deckcraft-cli.exe); the product
-  identity (name, publisher, install folder, artifact names) is Iber Presenta's.
+  identity (name, publisher, install folder, artifact names) is Tinta Presenta's.
 
   The binaries link the C runtime statically (+crt-static), so neither the MSI nor the portable
   zip needs the Visual C++ redistributable. Signing is delegated to sign.ps1 (skipped with a
@@ -28,10 +28,10 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $Root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-# Product identity of this IberOffice build (keep in sync with deckcraft.wxs, sign.ps1 and the
+# Product identity of this Tinta Office build (keep in sync with deckcraft.wxs, sign.ps1 and the
 # brand values in .cargo/config.toml).
-$AppTitle = 'Iber Presenta'
-$AppSlug = 'iber-presenta'
+$AppTitle = 'Tinta Presenta'
+$AppSlug = 'tinta-presenta'
 
 function Invoke-Native([string] $What, [scriptblock] $Block) {
   Write-Output "==> $What"

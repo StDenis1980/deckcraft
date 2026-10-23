@@ -1,10 +1,10 @@
-# Iber Presenta app icon
+# Tinta Presenta app icon
 
-<img src="deckcraft.svg" alt="Iber Presenta app icon: an ivory azulejo tile with amber corners and a rounded play triangle" width="128">
+<img src="deckcraft.svg" alt="Tinta Presenta app icon: an ivory azulejo tile with amber corners and a rounded play triangle" width="128">
 
-**Design:** the IberOffice "azulejo" tile. An ivory rounded square with a quarter circle in each
-corner, like a glazed wall tile, and the app's glyph in the middle: for Iber Presenta, a rounded play triangle. The four
-IberOffice apps (Iber PDF, Iber Texto, Iber Calculo, Iber Presenta) share the tile and differ by
+**Design:** the Tinta Office "azulejo" tile. An ivory rounded square with a quarter circle in each
+corner, like a glazed wall tile, and the app's glyph in the middle: for Tinta Presenta, a rounded play triangle. The four
+Tinta Office apps (Tinta PDF, Tinta Texto, Tinta Calculo, Tinta Presenta) share the tile and differ by
 colour and glyph.
 
 ## Palette
@@ -13,7 +13,7 @@ colour and glyph.
 |---|---|---|
 | Ivory | `#F3EDE1` | The tile |
 | Edge | `#D8CBB2` | The tile outline |
-| Iber Presenta (app colour) | `#C7780F` | The corners and the glyph |
+| Tinta Presenta (app colour) | `#C7780F` | The corners and the glyph |
 
 ## Geometry
 
@@ -38,6 +38,6 @@ The app ID is `ai.storyteller.deckcraft`. It's used for the hicolor icon names, 
 
 ## Provenance and regenerating
 
-Original artwork for IberOffice, drawn in code by
-[`packaging/iberoffice-icons.py`](../../packaging/iberoffice-icons.py); no third-party material.
+Original artwork for Tinta Office, drawn in code by
+[`packaging/tinta-icons.py`](../../packaging/tinta-icons.py); no third-party material.
 Run `packaging/icons.sh` (python3 with cairosvg and Pillow) to rewrite every file here.

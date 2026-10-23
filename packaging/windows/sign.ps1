@@ -11,12 +11,12 @@
   With neither, it prints a warning and leaves the files unsigned (exit code 0), so test builds
   still produce installers.
 
-  The signature description (/d) and URL (/du) are Iber Presenta's (keep in sync with
+  The signature description (/d) and URL (/du) are Tinta Presenta's (keep in sync with
   .cargo/config.toml). This is the one place to adapt when the signing setup changes (an HSM/cloud key, a different
   timestamp server, ...). Optional overrides: WINDOWS_TIMESTAMP_URL, SIGNTOOL (path to signtool.exe).
 
 .EXAMPLE
-  pwsh packaging/windows/sign.ps1 dist/deckcraft.exe dist/iber-presenta.msi
+  pwsh packaging/windows/sign.ps1 dist/deckcraft.exe dist/tinta-presenta.msi
 #>
 param(
   [Parameter(Mandatory = $true, ValueFromRemainingArguments = $true)]
@@ -56,8 +56,8 @@ if (-not $haveCert -and -not $haveAzure) {
 }
 
 $script:SignTool = Find-SignTool
-$common = @('sign', '/v', '/fd', 'SHA256', '/td', 'SHA256', '/d', 'Iber Presenta', '/du', 'https://github.com/StDenis1980/deckcraft')
-$tmp = Join-Path ([IO.Path]::GetTempPath()) "iber-presenta-sign-$PID"
+$common = @('sign', '/v', '/fd', 'SHA256', '/td', 'SHA256', '/d', 'Tinta Presenta', '/du', 'https://github.com/StDenis1980/deckcraft')
+$tmp = Join-Path ([IO.Path]::GetTempPath()) "tinta-presenta-sign-$PID"
 New-Item -ItemType Directory -Force -Path $tmp | Out-Null
 
 try {
