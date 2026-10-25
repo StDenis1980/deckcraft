@@ -18,6 +18,10 @@ set -euo pipefail
 . "$(dirname "${BASH_SOURCE[0]}")/../common.sh"
 HERE="$ROOT/packaging/linux"
 APP_ID=ai.storyteller.deckcraft
+# Tinta Office: the packages carry this build's name, app id and icons (tinta-brand.sh).
+BRAND_PREFIX=DECKCRAFT UPSTREAM_ID="$APP_ID" UPSTREAM_NAME=DeckCraft UPSTREAM_REPO=storytold/deckcraft
+# shellcheck source=tinta-brand.sh
+. "$HERE/tinta-brand.sh"
 
 SKIP_BUILD=0
 FORMATS="appimage deb rpm tar"
@@ -37,10 +41,10 @@ case "$ARCH" in
   aarch64 | arm64) ARCH=aarch64; DEB_ARCH=arm64 ;;
   *) echo "unsupported architecture $ARCH" >&2; exit 2 ;;
 esac
-export DECKCRAFT_MAINTAINER="${DECKCRAFT_MAINTAINER:-DeckCraft maintainers <deckcraft@storyteller.ai>}"
-BASENAME="deckcraft-$VERSION-linux-$ARCH"
+export DECKCRAFT_MAINTAINER="${DECKCRAFT_MAINTAINER:-$BRAND_PUBLISHER <hola@tintaoffice.com>}"
+BASENAME="$BRAND_SLUG-$VERSION-linux-$ARCH"
 
-echo "==> DeckCraft $VERSION for Linux $ARCH ($FORMATS)"
+echo "==> $BRAND_NAME $VERSION for Linux $ARCH ($FORMATS)"
 
 if [[ "$SKIP_BUILD" = 0 ]]; then
   if [[ -n "${CROSS_TARGET:-}" ]]; then
@@ -67,12 +71,13 @@ mkdir -p "$STAGE/usr/share/icons"
 cp -R "$ROOT/assets/app-icon/hicolor" "$STAGE/usr/share/icons/"
 mkdir -p "$STAGE/usr/share/doc/deckcraft"
 copy_docs "$STAGE/usr/share/doc/deckcraft"
+tinta_stage "$STAGE"
 
 if command -v desktop-file-validate >/dev/null; then
-  desktop-file-validate "$STAGE/usr/share/applications/$APP_ID.desktop"
+  desktop-file-validate "$STAGE/usr/share/applications/$BRAND_ID.desktop"
 fi
 if command -v appstreamcli >/dev/null; then
-  appstreamcli validate --no-net --explain "$STAGE/usr/share/metainfo/$APP_ID.metainfo.xml"
+  appstreamcli validate --no-net --explain "$STAGE/usr/share/metainfo/$BRAND_ID.metainfo.xml"
 fi
 
 has() {
@@ -94,7 +99,8 @@ if has deb || has rpm; then
   export VERSION
   export NFPM_ARCH="$DEB_ARCH"
   # nfpm expands env vars in fields like `version` and `arch`, but not in `contents[].src`.
-  sed "s|\${STAGE}|$STAGE|g" "$HERE/nfpm.yaml" >"$WORK/nfpm.yaml"
+  tinta_nfpm "$HERE/nfpm.yaml" "$WORK/nfpm.brand.yaml"
+  sed "s|\${STAGE}|$STAGE|g" "$WORK/nfpm.brand.yaml" >"$WORK/nfpm.yaml"
   for fmt in deb rpm; do
     if has "$fmt"; then (cd "$ROOT" && nfpm package -f "$WORK/nfpm.yaml" -p "$fmt" -t "$DIST/$BASENAME.$fmt"); fi
   done
@@ -102,13 +108,13 @@ fi
 
 # ---- AppImage -----------------------------------------------------------------------------------
 if has appimage; then
-  APPDIR="$WORK/DeckCraft.AppDir"
+  APPDIR="$WORK/$BRAND_SLUG.AppDir"
   cp -R "$STAGE" "$APPDIR"
   mv "$APPDIR/usr/share/doc" "$WORK/doc-unused"
   ln -s usr/bin/deckcraft "$APPDIR/AppRun"
-  cp "$HERE/$APP_ID.desktop" "$APPDIR/$APP_ID.desktop"
-  cp "$ROOT/assets/app-icon/hicolor/256x256/apps/$APP_ID.png" "$APPDIR/$APP_ID.png"
-  ln -s "$APP_ID.png" "$APPDIR/.DirIcon"
+  cp "$STAGE/usr/share/applications/$BRAND_ID.desktop" "$APPDIR/$BRAND_ID.desktop"
+  cp "$STAGE/usr/share/icons/hicolor/256x256/apps/$BRAND_ID.png" "$APPDIR/$BRAND_ID.png"
+  ln -s "$BRAND_ID.png" "$APPDIR/.DirIcon"
 
   TOOL="${APPIMAGETOOL:-$(command -v appimagetool || true)}"
   if [[ -z "$TOOL" ]]; then
@@ -129,8 +135,8 @@ if has appimage; then
   # fetch only the blocks that changed in a newer release, through the .zsync published next to
   # each AppImage on GitHub Releases. `latest` is the newest published release that is not a
   # pre-release. A fork's builds point at its own releases through GITHUB_REPOSITORY.
-  REPO="${GITHUB_REPOSITORY:-storytold/deckcraft}"
-  UPDATE_INFO="gh-releases-zsync|${REPO%%/*}|${REPO#*/}|latest|deckcraft-*-linux-$ARCH.AppImage.zsync"
+  REPO="${GITHUB_REPOSITORY:-$BRAND_REPO}"
+  UPDATE_INFO="gh-releases-zsync|${REPO%%/*}|${REPO#*/}|latest|$BRAND_SLUG-*-linux-$ARCH.AppImage.zsync"
   # Extract-and-run: works without FUSE (containers, CI). The output embeds the static runtime,
   # so users don't need libfuse2 either. With zsyncmake on the host (CI installs the zsync
   # package) appimagetool also writes the .zsync, into its working directory, hence the cd.

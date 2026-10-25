@@ -63,7 +63,7 @@
       <string>DeckCraft</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>ai.storyteller.deckcraft.presentation</string>
+        <string>io.github.stdenis1980.tintapresenta.presentation</string>
       </array>
     </dict>
     <dict>
@@ -121,7 +121,7 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>ai.storyteller.deckcraft.presentation</string>
+      <string>io.github.stdenis1980.tintapresenta.presentation</string>
       <key>UTTypeDescription</key>
       <string>DeckCraft Presentation</string>
       <key>UTTypeConformsTo</key>

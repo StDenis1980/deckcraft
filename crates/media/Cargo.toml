@@ -3,7 +3,7 @@ name = "deckcraft-media"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-description = "DeckCraft media: probing, audio decoding (MP3, AAC/M4A, WAV, AIFF, FLAC, ALAC, Vorbis, Opus) to f32 PCM, H.264/HEVC/VP9/AV1 video decoding, poster frames, trim/fade/volume and the playback mixer and clock"
+description = "DeckCraft media: probing, audio decoding (MP3, WAV, AIFF, FLAC, ALAC, Vorbis, Opus) to f32 PCM, VP9/AV1 video decoding (H.264, HEVC and AAC with the patented-codecs feature), poster frames, trim/fade/volume and the playback mixer and clock"
 
 [lints]
 workspace = true
@@ -13,8 +13,8 @@ deckcraft-isobmff = { workspace = true }
 deckcraft-matroska = { workspace = true }
 deckcraft-ogg = { workspace = true }
 deckcraft-opus = { workspace = true }
-deckcraft-h264 = { workspace = true }
-deckcraft-hevc = { workspace = true }
+deckcraft-h264 = { workspace = true, optional = true }
+deckcraft-hevc = { workspace = true, optional = true }
 deckcraft-vp9 = { workspace = true }
 deckcraft-av1 = { workspace = true }
 thiserror = { workspace = true }
@@ -22,4 +22,12 @@ log = { workspace = true }
 image = { workspace = true }
 # Audio decoding for the formats we have no decoder of our own for (MPL-2.0, used unmodified,
 # as in FilmCraft).
-symphonia = { version = "0.5.5", default-features = false, features = ["aac", "adpcm", "alac", "flac", "mp1", "mp2", "mp3", "pcm", "vorbis", "wav", "aiff", "caf", "ogg", "mkv", "isomp4"] }
+symphonia = { version = "0.5.5", default-features = false, features = ["adpcm", "alac", "flac", "mp1", "mp2", "mp3", "pcm", "vorbis", "wav", "aiff", "caf", "ogg", "mkv", "isomp4"] }
+
+[features]
+# H.264, HEVC and AAC are covered by patent pools (Via LA, Access Advance) that ask distributors
+# of decoders for royalties. Tinta Presenta builds leave them out: such media is probed and named
+# but reported as not decodable, and VP9, AV1, Opus, Vorbis, FLAC, MP3, ALAC and PCM still play.
+# `cargo test -p deckcraft-media --features patented-codecs` runs their tests.
+default = []
+patented-codecs = ["dep:deckcraft-h264", "dep:deckcraft-hevc", "symphonia/aac"]

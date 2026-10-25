@@ -39,11 +39,13 @@ fn dec_err(e: impl std::fmt::Display) -> MediaError {
 
 // ---------- codecs ----------
 
+#[cfg(feature = "patented-codecs")]
 struct H264 {
     avcc: Vec<u8>,
     dec: deckcraft_h264::Decoder,
 }
 
+#[cfg(feature = "patented-codecs")]
 impl H264 {
     fn new(avcc: Vec<u8>) -> Result<H264> {
         let dec = deckcraft_h264::Decoder::from_avcc(&avcc).map_err(dec_err)?;
@@ -69,6 +71,7 @@ impl H264 {
     }
 }
 
+#[cfg(feature = "patented-codecs")]
 impl Codec for H264 {
     fn decode(&mut self, sample: &[u8], pts: i64) -> Result<Vec<Pic>> {
         Ok(self.dec.decode(sample, pts).map_err(dec_err)?.into_iter().map(H264::convert).collect())
@@ -118,11 +121,13 @@ macro_rules! plane_pic {
     }};
 }
 
+#[cfg(feature = "patented-codecs")]
 struct Hevc {
     hvcc: Vec<u8>,
     dec: deckcraft_hevc::Decoder,
 }
 
+#[cfg(feature = "patented-codecs")]
 impl Hevc {
     fn new(hvcc: Vec<u8>) -> Result<Hevc> {
         let dec = deckcraft_hevc::Decoder::from_hvcc(&hvcc).map_err(dec_err)?;
@@ -136,6 +141,7 @@ impl Hevc {
     }
 }
 
+#[cfg(feature = "patented-codecs")]
 impl Codec for Hevc {
     fn decode(&mut self, sample: &[u8], pts: i64) -> Result<Vec<Pic>> {
         Ok(self.dec.decode(sample, pts).map_err(dec_err)?.into_iter().map(Hevc::convert).collect())
@@ -278,7 +284,9 @@ fn open_track(bytes: &[u8]) -> Result<(Demux, Track, Box<dyn Codec>)> {
             let t = &f.tracks[ti];
             let entry = t.entries.first().ok_or(MediaError::Missing("video track"))?;
             let codec: Box<dyn Codec> = match &entry.codec {
+                #[cfg(feature = "patented-codecs")]
                 CodecConfig::Avc(a) => Box::new(H264::new(a.to_bytes())?),
+                #[cfg(feature = "patented-codecs")]
                 CodecConfig::Hevc(c) => Box::new(Hevc::new(c.to_bytes())?),
                 CodecConfig::Vp9(_) => Box::new(Vp9 { dec: deckcraft_vp9::Decoder::new() }),
                 CodecConfig::Av1(c) => Box::new(Av1 { dec: deckcraft_av1::Decoder::new(), config_obus: c.config_obus.clone(), primed: false }),
@@ -298,7 +306,9 @@ fn open_track(bytes: &[u8]) -> Result<(Demux, Track, Box<dyn Codec>)> {
                 .ok_or(MediaError::Missing("video track"))?;
             let t = &f.tracks[ti];
             let codec: Box<dyn Codec> = match &t.codec {
+                #[cfg(feature = "patented-codecs")]
                 MkvCodec::Avc { avcc } => Box::new(H264::new(avcc.clone())?),
+                #[cfg(feature = "patented-codecs")]
                 MkvCodec::Hevc { hvcc } => Box::new(Hevc::new(hvcc.clone())?),
                 MkvCodec::Vp9 { .. } => Box::new(Vp9 { dec: deckcraft_vp9::Decoder::new() }),
                 MkvCodec::Av1 { av1c } => Box::new(Av1 {
