@@ -1,6 +1,7 @@
 //! UI-level shortcuts, the command palette, and the menu structure (shared with the native macOS
 //! menu bar in the desktop app).
 
+use crate::i18n::tl;
 use deckcraft_engine::Mods;
 use serde_json::json;
 
@@ -106,12 +107,13 @@ pub fn palette(app: &mut SlideApp, ctx: &egui::Context) {
     let t = Tokens::get(ctx);
     let mut close = false;
     let mut run: Option<String> = None;
-    egui::Window::new("command_palette")
+    egui::Window::new(tl("command_palette"))
         .title_bar(false)
         .anchor(egui::Align2::CENTER_TOP, egui::vec2(0.0, 90.0))
         .fixed_size(egui::vec2(520.0, 380.0))
         .show(ctx, |ui| {
-            let r = ui.add(egui::TextEdit::singleline(&mut query).hint_text("Search commands…").desired_width(f32::INFINITY).font(theme::font(15.0)));
+            let r =
+                ui.add(egui::TextEdit::singleline(&mut query).hint_text(tl("Search commands…")).desired_width(f32::INFINITY).font(theme::font(15.0)));
             r.request_focus();
             let q = query.to_lowercase();
             let items = palette_items(&app.session, &q);

@@ -4,6 +4,7 @@
 //! selection. It does not edit, and Arrange All is not here. Closing the window leaves the
 //! presentation open.
 
+use crate::i18n::tl;
 use deckcraft_render::RenderOpts;
 use egui::{Color32, CornerRadius, Rect, RichText, pos2, vec2};
 use serde_json::{Value, json};
@@ -96,10 +97,10 @@ pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
                             ui.add_space(16.0);
                             ui.label(RichText::new(format!("Slide {} of {n}", slide + 1)).color(t.text_dim).font(crate::theme::font(13.0)));
                             ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                                if ui.add_enabled(slide + 1 < n, egui::Button::new("Next")).clicked() {
+                                if ui.add_enabled(slide + 1 < n, egui::Button::new(tl("Next"))).clicked() {
                                     let _ = app.run("view.newWindow", json!({"delta": 1}));
                                 }
-                                if ui.add_enabled(slide > 0, egui::Button::new("Previous")).clicked() {
+                                if ui.add_enabled(slide > 0, egui::Button::new(tl("Previous"))).clicked() {
                                     let _ = app.run("view.newWindow", json!({"delta": -1}));
                                 }
                             });

@@ -16,6 +16,7 @@ pub mod dialogs;
 pub mod doc_window;
 pub mod eyedropper;
 pub mod fillui;
+pub mod i18n;
 pub mod icons;
 pub mod media;
 pub mod menus;
@@ -323,6 +324,8 @@ pub struct UiState {
     pub comment_focus: Option<(usize, usize)>,
     /// Quick Access Toolbar buttons, left to right.
     pub qat: Vec<qat::QatItem>,
+    /// Interface language: [`i18n::AUTO`] (the system's, the default) or a language code (`uk`).
+    pub language: String,
 }
 
 impl Default for UiState {
@@ -355,6 +358,7 @@ impl Default for UiState {
             grayscale: false,
             comment_focus: None,
             qat: qat::defaults(),
+            language: i18n::AUTO.into(),
         }
     }
 }
@@ -395,6 +399,7 @@ impl UiState {
             self.format_tab = d.format_tab;
         }
         self.pane = self.pane.filter(short);
+        self.language = i18n::normalize_pref(&self.language).unwrap_or(i18n::AUTO).into();
         self.recent.retain(|p| !p.is_empty() && p.len() <= 4096 && !p.contains('\0'));
         self.recent.dedup();
         self.recent.truncate(RECENT_MAX);
@@ -455,6 +460,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
+    ("app.language", "Interface Language", None, "{language?: auto|en|uk}"),
     ("app.openDialog", "Open…", None, "{purpose?}"),
     ("app.insertPictureDialog", "Picture from File…", None, "{}"),
     ("app.smartArtPictureDialog", "Insert Picture in SmartArt…", None, "{id?, index}"),
@@ -809,6 +815,7 @@ impl SlideApp {
     /// Build application UI state, taking ownership of audio output and initialising media, dialogs,
     /// synthetic input, and timing fields.
     pub fn new(session: Session, mut services: Services) -> Self {
+        deckcraft_render::set_prompt_text(i18n::prompt_text);
         let audio_out = services.audio_out.take();
         SlideApp {
             last_fill: serde_json::json!("accent1"),
@@ -1324,6 +1331,19 @@ impl SlideApp {
                 self.restyle = true;
             }
             "view.grayscale" => self.ui.grayscale = self.flag(p, self.ui.grayscale),
+            "app.language" => {
+                let pref = p.get("language").and_then(Value::as_str).unwrap_or(i18n::AUTO);
+                let Some(code) = i18n::normalize_pref(pref) else {
+                    let codes: Vec<&str> = i18n::Language::ALL.iter().map(|l| l.code()).collect();
+                    return Err(format!("unknown language \"{pref}\" (auto, {})", codes.join(", ")));
+                };
+                if self.ui.language != code {
+                    self.ui.language = code.into();
+                    i18n::set_current(i18n::resolve(code));
+                    // Slide renders hold placeholder prompts in the old language.
+                    self.textures.invalidate();
+                }
+            }
             "view.newWindow" => return doc_window::command(self, p),
             "show.start" => {
                 if let Some(name) = p.get("custom").and_then(Value::as_str).filter(|s| !s.is_empty()) {
@@ -2033,6 +2053,7 @@ impl SlideApp {
     /// opening/inbox results, screenshot completions/deadlines, AutoRecover pacing and media
     /// clocks. UI events are handled in [`Self::ui`], where a forced hidden paint also arrives.
     pub fn logic(&mut self, ctx: &egui::Context) {
+        i18n::set_current(i18n::resolve(&self.ui.language));
         if !Self::root_viewport_admitted(ctx) {
             log::debug!("ignoring SlideApp::logic for render-only viewport {:?}", ctx.viewport_id());
             return;
@@ -3312,6 +3333,7 @@ impl SlideApp {
     /// Run the admitted root UI pass, including setup gating, panels, canvas, dialogs, overlays, and
     /// show mode.
     fn ui_inner(&mut self, ui: &mut egui::Ui) {
+        i18n::set_current(i18n::resolve(&self.ui.language));
         let ctx = ui.ctx().clone();
         self.ime_frame_viewport = Some(ctx.viewport_id());
         self.ime_pending = None;
@@ -5334,6 +5356,37 @@ mod tests {
         assert!(reply["result"]["width"].as_u64().is_some_and(|w| w > 0));
         assert_eq!(harness.state().capture.pending(), 0);
         assert_eq!(harness.state().capture.reserved_bytes(), 0, "the reservation is released after the reply");
+    }
+
+    /// Interface languages: `app.language` switches the ribbon, tabs and status bar to Ukrainian
+    /// at once and back to the system's (English in tests); an unknown language is refused and
+    /// leaves the setting alone. `DECKCRAFT_UK_SHOT=path.png` also saves the Ukrainian window.
+    #[test]
+    fn app_language_switches_the_interface_to_ukrainian_and_back() {
+        let mut harness = egui_kittest::Harness::builder().with_size(egui::vec2(1440.0, 900.0)).build_ui_state(
+            |ui, app: &mut SlideApp| {
+                app.logic(ui.ctx());
+                app.ui(ui);
+            },
+            SlideApp::new(Session::with_new(), Services::default()),
+        );
+        harness.run_steps(2);
+        assert!(harness.query_by_label("Insert").is_some(), "English by default");
+        harness.state_mut().run("app.language", json!({"language": "uk-UA"})).unwrap();
+        assert_eq!(harness.state().ui.language, "uk");
+        harness.run_steps(2);
+        assert!(harness.query_by_label("Вставлення").is_some(), "the Insert tab in Ukrainian");
+        assert!(harness.query_by_label("Insert").is_none());
+        assert!(harness.query_by_label_contains("Слайд 1 з 1").is_some(), "the status bar in Ukrainian");
+        if let Ok(path) = std::env::var("DECKCRAFT_UK_SHOT") {
+            harness.render().unwrap().save(path).unwrap();
+        }
+        assert!(harness.state_mut().run("app.language", json!({"language": "klingon"})).is_err());
+        assert_eq!(harness.state().ui.language, "uk");
+        harness.state_mut().run("app.language", json!({"language": "auto"})).unwrap();
+        harness.run_steps(2);
+        assert!(harness.query_by_label("Insert").is_some(), "auto follows the (English) test system");
+        crate::i18n::set_current(crate::i18n::Language::En);
     }
 
     /// A hidden/logic-only iteration drains control requests and autosave/screenshot queues; it does

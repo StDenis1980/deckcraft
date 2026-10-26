@@ -11,6 +11,7 @@ rust-version = "1.95"
 repository = "https://github.com/storytold/deckcraft"
 
 [workspace.dependencies]
+sys-locale = "0.3"
 # internal
 deckcraft-brand = { path = "crates/brand" }
 deckcraft-geom = { path = "crates/geom" }

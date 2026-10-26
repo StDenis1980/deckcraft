@@ -2123,6 +2123,15 @@ fn arrowheads(ctx: &mut RenderContext, rctx: &Ctx, line: &Line, ph: Option<Rgba>
     }
 }
 
+/// Translates the prompts of empty placeholders (`Click to add title`) into the interface
+/// language. The front end sets it once; unset, prompts show in English.
+static PROMPT_TEXT: std::sync::OnceLock<fn(&'static str) -> &'static str> = std::sync::OnceLock::new();
+
+/// Set the placeholder prompt translator (see [`PROMPT_TEXT`]). Only the first call counts.
+pub fn set_prompt_text(translate: fn(&'static str) -> &'static str) {
+    let _ = PROMPT_TEXT.set(translate);
+}
+
 /// The prompt shown in an empty placeholder, formatted like its content would be.
 fn prompt_body(rctx: &Ctx, s: &Shape, kind: PhType) -> TextBody {
     // Layout/master prompt text when the layout supplies a custom one.
@@ -2134,7 +2143,7 @@ fn prompt_body(rctx: &Ctx, s: &Shape, kind: PhType) -> TextBody {
     if matches!(rctx.owner, resolve::Owner::Layout | resolve::Owner::Master) {
         return TextBody::default();
     }
-    let txt = kind.prompt();
+    let txt = PROMPT_TEXT.get().map_or(kind.prompt(), |translate| translate(kind.prompt()));
     if txt.is_empty() || kind.is_footer_kind() {
         return TextBody::default();
     }
