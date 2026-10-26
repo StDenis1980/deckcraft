@@ -1,6 +1,7 @@
 //! Brief notices over the window's bottom edge: shown once, gone after a few seconds or when
 //! closed. Used to say a presentation's fonts aren't installed when it is first opened.
 
+use crate::i18n::tl;
 use egui::{Align2, CornerRadius, Margin, Stroke, vec2};
 
 use crate::SlideApp;
@@ -66,7 +67,7 @@ pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
                         ui.painter().rect_filled(r, CornerRadius::same(4), t.hover);
                     }
                     icons::paint(ui.painter(), r.shrink(3.0), Icon::Close, t.text_dim, false);
-                    if resp.on_hover_text("Close").clicked() {
+                    if resp.on_hover_text(tl("Close")).clicked() {
                         close = true;
                     }
                 });
