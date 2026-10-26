@@ -8,7 +8,7 @@
   the brand values in .cargo/config.toml). Per-machine install into
   Program Files\Tinta Office\Tinta Presenta, Start Menu and desktop shortcuts, `.deckcraft` owned by
   Tinta Presenta, and Tinta Presenta offered under "Open with" for .pptx/.potx/.ppsx (without taking
-  over the user's default app for them).
+  over the user's default app for them), and listed in Settings > Default apps (Capabilities).
 
   The UpgradeCode and component GUIDs are this fork's own (not upstream DeckCraft's), so an
   Tinta Presenta install neither upgrades nor removes a DeckCraft install. The UpgradeCode is fixed
@@ -99,6 +99,17 @@
         <RegistryValue Root="HKLM" Key="Software\Classes\.ppsx\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
 
         <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\deckcraft.exe" Value="[#AppExe]" Type="string" />
+
+        <!-- Capabilities: lists Tinta Presenta in Settings > Default apps, where the user can make
+             it the default for these types. Nothing here sets an extension's default. -->
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities" Name="ApplicationName" Value="Tinta Presenta" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities" Name="ApplicationDescription" Value="Presentations and slide shows; open and save PowerPoint files." Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities" Name="ApplicationIcon" Value="&quot;[#AppExe]&quot;,0" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities\FileAssociations" Name=".deckcraft" Value="TintaPresenta.Presentation" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities\FileAssociations" Name=".pptx" Value="TintaPresenta.Presentation" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities\FileAssociations" Name=".potx" Value="TintaPresenta.Presentation" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Tinta Office\Tinta Presenta\Capabilities\FileAssociations" Name=".ppsx" Value="TintaPresenta.Presentation" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\RegisteredApplications" Name="Tinta Presenta" Value="Software\Tinta Office\Tinta Presenta\Capabilities" Type="string" />
       </Component>
 
       <Component Id="Cli" Guid="644AFBC5-6FD6-4DA3-B929-1B300E938A98">
