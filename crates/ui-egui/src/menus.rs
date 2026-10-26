@@ -294,7 +294,14 @@ pub fn menu_tree() -> Vec<(&'static str, Vec<(&'static str, &'static str)>)> {
                 ("Set Up Show…", "show.setup"),
             ],
         ),
-        ("Help", vec![(deckcraft_engine::brand::rebrand_static("About DeckCraft"), "app.about"), ("Command Palette", "app.palette")]),
+        (
+            "Help",
+            vec![
+                (deckcraft_engine::brand::rebrand_static("About DeckCraft"), "app.about"),
+                ("Check for Updates…", "app.checkUpdates"),
+                ("Command Palette", "app.palette"),
+            ],
+        ),
     ]
 }
 

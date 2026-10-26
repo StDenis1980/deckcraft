@@ -17,6 +17,9 @@
   App Paths\deckcraft.exe), since the executables keep their upstream names.
 -->
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <?ifndef HasCraftFontLicences ?>
+  <?define HasCraftFontLicences=0 ?>
+  <?endif ?>
   <Package
       Name="Tinta Presenta"
       Manufacturer="Tinta Office"
@@ -47,20 +50,34 @@
     <StandardDirectory Id="DesktopFolder" />
 
     <Feature Id="Main" Title="Tinta Presenta" Level="1">
+      <?if $(var.HasCraftFontLicences) = 1 ?>
+      <ComponentGroupRef Id="CraftFontLicences" />
+      <?endif ?>
       <ComponentGroupRef Id="AppFiles" />
     </Feature>
   </Package>
 
   <Fragment>
+    <?if $(var.HasCraftFontLicences) = 1 ?>
+    <ComponentGroup Id="CraftFontLicences" Directory="INSTALLFOLDER">
+      <Files Include="$(var.DocsDir)\**" />
+    </ComponentGroup>
+    <?endif ?>
     <ComponentGroup Id="AppFiles" Directory="INSTALLFOLDER">
       <Component Id="App" Guid="69F3CF79-9760-42F8-A78D-EFFDE20AB5F7">
+        <File Id="AppNotice" Source="$(var.BinDir)\NOTICE" KeyPath="no" />
         <File Id="AppExe" Source="$(var.BinDir)\deckcraft.exe" KeyPath="yes">
+          <!-- No Icon here, so the shortcuts show the icon embedded in deckcraft.exe (build.rs). An
+               MSI Icon is cached under %APPDATA%\Microsoft\Installer\{ProductCode}\, and every
+               update is a major upgrade with a new ProductCode that deletes the old folder. A
+               taskbar pin is a copy of this shortcut that the update never touches, so it kept
+               pointing at the deleted file and lost its icon (#1114). The exe's path survives
+               updates; the shortcuts are not advertised, so they target that path and their icon is
+               the exe's own. The Icon above stays for ARPPRODUCTICON (Apps and features). -->
           <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Tinta Presenta"
-              Description="Tinta Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
-              Icon="AppIcon.ico" IconIndex="0" />
+              Description="Tinta Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="no" />
           <Shortcut Id="DesktopShortcut" Directory="DesktopFolder" Name="Tinta Presenta"
-              Description="Tinta Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
-              Icon="AppIcon.ico" IconIndex="0" />
+              Description="Tinta Presenta presentations and slide shows" WorkingDirectory="INSTALLFOLDER" Advertise="no" />
         </File>
 
         <!-- .deckcraft: the app's own format. -->
