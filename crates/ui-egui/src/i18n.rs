@@ -19,7 +19,7 @@
 use std::cell::Cell;
 use std::collections::HashMap;
 use std::sync::LazyLock;
-use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::atomic::{AtomicU8, Ordering};
 
 /// The `language` setting that follows the system.
 pub const AUTO: &str = "auto";
@@ -29,17 +29,19 @@ pub const AUTO: &str = "auto";
 pub enum Language {
     En,
     Uk,
+    Es,
 }
 
 impl Language {
     /// Every language, English first: it is the source and the fallback.
-    pub const ALL: [Language; 2] = [Language::En, Language::Uk];
+    pub const ALL: [Language; 3] = [Language::En, Language::Uk, Language::Es];
 
     /// BCP 47 code, lowercase; also the `language` setting's value.
     pub const fn code(self) -> &'static str {
         match self {
             Language::En => "en",
             Language::Uk => "uk",
+            Language::Es => "es",
         }
     }
 
@@ -48,6 +50,7 @@ impl Language {
         match self {
             Language::En => "English",
             Language::Uk => "Українська",
+            Language::Es => "Español",
         }
     }
 
@@ -56,6 +59,7 @@ impl Language {
         match self {
             Language::En => None,
             Language::Uk => Some(include_str!("i18n/uk.tsv")),
+            Language::Es => Some(include_str!("i18n/es.tsv")),
         }
     }
 
@@ -68,9 +72,11 @@ impl Language {
 
     fn catalog(self) -> Option<&'static Catalog> {
         static UK: LazyLock<Catalog> = LazyLock::new(|| Catalog::parse(Language::Uk.source().unwrap_or_default()));
+        static ES: LazyLock<Catalog> = LazyLock::new(|| Catalog::parse(Language::Es.source().unwrap_or_default()));
         match self {
             Language::En => None,
             Language::Uk => Some(&UK),
+            Language::Es => Some(&ES),
         }
     }
 }
@@ -110,18 +116,19 @@ thread_local! {
 
 /// The app's language for text drawn off the UI thread (placeholder prompts in slide renders).
 /// Tests leave it English, so a test that switches language cannot change another's renders.
-static APP_UKRAINIAN: AtomicBool = AtomicBool::new(false);
+static APP_LANGUAGE: AtomicU8 = AtomicU8::new(0);
 
 pub fn set_current(language: Language) {
     CURRENT.with(|c| c.set(language));
     #[cfg(not(test))]
-    APP_UKRAINIAN.store(language == Language::Uk, Ordering::Relaxed);
+    APP_LANGUAGE.store(language as u8, Ordering::Relaxed);
 }
 
 /// The renderer's placeholder prompt translator ([`deckcraft_render::set_prompt_text`]): the app's
 /// language, whichever thread renders.
 pub fn prompt_text(english: &'static str) -> &'static str {
-    let language = if APP_UKRAINIAN.load(Ordering::Relaxed) { Language::Uk } else { Language::En };
+    let stored = APP_LANGUAGE.load(Ordering::Relaxed);
+    let language = Language::ALL.into_iter().find(|l| *l as u8 == stored).unwrap_or(Language::En);
     tr(language, english)
 }
 
@@ -221,6 +228,7 @@ mod tests {
             assert_eq!(Language::from_tag(tag), Some(Language::Uk), "{tag}");
         }
         assert_eq!(Language::from_tag("en-GB"), Some(Language::En));
+        assert_eq!(Language::from_tag("es_ES.UTF-8"), Some(Language::Es));
         assert_eq!(Language::from_tag("ru-RU"), None);
         assert_eq!(Language::from_tag(""), None);
         assert_eq!(resolve("uk"), Language::Uk);
@@ -235,6 +243,8 @@ mod tests {
     fn lookups_translate_and_fall_back_to_english() {
         assert_eq!(tr(Language::Uk, "Insert"), "Вставлення");
         assert_eq!(tr(Language::En, "Insert"), "Insert");
+        assert_eq!(tr(Language::Es, "Insert"), "Insertar");
+        assert_eq!(tr(Language::Es, "Slide {n} of {total}"), "Diapositiva {n} de {total}");
         assert_eq!(tr(Language::Uk, "no such string anywhere"), "no such string anywhere");
         set_current(Language::Uk);
         assert_eq!(tl("Home"), "Основне");
