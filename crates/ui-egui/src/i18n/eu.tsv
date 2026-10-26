@@ -1,0 +1,679 @@
+# Euskara (eu) interface catalog for DeckCraft (Tinta Presenta). Machine-assisted; needs native review.
+# craft-i18n catalog format, so it can move to storytold/craft-i18n as locales/eu/deckcraft.tsv.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Data finkoa (hutsik = automatikoki eguneratu):
+	  Footer text:	  Orri-oinaren testua:
+	  Format:	  Formatua:
+	  Present  	  Aurkeztu  
+	 (not checked)	 (egiaztatu gabe)
+	(no spelling suggestions)	(ez dago ortografia-iradokizunik)
+	(none)	(bat ere ez)
+	+ Add	+ Gehitu
+	+ New Comment	+ Iruzkin berria
+	+ Row	+ Errenkada
+	+ Series	+ Seriea
+	3-D	3D
+	3-D Format	3D formatua
+	3-D Rotation	3D biraketa
+	[No Sound]	[Soinurik gabe]
+	[Stop Previous Sound]	[Gelditu aurreko soinua]
+	About DeckCraft	DeckCraft-i buruz
+	Accept\nAll	Onartu\nguztiak
+	Accessibility Checker	Irisgarritasun-egiaztatzailea
+	Action	Ekintza
+	Action Settings	Ekintzaren ezarpenak
+	Action Settings…	Ekintzaren ezarpenak…
+	Add	Gehitu
+	Add a title with a picture or some text to get layout ideas.	Gehitu izenburu bat irudi batekin edo testu apur batekin diseinu-ideiak lortzeko.
+	Add Pictures…	Gehitu irudiak…
+	Add Point	Gehitu puntua
+	Add Section	Gehitu atala
+	Add Shape	Gehitu forma
+	Add to Dictionary	Gehitu hiztegira
+	Add\nAnimation	Gehitu\nanimazioa
+	Address:	Helbidea:
+	After:	Ondoren:
+	Album theme	Albumaren gaia
+	Align	Lerrokatu
+	Align Left	Lerrokatu ezkerrean
+	Align Right	Lerrokatu eskuinean
+	Align Text	Lerrokatu testua
+	Alignment	Lerrokatzea
+	Alignment:	Lerrokatzea:
+	ALL pictures black and white	Irudi GUZTIAK zuri-beltzean
+	All slides	Diapositiba guztiak
+	Alt Text	Testu alternatiboa
+	Alt text	Testu alternatiboa
+	Alt\nText	Testu\nalternatiboa
+	An open-source, clean-room project. Not affiliated with Microsoft.	Kode irekiko proiektua, hutsetik sortua. Ez du loturarik Microsoft-ekin.
+	Angle	Angelua
+	Animation Painter (double-click to keep it on)	Kopiatu animazioa (klik bikoitza aktibo mantentzeko)
+	Animation\nPainter	Kopiatu\nanimazioa
+	Animation\nPane	Animazio-\npanela
+	Animations	Animazioak
+	Applies to this presentation's theme colours.	Aurkezpen honen gaiaren koloreei aplikatzen zaie.
+	Apply	Aplikatu
+	Apply to All	Aplikatu guztiei
+	Apply to:	Aplikatu hemen:
+	Apply\nTo All	Aplikatu\nguztiei
+	Arrange	Antolatu
+	Arrows	Geziak
+	Artistic\nEffects	Efektu\nartistikoak
+	As:	Honela:
+	Audio	Audioa
+	AutoCorrect	Zuzenketa automatikoa
+	AutoCorrect as you type	Zuzenketa automatikoa idatzi ahala
+	AutoCorrect Options…	Zuzenketa automatikoaren aukerak…
+	Automatic	Automatikoa
+	Automatic (system language)	Automatikoa (sistemaren hizkuntza)
+	Automatic bulleted and numbered lists	Buletdun eta zenbakidun zerrenda automatikoak
+	Available formats:	Formatu erabilgarriak:
+	Back (Esc)	Atzera (Esc)
+	Background\nStyles	Atzeko planoaren\nestiloak
+	Banded Columns	Zutabe bandadunak
+	Banded Rows	Errenkada bandadunak
+	Based on DeckCraft by the ArtCraft team.	ArtCraft taldearen DeckCraft-en oinarrituta.
+	Baseline	Oinarri-lerroa
+	Bevel	Alaka
+	Body:	Gorputza:
+	Bold	Lodia
+	Borders	Ertzak
+	Bring Forward	Ekarri aurrera
+	Bring to Front	Ekarri aurrealdera
+	Bring\nForward	Ekarri\naurrera
+	Browse for Themes…	Bilatu gaiak…
+	Bullets	Buletak
+	Bullets and Numbering	Buletak eta zenbakitzea
+	Bullets and Numbering…	Buletak eta zenbakitzea…
+	Cameo	Cameo
+	Camera capture is not available yet	Kamera bidezko kaptura ez dago erabilgarri oraindik
+	Cancel	Utzi
+	Capitalize first letter of sentences	Jarri esaldien lehen letra maiuskulaz
+	Capitalize names of days	Jarri egunen izenak maiuskulaz
+	Caps	Muturrak
+	Captions under pictures	Epigrafeak irudien azpian
+	Cell Margins	Gelaxkaren marjinak
+	Center	Erdian
+	Centimeters	Zentimetroak
+	Change Case	Aldatu maiuskulak/minuskulak
+	Change Colors	Aldatu koloreak
+	Change File Type	Aldatu fitxategi mota
+	Change Picture	Aldatu irudia
+	Change Picture…	Aldatu irudia…
+	Change Shape	Aldatu forma
+	Change to:	Aldatu honetara:
+	Change\nChart Type	Aldatu diagrama\nmota
+	Character Spacing	Karaktere-tartea
+	Chart	Diagrama
+	Chart cell	Diagramaren gelaxka
+	Chart Data	Diagramaren datuak
+	Chart Design	Diagramaren diseinua
+	Check\nAccessibility	Egiaztatu\nirisgarritasuna
+	Choose a SmartArt Graphic	Aukeratu SmartArt grafiko bat
+	Choosing a presentation to reuse needs the desktop app	Berrerabiltzeko aurkezpen bat aukeratzeko mahaigaineko aplikazioa behar da
+	Choosing a sound file needs the desktop app	Soinu-fitxategi bat aukeratzeko mahaigaineko aplikazioa behar da
+	Clear All	Garbitu guztia
+	Clear All Formatting	Garbitu formatu guztia
+	Click a colour in the picture to make it transparent	Egin klik irudiko kolore batean gardena izan dadin
+	Click a symbol to insert it at the insertion point.	Egin klik ikur batean txertatze-puntuan txertatzeko.
+	Click icon to add chart	Egin klik ikonoan diagrama gehitzeko
+	Click icon to add media	Egin klik ikonoan multimedia gehitzeko
+	Click icon to add picture	Egin klik ikonoan irudia gehitzeko
+	Click icon to add SmartArt graphic	Egin klik ikonoan SmartArt grafikoa gehitzeko
+	Click icon to add table	Egin klik ikonoan taula gehitzeko
+	Click the slide to take the colour under the pointer	Egin klik diapositiban erakuslearen azpiko kolorea hartzeko
+	Click to add notes	Egin klik oharrak gehitzeko
+	Click to add subtitle	Egin klik azpititulua gehitzeko
+	Click to add text	Egin klik testua gehitzeko
+	Click to add title	Egin klik izenburua gehitzeko
+	Click to change this one; Shift-click to change all	Klik hau aldatzeko; Maius+klik guztiak aldatzeko
+	Close	Itxi
+	Close\nMaster View	Itxi maisu-\nikuspegia
+	Color	Kolorea
+	Color:	Kolorea:
+	Colors	Koloreak
+	Columns	Zutabeak
+	Comment	Iruzkina
+	Comments	Iruzkinak
+	Compare	Konparatu
+	Compare this presentation with a revised copy from Review › Compare.	Konparatu aurkezpen hau berrikusitako kopia batekin Berrikusi › Konparatu aukeratik.
+	Compress Pictures	Konprimatu irudiak
+	Convert	Bihurtu
+	Convert to Shapes	Bihurtu forma
+	Convert to SmartArt	Bihurtu SmartArt
+	Convert to Text	Bihurtu testu
+	Copy	Kopiatu
+	Copy path	Kopiatu bide-izena
+	Correct accidental use of cAPS LOCK key	Zuzendu bLOK mAIUS teklaren nahigabeko erabilera
+	Correct TWo INitial CApitals	Zuzendu HAsierako BI MAiuskula
+	Corrections	Zuzenketak
+	Create	Sortu
+	Create a PDF Document	Sortu PDF dokumentu bat
+	Create Handouts	Sortu esku-orriak
+	Create New Theme Colors	Sortu gaiaren kolore berriak
+	Create New Theme Fonts	Sortu gaiaren letra-tipo berriak
+	Crop	Moztu
+	Crop to Shape	Moztu formara
+	Custom character:	Karaktere pertsonalizatua:
+	Custom Shows	Aurkezpen pertsonalizatuak
+	Custom\nShow	Aurkezpen\npertsonalizatua
+	Customize Colors…	Pertsonalizatu koloreak…
+	Customize Fonts…	Pertsonalizatu letra-tipoak…
+	Customize Quick Access Toolbar	Pertsonalizatu Sarbide bizkorreko tresna-barra
+	Cut	Ebaki
+	Dark appearance	Itxura iluna
+	Dark\nMode	Modu\niluna
+	Dash	Marra
+	Dashes	Marrak
+	Date	Data
+	Date &\nTime	Data eta\nordua
+	Date and Time	Data eta ordua
+	Date and time	Data eta ordua
+	Decrease Font Size	Txikitu letra-tamaina
+	Decrease List Level	Jaitsi zerrenda-maila
+	Default tab stops (in):	Tabulazio lehenetsiak (hazb.):
+	Delay:	Atzerapena:
+	Delete	Ezabatu
+	Delete Columns	Ezabatu zutabeak
+	Delete Point	Ezabatu puntua
+	Delete Repeated Word	Ezabatu errepikatutako hitza
+	Delete Rows	Ezabatu errenkadak
+	Delete Segment	Ezabatu segmentua
+	Delete Slide	Ezabatu diapositiba
+	Delete Table	Ezabatu taula
+	Demote	Jaitsi maila
+	Design	Diseinua
+	Design\nIdeas	Diseinu-\nideiak
+	Direction	Norabidea
+	Display	Bistaratzea
+	Display drawing guides on screen	Erakutsi marrazteko gidak pantailan
+	Display grid on screen	Erakutsi sareta pantailan
+	Distribute Columns	Banatu zutabeak
+	Distribute Horizontally	Banatu horizontalki
+	Distribute Rows	Banatu errenkadak
+	Distribute Vertically	Banatu bertikalki
+	Do not check spelling or grammar	Ez egiaztatu ortografia edo gramatika
+	Don't Save	Ez gorde
+	Don't show on title slide	Ez erakutsi izenburu-diapositiban
+	Done	Eginda
+	Draw	Marraztu
+	Draw Table	Marraztu taula
+	Duplicate Selected Slides	Bikoiztu hautatutako diapositibak
+	Duplicate Slide	Bikoiztu diapositiba
+	Duration:	Iraupena:
+	e.g. 1-3, 5	adib. 1-3, 5
+	Edit Alt Text…	Editatu testu alternatiboa…
+	Edit Photo Album…	Editatu argazki-albuma…
+	Edit Points	Editatu puntuak
+	Edit Text	Editatu testua
+	Edit the data: first row = series names, first column = categories.	Editatu datuak: lehen errenkada = serieen izenak, lehen zutabea = kategoriak.
+	Edit\nData	Editatu\ndatuak
+	Edit\nShape	Editatu\nforma
+	Editing	Edizioa
+	Effect\nOptions	Efektu-\naukerak
+	Effects	Efektuak
+	Email Address	Helbide elektronikoa
+	Email address:	Helbide elektronikoa:
+	End Review	Amaitu berrikuspena
+	End trim (s):	Amaierako moztea (s):
+	End\nReview	Amaitu\nberrikuspena
+	Equation	Ekuazioa
+	Eraser	Borragoma
+	Exit Edit Points	Irten puntuen ediziotik
+	Export	Esportatu
+	Export the presentation as:	Esportatu aurkezpena honela:
+	Eyedropper	Tantakina
+	Fade in (s):	Pixkanakako agerpena (s):
+	Fade out (s):	Pixkanakako desagerpena (s):
+	File	Fitxategia
+	Fill	Betegarria
+	Find	Bilatu
+	Find and Replace	Bilatu eta ordeztu
+	Find Next	Bilatu hurrengoa
+	Find what:	Bilatu:
+	Find whole words only	Hitz osoak soilik
+	First Column	Lehen zutabea
+	Fit	Doitu
+	Fit slide to current window	Doitu diapositiba uneko leihora
+	Fit to\nWindow	Doitu\nleihora
+	Flip Horizontal	Irauli horizontalki
+	Flip Vertical	Irauli bertikalki
+	Follow Path	Jarraitu bideari
+	Font	Letra-tipoa
+	Font Color	Letra-kolorea
+	Font name	Letra-tipoaren izena
+	Fonts	Letra-tipoak
+	Font…	Letra-tipoa…
+	Footer	Orri-oina
+	Footers	Orri-oinak
+	Format	Formatua
+	Format Background…	Atzeko planoaren formatua…
+	Format Painter (double-click to keep it on)	Kopiatu formatua (klik bikoitza aktibo mantentzeko)
+	Format Shape…	Formaren formatua…
+	Format\nBackground	Atzeko planoaren\nformatua
+	Format\nPane	Formatu-\npanela
+	Frame shape	Markoaren forma
+	Frame Slides	Markoa diapositibei
+	From slide:	Diapositiba honetatik:
+	From the top-left corner of the slide	Diapositibaren goiko ezkerreko izkinatik
+	From\nBeginning	Hasieratik\nhasita
+	From\nCurrent Slide	Uneko\ndiapositibatik
+	General	Orokorra
+	Glow	Distira
+	Grab bag	Askotarikoak
+	Gradient stops	Gradiente-puntuak
+	Gradient…	Gradientea…
+	Grayscale	Gris-eskala
+	Grid and Guides	Sareta eta gidak
+	Grid Options	Saretaren aukerak
+	Grid\nOptions	Saretaren\naukerak
+	Gridlines	Sareta-lerroak
+	Group	Taldekatu
+	Group Objects	Taldekatu objektuak
+	Guides	Gidak
+	Handout Master	Esku-orrien maisua
+	Handout\nMaster	Esku-orrien\nmaisua
+	Header	Goiburua
+	Header &\nFooter	Goiburua eta\norri-oina
+	Header and Footer	Goiburua eta orri-oina
+	Header Row	Goiburu-errenkada
+	Heading and body fonts for this presentation.	Aurkezpen honetako izenburuen eta gorputzaren letra-tipoak.
+	Heading:	Izenburua:
+	Height:	Altuera:
+	Hide All	Ezkutatu guztiak
+	Hide background graphics	Ezkutatu atzeko planoko grafikoak
+	Hide During Show	Ezkutatu aurkezpenean
+	Hide\nSlide	Ezkutatu\ndiapositiba
+	Highlight click	Nabarmendu klika
+	Home	Hasiera
+	How would you describe this object and its context to someone who is blind or has low vision?	Nola deskribatuko zenioke objektu hau eta haren testuingurua itsua den edo ikusmen urria duen norbaiti?
+	Hyperlink to:	Hiperesteka honetara:
+	Icons	Ikonoak
+	Ignore All	Ez ikusi guztiak
+	Inches	Hazbeteak
+	Include hidden slides	Sartu ezkutuko diapositibak
+	Increase Font Size	Handitu letra-tamaina
+	Increase List Level	Igo zerrenda-maila
+	Indentation	Koska
+	Ink to Math (coming soon)	Tinta formulara (laster)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Tinta formara: bihurtu formetan marraztutako lerroak, laukizuzenak, obaloak eta triangeluak
+	Ink to Text (coming soon)	Tinta testura (laster)
+	Ink to\nMath	Tinta\nformulara
+	Ink to\nShape	Tinta\nformara
+	Ink to\nText	Tinta\ntestura
+	Insert	Txertatu
+	Insert Hyperlink	Txertatu hiperesteka
+	Insert Picture	Txertatu irudia
+	Insert picture from file…	Txertatu irudia fitxategitik…
+	Insert Table	Txertatu taula
+	Insert Table…	Txertatu taula…
+	Insert\nAbove	Txertatu\ngoian
+	Insert\nBelow	Txertatu\nbehean
+	Insert\nLayout	Txertatu\ndiseinua
+	Insert\nLeft	Txertatu\nezkerrean
+	Insert\nPlaceholder	Txertatu\nleku-marka
+	Insert\nRight	Txertatu\neskuinean
+	Insert…	Txertatu…
+	Interface Language	Interfazearen hizkuntza
+	Interface language:	Interfazearen hizkuntza:
+	Italic	Etzana
+	Justify	Justifikatu
+	Keep source formatting	Mantendu jatorrizko formatua
+	Landscape	Horizontala
+	Language	Hizkuntza
+	Language:	Hizkuntza:
+	Last Column	Azken zutabea
+	Layout	Diseinua
+	Layouts	Diseinuak
+	Learn\nMore	Informazio\ngehiago
+	Leave the slide background out: only what is on the slide is drawn	Diapositibaren atzeko planorik gabe: haren edukia soilik marrazten da
+	Less Brightness	Distira gutxiago
+	Less Contrast	Kontraste gutxiago
+	Light/Dark appearance	Itxura argia/iluna
+	Line	Lerroa
+	Line Spacing	Lerroartea
+	Line spacing	Lerroartea
+	Line Spacing Options…	Lerroartearen aukerak…
+	Link	Esteka
+	Link…	Esteka…
+	Lock aspect ratio	Blokeatu aspektu-erlazioa
+	Loop continuously until 'Esc'	Errepikatu etengabe Esc sakatu arte
+	Loop forever	Errepikatu beti
+	Loop Until Next Sound	Errepikatu hurrengo soinura arte
+	Loop until Stopped	Errepikatu gelditu arte
+	Margins (pt)	Marjinak (pt)
+	Mark as decorative	Markatu apaingarri gisa
+	Match case	Bereizi maiuskulak eta minuskulak
+	Maximize content (else ensure fit)	Maximizatu edukia (bestela, ziurtatu doikuntza)
+	Measurement units:	Neurri-unitateak:
+	Merge Shapes	Konbinatu formak
+	Merge\nCells	Konbinatu\ngelaxkak
+	Merge\nShapes	Konbinatu\nformak
+	Mirror	Ispilatu
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	Hilabeteen izenak eta AM/PM ingeleserako erakusten dira. Gainerako hizkuntzek zenbakizko data eta 24 orduko ordua erakusten dute.
+	More Brightness	Distira gehiago
+	More Colors… #	Kolore gehiago… #
+	More Columns…	Zutabe gehiago…
+	More Contrast	Kontraste gehiago
+	Move Down	Eraman behera
+	Move Section Down	Eraman atala behera
+	Move Section Up	Eraman atala gora
+	Move Up	Eraman gora
+	Name	Izena
+	Name:	Izena:
+	New	Berria
+	New Comment	Iruzkin berria
+	New Photo Album…	Argazki-album berria…
+	New show name:	Aurkezpen berriaren izena:
+	New Slide	Diapositiba berria
+	New Slide (⇧⌘N)	Diapositiba berria (⇧⌘N)
+	New Text Box	Testu-koadro berria
+	New\nComment	Iruzkin\nberria
+	New\nSlide	Diapositiba\nberria
+	New\nWindow	Leiho\nberria
+	Next	Hurrengoa
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	Ez da irisgarritasun-arazorik aurkitu. Desgaitasuna duten pertsonek ez lukete zailtasunik izan behar dokumentu hau irakurtzeko.
+	No comments.	Ez dago iruzkinik.
+	No contributor data was built into this copy.	Kopia honek ez du laguntzaileen daturik.
+	No differences left.	Ez da alderik geratzen.
+	No Glow	Distirarik ez
+	No icons match.	Ez dago bat datorren ikonorik.
+	No line	Lerrorik ez
+	No model credits were built into this copy.	Kopia honek ez du ereduen kreditu-daturik.
+	No notes.	Ez dago oharrik.
+	No pictures yet	Oraindik ez dago irudirik
+	None	Bat ere ez
+	Normal	Normala
+	Not a copy of this presentation: slides are matched by position.	Ez da aurkezpen honen kopia bat: diapositibak posizioaren arabera parekatzen dira.
+	Notes	Oharrak
+	Notes Master	Oharren maisua
+	Notes\nMaster	Oharren\nmaisua
+	Number of columns:	Zutabe kopurua:
+	Number of rows:	Errenkada kopurua:
+	Number:	Zenbakia:
+	Numbering	Zenbakitzea
+	OK	Ados
+	On Click of… (none)	Klik egitean… (bat ere ez)
+	On Mouse Click	Saguarekin klik egitean
+	Open a presentation from a folder (Ctrl+O)	Ireki karpeta bateko aurkezpen bat (Ctrl+O)
+	Open another window on this presentation	Ireki aurkezpen honen beste leiho bat
+	Open file location	Ireki fitxategiaren kokapena
+	Options	Aukerak
+	Order Objects	Ordenatu objektuak
+	Ordinals (1st) with superscript	Ordinalak (1st) goi-indizean
+	Orientation:	Orientazioa:
+	Other Sound…	Beste soinu bat…
+	Outline	Ingerada
+	Page Setup…	Orrialdearen konfigurazioa…
+	Paragraph	Paragrafoa
+	Paragraph…	Paragrafoa…
+	Paste	Itsatsi
+	Paste (⌘V)	Itsatsi (⌘V)
+	Paste and Match Formatting	Itsatsi eta egokitu formatua
+	Paste Formatting	Itsatsi formatua
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Itsatsi edo idatzi eskema bat. Koskarik gabeko lerroak diapositiben izenburu bihurtzen dira; tabulazioz koskatutakoak, buletak.
+	Paste Special	Itsatsi berezia
+	Paste Special…	Itsatsi berezia…
+	Pattern	Eredua
+	Pen Color	Lumaren kolorea
+	Pen Style	Lumaren estiloa
+	Pen Weight	Lumaren lodiera
+	Percent:	Ehunekoa:
+	Photo Album	Argazki-albuma
+	Photo Album options	Argazki-albumaren aukerak
+	Photo Album…	Argazki-albuma…
+	Photo\nAlbum	Argazki-\nalbuma
+	Pick a design for this slide. Ideas are generated on your device.	Aukeratu diapositiba honetarako diseinu bat. Ideiak zure gailuan sortzen dira.
+	Pick a graphic; type one item per line.	Aukeratu grafiko bat eta idatzi elementu bat lerro bakoitzeko.
+	Picture	Irudia
+	Picture Border	Irudiaren ertza
+	Picture Format	Irudiaren formatua
+	Picture layout	Irudien diseinua
+	Picture source	Irudien jatorria
+	Pictures	Irudiak
+	Pictures in album	Albumeko irudiak
+	Play Across Slides	Erreproduzitu diapositiba guztietan
+	Play from\nCurrent Slide	Erreproduzitu uneko\ndiapositibatik
+	Play from\nStart	Erreproduzitu\nhasieratik
+	Play Full Screen	Erreproduzitu pantaila osoan
+	Play Narrations	Erreproduzitu narrazioak
+	Play this slide's animations on the canvas	Erreproduzitu diapositiba honen animazioak oihalean
+	Playback	Erreprodukzioa
+	Portrait	Bertikala
+	Position	Posizioa
+	Position Objects	Kokatu objektuak
+	Post	Argitaratu
+	Preferences	Hobespenak
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Aurkezpenak eta diapositiba-aurkezpenak, hutsetik sortuak Rust hutsean.
+	Presenter\nView	Aurkezlearen\nikuspegia
+	Preserve	Gorde
+	Preset gradients	Aurrez ezarritako gradienteak
+	Preview	Aurrebista
+	Previous	Aurrekoa
+	Print Hidden Slides	Inprimatu ezkutuko diapositibak
+	Print layout:	Inprimatze-diseinua:
+	Program:	Programa:
+	Promote	Igo maila
+	pt	pt
+	Put a picture in the selected node's picture placeholder	Jarri irudi bat hautatutako nodoaren irudi-leku-markan
+	Quick\nStyles	Estilo\nbizkorrak
+	Reading View	Irakurtzeko ikuspegia
+	Recent	Azkenak
+	Recolor	Koloreztatu berriro
+	Record	Grabatu
+	Recording narration needs audio capture (coming soon)	Narrazioak grabatzeko audioa kapturatu behar da (laster)
+	Recover Unsaved Presentations	Berreskuratu gorde gabeko aurkezpenak
+	Reflection	Islapena
+	Regroup	Taldekatu berriro
+	Rehearse\nTimings	Entseatu\ntenporizazioak
+	Remove	Kendu
+	Remove All Sections	Kendu atal guztiak
+	Remove bullets and numbering	Kendu buletak eta zenbakitzea
+	Remove from Quick Access Toolbar	Kendu Sarbide bizkorreko tresna-barratik
+	Remove from Recent	Kendu azkenetatik
+	Remove Section	Kendu atala
+	Remove Section & Slides	Kendu atala eta diapositibak
+	Remove stop	Kendu puntua
+	Remove the picture style	Kendu irudiaren estiloa
+	Remove\nBackground	Kendu atzeko\nplanoa
+	Rename	Aldatu izena
+	Rename Layout	Aldatu diseinuaren izena
+	Rename Section	Aldatu atalaren izena
+	Rename Section…	Aldatu atalaren izena…
+	Repeated word	Errepikatutako hitza
+	Replace	Ordeztu
+	Replace All	Ordeztu guztiak
+	Replace Font	Ordeztu letra-tipoa
+	Replace Fonts…	Ordeztu letra-tipoak…
+	Replace fractions (1/2) with fraction characters (½)	Ordeztu zatikiak (1/2) zatiki-karaktereekin (½)
+	Replace straight quotes with smart quotes	Ordeztu komatxo zuzenak komatxo tipografikoekin
+	Replace text as you type	Ordeztu testua idatzi ahala
+	Replace with:	Ordeztu honekin:
+	Replace:	Ordeztu:
+	Replace…	Ordeztu…
+	Reply…	Erantzun…
+	Rescan Installed Fonts	Bilatu berriro instalatutako letra-tipoak
+	Reset	Berrezarri
+	Reset 3-D	Berrezarri 3D
+	Reset Background	Berrezarri atzeko planoa
+	Reset Effects	Berrezarri efektuak
+	Reset Picture	Berrezarri irudia
+	Reset Slide	Berrezarri diapositiba
+	Reset Slide Background	Berrezarri diapositibaren atzeko planoa
+	Reset to Defaults	Berrezarri balio lehenetsiak
+	Reuse Slides	Berrerabili diapositibak
+	Reverse the order	Alderantzikatu ordena
+	Review	Berrikusi
+	Rewind after Playing	Atzeratu erreproduzitu ondoren
+	Right-click any ribbon button to add it.	Egin klik eskuineko botoiarekin zintako edozein botoitan gehitzeko.
+	Rotate	Biratu
+	Rotate Left	Biratu ezkerrera
+	Rotate Left 90°	Biratu 90° ezkerrera
+	Rotate Right	Biratu eskuinera
+	Rotate Right 90°	Biratu 90° eskuinera
+	Rotate with shape	Biratu formarekin
+	Ruler	Erregela
+	Save	Gorde
+	Screenshot	Pantaila-argazkia
+	Screenshot (not available yet)	Pantaila-argazkia (oraindik ez dago erabilgarri)
+	ScreenTip:	Pantailako argibidea:
+	Scroll ribbon left	Korritu zinta ezkerrera
+	Scroll ribbon right	Korritu zinta eskuinera
+	Search commands (⇧⌘P)	Bilatu komandoak (⇧⌘P)
+	Search commands…	Bilatu komandoak…
+	Search icons	Bilatu ikonoak
+	Seconds per slide:	Segundoak diapositiba bakoitzeko:
+	Section	Atala
+	Select	Hautatu
+	Select a chart first.	Hautatu diagrama bat lehenik.
+	Select a shape to format it.	Hautatu forma bat formatua emateko.
+	Select a SmartArt graphic to edit its text.	Hautatu SmartArt grafiko bat haren testua editatzeko.
+	Select an object on the slide and add an animation from the Animations tab.	Hautatu diapositibako objektu bat eta gehitu animazio bat Animazioak fitxatik.
+	Selection Pane…	Hautapen-panela…
+	Selection\nPane	Hautapen-\npanela
+	Send Backward	Eraman atzerago
+	Send to Back	Eraman atzealdera
+	Send\nBackward	Eraman\natzerago
+	Set	Ezarri
+	Set as Default Shape	Ezarri forma lehenetsi gisa
+	Set Transparent Color	Ezarri kolore gardena
+	Set Up Slide Show	Konfiguratu aurkezpena
+	Set Up\nSlide Show	Konfiguratu\naurkezpena
+	Shading	Itzaleztatzea
+	Shadow	Itzala
+	Shape Effects	Efektuak
+	Shape Fill	Betegarria
+	Shape Format	Formaren formatua
+	Shape Outline	Ingerada
+	Shape\nStyles	Forma-\nestiloak
+	Shapes	Formak
+	Show	Erakutsi
+	Show All	Erakutsi guztiak
+	Show Media Controls	Erakutsi multimedia-kontrolak
+	Show smart guides	Erakutsi gida adimendunak
+	Show type	Aurkezpen mota
+	Show without animation	Aurkezpena animaziorik gabe
+	Show without narration	Aurkezpena narraziorik gabe
+	Show\nComments	Erakutsi\niruzkinak
+	Size	Tamaina
+	Size (% of text):	Tamaina (testuaren %):
+	Size and Position	Tamaina eta posizioa
+	Size and Position…	Tamaina eta posizioa…
+	Size:	Tamaina:
+	Slide Master	Diapositiben maisua
+	Slide number	Diapositiba-zenbakia
+	Slide Show	Aurkezpena
+	Slide Size	Diapositibaren tamaina
+	Slide Sorter	Diapositiba-sailkatzailea
+	Slide text	Diapositibaren testua
+	Slide title	Diapositibaren izenburua
+	Slide {n} of {total}	{n}/{total} diapositiba
+	Slide\nMaster	Diapositiben\nmaisua
+	Slide\nNumber	Diapositiba-\nzenbakia
+	Slide\nSize	Diapositibaren\ntamaina
+	Slides	Diapositibak
+	Slides (e.g. 1,3,5):	Diapositibak (adib. 1,3,5):
+	Slides from Outline	Diapositibak eskematik
+	Slides from Outline…	Diapositibak eskematik…
+	Slides sized for:	Diapositiben tamaina honetarako:
+	Slides:	Diapositibak:
+	SmartArt	SmartArt
+	SmartArt Design	SmartArt diseinua
+	SmartArt items	SmartArt elementuak
+	SmartArt Styles	SmartArt estiloak
+	SmartArt text	SmartArt testua
+	Snap	Atxiki
+	Snap objects to grid	Atxiki objektuak saretari
+	Snap objects to other objects	Atxiki objektuak beste objektuei
+	Soft Edges	Ertz leunak
+	Solid line	Lerro jarraitua
+	Sort	Ordenatu
+	Sound:	Soinua:
+	Spacing	Tartea
+	Spacing (in):	Tartea (hazb.):
+	Spacing (pt):	Tartea (pt):
+	Special	Berezia
+	Spelling	Ortografia
+	Spelling is checked for languages marked (dictionary).	Ortografia (hiztegia) markatutako hizkuntzetan egiaztatzen da.
+	Split\nCells	Zatitu\ngelaxkak
+	Standard (4:3)	Estandarra (4:3)
+	Standard Colors	Kolore estandarrak
+	Start at:	Hasi hemen:
+	Start Automatically	Hasi automatikoki
+	Start time (s):	Hasiera-ordua (s):
+	Start:	Hasiera:
+	Strikethrough	Marratua
+	Subscript	Azpiindizea
+	Superscript	Goi-indizea
+	Symbol	Ikurra
+	Tab stop position (in):	Tabulazioaren posizioa (hazb.):
+	Tab stops:	Tabulazioak:
+	Table	Taula
+	Table Design	Taularen diseinua
+	Tabs	Tabulazioak
+	Tabs…	Tabulazioak…
+	Templates	Txantiloiak
+	Text Box	Testu-koadroa
+	Text box:	Testu-koadroa:
+	Text Direction	Testuaren norabidea
+	Text Effects	Testu-efektuak
+	Text Fill	Testuaren betegarria
+	Text Highlight Color	Testua nabarmentzeko kolorea
+	Text Outline	Testuaren ingerada
+	Text\nBox	Testu-\nkoadroa
+	Text\nPane	Testu-\npanela
+	The spelling check is complete. No issues found.	Ortografia-egiaztapena amaitu da. Ez da arazorik aurkitu.
+	Theme Colors	Gaiaren koloreak
+	Themes	Gaiak
+	Themes (whole presentation)	Gaiak (aurkezpen osoa)
+	Thesaurus	Sinonimoen hiztegia
+	This Document	Dokumentu hau
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Aurkezpen honek ez du aurkezpen pertsonalizaturik (Aurkezpena ▸ Aurkezpen pertsonalizatua).
+	Tile picture as texture	Jarri irudia mosaikoan testura gisa
+	Title	Izenburua
+	To slide:	Diapositiba honetara:
+	Total Row	Guztizkoen errenkada
+	Transform	Eraldatu
+	Transitions	Trantsizioak
+	Translate	Itzuli
+	Translation needs a language model (not bundled)	Itzulpenak hizkuntza-eredu bat behar du (ez dago barne)
+	Transparency	Gardentasuna
+	Transparent background	Atzeko plano gardena
+	Trigger	Abiarazlea
+	Trim	Moztu
+	Trim Media	Moztu multimedia
+	Type	Mota
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Idatzi ekuazio bat formatu linealean (adib. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Idatzi eta antolatu diagramaren testua
+	Type your text here	Idatzi testua hemen
+	Underline	Azpimarratua
+	Ungroup	Banandu
+	Update automatically	Eguneratu automatikoki
+	Use Timings	Erabili tenporizazioak
+	Use timings, if present	Erabili tenporizazioak, badaude
+	Vertical alignment	Lerrokatze bertikala
+	Video	Bideoa
+	View	Ikusi
+	Volume	Bolumena
+	Warp	Deformatu
+	Web Page or File	Web orria edo fitxategia
+	Weight	Lodiera
+	Whole presentation	Aurkezpen osoa
+	Widescreen (16:9)	Pantaila zabala (16:9)
+	Width	Zabalera
+	Width (pixels):	Zabalera (pixelak):
+	Width:	Zabalera:
+	Width: 	Zabalera: 
+	With	Honekin
+	With:	Honekin:
+	WordArt	WordArt
+	Wrap text in shape	Doitu testua forman
+	Your changes will be lost if you don't save them.	Gordetzen ez badituzu, aldaketak galduko dira.
+	Your name (comments):	Zure izena (iruzkinak):
+	Zoom	Zooma
+	Zoom In	Handiagotu
+	Zoom Out	Txikiagotu
+	Zoom to	Zooma honetara

@@ -460,7 +460,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
-    ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca}"),
+    ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu}"),
     ("app.openDialog", "Open…", None, "{purpose?}"),
     ("app.insertPictureDialog", "Picture from File…", None, "{}"),
     ("app.smartArtPictureDialog", "Insert Picture in SmartArt…", None, "{id?, index}"),
@@ -5359,7 +5359,7 @@ mod tests {
     }
 
     /// Interface languages: `app.language` switches the ribbon, tabs and status bar to Ukrainian,
-    /// Spanish and Catalan at once and back to the system's (English in tests); an unknown language is refused and
+    /// Spanish, Catalan, Galician and Basque at once and back to the system's (English in tests); an unknown language is refused and
     /// leaves the setting alone. `DECKCRAFT_UK_SHOT` / `_ES_SHOT` / `_CA_SHOT=path.png` also save the window.
     #[test]
     fn app_language_switches_the_interface_to_ukrainian_and_back() {
@@ -5396,6 +5396,14 @@ mod tests {
         assert!(harness.query_by_label("Insereix").is_some(), "the Insert tab in Catalan");
         if let Ok(path) = std::env::var("DECKCRAFT_CA_SHOT") {
             harness.render().unwrap().save(path).unwrap();
+        }
+        for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu")] {
+            harness.state_mut().run("app.language", json!({"language": code})).unwrap();
+            harness.run_steps(2);
+            assert!(harness.query_by_label(insert).is_some(), "the Insert tab in {code}");
+            if let Ok(dir) = std::env::var("DECKCRAFT_SHOT_DIR") {
+                harness.render().unwrap().save(format!("{dir}/deck-{code}.png")).unwrap();
+            }
         }
         harness.state_mut().run("app.language", json!({"language": "auto"})).unwrap();
         harness.run_steps(2);
