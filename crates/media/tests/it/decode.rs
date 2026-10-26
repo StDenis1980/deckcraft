@@ -138,6 +138,7 @@ fn mp3() {
     check_tone("mp3", &b, 44_100, 1);
 }
 
+#[cfg(feature = "patented-codecs")]
 #[test]
 fn aac_m4a_and_adts() {
     check_tone("m4a", &fixture("tone.m4a"), 44_100, 1);
@@ -260,6 +261,7 @@ fn check_video(name: &str, w: u32, h: u32, frames: usize, codec: &str) {
     assert!(png.starts_with(&[0x89, b'P', b'N', b'G']));
 }
 
+#[cfg(feature = "patented-codecs")]
 #[test]
 fn h264_mp4_with_b_frames_and_aac_audio() {
     check_video("clip-h264.mp4", 64, 48, 5, "H.264");
@@ -271,12 +273,14 @@ fn h264_mp4_with_b_frames_and_aac_audio() {
     assert!((frequency(&p) - 440.0).abs() < 15.0);
 }
 
+#[cfg(feature = "patented-codecs")]
 #[test]
 fn h264_mov() {
     check_video("clip-h264.mov", 64, 48, 6, "H.264");
     assert_eq!(probe(&fixture("clip-h264.mov")).map(|i| i.container), Ok("mov"));
 }
 
+#[cfg(feature = "patented-codecs")]
 #[test]
 fn hevc_mp4() {
     check_video("clip-hevc.mp4", 64, 48, 6, "HEVC");
@@ -297,6 +301,7 @@ fn av1_mkv() {
     check_video("clip-av1.mkv", 64, 64, 6, "AV1");
 }
 
+#[cfg(feature = "patented-codecs")]
 #[test]
 fn video_feed_follows_the_clock() {
     let mut feed = deckcraft_media::VideoFeed::new(fixture("clip-h264.mov")).expect("feed");
@@ -315,7 +320,12 @@ fn video_feed_follows_the_clock() {
 #[test]
 fn video_feed_repeated_seeks_keep_the_requested_frame() {
     let timeout = Duration::from_secs(5);
-    for name in ["clip-h264.mov", "clip-hevc.mp4", "clip-vp9.webm", "clip-av1.mkv"] {
+    let names: &[&str] = if deckcraft_media::PATENTED_CODECS {
+        &["clip-h264.mov", "clip-hevc.mp4", "clip-vp9.webm", "clip-av1.mkv"]
+    } else {
+        &["clip-vp9.webm", "clip-av1.mkv"]
+    };
+    for &name in names {
         let mut feed = deckcraft_media::VideoFeed::new(fixture(name)).expect("feed");
         for _ in 0..20 {
             // A decoder can finish this small clip before the consumer next polls it.
@@ -384,6 +394,34 @@ fn mp4_sample_tables_that_overrun_the_file_are_corrupt() {
         let _ = probe::probe(&b);
     }
     for name in ["tone.m4a", "tone-alac.m4a", "clip-h264.mp4", "clip-h264.mov", "clip-hevc.mp4"] {
-        assert!(audio::decode(&fixture(name)).is_ok() || name.starts_with("clip"), "{name} still decodes");
+        let aac = name == "tone.m4a" && !deckcraft_media::PATENTED_CODECS;
+        assert!(audio::decode(&fixture(name)).is_ok() || name.starts_with("clip") || aac, "{name} still decodes");
     }
+}
+
+/// H.264, HEVC and AAC decode only with the `patented-codecs` feature. Without it (Tinta Presenta
+/// builds) such media is still probed and named, reported as not decodable, and refused with
+/// `Unsupported` rather than a corrupt-file error.
+#[test]
+fn patent_pool_formats_follow_the_feature() {
+    let on = deckcraft_media::PATENTED_CODECS;
+    for (name, codec) in [("clip-h264.mp4", "H.264"), ("clip-h264.mov", "H.264"), ("clip-hevc.mp4", "HEVC")] {
+        let b = fixture(name);
+        let v = probe(&b).ok().and_then(|i| i.video).unwrap_or_else(|| panic!("{name}: no video info"));
+        assert_eq!((v.codec.as_str(), v.decodable), (codec, on), "{name}");
+        match video::VideoDecoder::open(b) {
+            Ok(_) => assert!(on, "{name} opened without the feature"),
+            Err(e) => {
+                assert!(!on, "{name}: {e}");
+                assert!(matches!(e, MediaError::Unsupported(_)), "{name}: {e}");
+            }
+        }
+    }
+    let m4a = fixture("tone.m4a");
+    let a = probe(&m4a).ok().and_then(|i| i.audio).expect("m4a audio info");
+    assert_eq!((a.codec.as_str(), a.decodable), ("AAC", on));
+    assert_eq!(audio::decode(&m4a).is_ok(), on);
+    // The free formats decode either way.
+    assert!(video::VideoDecoder::open(fixture("clip-vp9.webm")).is_ok());
+    assert!(audio::decode(&fixture("tone.mp3")).is_ok());
 }

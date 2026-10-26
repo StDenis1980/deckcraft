@@ -115,7 +115,11 @@ fn probe_mp4(bytes: &Bytes) -> Result<MediaInfo> {
         let secs = if t.timescale > 0 { t.duration as f64 / t.timescale as f64 } else { 0.0 };
         if let Some(e) = t.entries.first() {
             let (w, h) = e.video.as_ref().map(|v| (v.width as u32, v.height as u32)).unwrap_or((t.width, t.height));
-            let decodable = matches!(e.codec, CodecConfig::Avc(_) | CodecConfig::Hevc(_) | CodecConfig::Vp9(_) | CodecConfig::Av1(_));
+            let decodable = match e.codec {
+                CodecConfig::Avc(_) | CodecConfig::Hevc(_) => crate::PATENTED_CODECS,
+                CodecConfig::Vp9(_) | CodecConfig::Av1(_) => true,
+                _ => false,
+            };
             let frames = t.samples.len() as u64;
             info.video = Some(VideoInfo {
                 codec: codec_name(&e.codec),
@@ -132,8 +136,11 @@ fn probe_mp4(bytes: &Bytes) -> Result<MediaInfo> {
         let t = &f.tracks[ti];
         if let Some(e) = t.entries.first() {
             let (rate, channels) = e.audio.as_ref().map(|a| (a.sample_rate.round() as u32, a.channels as u16)).unwrap_or((0, 0));
-            let decodable =
-                matches!(e.codec, CodecConfig::Aac(_) | CodecConfig::Mp3 | CodecConfig::Pcm(_) | CodecConfig::Alac { .. } | CodecConfig::Flac(_));
+            let decodable = match e.codec {
+                CodecConfig::Aac(_) => crate::PATENTED_CODECS,
+                CodecConfig::Mp3 | CodecConfig::Pcm(_) | CodecConfig::Alac { .. } | CodecConfig::Flac(_) => true,
+                _ => false,
+            };
             info.audio = Some(AudioInfo { codec: codec_name(&e.codec), sample_rate: rate, channels, decodable });
         }
         if t.timescale > 0 {
@@ -159,7 +166,11 @@ fn probe_mkv(bytes: &Bytes) -> Result<MediaInfo> {
             _ if dur > 0.0 => frames as f64 / dur,
             _ => 0.0,
         };
-        let decodable = matches!(t.codec, Codec::Avc { .. } | Codec::Hevc { .. } | Codec::Vp9 { .. } | Codec::Av1 { .. });
+        let decodable = match t.codec {
+            Codec::Avc { .. } | Codec::Hevc { .. } => crate::PATENTED_CODECS,
+            Codec::Vp9 { .. } | Codec::Av1 { .. } => true,
+            _ => false,
+        };
         info.video = Some(VideoInfo { codec: mkv_codec_name(&t.codec), width: w, height: h, fps, frames, decodable });
     }
     if let Some(t) = f.tracks.iter().find(|t| t.kind == TrackKind::Audio) {
@@ -169,8 +180,11 @@ fn probe_mkv(bytes: &Bytes) -> Result<MediaInfo> {
             .map(|a| (a.output_sampling_frequency.unwrap_or(a.sampling_frequency).round() as u32, a.channels as u16))
             .unwrap_or((0, 0));
         let rate = if matches!(t.codec, Codec::Opus { .. }) { 48_000 } else { rate };
-        let decodable =
-            matches!(t.codec, Codec::Opus { .. } | Codec::Vorbis { .. } | Codec::Aac { .. } | Codec::Flac { .. } | Codec::Mp3 | Codec::Pcm { .. });
+        let decodable = match t.codec {
+            Codec::Aac { .. } => crate::PATENTED_CODECS,
+            Codec::Opus { .. } | Codec::Vorbis { .. } | Codec::Flac { .. } | Codec::Mp3 | Codec::Pcm { .. } => true,
+            _ => false,
+        };
         info.audio = Some(AudioInfo { codec: mkv_codec_name(&t.codec), sample_rate: rate, channels, decodable });
     }
     Ok(info)

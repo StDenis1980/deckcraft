@@ -135,11 +135,10 @@ fn services() -> Services {
     }
 }
 
-/// The window class (Wayland app id). The Linux packages (`packaging/linux`) still install the
-/// release's desktop entry and icons under the release's id, so a rebranded build keeps that id
-/// until they are generated from `brand::APP_ID`; otherwise docks could not match the window to its
-/// launcher and icon.
-const APP_ID: &str = brand::UPSTREAM_APP_ID;
+/// The window class (Wayland app id). The Linux packages install the desktop entry and icons under
+/// `brand::APP_ID` (packaging/linux/tinta-brand.sh renames the release's files), so docks match the
+/// window to its launcher and icon.
+const APP_ID: &str = brand::APP_ID;
 
 const USAGE: &str = "\
 Usage: deckcraft [--control PORT] [--sample] [--show] [FILE...]

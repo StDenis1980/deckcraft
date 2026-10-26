@@ -131,6 +131,10 @@ impl Container {
 }
 
 /// Worker threads are available (not on wasm32).
+/// Whether this build decodes the patent-pool formats H.264, HEVC and AAC (the `patented-codecs`
+/// feature, off in Tinta Presenta builds). Without it they are probed and named, not decoded.
+pub const PATENTED_CODECS: bool = cfg!(feature = "patented-codecs");
+
 pub(crate) const THREADS: bool = !cfg!(target_arch = "wasm32");
 
 #[cfg(test)]
