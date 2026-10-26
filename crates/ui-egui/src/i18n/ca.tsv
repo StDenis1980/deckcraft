@@ -1,0 +1,679 @@
+# Català (ca) interface catalog for DeckCraft (Tinta Presenta), Office/Softcatalà terminology.
+# craft-i18n catalog format, so it can move to storytold/craft-i18n as locales/ca/deckcraft.tsv.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Data fixa (buit = actualitza automàticament):
+	  Footer text:	  Text del peu de pàgina:
+	  Format:	  Format:
+	  Present  	  Presenta  
+	 (not checked)	 (sense revisar)
+	(no spelling suggestions)	(no hi ha suggeriments ortogràfics)
+	(none)	(cap)
+	+ Add	+ Afegeix
+	+ New Comment	+ Comentari nou
+	+ Row	+ Fila
+	+ Series	+ Sèrie
+	3-D	3D
+	3-D Format	Format 3D
+	3-D Rotation	Rotació 3D
+	[No Sound]	[Sense so]
+	[Stop Previous Sound]	[Atura el so anterior]
+	About DeckCraft	Quant a DeckCraft
+	Accept\nAll	Accepta-ho\ntot
+	Accessibility Checker	Verificador d'accessibilitat
+	Action	Acció
+	Action Settings	Configuració de l'acció
+	Action Settings…	Configuració de l'acció…
+	Add	Afegeix
+	Add a title with a picture or some text to get layout ideas.	Afegeix un títol amb una imatge o una mica de text per obtenir idees de disseny.
+	Add Pictures…	Afegeix imatges…
+	Add Point	Afegeix un punt
+	Add Section	Afegeix una secció
+	Add Shape	Afegeix una forma
+	Add to Dictionary	Afegeix al diccionari
+	Add\nAnimation	Afegeix\nanimació
+	Address:	Adreça:
+	After:	Després:
+	Album theme	Tema de l'àlbum
+	Align	Alinea
+	Align Left	Alinea a l'esquerra
+	Align Right	Alinea a la dreta
+	Align Text	Alinea el text
+	Alignment	Alineació
+	Alignment:	Alineació:
+	ALL pictures black and white	TOTES les imatges en blanc i negre
+	All slides	Totes les diapositives
+	Alt Text	Text alternatiu
+	Alt text	Text alternatiu
+	Alt\nText	Text\nalternatiu
+	An open-source, clean-room project. Not affiliated with Microsoft.	Projecte de codi obert, creat des de zero. Sense relació amb Microsoft.
+	Angle	Angle
+	Animation Painter (double-click to keep it on)	Copia l'animació (doble clic per mantenir-ho actiu)
+	Animation\nPainter	Copia\nl'animació
+	Animation\nPane	Subfinestra\nd'animació
+	Animations	Animacions
+	Applies to this presentation's theme colours.	S'aplica als colors del tema d'aquesta presentació.
+	Apply	Aplica
+	Apply to All	Aplica-ho a tot
+	Apply to:	Aplica a:
+	Apply\nTo All	Aplica-ho\na tot
+	Arrange	Organitza
+	Arrows	Fletxes
+	Artistic\nEffects	Efectes\nartístics
+	As:	Com a:
+	Audio	Àudio
+	AutoCorrect	Correcció automàtica
+	AutoCorrect as you type	Correcció automàtica mentre escrius
+	AutoCorrect Options…	Opcions de correcció automàtica…
+	Automatic	Automàtic
+	Automatic (system language)	Automàtic (idioma del sistema)
+	Automatic bulleted and numbered lists	Llistes automàtiques de pics i numerades
+	Available formats:	Formats disponibles:
+	Back (Esc)	Enrere (Esc)
+	Background\nStyles	Estils\nde fons
+	Banded Columns	Columnes amb bandes
+	Banded Rows	Files amb bandes
+	Based on DeckCraft by the ArtCraft team.	Basat en DeckCraft de l'equip d'ArtCraft.
+	Baseline	Línia de base
+	Bevel	Bisell
+	Body:	Cos:
+	Bold	Negreta
+	Borders	Vores
+	Bring Forward	Porta endavant
+	Bring to Front	Porta al davant
+	Bring\nForward	Porta\nendavant
+	Browse for Themes…	Cerca temes…
+	Bullets	Pics
+	Bullets and Numbering	Pics i numeració
+	Bullets and Numbering…	Pics i numeració…
+	Cameo	Cameo
+	Camera capture is not available yet	La captura de càmera encara no està disponible
+	Cancel	Cancel·la
+	Capitalize first letter of sentences	Posa en majúscula la primera lletra de les frases
+	Capitalize names of days	Posa en majúscula els noms dels dies
+	Caps	Extrems
+	Captions under pictures	Llegendes sota les imatges
+	Cell Margins	Marges de la cel·la
+	Center	Centre
+	Centimeters	Centímetres
+	Change Case	Canvia majúscules/minúscules
+	Change Colors	Canvia els colors
+	Change File Type	Canvia el tipus de fitxer
+	Change Picture	Canvia la imatge
+	Change Picture…	Canvia la imatge…
+	Change Shape	Canvia la forma
+	Change to:	Canvia a:
+	Change\nChart Type	Canvia el tipus\nde gràfic
+	Character Spacing	Espaiat entre caràcters
+	Chart	Gràfic
+	Chart cell	Cel·la del gràfic
+	Chart Data	Dades del gràfic
+	Chart Design	Disseny del gràfic
+	Check\nAccessibility	Comprova\nl'accessibilitat
+	Choose a SmartArt Graphic	Tria un gràfic SmartArt
+	Choosing a presentation to reuse needs the desktop app	Per triar una presentació per reutilitzar cal l'aplicació d'escriptori
+	Choosing a sound file needs the desktop app	Per triar un fitxer de so cal l'aplicació d'escriptori
+	Clear All	Esborra-ho tot
+	Clear All Formatting	Esborra tot el format
+	Click a colour in the picture to make it transparent	Fes clic en un color de la imatge per fer-lo transparent
+	Click a symbol to insert it at the insertion point.	Fes clic en un símbol per inserir-lo al punt d'inserció.
+	Click icon to add chart	Fes clic a la icona per afegir un gràfic
+	Click icon to add media	Fes clic a la icona per afegir multimèdia
+	Click icon to add picture	Fes clic a la icona per afegir una imatge
+	Click icon to add SmartArt graphic	Fes clic a la icona per afegir un gràfic SmartArt
+	Click icon to add table	Fes clic a la icona per afegir una taula
+	Click the slide to take the colour under the pointer	Fes clic a la diapositiva per agafar el color sota el punter
+	Click to add notes	Fes clic per afegir notes
+	Click to add subtitle	Fes clic per afegir un subtítol
+	Click to add text	Fes clic per afegir text
+	Click to add title	Fes clic per afegir un títol
+	Click to change this one; Shift-click to change all	Clic per canviar aquest; Maj+clic per canviar-los tots
+	Close	Tanca
+	Close\nMaster View	Tanca la vista\nde patró
+	Color	Color
+	Color:	Color:
+	Colors	Colors
+	Columns	Columnes
+	Comment	Comentari
+	Comments	Comentaris
+	Compare	Compara
+	Compare this presentation with a revised copy from Review › Compare.	Compara aquesta presentació amb una còpia revisada des de Revisió › Compara.
+	Compress Pictures	Comprimeix les imatges
+	Convert	Converteix
+	Convert to Shapes	Converteix en formes
+	Convert to SmartArt	Converteix en SmartArt
+	Convert to Text	Converteix en text
+	Copy	Copia
+	Copy path	Copia el camí
+	Correct accidental use of cAPS LOCK key	Corregeix l'ús accidental de la tecla bLOQ mAJ
+	Correct TWo INitial CApitals	Corregeix DUes MAjúscules INicials
+	Corrections	Correccions
+	Create	Crea
+	Create a PDF Document	Crea un document PDF
+	Create Handouts	Crea documents
+	Create New Theme Colors	Crea colors de tema nous
+	Create New Theme Fonts	Crea tipus de lletra de tema nous
+	Crop	Escapça
+	Crop to Shape	Escapça a la forma
+	Custom character:	Caràcter personalitzat:
+	Custom Shows	Presentacions personalitzades
+	Custom\nShow	Presentació\npersonalitzada
+	Customize Colors…	Personalitza els colors…
+	Customize Fonts…	Personalitza els tipus de lletra…
+	Customize Quick Access Toolbar	Personalitza la barra d'eines d'accés ràpid
+	Cut	Retalla
+	Dark appearance	Aparença fosca
+	Dark\nMode	Mode\nfosc
+	Dash	Guió
+	Dashes	Guions
+	Date	Data
+	Date &\nTime	Data\ni hora
+	Date and Time	Data i hora
+	Date and time	Data i hora
+	Decrease Font Size	Redueix la mida del tipus de lletra
+	Decrease List Level	Redueix el nivell de llista
+	Default tab stops (in):	Tabulacions per defecte (polz.):
+	Delay:	Retard:
+	Delete	Suprimeix
+	Delete Columns	Suprimeix les columnes
+	Delete Point	Suprimeix el punt
+	Delete Repeated Word	Suprimeix la paraula repetida
+	Delete Rows	Suprimeix les files
+	Delete Segment	Suprimeix el segment
+	Delete Slide	Suprimeix la diapositiva
+	Delete Table	Suprimeix la taula
+	Demote	Abaixa de nivell
+	Design	Disseny
+	Design\nIdeas	Idees\nde disseny
+	Direction	Direcció
+	Display	Visualització
+	Display drawing guides on screen	Mostra les guies de dibuix a la pantalla
+	Display grid on screen	Mostra la quadrícula a la pantalla
+	Distribute Columns	Distribueix les columnes
+	Distribute Horizontally	Distribueix horitzontalment
+	Distribute Rows	Distribueix les files
+	Distribute Vertically	Distribueix verticalment
+	Do not check spelling or grammar	No revisis l'ortografia ni la gramàtica
+	Don't Save	No desis
+	Don't show on title slide	No ho mostris a la diapositiva de títol
+	Done	Fet
+	Draw	Dibuix
+	Draw Table	Dibuixa una taula
+	Duplicate Selected Slides	Duplica les diapositives seleccionades
+	Duplicate Slide	Duplica la diapositiva
+	Duration:	Durada:
+	e.g. 1-3, 5	p. ex. 1-3, 5
+	Edit Alt Text…	Edita el text alternatiu…
+	Edit Photo Album…	Edita l'àlbum de fotos…
+	Edit Points	Edita els punts
+	Edit Text	Edita el text
+	Edit the data: first row = series names, first column = categories.	Edita les dades: primera fila = noms de les sèries, primera columna = categories.
+	Edit\nData	Edita\nles dades
+	Edit\nShape	Edita\nla forma
+	Editing	Edició
+	Effect\nOptions	Opcions\nd'efecte
+	Effects	Efectes
+	Email Address	Adreça electrònica
+	Email address:	Adreça electrònica:
+	End Review	Finalitza la revisió
+	End trim (s):	Retall final (s):
+	End\nReview	Finalitza\nla revisió
+	Equation	Equació
+	Eraser	Goma d'esborrar
+	Exit Edit Points	Surt d'editar punts
+	Export	Exporta
+	Export the presentation as:	Exporta la presentació com a:
+	Eyedropper	Comptagotes
+	Fade in (s):	Esvaïment d'entrada (s):
+	Fade out (s):	Esvaïment de sortida (s):
+	File	Fitxer
+	Fill	Emplenament
+	Find	Cerca
+	Find and Replace	Cerca i substitueix
+	Find Next	Cerca el següent
+	Find what:	Cerca:
+	Find whole words only	Només paraules senceres
+	First Column	Primera columna
+	Fit	Ajusta
+	Fit slide to current window	Ajusta la diapositiva a la finestra actual
+	Fit to\nWindow	Ajusta a\nla finestra
+	Flip Horizontal	Capgira horitzontalment
+	Flip Vertical	Capgira verticalment
+	Follow Path	Segueix el camí
+	Font	Tipus de lletra
+	Font Color	Color del tipus de lletra
+	Font name	Nom del tipus de lletra
+	Fonts	Tipus de lletra
+	Font…	Tipus de lletra…
+	Footer	Peu de pàgina
+	Footers	Peus de pàgina
+	Format	Format
+	Format Background…	Format del fons…
+	Format Painter (double-click to keep it on)	Copia el format (doble clic per mantenir-ho actiu)
+	Format Shape…	Format de la forma…
+	Format\nBackground	Format\ndel fons
+	Format\nPane	Subfinestra\nde format
+	Frame shape	Forma del marc
+	Frame Slides	Emmarca les diapositives
+	From slide:	Des de la diapositiva:
+	From the top-left corner of the slide	Des de l'angle superior esquerre de la diapositiva
+	From\nBeginning	Des del\nprincipi
+	From\nCurrent Slide	Des de la\ndiapositiva actual
+	General	General
+	Glow	Resplendor
+	Grab bag	Calaix de sastre
+	Gradient stops	Punts de degradat
+	Gradient…	Degradat…
+	Grayscale	Escala de grisos
+	Grid and Guides	Quadrícula i guies
+	Grid Options	Opcions de la quadrícula
+	Grid\nOptions	Opcions de\nla quadrícula
+	Gridlines	Línies de quadrícula
+	Group	Agrupa
+	Group Objects	Agrupa els objectes
+	Guides	Guies
+	Handout Master	Patró de documents
+	Handout\nMaster	Patró de\ndocuments
+	Header	Capçalera
+	Header &\nFooter	Capçalera i\npeu de pàgina
+	Header and Footer	Capçalera i peu de pàgina
+	Header Row	Fila de capçalera
+	Heading and body fonts for this presentation.	Tipus de lletra dels títols i del cos d'aquesta presentació.
+	Heading:	Títol:
+	Height:	Alçada:
+	Hide All	Amaga-ho tot
+	Hide background graphics	Amaga els gràfics de fons
+	Hide During Show	Amaga durant la presentació
+	Hide\nSlide	Amaga la\ndiapositiva
+	Highlight click	Ressalta el clic
+	Home	Inici
+	How would you describe this object and its context to someone who is blind or has low vision?	Com descriuries aquest objecte i el seu context a algú cec o amb baixa visió?
+	Hyperlink to:	Hiperenllaç a:
+	Icons	Icones
+	Ignore All	Omet-ho tot
+	Inches	Polzades
+	Include hidden slides	Inclou les diapositives amagades
+	Increase Font Size	Augmenta la mida del tipus de lletra
+	Increase List Level	Augmenta el nivell de llista
+	Indentation	Sagnat
+	Ink to Math (coming soon)	Tinta a fórmula (aviat)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Tinta a forma: converteix en formes les línies, rectangles, ovals i triangles dibuixats
+	Ink to Text (coming soon)	Tinta a text (aviat)
+	Ink to\nMath	Tinta a\nfórmula
+	Ink to\nShape	Tinta a\nforma
+	Ink to\nText	Tinta a\ntext
+	Insert	Insereix
+	Insert Hyperlink	Insereix un hiperenllaç
+	Insert Picture	Insereix una imatge
+	Insert picture from file…	Insereix una imatge des d'un fitxer…
+	Insert Table	Insereix una taula
+	Insert Table…	Insereix una taula…
+	Insert\nAbove	Insereix\na sobre
+	Insert\nBelow	Insereix\na sota
+	Insert\nLayout	Insereix\nun disseny
+	Insert\nLeft	Insereix a\nl'esquerra
+	Insert\nPlaceholder	Insereix un\nmarcador
+	Insert\nRight	Insereix a\nla dreta
+	Insert…	Insereix…
+	Interface Language	Idioma de la interfície
+	Interface language:	Idioma de la interfície:
+	Italic	Cursiva
+	Justify	Justifica
+	Keep source formatting	Mantén el format d'origen
+	Landscape	Horitzontal
+	Language	Idioma
+	Language:	Idioma:
+	Last Column	Última columna
+	Layout	Disseny
+	Layouts	Dissenys
+	Learn\nMore	Més\ninformació
+	Leave the slide background out: only what is on the slide is drawn	Sense el fons de la diapositiva: només es dibuixa el contingut
+	Less Brightness	Menys brillantor
+	Less Contrast	Menys contrast
+	Light/Dark appearance	Aparença clara/fosca
+	Line	Línia
+	Line Spacing	Interlineat
+	Line spacing	Interlineat
+	Line Spacing Options…	Opcions d'interlineat…
+	Link	Enllaç
+	Link…	Enllaç…
+	Lock aspect ratio	Bloqueja la relació d'aspecte
+	Loop continuously until 'Esc'	Repeteix contínuament fins a prémer Esc
+	Loop forever	Repeteix sempre
+	Loop Until Next Sound	Repeteix fins al so següent
+	Loop until Stopped	Repeteix fins que s'aturi
+	Margins (pt)	Marges (pt)
+	Mark as decorative	Marca com a decoratiu
+	Match case	Coincidència de majúscules i minúscules
+	Maximize content (else ensure fit)	Maximitza el contingut (si no, assegura l'ajust)
+	Measurement units:	Unitats de mesura:
+	Merge Shapes	Combina formes
+	Merge\nCells	Combina\ncel·les
+	Merge\nShapes	Combina\nformes
+	Mirror	Reflecteix
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	Els noms dels mesos i AM/PM es mostren per a l'anglès. Els altres idiomes mostren la data numèrica i l'hora en format de 24 hores.
+	More Brightness	Més brillantor
+	More Colors… #	Més colors… #
+	More Columns…	Més columnes…
+	More Contrast	Més contrast
+	Move Down	Mou avall
+	Move Section Down	Mou la secció avall
+	Move Section Up	Mou la secció amunt
+	Move Up	Mou amunt
+	Name	Nom
+	Name:	Nom:
+	New	Nou
+	New Comment	Comentari nou
+	New Photo Album…	Àlbum de fotos nou…
+	New show name:	Nom de la presentació nova:
+	New Slide	Diapositiva nova
+	New Slide (⇧⌘N)	Diapositiva nova (⇧⌘N)
+	New Text Box	Quadre de text nou
+	New\nComment	Comentari\nnou
+	New\nSlide	Diapositiva\nnova
+	New\nWindow	Finestra\nnova
+	Next	Següent
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	No s'ha trobat cap problema d'accessibilitat. Les persones amb discapacitat no haurien de tenir dificultats per llegir aquest document.
+	No comments.	No hi ha comentaris.
+	No contributor data was built into this copy.	En aquesta còpia no s'han inclòs dades de contribuïdors.
+	No differences left.	No queden diferències.
+	No Glow	Sense resplendor
+	No icons match.	Cap icona no coincideix.
+	No line	Sense línia
+	No model credits were built into this copy.	En aquesta còpia no s'han inclòs crèdits de models.
+	No notes.	No hi ha notes.
+	No pictures yet	Encara no hi ha imatges
+	None	Cap
+	Normal	Normal
+	Not a copy of this presentation: slides are matched by position.	No és una còpia d'aquesta presentació: les diapositives s'aparellen per posició.
+	Notes	Notes
+	Notes Master	Patró de notes
+	Notes\nMaster	Patró de\nnotes
+	Number of columns:	Nombre de columnes:
+	Number of rows:	Nombre de files:
+	Number:	Número:
+	Numbering	Numeració
+	OK	D'acord
+	On Click of… (none)	En fer clic a… (cap)
+	On Mouse Click	En fer clic amb el ratolí
+	Open a presentation from a folder (Ctrl+O)	Obre una presentació d'una carpeta (Ctrl+O)
+	Open another window on this presentation	Obre una altra finestra d'aquesta presentació
+	Open file location	Obre la ubicació del fitxer
+	Options	Opcions
+	Order Objects	Ordena els objectes
+	Ordinals (1st) with superscript	Ordinals (1st) en superíndex
+	Orientation:	Orientació:
+	Other Sound…	Un altre so…
+	Outline	Contorn
+	Page Setup…	Configuració de la pàgina…
+	Paragraph	Paràgraf
+	Paragraph…	Paràgraf…
+	Paste	Enganxa
+	Paste (⌘V)	Enganxa (⌘V)
+	Paste and Match Formatting	Enganxa i fes coincidir el format
+	Paste Formatting	Enganxa el format
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Enganxa o escriu un esquema. Les línies sense sagnat es converteixen en títols de diapositiva; les sagnades amb tabulació, en pics.
+	Paste Special	Enganxament especial
+	Paste Special…	Enganxament especial…
+	Pattern	Trama
+	Pen Color	Color del llapis
+	Pen Style	Estil del llapis
+	Pen Weight	Gruix del llapis
+	Percent:	Percentatge:
+	Photo Album	Àlbum de fotos
+	Photo Album options	Opcions de l'àlbum de fotos
+	Photo Album…	Àlbum de fotos…
+	Photo\nAlbum	Àlbum\nde fotos
+	Pick a design for this slide. Ideas are generated on your device.	Tria un disseny per a aquesta diapositiva. Les idees es generen al teu dispositiu.
+	Pick a graphic; type one item per line.	Tria un gràfic i escriu un element per línia.
+	Picture	Imatge
+	Picture Border	Vora de la imatge
+	Picture Format	Format de la imatge
+	Picture layout	Disseny de les imatges
+	Picture source	Origen de les imatges
+	Pictures	Imatges
+	Pictures in album	Imatges de l'àlbum
+	Play Across Slides	Reprodueix en totes les diapositives
+	Play from\nCurrent Slide	Reprodueix des de la\ndiapositiva actual
+	Play from\nStart	Reprodueix\ndes de l'inici
+	Play Full Screen	Reprodueix a pantalla completa
+	Play Narrations	Reprodueix les narracions
+	Play this slide's animations on the canvas	Reprodueix les animacions d'aquesta diapositiva al llenç
+	Playback	Reproducció
+	Portrait	Vertical
+	Position	Posició
+	Position Objects	Posiciona els objectes
+	Post	Publica
+	Preferences	Preferències
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Presentacions amb diapositives, creades des de zero en Rust pur.
+	Presenter\nView	Visualització\ndel presentador
+	Preserve	Conserva
+	Preset gradients	Degradats predefinits
+	Preview	Visualització prèvia
+	Previous	Anterior
+	Print Hidden Slides	Imprimeix les diapositives amagades
+	Print layout:	Disseny d'impressió:
+	Program:	Programa:
+	Promote	Apuja de nivell
+	pt	pt
+	Put a picture in the selected node's picture placeholder	Posa una imatge al marcador d'imatge del node seleccionat
+	Quick\nStyles	Estils\nràpids
+	Reading View	Visualització de lectura
+	Recent	Recents
+	Recolor	Torna a acolorir
+	Record	Enregistra
+	Recording narration needs audio capture (coming soon)	Per enregistrar narracions cal capturar àudio (aviat)
+	Recover Unsaved Presentations	Recupera les presentacions no desades
+	Reflection	Reflex
+	Regroup	Torna a agrupar
+	Rehearse\nTimings	Assaja els\nintervals
+	Remove	Elimina
+	Remove All Sections	Elimina totes les seccions
+	Remove bullets and numbering	Elimina els pics i la numeració
+	Remove from Quick Access Toolbar	Elimina de la barra d'eines d'accés ràpid
+	Remove from Recent	Elimina dels recents
+	Remove Section	Elimina la secció
+	Remove Section & Slides	Elimina la secció i les diapositives
+	Remove stop	Elimina el punt
+	Remove the picture style	Elimina l'estil de la imatge
+	Remove\nBackground	Elimina\nel fons
+	Rename	Canvia el nom
+	Rename Layout	Canvia el nom del disseny
+	Rename Section	Canvia el nom de la secció
+	Rename Section…	Canvia el nom de la secció…
+	Repeated word	Paraula repetida
+	Replace	Substitueix
+	Replace All	Substitueix-ho tot
+	Replace Font	Substitueix el tipus de lletra
+	Replace Fonts…	Substitueix els tipus de lletra…
+	Replace fractions (1/2) with fraction characters (½)	Substitueix les fraccions (1/2) per caràcters de fracció (½)
+	Replace straight quotes with smart quotes	Substitueix les cometes rectes per cometes tipogràfiques
+	Replace text as you type	Substitueix el text mentre escrius
+	Replace with:	Substitueix per:
+	Replace:	Substitueix:
+	Replace…	Substitueix…
+	Reply…	Respon…
+	Rescan Installed Fonts	Torna a cercar els tipus de lletra instal·lats
+	Reset	Restableix
+	Reset 3-D	Restableix el 3D
+	Reset Background	Restableix el fons
+	Reset Effects	Restableix els efectes
+	Reset Picture	Restableix la imatge
+	Reset Slide	Restableix la diapositiva
+	Reset Slide Background	Restableix el fons de la diapositiva
+	Reset to Defaults	Restableix els valors per defecte
+	Reuse Slides	Reutilitza diapositives
+	Reverse the order	Inverteix l'ordre
+	Review	Revisió
+	Rewind after Playing	Rebobina després de reproduir
+	Right-click any ribbon button to add it.	Fes clic amb el botó dret en qualsevol botó de la cinta per afegir-lo.
+	Rotate	Gira
+	Rotate Left	Gira a l'esquerra
+	Rotate Left 90°	Gira 90° a l'esquerra
+	Rotate Right	Gira a la dreta
+	Rotate Right 90°	Gira 90° a la dreta
+	Rotate with shape	Gira amb la forma
+	Ruler	Regle
+	Save	Desa
+	Screenshot	Captura de pantalla
+	Screenshot (not available yet)	Captura de pantalla (encara no disponible)
+	ScreenTip:	Informació en pantalla:
+	Scroll ribbon left	Desplaça la cinta a l'esquerra
+	Scroll ribbon right	Desplaça la cinta a la dreta
+	Search commands (⇧⌘P)	Cerca ordres (⇧⌘P)
+	Search commands…	Cerca ordres…
+	Search icons	Cerca icones
+	Seconds per slide:	Segons per diapositiva:
+	Section	Secció
+	Select	Selecciona
+	Select a chart first.	Primer selecciona un gràfic.
+	Select a shape to format it.	Selecciona una forma per donar-li format.
+	Select a SmartArt graphic to edit its text.	Selecciona un gràfic SmartArt per editar-ne el text.
+	Select an object on the slide and add an animation from the Animations tab.	Selecciona un objecte de la diapositiva i afegeix una animació des de la pestanya Animacions.
+	Selection Pane…	Subfinestra de selecció…
+	Selection\nPane	Subfinestra\nde selecció
+	Send Backward	Envia enrere
+	Send to Back	Envia al fons
+	Send\nBackward	Envia\nenrere
+	Set	Estableix
+	Set as Default Shape	Estableix com a forma per defecte
+	Set Transparent Color	Estableix el color transparent
+	Set Up Slide Show	Configura la presentació
+	Set Up\nSlide Show	Configura la\npresentació
+	Shading	Ombrejat
+	Shadow	Ombra
+	Shape Effects	Efectes
+	Shape Fill	Emplenament
+	Shape Format	Format de la forma
+	Shape Outline	Contorn
+	Shape\nStyles	Estils\nde forma
+	Shapes	Formes
+	Show	Mostra
+	Show All	Mostra-ho tot
+	Show Media Controls	Mostra els controls multimèdia
+	Show smart guides	Mostra les guies intel·ligents
+	Show type	Tipus de presentació
+	Show without animation	Presentació sense animació
+	Show without narration	Presentació sense narració
+	Show\nComments	Mostra els\ncomentaris
+	Size	Mida
+	Size (% of text):	Mida (% del text):
+	Size and Position	Mida i posició
+	Size and Position…	Mida i posició…
+	Size:	Mida:
+	Slide Master	Patró de diapositives
+	Slide number	Número de diapositiva
+	Slide Show	Presentació
+	Slide Size	Mida de la diapositiva
+	Slide Sorter	Classificador de diapositives
+	Slide text	Text de la diapositiva
+	Slide title	Títol de la diapositiva
+	Slide {n} of {total}	Diapositiva {n} de {total}
+	Slide\nMaster	Patró de\ndiapositives
+	Slide\nNumber	Número de\ndiapositiva
+	Slide\nSize	Mida de la\ndiapositiva
+	Slides	Diapositives
+	Slides (e.g. 1,3,5):	Diapositives (p. ex. 1,3,5):
+	Slides from Outline	Diapositives des d'un esquema
+	Slides from Outline…	Diapositives des d'un esquema…
+	Slides sized for:	Mida de les diapositives per a:
+	Slides:	Diapositives:
+	SmartArt	SmartArt
+	SmartArt Design	Disseny de SmartArt
+	SmartArt items	Elements de SmartArt
+	SmartArt Styles	Estils de SmartArt
+	SmartArt text	Text de SmartArt
+	Snap	Ajusta
+	Snap objects to grid	Ajusta els objectes a la quadrícula
+	Snap objects to other objects	Ajusta els objectes a altres objectes
+	Soft Edges	Vores suaus
+	Solid line	Línia contínua
+	Sort	Ordena
+	Sound:	So:
+	Spacing	Espaiat
+	Spacing (in):	Espaiat (polz.):
+	Spacing (pt):	Espaiat (pt):
+	Special	Especial
+	Spelling	Ortografia
+	Spelling is checked for languages marked (dictionary).	L'ortografia es revisa en els idiomes marcats amb (diccionari).
+	Split\nCells	Divideix\nles cel·les
+	Standard (4:3)	Estàndard (4:3)
+	Standard Colors	Colors estàndard
+	Start at:	Comença a:
+	Start Automatically	Inicia automàticament
+	Start time (s):	Temps d'inici (s):
+	Start:	Inici:
+	Strikethrough	Ratllat
+	Subscript	Subíndex
+	Superscript	Superíndex
+	Symbol	Símbol
+	Tab stop position (in):	Posició de la tabulació (polz.):
+	Tab stops:	Tabulacions:
+	Table	Taula
+	Table Design	Disseny de la taula
+	Tabs	Tabulacions
+	Tabs…	Tabulacions…
+	Templates	Plantilles
+	Text Box	Quadre de text
+	Text box:	Quadre de text:
+	Text Direction	Direcció del text
+	Text Effects	Efectes de text
+	Text Fill	Emplenament del text
+	Text Highlight Color	Color de ressaltat del text
+	Text Outline	Contorn del text
+	Text\nBox	Quadre\nde text
+	Text\nPane	Subfinestra\nde text
+	The spelling check is complete. No issues found.	La revisió ortogràfica ha acabat. No s'ha trobat cap problema.
+	Theme Colors	Colors del tema
+	Themes	Temes
+	Themes (whole presentation)	Temes (tota la presentació)
+	Thesaurus	Tesaurus
+	This Document	Aquest document
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Aquesta presentació no té presentacions personalitzades (Presentació ▸ Presentació personalitzada).
+	Tile picture as texture	Posa la imatge en mosaic com a textura
+	Title	Títol
+	To slide:	Fins a la diapositiva:
+	Total Row	Fila de total
+	Transform	Transforma
+	Transitions	Transicions
+	Translate	Tradueix
+	Translation needs a language model (not bundled)	La traducció necessita un model de llenguatge (no inclòs)
+	Transparency	Transparència
+	Transparent background	Fons transparent
+	Trigger	Desencadenador
+	Trim	Retalla
+	Trim Media	Retalla el contingut multimèdia
+	Type	Tipus
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Escriu una equació en format lineal (p. ex. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Escriu i organitza el text del diagrama
+	Type your text here	Escriu el text aquí
+	Underline	Subratllat
+	Ungroup	Desagrupa
+	Update automatically	Actualitza automàticament
+	Use Timings	Utilitza els intervals
+	Use timings, if present	Utilitza els intervals, si n'hi ha
+	Vertical alignment	Alineació vertical
+	Video	Vídeo
+	View	Visualització
+	Volume	Volum
+	Warp	Deforma
+	Web Page or File	Pàgina web o fitxer
+	Weight	Gruix
+	Whole presentation	Tota la presentació
+	Widescreen (16:9)	Panoràmica (16:9)
+	Width	Amplada
+	Width (pixels):	Amplada (píxels):
+	Width:	Amplada:
+	Width: 	Amplada: 
+	With	Amb
+	With:	Amb:
+	WordArt	WordArt
+	Wrap text in shape	Ajusta el text a la forma
+	Your changes will be lost if you don't save them.	Els canvis es perdran si no els deses.
+	Your name (comments):	El teu nom (comentaris):
+	Zoom	Zoom
+	Zoom In	Amplia
+	Zoom Out	Redueix
+	Zoom to	Zoom a

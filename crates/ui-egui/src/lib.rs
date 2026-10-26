@@ -460,7 +460,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
-    ("app.language", "Interface Language", None, "{language?: auto|en|uk}"),
+    ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu}"),
     ("app.openDialog", "Open…", None, "{purpose?}"),
     ("app.insertPictureDialog", "Picture from File…", None, "{}"),
     ("app.smartArtPictureDialog", "Insert Picture in SmartArt…", None, "{id?, index}"),
@@ -5358,9 +5358,9 @@ mod tests {
         assert_eq!(harness.state().capture.reserved_bytes(), 0, "the reservation is released after the reply");
     }
 
-    /// Interface languages: `app.language` switches the ribbon, tabs and status bar to Ukrainian
-    /// at once and back to the system's (English in tests); an unknown language is refused and
-    /// leaves the setting alone. `DECKCRAFT_UK_SHOT=path.png` also saves the Ukrainian window.
+    /// Interface languages: `app.language` switches the ribbon, tabs and status bar to Ukrainian,
+    /// Spanish, Catalan, Galician and Basque at once and back to the system's (English in tests); an unknown language is refused and
+    /// leaves the setting alone. `DECKCRAFT_UK_SHOT` / `_ES_SHOT` / `_CA_SHOT=path.png` also save the window.
     #[test]
     fn app_language_switches_the_interface_to_ukrainian_and_back() {
         let mut harness = egui_kittest::Harness::builder().with_size(egui::vec2(1440.0, 900.0)).build_ui_state(
@@ -5383,6 +5383,28 @@ mod tests {
         }
         assert!(harness.state_mut().run("app.language", json!({"language": "klingon"})).is_err());
         assert_eq!(harness.state().ui.language, "uk");
+        harness.state_mut().run("app.language", json!({"language": "es_ES.UTF-8"})).unwrap();
+        assert_eq!(harness.state().ui.language, "es");
+        harness.run_steps(2);
+        assert!(harness.query_by_label("Insertar").is_some(), "the Insert tab in Spanish");
+        assert!(harness.query_by_label_contains("Diapositiva 1 de 1").is_some(), "the status bar in Spanish");
+        if let Ok(path) = std::env::var("DECKCRAFT_ES_SHOT") {
+            harness.render().unwrap().save(path).unwrap();
+        }
+        harness.state_mut().run("app.language", json!({"language": "ca"})).unwrap();
+        harness.run_steps(2);
+        assert!(harness.query_by_label("Insereix").is_some(), "the Insert tab in Catalan");
+        if let Ok(path) = std::env::var("DECKCRAFT_CA_SHOT") {
+            harness.render().unwrap().save(path).unwrap();
+        }
+        for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu")] {
+            harness.state_mut().run("app.language", json!({"language": code})).unwrap();
+            harness.run_steps(2);
+            assert!(harness.query_by_label(insert).is_some(), "the Insert tab in {code}");
+            if let Ok(dir) = std::env::var("DECKCRAFT_SHOT_DIR") {
+                harness.render().unwrap().save(format!("{dir}/deck-{code}.png")).unwrap();
+            }
+        }
         harness.state_mut().run("app.language", json!({"language": "auto"})).unwrap();
         harness.run_steps(2);
         assert!(harness.query_by_label("Insert").is_some(), "auto follows the (English) test system");
