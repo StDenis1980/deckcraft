@@ -460,7 +460,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
-    ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu}"),
+    ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu|it|fr|de|pl}"),
     ("app.openDialog", "Open…", None, "{purpose?}"),
     ("app.insertPictureDialog", "Picture from File…", None, "{}"),
     ("app.smartArtPictureDialog", "Insert Picture in SmartArt…", None, "{id?, index}"),
@@ -5397,10 +5397,11 @@ mod tests {
         if let Ok(path) = std::env::var("DECKCRAFT_CA_SHOT") {
             harness.render().unwrap().save(path).unwrap();
         }
-        for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu")] {
+        for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu"), ("it", "Inserisci"), ("fr", "Insérer"), ("de", "Einfügen"), ("pl", "Wstaw")] {
             harness.state_mut().run("app.language", json!({"language": code})).unwrap();
             harness.run_steps(2);
-            assert!(harness.query_by_label(insert).is_some(), "the Insert tab in {code}");
+            // German uses "Einfügen" for both the Insert tab and Paste, so match any node.
+            assert!(harness.query_all_by_label(insert).next().is_some(), "the Insert tab in {code}");
             if let Ok(dir) = std::env::var("DECKCRAFT_SHOT_DIR") {
                 harness.render().unwrap().save(format!("{dir}/deck-{code}.png")).unwrap();
             }

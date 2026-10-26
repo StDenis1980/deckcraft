@@ -1,0 +1,680 @@
+# Italiano (it) interface catalog for DeckCraft (Tinta Presenta). Machine-assisted; needs native review.
+# craft-i18n catalog format. Written from the meaning of the English text; rows shared with the
+# Tinta forks of PdfCraft, WordCraft and GridCraft reuse their wording. No other product's localisation.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Data fissa (vuoto = aggiorna automaticamente):
+	  Footer text:	  Testo del piè di pagina:
+	  Format:	  Formato:
+	  Present  	  Presenta  
+	 (not checked)	 (non controllato)
+	(no spelling suggestions)	(nessun suggerimento ortografico)
+	(none)	(nessuno)
+	+ Add	+ Aggiungi
+	+ New Comment	+ Nuovo commento
+	+ Row	+ Riga
+	+ Series	+ Serie
+	3-D	3D
+	3-D Format	Formato 3D
+	3-D Rotation	Rotazione 3D
+	[No Sound]	[Nessun suono]
+	[Stop Previous Sound]	[Interrompi suono precedente]
+	About DeckCraft	Informazioni su DeckCraft
+	Accept\nAll	Accetta\ntutto
+	Accessibility Checker	Controllo accessibilità
+	Action	Azione
+	Action Settings	Impostazioni azione
+	Action Settings…	Impostazioni azione…
+	Add	Aggiungi
+	Add a title with a picture or some text to get layout ideas.	Aggiungi un titolo con un'immagine o del testo per ricevere idee di layout.
+	Add Pictures…	Aggiungi immagini…
+	Add Point	Aggiungi punto
+	Add Section	Aggiungi sezione
+	Add Shape	Aggiungi forma
+	Add to Dictionary	Aggiungi al dizionario
+	Add\nAnimation	Aggiungi\nanimazione
+	Address:	Indirizzo:
+	After:	Dopo:
+	Album theme	Tema dell'album
+	Align	Allinea
+	Align Left	Allinea a sinistra
+	Align Right	Allinea a destra
+	Align Text	Allinea testo
+	Alignment	Allineamento
+	Alignment:	Allineamento:
+	ALL pictures black and white	TUTTE le immagini in bianco e nero
+	All slides	Tutte le diapositive
+	Alt Text	Testo alternativo
+	Alt text	Testo alternativo
+	Alt\nText	Testo\nalternativo
+	An open-source, clean-room project. Not affiliated with Microsoft.	Un progetto open source e clean-room. Non affiliato a Microsoft.
+	Angle	Angolo
+	Animation Painter (double-click to keep it on)	Copia animazione (doppio clic per mantenerlo attivo)
+	Animation\nPainter	Copia\nanimazione
+	Animation\nPane	Riquadro\nanimazione
+	Animations	Animazioni
+	Applies to this presentation's theme colours.	Si applica ai colori del tema di questa presentazione.
+	Apply	Applica
+	Apply to All	Applica a tutte
+	Apply to:	Applica a:
+	Apply\nTo All	Applica\na tutte
+	Arrange	Disponi
+	Arrows	Frecce
+	Artistic\nEffects	Effetti\nartistici
+	As:	Come:
+	Audio	Audio
+	AutoCorrect	Correzione automatica
+	AutoCorrect as you type	Correzione automatica durante la digitazione
+	AutoCorrect Options…	Opzioni di correzione automatica…
+	Automatic	Automatico
+	Automatic (system language)	Automatica (lingua del sistema)
+	Automatic bulleted and numbered lists	Elenchi puntati e numerati automatici
+	Available formats:	Formati disponibili:
+	Back (Esc)	Indietro (Esc)
+	Background\nStyles	Stili\nsfondo
+	Banded Columns	Colonne alternate
+	Banded Rows	Righe alternate
+	Based on DeckCraft by the ArtCraft team.	Basato su DeckCraft del team ArtCraft.
+	Baseline	Linea di base
+	Bevel	Smussatura
+	Body:	Corpo:
+	Bold	Grassetto
+	Borders	Bordi
+	Bring Forward	Porta avanti
+	Bring to Front	Porta in primo piano
+	Bring\nForward	Porta\navanti
+	Browse for Themes…	Cerca temi…
+	Bullets	Elenchi puntati
+	Bullets and Numbering	Elenchi puntati e numerati
+	Bullets and Numbering…	Elenchi puntati e numerati…
+	Cameo	Cammeo
+	Camera capture is not available yet	L'acquisizione dalla fotocamera non è ancora disponibile
+	Cancel	Annulla
+	Capitalize first letter of sentences	Maiuscola all'inizio delle frasi
+	Capitalize names of days	Maiuscola nei nomi dei giorni
+	Caps	Maiuscole
+	Captions under pictures	Didascalie sotto le immagini
+	Cell Margins	Margini cella
+	Center	Centro
+	Centimeters	Centimetri
+	Change Case	Maiuscole/minuscole
+	Change Colors	Cambia colori
+	Change File Type	Cambia tipo di file
+	Change Picture	Cambia immagine
+	Change Picture…	Cambia immagine…
+	Change Shape	Cambia forma
+	Change to:	Cambia in:
+	Change\nChart Type	Cambia tipo\ndi grafico
+	Character Spacing	Spaziatura caratteri
+	Chart	Grafico
+	Chart cell	Cella del grafico
+	Chart Data	Dati del grafico
+	Chart Design	Grafico Design
+	Check\nAccessibility	Verifica\naccessibilità
+	Choose a SmartArt Graphic	Scegli un elemento grafico SmartArt
+	Choosing a presentation to reuse needs the desktop app	Per scegliere una presentazione da riutilizzare serve l'app desktop
+	Choosing a sound file needs the desktop app	Per scegliere un file audio serve l'app desktop
+	Clear All	Deseleziona tutto
+	Clear All Formatting	Cancella formattazione
+	Click a colour in the picture to make it transparent	Fai clic su un colore dell'immagine per renderlo trasparente
+	Click a symbol to insert it at the insertion point.	Fai clic su un simbolo per inserirlo nel punto di inserimento.
+	Click icon to add chart	Fai clic sull'icona per aggiungere un grafico
+	Click icon to add media	Fai clic sull'icona per aggiungere un elemento multimediale
+	Click icon to add picture	Fai clic sull'icona per aggiungere un'immagine
+	Click icon to add SmartArt graphic	Fai clic sull'icona per aggiungere un elemento grafico SmartArt
+	Click icon to add table	Fai clic sull'icona per aggiungere una tabella
+	Click the slide to take the colour under the pointer	Fai clic sulla diapositiva per prendere il colore sotto il puntatore
+	Click to add notes	Fai clic per aggiungere note
+	Click to add subtitle	Fai clic per aggiungere un sottotitolo
+	Click to add text	Fai clic per aggiungere testo
+	Click to add title	Fai clic per aggiungere un titolo
+	Click to change this one; Shift-click to change all	Fai clic per cambiare questo; Maiusc+clic per cambiarli tutti
+	Close	Chiudi
+	Close\nMaster View	Chiudi visualizzazione\nschema
+	Color	Colore
+	Color:	Colore:
+	Colors	Colori
+	Columns	Colonne
+	Comment	Commento
+	Comments	Commenti
+	Compare	Confronta
+	Compare this presentation with a revised copy from Review › Compare.	Confronta questa presentazione con una copia rivista da Revisione › Confronta.
+	Compress Pictures	Comprimi immagini
+	Convert	Converti
+	Convert to Shapes	Converti in forme
+	Convert to SmartArt	Converti in SmartArt
+	Convert to Text	Converti in testo
+	Copy	Copia
+	Copy path	Copia percorso
+	Correct accidental use of cAPS LOCK key	Correggi l'uso accidentale del tasto bLOC MAIUSC
+	Correct TWo INitial CApitals	Correggi DUe MAiuscole INiziali
+	Corrections	Correzioni
+	Create	Crea
+	Create a PDF Document	Crea un documento PDF
+	Create Handouts	Crea stampati
+	Create New Theme Colors	Crea nuovi colori tema
+	Create New Theme Fonts	Crea nuovi caratteri tema
+	Crop	Ritaglia
+	Crop to Shape	Ritaglia a forma
+	Custom character:	Carattere personalizzato:
+	Custom Shows	Presentazioni personalizzate
+	Custom\nShow	Presentazione\npersonalizzata
+	Customize Colors…	Personalizza colori…
+	Customize Fonts…	Personalizza caratteri…
+	Customize Quick Access Toolbar	Personalizza barra di accesso rapido
+	Cut	Taglia
+	Dark appearance	Aspetto scuro
+	Dark\nMode	Modalità\nscura
+	Dash	Trattino
+	Dashes	Tratteggi
+	Date	Data
+	Date &\nTime	Data e\nora
+	Date and Time	Data e ora
+	Date and time	Data e ora
+	Decrease Font Size	Riduci dimensione carattere
+	Decrease List Level	Riduci livello elenco
+	Default tab stops (in):	Tabulazioni predefinite (in):
+	Delay:	Ritardo:
+	Delete	Elimina
+	Delete Columns	Elimina colonne
+	Delete Point	Elimina punto
+	Delete Repeated Word	Elimina parola ripetuta
+	Delete Rows	Elimina righe
+	Delete Segment	Elimina segmento
+	Delete Slide	Elimina diapositiva
+	Delete Table	Elimina tabella
+	Demote	Abbassa di livello
+	Design	Design
+	Design\nIdeas	Idee\nprogettuali
+	Direction	Direzione
+	Display	Visualizza
+	Display drawing guides on screen	Mostra guide di disegno sullo schermo
+	Display grid on screen	Mostra griglia sullo schermo
+	Distribute Columns	Distribuisci colonne
+	Distribute Horizontally	Distribuisci orizzontalmente
+	Distribute Rows	Distribuisci righe
+	Distribute Vertically	Distribuisci verticalmente
+	Do not check spelling or grammar	Non controllare ortografia e grammatica
+	Don't Save	Non salvare
+	Don't show on title slide	Non mostrare nella diapositiva del titolo
+	Done	Fine
+	Draw	Disegna
+	Draw Table	Disegna tabella
+	Duplicate Selected Slides	Duplica diapositive selezionate
+	Duplicate Slide	Duplica diapositiva
+	Duration:	Durata:
+	e.g. 1-3, 5	es. 1-3, 5
+	Edit Alt Text…	Modifica testo alternativo…
+	Edit Photo Album…	Modifica album fotografico…
+	Edit Points	Modifica punti
+	Edit Text	Modifica testo
+	Edit the data: first row = series names, first column = categories.	Modifica i dati: prima riga = nomi delle serie, prima colonna = categorie.
+	Edit\nData	Modifica\ndati
+	Edit\nShape	Modifica\nforma
+	Editing	Modifica
+	Effect\nOptions	Opzioni\neffetti
+	Effects	Effetti
+	Email Address	Indirizzo email
+	Email address:	Indirizzo e-mail:
+	End Review	Termina revisione
+	End trim (s):	Taglio finale (s):
+	End\nReview	Termina\nrevisione
+	Equation	Equazione
+	Eraser	Gomma
+	Exit Edit Points	Esci da Modifica punti
+	Export	Esporta
+	Export the presentation as:	Esporta la presentazione come:
+	Eyedropper	Contagocce
+	Fade in (s):	Dissolvenza in entrata (s):
+	Fade out (s):	Dissolvenza in uscita (s):
+	File	File
+	Fill	Compila
+	Find	Trova
+	Find and Replace	Trova e sostituisci
+	Find Next	Trova successivo
+	Find what:	Trova:
+	Find whole words only	Solo parole intere
+	First Column	Prima colonna
+	Fit	Adatta
+	Fit slide to current window	Adatta la diapositiva alla finestra corrente
+	Fit to\nWindow	Adatta alla\nfinestra
+	Flip Horizontal	Capovolgi orizzontalmente
+	Flip Vertical	Capovolgi verticalmente
+	Follow Path	Segui percorso
+	Font	Carattere
+	Font Color	Colore carattere
+	Font name	Nome del carattere
+	Fonts	Caratteri
+	Font…	Carattere…
+	Footer	Piè di pagina
+	Footers	Piè di pagina
+	Format	Formato
+	Format Background…	Formato sfondo…
+	Format Painter (double-click to keep it on)	Copia formato (doppio clic per mantenerlo attivo)
+	Format Shape…	Formato forma…
+	Format\nBackground	Formato\nsfondo
+	Format\nPane	Riquadro\nFormato
+	Frame shape	Forma della cornice
+	Frame Slides	Incornicia diapositive
+	From slide:	Dalla diapositiva:
+	From the top-left corner of the slide	Dall'angolo superiore sinistro della diapositiva
+	From\nBeginning	Dall'\ninizio
+	From\nCurrent Slide	Dalla diapositiva\ncorrente
+	General	Generale
+	Glow	Bagliore
+	Grab bag	Alla rinfusa
+	Gradient stops	Punti di sfumatura
+	Gradient…	Sfumatura…
+	Grayscale	Scala di grigi
+	Grid and Guides	Griglia e guide
+	Grid Options	Opzioni griglia
+	Grid\nOptions	Opzioni\ngriglia
+	Gridlines	Griglia
+	Group	Raggruppa
+	Group Objects	Raggruppa oggetti
+	Guides	Guide
+	Handout Master	Schema stampati
+	Handout\nMaster	Schema\nstampati
+	Header	Intestazione
+	Header &\nFooter	Intestazione e\npiè di pagina
+	Header and Footer	Intestazione e piè di pagina
+	Header Row	Riga di intestazione
+	Heading and body fonts for this presentation.	Caratteri per titoli e corpo di questa presentazione.
+	Heading:	Titolo:
+	Height:	Altezza:
+	Hide All	Nascondi tutto
+	Hide background graphics	Nascondi grafica di sfondo
+	Hide During Show	Nascondi durante la presentazione
+	Hide\nSlide	Nascondi\ndiapositiva
+	Highlight click	Evidenzia clic
+	Home	Home
+	How would you describe this object and its context to someone who is blind or has low vision?	Come descriveresti questo oggetto e il suo contesto a una persona cieca o ipovedente?
+	Hyperlink to:	Collegamento ipertestuale a:
+	Icons	Icone
+	Ignore All	Ignora tutto
+	Inches	Pollici
+	Include hidden slides	Includi diapositive nascoste
+	Increase Font Size	Aumenta dimensione carattere
+	Increase List Level	Aumenta livello elenco
+	Indentation	Rientri
+	Ink to Math (coming soon)	Input penna in formula (presto disponibile)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Input penna in forma: trasforma linee, rettangoli, ovali e triangoli disegnati in forme
+	Ink to Text (coming soon)	Input penna in testo (presto disponibile)
+	Ink to\nMath	Input penna\nin formula
+	Ink to\nShape	Input penna\nin forma
+	Ink to\nText	Input penna\nin testo
+	Insert	Inserisci
+	Insert Hyperlink	Inserisci collegamento
+	Insert Picture	Inserisci immagine
+	Insert picture from file…	Inserisci immagine da file…
+	Insert Table	Inserisci tabella
+	Insert Table…	Inserisci tabella…
+	Insert\nAbove	Inserisci\nsopra
+	Insert\nBelow	Inserisci\nsotto
+	Insert\nLayout	Inserisci\nlayout
+	Insert\nLeft	Inserisci\na sinistra
+	Insert\nPlaceholder	Inserisci\nsegnaposto
+	Insert\nRight	Inserisci\na destra
+	Insert…	Inserisci…
+	Interface Language	Lingua dell'interfaccia
+	Interface language:	Lingua dell'interfaccia:
+	Italic	Corsivo
+	Justify	Giustifica
+	Keep source formatting	Mantieni formattazione originale
+	Landscape	Orizzontale
+	Language	Lingua
+	Language:	Lingua:
+	Last Column	Ultima colonna
+	Layout	Layout
+	Layouts	Layout
+	Learn\nMore	Ulteriori\ninformazioni
+	Leave the slide background out: only what is on the slide is drawn	Escludi lo sfondo della diapositiva: viene disegnato solo ciò che è sulla diapositiva
+	Less Brightness	Meno luminosità
+	Less Contrast	Meno contrasto
+	Light/Dark appearance	Aspetto chiaro/scuro
+	Line	Linea
+	Line Spacing	Interlinea
+	Line spacing	Interlinea
+	Line Spacing Options…	Opzioni interlinea…
+	Link	Collegamento
+	Link…	Collegamento…
+	Lock aspect ratio	Blocca proporzioni
+	Loop continuously until 'Esc'	Ripeti continuamente fino a 'Esc'
+	Loop forever	Ripeti sempre
+	Loop Until Next Sound	Ripeti fino al suono successivo
+	Loop until Stopped	Ripeti fino all'interruzione
+	Margins (pt)	Margini (pt)
+	Mark as decorative	Contrassegna come decorativo
+	Match case	Maiuscole/minuscole
+	Maximize content (else ensure fit)	Massimizza il contenuto (altrimenti garantisci l'adattamento)
+	Measurement units:	Unità di misura:
+	Merge Shapes	Unisci forme
+	Merge\nCells	Unisci\ncelle
+	Merge\nShapes	Unisci\nforme
+	Mirror	Specchio
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	I nomi dei mesi e AM/PM sono elencati in inglese. Le altre lingue mostrano la data numerica e l'ora nel formato 24 ore.
+	More Brightness	Più luminosità
+	More Colors… #	Altri colori… #
+	More Columns…	Altre colonne…
+	More Contrast	Più contrasto
+	Move Down	Sposta giù
+	Move Section Down	Sposta sezione in basso
+	Move Section Up	Sposta sezione in alto
+	Move Up	Sposta su
+	Name	Nome
+	Name:	Nome:
+	New	Nuovo
+	New Comment	Nuovo commento
+	New Photo Album…	Nuovo album fotografico…
+	New show name:	Nome della nuova presentazione:
+	New Slide	Nuova diapositiva
+	New Slide (⇧⌘N)	Nuova diapositiva (⇧⌘N)
+	New Text Box	Nuova casella di testo
+	New\nComment	Nuovo\ncommento
+	New\nSlide	Nuova\ndiapositiva
+	New\nWindow	Nuova\nfinestra
+	Next	Avanti
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	Nessun problema di accessibilità rilevato. Le persone con disabilità non dovrebbero avere difficoltà a leggere questo documento.
+	No comments.	Nessun commento.
+	No contributor data was built into this copy.	Questa copia non include dati sui contributori.
+	No differences left.	Nessuna differenza rimasta.
+	No Glow	Nessun bagliore
+	No icons match.	Nessuna icona corrispondente.
+	No line	Nessuna linea
+	No model credits were built into this copy.	Questa copia non include riconoscimenti per i modelli.
+	No notes.	Nessuna nota.
+	No pictures yet	Ancora nessuna immagine
+	None	Nessuno
+	Normal	Normale
+	Not a copy of this presentation: slides are matched by position.	Non è una copia di questa presentazione: le diapositive sono abbinate per posizione.
+	Notes	Note
+	Notes Master	Schema note
+	Notes\nMaster	Schema\nnote
+	Number of columns:	Numero di colonne:
+	Number of rows:	Numero di righe:
+	Number:	Numero:
+	Numbering	Numerazione
+	OK	OK
+	On Click of… (none)	Al clic di… (nessuno)
+	On Mouse Click	Al clic del mouse
+	Open a presentation from a folder (Ctrl+O)	Apri una presentazione da una cartella (Ctrl+O)
+	Open another window on this presentation	Apri un'altra finestra su questa presentazione
+	Open file location	Apri percorso file
+	Options	Opzioni
+	Order Objects	Ordina oggetti
+	Ordinals (1st) with superscript	Numeri ordinali (1°) in apice
+	Orientation:	Orientamento:
+	Other Sound…	Altro suono…
+	Outline	Contorno
+	Page Setup…	Imposta pagina…
+	Paragraph	Paragrafo
+	Paragraph…	Paragrafo…
+	Paste	Incolla
+	Paste (⌘V)	Incolla (⌘V)
+	Paste and Match Formatting	Incolla e uniforma formattazione
+	Paste Formatting	Incolla formattazione
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Incolla o digita una struttura. Le righe senza rientro diventano titoli delle diapositive; quelle rientrate con tabulazione diventano elenchi puntati.
+	Paste Special	Incolla speciale
+	Paste Special…	Incolla speciale…
+	Pattern	Schema
+	Pen Color	Colore penna
+	Pen Style	Stile penna
+	Pen Weight	Spessore penna
+	Percent:	Percentuale:
+	Photo Album	Album fotografico
+	Photo Album options	Opzioni album fotografico
+	Photo Album…	Album fotografico…
+	Photo\nAlbum	Album\nfotografico
+	Pick a design for this slide. Ideas are generated on your device.	Scegli un design per questa diapositiva. Le idee vengono generate sul tuo dispositivo.
+	Pick a graphic; type one item per line.	Scegli un elemento grafico; digita un elemento per riga.
+	Picture	Immagine
+	Picture Border	Bordo immagine
+	Picture Format	Formato immagine
+	Picture layout	Layout immagini
+	Picture source	Origine immagini
+	Pictures	Immagini
+	Pictures in album	Immagini nell'album
+	Play Across Slides	Riproduci tra diapositive
+	Play from\nCurrent Slide	Riproduci dalla\ndiapositiva corrente
+	Play from\nStart	Riproduci\ndall'inizio
+	Play Full Screen	Riproduci a schermo intero
+	Play Narrations	Riproduci commenti audio
+	Play this slide's animations on the canvas	Riproduci le animazioni di questa diapositiva nell'area di lavoro
+	Playback	Riproduzione
+	Portrait	Verticale
+	Position	Posizione
+	Position Objects	Posiziona oggetti
+	Post	Pubblica
+	Preferences	Preferenze
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Presentazioni e slideshow, ricostruiti da zero in puro Rust.
+	Presenter\nView	Visualizzazione\nrelatore
+	Preserve	Mantieni
+	Preset gradients	Sfumature predefinite
+	Preview	Anteprima
+	Previous	Precedente
+	Print Hidden Slides	Stampa diapositive nascoste
+	Print layout:	Layout di stampa:
+	Program:	Programma:
+	Promote	Alza di livello
+	pt	pt
+	Put a picture in the selected node's picture placeholder	Inserisci un'immagine nel segnaposto immagine del nodo selezionato
+	Quick\nStyles	Stili\nrapidi
+	Reading View	Visualizzazione di lettura
+	Recent	Recenti
+	Recolor	Ricolora
+	Record	Registra
+	Recording narration needs audio capture (coming soon)	La registrazione del commento audio richiede l'acquisizione audio (presto disponibile)
+	Recover Unsaved Presentations	Recupera presentazioni non salvate
+	Reflection	Riflesso
+	Regroup	Raggruppa di nuovo
+	Rehearse\nTimings	Prova\ntempi
+	Remove	Rimuovi
+	Remove All Sections	Rimuovi tutte le sezioni
+	Remove bullets and numbering	Rimuovi elenchi puntati e numerati
+	Remove from Quick Access Toolbar	Rimuovi dalla barra di accesso rapido
+	Remove from Recent	Rimuovi dai recenti
+	Remove Section	Rimuovi sezione
+	Remove Section & Slides	Rimuovi sezione e diapositive
+	Remove stop	Rimuovi punto
+	Remove the picture style	Rimuovi lo stile immagine
+	Remove\nBackground	Rimuovi\nsfondo
+	Rename	Rinomina
+	Rename Layout	Rinomina layout
+	Rename Section	Rinomina sezione
+	Rename Section…	Rinomina sezione…
+	Repeated word	Parola ripetuta
+	Replace	Sostituisci
+	Replace All	Sostituisci tutto
+	Replace Font	Sostituisci carattere
+	Replace Fonts…	Sostituisci caratteri…
+	Replace fractions (1/2) with fraction characters (½)	Sostituisci frazioni (1/2) con caratteri frazione (½)
+	Replace straight quotes with smart quotes	Sostituisci virgolette dritte con virgolette inglesi
+	Replace text as you type	Sostituisci testo durante la digitazione
+	Replace with:	Sostituisci con:
+	Replace:	Sostituisci:
+	Replace…	Sostituisci…
+	Reply…	Rispondi…
+	Rescan Installed Fonts	Rianalizza caratteri installati
+	Reset	Reimposta
+	Reset 3-D	Reimposta 3D
+	Reset Background	Reimposta sfondo
+	Reset Effects	Reimposta effetti
+	Reset Picture	Reimposta immagine
+	Reset Slide	Reimposta diapositiva
+	Reset Slide Background	Reimposta sfondo diapositiva
+	Reset to Defaults	Ripristina impostazioni predefinite
+	Reuse Slides	Riutilizza diapositive
+	Reverse the order	Inverti l'ordine
+	Review	Revisione
+	Rewind after Playing	Riavvolgi dopo la riproduzione
+	Right-click any ribbon button to add it.	Fai clic con il pulsante destro su un pulsante della barra multifunzione per aggiungerlo.
+	Rotate	Ruota
+	Rotate Left	Ruota a sinistra
+	Rotate Left 90°	Ruota a sinistra di 90°
+	Rotate Right	Ruota a destra
+	Rotate Right 90°	Ruota a destra di 90°
+	Rotate with shape	Ruota con la forma
+	Ruler	Righello
+	Save	Salva
+	Screenshot	Screenshot
+	Screenshot (not available yet)	Screenshot (non ancora disponibile)
+	ScreenTip:	Descrizione comando:
+	Scroll ribbon left	Scorri la barra multifunzione a sinistra
+	Scroll ribbon right	Scorri la barra multifunzione a destra
+	Search commands (⇧⌘P)	Cerca comandi (⇧⌘P)
+	Search commands…	Cerca comandi…
+	Search icons	Cerca icone
+	Seconds per slide:	Secondi per diapositiva:
+	Section	Sezione
+	Select	Seleziona
+	Select a chart first.	Seleziona prima un grafico.
+	Select a shape to format it.	Seleziona una forma per formattarla.
+	Select a SmartArt graphic to edit its text.	Seleziona un elemento grafico SmartArt per modificarne il testo.
+	Select an object on the slide and add an animation from the Animations tab.	Seleziona un oggetto sulla diapositiva e aggiungi un'animazione dalla scheda Animazioni.
+	Selection Pane…	Riquadro di selezione…
+	Selection\nPane	Riquadro di\nselezione
+	Send Backward	Porta indietro
+	Send to Back	Porta in fondo
+	Send\nBackward	Porta\nindietro
+	Set	Imposta
+	Set as Default Shape	Imposta come forma predefinita
+	Set Transparent Color	Imposta colore trasparente
+	Set Up Slide Show	Imposta presentazione
+	Set Up\nSlide Show	Imposta\npresentazione
+	Shading	Sfondo
+	Shadow	Ombreggiatura
+	Shape Effects	Effetti forma
+	Shape Fill	Riempimento forma
+	Shape Format	Formato forma
+	Shape Outline	Contorno forma
+	Shape\nStyles	Stili\nforma
+	Shapes	Forme
+	Show	Mostra
+	Show All	Mostra tutto
+	Show Media Controls	Mostra controlli multimediali
+	Show smart guides	Mostra guide intelligenti
+	Show type	Tipo di presentazione
+	Show without animation	Presentazione senza animazioni
+	Show without narration	Presentazione senza commento audio
+	Show\nComments	Mostra\ncommenti
+	Size	Dimensione
+	Size (% of text):	Dimensione (% del testo):
+	Size and Position	Dimensioni e posizione
+	Size and Position…	Dimensioni e posizione…
+	Size:	Dimensioni:
+	Slide Master	Schema diapositiva
+	Slide number	Numero diapositiva
+	Slide Show	Presentazione
+	Slide Size	Dimensioni diapositiva
+	Slide Sorter	Sequenza diapositive
+	Slide text	Testo della diapositiva
+	Slide title	Titolo della diapositiva
+	Slide {n} of {total}	Diapositiva {n} di {total}
+	Slide\nMaster	Schema\ndiapositiva
+	Slide\nNumber	Numero\ndiapositiva
+	Slide\nSize	Dimensioni\ndiapositiva
+	Slides	Diapositive
+	Slides (e.g. 1,3,5):	Diapositive (es. 1,3,5):
+	Slides from Outline	Diapositive da struttura
+	Slides from Outline…	Diapositive da struttura…
+	Slides sized for:	Dimensioni diapositive per:
+	Slides:	Diapositive:
+	SmartArt	SmartArt
+	SmartArt Design	SmartArt Design
+	SmartArt items	Elementi SmartArt
+	SmartArt Styles	Stili SmartArt
+	SmartArt text	Testo SmartArt
+	Snap	Allinea
+	Snap objects to grid	Allinea oggetti alla griglia
+	Snap objects to other objects	Allinea oggetti ad altri oggetti
+	Soft Edges	Bordi sfumati
+	Solid line	Linea continua
+	Sort	Ordina
+	Sound:	Suono:
+	Spacing	Spaziatura
+	Spacing (in):	Spaziatura (in):
+	Spacing (pt):	Spaziatura (pt):
+	Special	Speciale
+	Spelling	Ortografia
+	Spelling is checked for languages marked (dictionary).	L'ortografia viene controllata per le lingue contrassegnate (dizionario).
+	Split\nCells	Dividi\ncelle
+	Standard (4:3)	Standard (4:3)
+	Standard Colors	Colori standard
+	Start at:	Inizia da:
+	Start Automatically	Avvia automaticamente
+	Start time (s):	Inizio (s):
+	Start:	Avvio:
+	Strikethrough	Barrato
+	Subscript	Pedice
+	Superscript	Apice
+	Symbol	Simbolo
+	Tab stop position (in):	Posizione tabulazione (in):
+	Tab stops:	Tabulazioni:
+	Table	Tabella
+	Table Design	Tabella Design
+	Tabs	Tabulazioni
+	Tabs…	Tabulazioni…
+	Templates	Modelli
+	Text Box	Casella di testo
+	Text box:	Casella di testo:
+	Text Direction	Direzione testo
+	Text Effects	Effetti di testo
+	Text Fill	Riempimento testo
+	Text Highlight Color	Colore evidenziazione testo
+	Text Outline	Contorno testo
+	Text\nBox	Casella di\ntesto
+	Text\nPane	Riquadro\ntesto
+	The spelling check is complete. No issues found.	Il controllo ortografico è completo. Nessun problema rilevato.
+	Theme Colors	Colori tema
+	Themes	Temi
+	Themes (whole presentation)	Temi (intera presentazione)
+	Thesaurus	Sinonimi
+	This Document	Questo documento
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Questa presentazione non ha presentazioni personalizzate (Presentazione ▸ Presentazione personalizzata).
+	Tile picture as texture	Affianca immagine come trama
+	Title	Titolo
+	To slide:	Alla diapositiva:
+	Total Row	Riga totale
+	Transform	Trasforma
+	Transitions	Transizioni
+	Translate	Traduci
+	Translation needs a language model (not bundled)	La traduzione richiede un modello linguistico (non incluso)
+	Transparency	Trasparenza
+	Transparent background	Sfondo trasparente
+	Trigger	Attivazione
+	Trim	Taglia
+	Trim Media	Taglia elemento multimediale
+	Type	Tipo
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Digita un'equazione in forma lineare (es. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Digita e organizza il testo del diagramma
+	Type your text here	Digita qui il testo
+	Underline	Sottolineato
+	Ungroup	Separa
+	Update automatically	Aggiorna automaticamente
+	Use Timings	Usa intervalli
+	Use timings, if present	Usa intervalli, se presenti
+	Vertical alignment	Allineamento verticale
+	Video	Video
+	View	Visualizza
+	Volume	Volume
+	Warp	Altera
+	Web Page or File	Pagina Web o file
+	Weight	Spessore
+	Whole presentation	Intera presentazione
+	Widescreen (16:9)	Widescreen (16:9)
+	Width	Larghezza
+	Width (pixels):	Larghezza (pixel):
+	Width:	Larghezza:
+	Width: 	Larghezza: 
+	With	Con
+	With:	Con:
+	WordArt	WordArt
+	Wrap text in shape	Disponi testo nella forma
+	Your changes will be lost if you don't save them.	Se non le salvi, le modifiche andranno perse.
+	Your name (comments):	Il tuo nome (commenti):
+	Zoom	Ingrandimento
+	Zoom In	Ingrandisci
+	Zoom Out	Riduci
+	Zoom to	Zoom a
