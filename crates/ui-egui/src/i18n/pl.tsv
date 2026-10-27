@@ -678,3 +678,115 @@
 	Zoom In	Powiększ
 	Zoom Out	Pomniejsz
 	Zoom to	Powiększ do
+	Open	Otwórz
+	Info	Informacje
+	Save As	Zapisz jako
+	Print	Drukuj
+	Account	Konto
+	PowerPoint Presentation (*.pptx)	Prezentacja programu PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	Otwiera się w programie PowerPoint i innych aplikacjach do prezentacji
+	DeckCraft Presentation (*.deckcraft)	Prezentacja DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Własny format DeckCraft: zachowuje wszystko
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Stała kopia, która zachowuje układ na każdym urządzeniu
+	Outline (*.txt)	Konspekt (*.txt)
+	The slide titles and bullet text as plain text	Tytuły slajdów i tekst punktorów jako zwykły tekst
+	Outline/RTF (*.rtf)	Konspekt/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Tytuły slajdów i tekst punktorów dla edytorów tekstu
+	PNG Picture (*.png)	Obraz PNG (*.png)
+	The current slide as a picture	Bieżący slajd jako obraz
+	JPEG Picture (*.jpg)	Obraz JPEG (*.jpg)
+	The current slide as a compressed picture	Bieżący slajd jako skompresowany obraz
+	Add a title	Dodaj tytuł
+	Subject	Temat
+	Specify the subject	Określ temat
+	Tags	Tagi
+	Add a tag	Dodaj tag
+	Categories	Kategorie
+	Add a category	Dodaj kategorię
+	Company	Firma
+	Specify the company	Określ firmę
+	Add comments	Dodaj komentarze
+	Author	Autor
+	Add an author	Dodaj autora
+	Back	Wstecz
+	Blank Presentation	Pusta prezentacja
+	Sample deck: Northern Lights	Przykład: Zorza polarna
+	Presentations you open show up here. Use Open to browse for one.	Otwierane prezentacje pojawią się tutaj. Użyj polecenia Otwórz, aby jakąś znaleźć.
+	More themes	Więcej motywów
+	More templates	Więcej szablonów
+	Search for a file	Wyszukaj plik
+	More presentations	Więcej prezentacji
+	Get help and support	Uzyskaj pomoc i wsparcie
+	Join the ArtCraft community on Discord	Dołącz do społeczności ArtCraft na Discordzie
+	Search for themes and templates	Wyszukaj motywy i szablony
+	Browse	Przeglądaj
+	There are no unsaved presentations to recover	Brak niezapisanych prezentacji do odzyskania
+	Presentations	Prezentacje
+	No presentation is open.	Żadna prezentacja nie jest otwarta.
+	Not saved yet	Jeszcze nie zapisano
+	Copied the path	Skopiowano ścieżkę
+	Check for Issues	Sprawdź, czy są problemy
+	Inspect Presentation	Inspekcja prezentacji
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Przed udostępnieniem sprawdź, czy w prezentacji nie ma treści trudnych do odczytania dla osób z niepełnosprawnościami.
+	There are no unsaved changes.	Brak niezapisanych zmian.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Ta prezentacja ma niezapisane zmiany. Polecenie Przywróć wraca do zapisanego pliku.
+	This presentation has never been saved.	Ta prezentacja nigdy nie została zapisana.
+	Revert	Przywróć
+	Manage Presentation	Zarządzaj prezentacją
+	Properties	Właściwości
+	Hidden slides	Ukryte slajdy
+	Location	Lokalizacja
+	Save as type	Typ pliku
+	Download	Pobierz
+	Download the file	Pobierz plik
+	Choose where to save	Wybierz miejsce zapisu
+	Full Page Slides	Slajdy na całą stronę
+	Notes Pages	Strony notatek
+	Handouts (1 slide per page)	Materiały informacyjne (1 slajd na stronę)
+	Handouts (2 slides per page)	Materiały informacyjne (2 slajdy na stronę)
+	Handouts (3 slides per page)	Materiały informacyjne (3 slajdy na stronę)
+	Handouts (4 slides per page)	Materiały informacyjne (4 slajdy na stronę)
+	Handouts (6 slides per page)	Materiały informacyjne (6 slajdów na stronę)
+	Handouts (9 slides per page)	Materiały informacyjne (9 slajdów na stronę)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft drukuje przez plik PDF: otwiera się on w przeglądarce PDF, w której wybierasz drukarkę.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft drukuje przez plik PDF: zostaje on pobrany i można go wydrukować z przeglądarki lub przeglądarki PDF.
+	Settings	Ustawienia
+	Print All Slides	Drukuj wszystkie slajdy
+	Print Current Slide	Drukuj bieżący slajd
+	Custom Range	Zakres niestandardowy
+	Print range	Zakres wydruku
+	Print layout	Układ wydruku
+	Paper size	Rozmiar papieru
+	Landscape Orientation	Orientacja pozioma
+	Portrait Orientation	Orientacja pionowa
+	Orientation	Orientacja
+	Edit Header & Footer	Edytuj nagłówek i stopkę
+	Nothing to print: every slide in the range is hidden.	Nic do wydrukowania: wszystkie slajdy w zakresie są ukryte.
+	Previous Page	Poprzednia strona
+	{n} of {total}	{n} z {total}
+	Next Page	Następna strona
+	Create PDF Document	Utwórz dokument PDF
+	Keeps the layout, fonts and pictures	Zachowuje układ, czcionki i obrazy
+	Opens on any device with a PDF viewer	Otwiera się na każdym urządzeniu z przeglądarką PDF
+	The presentation keeps its own file	Prezentacja zachowuje własny plik
+	Create PDF	Utwórz PDF
+	Several slides on each page of a PDF	Kilka slajdów na każdej stronie pliku PDF
+	Three a page leaves lines for notes	Trzy na stronę zostawiają linie na notatki
+	Print them for your audience	Wydrukuj je dla słuchaczy
+	{n} slides per page	Slajdów na stronę: {n}
+	Slides per page	Slajdów na stronę
+	Appearance	Wygląd
+	Dark	Ciemny
+	Light	Jasny
+	User Information	Informacje o użytkowniku
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft nie ma kont: nie trzeba się nigdzie logować, a prezentacje zostają na Twoim urządzeniu.
+	Product Information	Informacje o produkcie
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Otwarte oprogramowanie na licencji MIT OR Apache-2.0. Niepowiązane z firmą Microsoft.
+	The version, the people and models who built it, and where to find us.	Wersja, ludzie i modele, którzy ją stworzyli, oraz gdzie nas znaleźć.
+	Join our community on Discord	Dołącz do naszej społeczności na Discordzie
+	Source on GitHub	Kod źródłowy w serwisie GitHub
+	Undo	Cofnij
+	Redo	Ponów
+	Start from Beginning	Od początku
+	Add to Quick Access Toolbar	Dodaj do paska narzędzi Szybki dostęp

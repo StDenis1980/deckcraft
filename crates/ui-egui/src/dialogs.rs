@@ -2914,7 +2914,7 @@ pub fn about(_app: &mut SlideApp, ui: &mut Ui) {
             }
             ui.label(tl("Based on DeckCraft by the ArtCraft team."));
             ui.add_space(6.0);
-            ui.hyperlink_to("Get help and support", deckcraft_engine::brand::SUPPORT);
+            ui.hyperlink_to(tl("Get help and support"), deckcraft_engine::brand::SUPPORT);
             ui.hyperlink_to(deckcraft_engine::brand::APP_PAGE.trim_start_matches("https://"), deckcraft_engine::brand::APP_PAGE);
         } else {
             ui.hyperlink_to("Join our community on Discord", deckcraft_engine::links::DISCORD);

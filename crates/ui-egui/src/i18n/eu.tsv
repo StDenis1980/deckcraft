@@ -677,3 +677,115 @@
 	Zoom In	Handiagotu
 	Zoom Out	Txikiagotu
 	Zoom to	Zooma honetara
+	Open	Ireki
+	Info	Informazioa
+	Save As	Gorde honela
+	Print	Inprimatu
+	Account	Kontua
+	PowerPoint Presentation (*.pptx)	PowerPoint aurkezpena (*.pptx)
+	Opens in PowerPoint and other presentation apps	PowerPointen eta beste aurkezpen-aplikazioetan irekitzen da
+	DeckCraft Presentation (*.deckcraft)	DeckCraft aurkezpena (*.deckcraft)
+	DeckCraft's own format: everything is kept	DeckCraft-en formatu propioa: dena gordetzen da
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Edozein gailutan diseinua mantentzen duen kopia finkoa
+	Outline (*.txt)	Eskema (*.txt)
+	The slide titles and bullet text as plain text	Diapositiben izenburuak eta buleten testua testu arrunt gisa
+	Outline/RTF (*.rtf)	Eskema/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Diapositiben izenburuak eta buleten testua testu-prozesadoreetarako
+	PNG Picture (*.png)	PNG irudia (*.png)
+	The current slide as a picture	Uneko diapositiba irudi gisa
+	JPEG Picture (*.jpg)	JPEG irudia (*.jpg)
+	The current slide as a compressed picture	Uneko diapositiba irudi konprimitu gisa
+	Add a title	Gehitu izenburu bat
+	Subject	Gaia
+	Specify the subject	Zehaztu gaia
+	Tags	Etiketak
+	Add a tag	Gehitu etiketa bat
+	Categories	Kategoriak
+	Add a category	Gehitu kategoria bat
+	Company	Erakundea
+	Specify the company	Zehaztu erakundea
+	Add comments	Gehitu iruzkinak
+	Author	Egilea
+	Add an author	Gehitu egile bat
+	Back	Atzera
+	Blank Presentation	Aurkezpen hutsa
+	Sample deck: Northern Lights	Adibidea: Ipar-argiak
+	Presentations you open show up here. Use Open to browse for one.	Irekitzen dituzun aurkezpenak hemen agertuko dira. Erabili Ireki bat bilatzeko.
+	More themes	Gai gehiago
+	More templates	Txantiloi gehiago
+	Search for a file	Bilatu fitxategi bat
+	More presentations	Aurkezpen gehiago
+	Get help and support	Lortu laguntza eta euskarria
+	Join the ArtCraft community on Discord	Batu ArtCraft-en komunitatera Discorden
+	Search for themes and templates	Bilatu gaiak eta txantiloiak
+	Browse	Arakatu
+	There are no unsaved presentations to recover	Ez dago berreskuratzeko gorde gabeko aurkezpenik
+	Presentations	Aurkezpenak
+	No presentation is open.	Ez dago aurkezpenik irekita.
+	Not saved yet	Oraindik gorde gabe
+	Copied the path	Bide-izena kopiatu da
+	Check for Issues	Egiaztatu arazorik dagoen
+	Inspect Presentation	Ikuskatu aurkezpena
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Partekatu aurretik, egiaztatu aurkezpenak ez duela desgaitasuna duten pertsonek irakurtzeko zaila izan dezaketen ezer.
+	There are no unsaved changes.	Ez dago gorde gabeko aldaketarik.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Aurkezpen honek gorde gabeko aldaketak ditu. Leheneratu aukerak gordetako fitxategira itzultzen da.
+	This presentation has never been saved.	Aurkezpen hau ez da inoiz gorde.
+	Revert	Leheneratu
+	Manage Presentation	Kudeatu aurkezpena
+	Properties	Propietateak
+	Hidden slides	Ezkutuko diapositibak
+	Location	Kokapena
+	Save as type	Fitxategi mota
+	Download	Deskargatu
+	Download the file	Deskargatu fitxategia
+	Choose where to save	Aukeratu non gorde
+	Full Page Slides	Orrialde osoko diapositibak
+	Notes Pages	Oharren orrialdeak
+	Handouts (1 slide per page)	Banatzeko orriak (diapositiba 1 orriko)
+	Handouts (2 slides per page)	Banatzeko orriak (2 diapositiba orriko)
+	Handouts (3 slides per page)	Banatzeko orriak (3 diapositiba orriko)
+	Handouts (4 slides per page)	Banatzeko orriak (4 diapositiba orriko)
+	Handouts (6 slides per page)	Banatzeko orriak (6 diapositiba orriko)
+	Handouts (9 slides per page)	Banatzeko orriak (9 diapositiba orriko)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft-ek PDF baten bidez inprimatzen du: zure PDF ikustailean irekitzen da, eta han aukeratzen duzu inprimagailua.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft-ek PDF baten bidez inprimatzen du: deskargatu egiten da, nabigatzailetik edo PDF ikustailetik inprimatzeko prest.
+	Settings	Ezarpenak
+	Print All Slides	Inprimatu diapositiba guztiak
+	Print Current Slide	Inprimatu uneko diapositiba
+	Custom Range	Barruti pertsonalizatua
+	Print range	Inprimatze-barrutia
+	Print layout	Inprimatze-diseinua
+	Paper size	Paperaren tamaina
+	Landscape Orientation	Orientazio horizontala
+	Portrait Orientation	Orientazio bertikala
+	Orientation	Orientazioa
+	Edit Header & Footer	Editatu goiburua eta orri-oina
+	Nothing to print: every slide in the range is hidden.	Ez dago ezer inprimatzeko: barrutiko diapositiba guztiak ezkutuan daude.
+	Previous Page	Aurreko orrialdea
+	{n} of {total}	{n}/{total}
+	Next Page	Hurrengo orrialdea
+	Create PDF Document	Sortu PDF dokumentua
+	Keeps the layout, fonts and pictures	Diseinua, letra-tipoak eta irudiak mantentzen ditu
+	Opens on any device with a PDF viewer	PDF ikustailea duen edozein gailutan irekitzen da
+	The presentation keeps its own file	Aurkezpenak bere fitxategia mantentzen du
+	Create PDF	Sortu PDFa
+	Several slides on each page of a PDF	Hainbat diapositiba PDF baten orrialde bakoitzean
+	Three a page leaves lines for notes	Hiru orriko jarrita, oharretarako lerroak geratzen dira
+	Print them for your audience	Inprimatu itzazu entzuleentzat
+	{n} slides per page	{n} diapositiba orriko
+	Slides per page	Diapositibak orriko
+	Appearance	Itxura
+	Dark	Iluna
+	Light	Argia
+	User Information	Erabiltzailearen informazioa
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft-ek ez du konturik: ez dago saioa hasteko ezer, eta zure aurkezpenak zure gailuan geratzen dira.
+	Product Information	Produktuaren informazioa
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Kode irekia MIT OR Apache-2.0 lizentziarekin. Ez dago Microsoft-ekin lotuta.
+	The version, the people and models who built it, and where to find us.	Bertsioa, sortu duten pertsonak eta ereduak, eta non aurkitu gaitzakezun.
+	Join our community on Discord	Batu gure komunitatera Discorden
+	Source on GitHub	Iturburu-kodea GitHub-en
+	Undo	Desegin
+	Redo	Berregin
+	Start from Beginning	Hasieratik
+	Add to Quick Access Toolbar	Gehitu sarbide azkarreko tresna-barrara
