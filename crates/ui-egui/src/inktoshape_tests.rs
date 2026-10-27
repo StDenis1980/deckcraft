@@ -55,7 +55,7 @@ fn pen_a_rectangle_then_ink_to_shape() {
     let x = sh.xfrm.unwrap();
     assert!((x.x - 200.0).abs() < 10.0 && (x.w - 400.0).abs() < 15.0 && (x.h - 250.0).abs() < 15.0, "{x:?}");
     assert_eq!(st.selection.shapes, vec![sh.id]);
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/ink_to_shape.png");
     }
 }

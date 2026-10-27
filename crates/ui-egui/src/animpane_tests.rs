@@ -195,6 +195,6 @@ fn screenshot() {
     let _gpu = crate::gpu_lock::gpu_lock();
     let mut h = harness();
     h.run_steps(2);
-    let img = h.render().unwrap();
+    let img = crate::test_gpu::render(&mut h).unwrap();
     img.save("/tmp/animpane.png").unwrap();
 }

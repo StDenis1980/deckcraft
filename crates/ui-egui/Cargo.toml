@@ -31,6 +31,8 @@ sys-locale = { workspace = true }
 
 [dev-dependencies]
 skrifa = { workspace = true }
+# The image type `Harness::render` returns (test_gpu.rs).
+image = { workspace = true }
 # kittest's own dev-dependencies do not propagate; tests need both font features explicitly.
 egui = { workspace = true, features = ["default_fonts", "monochrome_emoji_fonts"] }
 egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }

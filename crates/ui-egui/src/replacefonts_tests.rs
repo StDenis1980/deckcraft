@@ -88,8 +88,8 @@ fn ribbon_button_opens_the_dialog_and_replaces() {
 fn screenshot() {
     let _gpu = crate::gpu_lock::gpu_lock();
     let mut h = harness();
-    h.render().unwrap().save("/tmp/replacefonts0.png").unwrap();
+    crate::test_gpu::render(&mut h).unwrap().save("/tmp/replacefonts0.png").unwrap();
     h.state_mut().dialog = Some(crate::dialogs::Dialog::new("replaceFonts"));
     h.run_steps(4);
-    h.render().unwrap().save("/tmp/replacefonts.png").unwrap();
+    crate::test_gpu::render(&mut h).unwrap().save("/tmp/replacefonts.png").unwrap();
 }

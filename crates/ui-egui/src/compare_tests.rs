@@ -70,5 +70,5 @@ fn screenshot() {
     // Review tab.
     h.state_mut().ui.tab = "Review".into();
     h.run_steps(4);
-    h.render().unwrap().save("/tmp/compare.png").unwrap();
+    crate::test_gpu::render(&mut h).unwrap().save("/tmp/compare.png").unwrap();
 }

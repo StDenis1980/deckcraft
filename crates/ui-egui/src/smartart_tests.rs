@@ -99,7 +99,7 @@ fn layout_gallery_shows_cached_pictures_and_previews_on_hover() {
     h.get_by_role_and_label(egui::accesskit::Role::Button, "Vertical Box List").hover();
     h.run_steps(3);
     if let Ok(path) = std::env::var("SMARTART_GALLERY_PNG") {
-        h.render().expect("render").save(path).unwrap();
+        crate::test_gpu::render(&mut h).expect("render").save(path).unwrap();
     }
     let hovered = h.state().textures.smartart_cached();
     assert!(hovered > first, "hovering drew a preview of the graphic's own outline");

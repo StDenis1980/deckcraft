@@ -30,7 +30,7 @@ fn thesaurus_pane_swaps_the_word_at_the_caret() {
     h.run_steps(3);
     assert_eq!(h.state().ui.pane.as_deref(), Some("thesaurus"));
     assert_eq!(h.state().thesaurus_query, "Goal");
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/thesaurus.png");
     }
     h.get_by_label("Objective").click();

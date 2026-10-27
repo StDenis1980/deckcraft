@@ -77,7 +77,7 @@ fn drag_indents_add_move_and_remove_tabs_on_the_ruler() {
     drag(&mut h, Pos2::new(rx(pos), top + 12.0), Pos2::new(rx(220.0), top + 12.0));
     let pos = ruler(&mut h)["tabs"][0]["pos"].as_f64().unwrap() as f32;
     assert!((pos - 220.0).abs() <= 1.0, "{pos}");
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/ruler.png");
     }
     assert!(h.state().session.active().unwrap().selection.text.is_some(), "still editing the text");
@@ -122,7 +122,7 @@ fn the_tab_selector_picks_the_kind_of_stop_a_click_sets() {
     click(&mut h, Pos2::new(rx(200.0), top + 12.0));
     let r = ruler(&mut h);
     assert_eq!(r["tabs"][0]["align"], "dec", "{r}");
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/ruler_decimal.png");
     }
 }
@@ -144,7 +144,7 @@ fn tabs_dialog_sets_clears_and_applies_on_ok() {
     h.run_steps(2);
     h.get_by_label("Set").click();
     h.run_steps(2);
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/tabs_dialog.png");
     }
     // Nothing changes until OK.

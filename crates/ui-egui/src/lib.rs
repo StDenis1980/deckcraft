@@ -3612,6 +3612,8 @@ mod slide_size_tests;
 #[cfg(test)]
 mod split_button_tests;
 #[cfg(test)]
+mod test_gpu;
+#[cfg(test)]
 mod texture_limit_tests;
 #[cfg(test)]
 mod ui_soak_tests;
@@ -4369,7 +4371,7 @@ mod tests {
         assert!(app.canvas_rect.unwrap().contains(centre));
 
         // Drawn at full strength on the pasteboard (when a GPU renderer is available here).
-        if let Ok(img) = harness.render() {
+        if let Ok(img) = crate::test_gpu::render(&mut harness) {
             let px = |p: egui::Pos2| img.get_pixel(p.x as u32, p.y as u32).0;
             let shape = px(centre);
             let board = px(slide.min + egui::vec2(1060.0 * k, 400.0 * k));
@@ -5379,7 +5381,7 @@ mod tests {
         assert!(harness.query_by_label("Insert").is_none());
         assert!(harness.query_by_label_contains("Слайд 1 з 1").is_some(), "the status bar in Ukrainian");
         if let Ok(path) = std::env::var("DECKCRAFT_UK_SHOT") {
-            harness.render().unwrap().save(path).unwrap();
+            crate::test_gpu::render(&mut harness).unwrap().save(path).unwrap();
         }
         assert!(harness.state_mut().run("app.language", json!({"language": "klingon"})).is_err());
         assert_eq!(harness.state().ui.language, "uk");
@@ -5389,13 +5391,13 @@ mod tests {
         assert!(harness.query_by_label("Insertar").is_some(), "the Insert tab in Spanish");
         assert!(harness.query_by_label_contains("Diapositiva 1 de 1").is_some(), "the status bar in Spanish");
         if let Ok(path) = std::env::var("DECKCRAFT_ES_SHOT") {
-            harness.render().unwrap().save(path).unwrap();
+            crate::test_gpu::render(&mut harness).unwrap().save(path).unwrap();
         }
         harness.state_mut().run("app.language", json!({"language": "ca"})).unwrap();
         harness.run_steps(2);
         assert!(harness.query_by_label("Insereix").is_some(), "the Insert tab in Catalan");
         if let Ok(path) = std::env::var("DECKCRAFT_CA_SHOT") {
-            harness.render().unwrap().save(path).unwrap();
+            crate::test_gpu::render(&mut harness).unwrap().save(path).unwrap();
         }
         for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu"), ("it", "Inserisci"), ("fr", "Insérer"), ("de", "Einfügen"), ("pl", "Wstaw")] {
             harness.state_mut().run("app.language", json!({"language": code})).unwrap();
@@ -5403,7 +5405,7 @@ mod tests {
             // German uses "Einfügen" for both the Insert tab and Paste, so match any node.
             assert!(harness.query_all_by_label(insert).next().is_some(), "the Insert tab in {code}");
             if let Ok(dir) = std::env::var("DECKCRAFT_SHOT_DIR") {
-                harness.render().unwrap().save(format!("{dir}/deck-{code}.png")).unwrap();
+                crate::test_gpu::render(&mut harness).unwrap().save(format!("{dir}/deck-{code}.png")).unwrap();
             }
         }
         harness.state_mut().run("app.language", json!({"language": "auto"})).unwrap();

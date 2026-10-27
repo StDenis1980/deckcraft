@@ -40,7 +40,7 @@ fn turn_guides_on_drag_one_and_drop_it_off_the_slide() {
         h.run_steps(1);
     }
     assert_eq!(h.state().session.tool.guide_drag, Some((0, 300.0)));
-    if let Ok(img) = h.render() {
+    if let Ok(img) = crate::test_gpu::render(&mut h) {
         let _ = img.save("/tmp/guides.png");
     }
     h.event(egui::Event::PointerButton { pos: at(300.0, 100.0), button: PointerButton::Primary, pressed: false, modifiers: Modifiers::NONE });

@@ -25,7 +25,7 @@ fn spelling_dialog_changes_and_ignores_words() {
         app,
     );
     h.run_steps(3);
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     h.get_by_label("plan").click();
@@ -90,7 +90,7 @@ fn squiggles_mark_misspelt_words_in_the_background() {
         app,
     );
     h.run_steps(4);
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_SQUIGGLES"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_SQUIGGLES"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     // The context menu's word under the first squiggle, and its correction.
@@ -161,7 +161,7 @@ fn squiggles_in_table_cells_and_notes_and_on_the_ui_thread() {
         app,
     );
     h.run_steps(6);
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_TABLE"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_TABLE"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     // Correcting a cell's word through the context menu's command (settled again: frames may
@@ -234,7 +234,7 @@ fn notes_menu_language_dialog_and_repeated_words() {
         app,
     );
     h.run_steps(8);
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_NOTES"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_NOTES"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     // Right-click the notes' first word, once the (background) notes check is in.
@@ -242,7 +242,7 @@ fn notes_menu_language_dialog_and_repeated_words() {
     h.run_steps(2);
     let notes = h.query_all_by_role(Role::MultilineTextInput).next().map(|n| n.rect()).unwrap();
     right_click(&mut h, egui::pos2(notes.left() + 14.0, notes.top() + 8.0));
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_NOTES_MENU"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_NOTES_MENU"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     assert_eq!(h.state().squiggles.notes_menu.as_ref().map(|w| w.word.as_str()), Some("Remmeber"));
@@ -272,7 +272,7 @@ fn notes_menu_language_dialog_and_repeated_words() {
     h.state_mut().session.execute("edit.select", &json!({"ids": [id]})).unwrap();
     h.state_mut().dialog = Some(crate::dialogs::Dialog::new("language"));
     h.run_steps(4);
-    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_LANG"), h.render()) {
+    if let (Ok(path), Ok(img)) = (std::env::var("DECKCRAFT_PNG_OUT_LANG"), crate::test_gpu::render(&mut h)) {
         let _ = img.save(path);
     }
     assert_eq!(crate::dialogs::selected_language(h.state()).0, "xx-NM");

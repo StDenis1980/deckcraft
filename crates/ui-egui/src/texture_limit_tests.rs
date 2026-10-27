@@ -63,7 +63,7 @@ fn presenter_view_keeps_a_portrait_next_slide_in_its_column() {
     h.state_mut().run("show.presenter", json!({"on": true})).unwrap();
     h.state_mut().run("show.start", json!({"from": 0})).unwrap();
     h.run_steps(4);
-    let img = h.render().unwrap();
+    let img = crate::test_gpu::render(&mut h).unwrap();
     // Right of the Next column's narrow preview, below where a landscape one would end.
     let px = img.get_pixel(1000, 600).0;
     assert!(px[0] < 128 && px[1] < 128 && px[2] < 128, "the Next preview spills over the column: {px:?}");
