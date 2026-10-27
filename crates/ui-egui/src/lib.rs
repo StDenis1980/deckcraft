@@ -4322,7 +4322,7 @@ mod tests {
     }
 
     fn canvas_harness() -> egui_kittest::Harness<'static, SlideApp> {
-        let mut harness = egui_kittest::Harness::builder().with_size(egui::vec2(1200.0, 800.0)).build_ui_state(
+        let mut harness = crate::gpu_lock::builder().with_size(egui::vec2(1200.0, 800.0)).build_ui_state(
             |ui, app: &mut SlideApp| {
                 app.logic(ui.ctx());
                 app.ui(ui);
