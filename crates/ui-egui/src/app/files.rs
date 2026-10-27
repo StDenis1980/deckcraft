@@ -1,4 +1,5 @@
 use super::*;
+use crate::i18n::{tf, tl};
 
 fn purpose_of(purpose: &str) -> FilePurpose {
     match purpose {
@@ -442,6 +443,10 @@ impl SlideApp {
                         self.save_as_dialog("deckcraft");
                     }
                 }
+                UiRequest::Media { action, shape, .. } if action == "external" => {
+                    let slide = self.session.active().map(|d| d.selection.slide);
+                    self.open_media_externally(shape, slide);
+                }
                 UiRequest::Media { action, shape, ms } => {
                     let owner = if self.show.is_some() { media::Owner::Show } else { media::Owner::Editor };
                     // The command resolved `shape` on the editor's slide, also while a show runs.
@@ -450,6 +455,28 @@ impl SlideApp {
                     }
                 }
             }
+        }
+    }
+
+    /// Hands media shape `id` (looked up on `slide` first) to the system's player through
+    /// [`Services::open_external`], or as a download in the browser, for clips whose codec this
+    /// build can't decode. Failures go to the status bar.
+    pub(crate) fn open_media_externally(&mut self, id: deckcraft_model::ShapeId, slide: Option<usize>) {
+        let Some(item) = self.session.active().and_then(|d| {
+            let clip = media::find_clip(&d.doc, id, slide)?;
+            d.doc.media(clip.media).cloned()
+        }) else {
+            return;
+        };
+        let name = media::external_file_name(&item.name, &item.content_type);
+        if let Some(open) = self.services.open_external.as_mut() {
+            if let Err(e) = open(&name, &item.data) {
+                self.set_status(tf("Couldn't open the media: {error}", &[("error", &e)]));
+            }
+        } else if let Some(download) = self.services.download.as_mut() {
+            download(&name, &item.data);
+        } else {
+            self.set_status(tl("This build can't open media in another app."));
         }
     }
 

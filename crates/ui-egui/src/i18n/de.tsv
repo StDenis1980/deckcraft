@@ -791,3 +791,8 @@
 	Start from Beginning	Von Anfang an
 	Add to Quick Access Toolbar	Zur Symbolleiste für den Schnellzugriff hinzufügen
 	Window title bar	Fenstertitelleiste
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	{codec}-Video kann hier nicht abgespielt werden.
+	Open in the system player	Im Systemplayer öffnen
+	Couldn't open the media: {error}	Die Mediendatei konnte nicht geöffnet werden: {error}
+	This build can't open media in another app.	Diese Version kann Medien nicht in einer anderen App öffnen.

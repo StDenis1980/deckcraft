@@ -433,8 +433,9 @@ pub enum UiRequest {
     PickFile {
         purpose: String,
     },
-    /// Media playback for the UI host (`media.play` / `pause` / `stop` / `seek`): `action` is
-    /// `play`, `pause`, `toggle`, `stop` or `seek`; `ms` the media time to start from / seek to.
+    /// Media playback for the UI host (`media.play` / `pause` / `stop` / `seek` / `openExternal`):
+    /// `action` is `play`, `pause`, `toggle`, `stop`, `seek` or `external` (open the clip in the
+    /// system's player); `ms` the media time to start from / seek to.
     Media {
         action: String,
         shape: ShapeId,

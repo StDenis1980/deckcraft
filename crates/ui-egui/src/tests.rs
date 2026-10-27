@@ -88,6 +88,48 @@ fn web_png_export_can_leave_the_background_transparent() {
     assert_eq!(corner_alpha(&got[2].1), 255, "JPEG has no transparency");
 }
 
+/// `media.openExternal` hands the clip and a safe file name to the system's player (desktop),
+/// reports a failing player in the status bar, falls back to a download on the web, and says so
+/// when the host can do neither.
+#[test]
+fn open_external_hands_the_clip_to_the_system_player() {
+    use std::cell::RefCell;
+    use std::rc::Rc;
+    let clip = include_bytes!("../../media/tests/fixtures/clip-h264.mp4");
+    let opened: Rc<RefCell<Vec<(String, usize)>>> = Rc::default();
+    let log = opened.clone();
+    let services = Services {
+        open_external: Some(Box::new(move |name: &str, b: &[u8]| {
+            log.borrow_mut().push((name.to_string(), b.len()));
+            Ok(())
+        })),
+        ..Default::default()
+    };
+    let mut app = SlideApp::new(Session::with_new(), services);
+    app.run("slide.new", json!({"layout": "blank"})).unwrap();
+    app.run("insert.video", json!({"name": "clip.mp4", "data": deckcraft_engine::cmd::base64_encode(clip)})).unwrap();
+    app.run("media.openExternal", json!({})).unwrap();
+    {
+        let opened = opened.borrow();
+        assert_eq!(opened.len(), 1, "the player got the clip once");
+        assert_eq!(opened[0].1, clip.len());
+        assert!(opened[0].0.ends_with(".mp4"), "{}", opened[0].0);
+    }
+    app.services.open_external = Some(Box::new(|_: &str, _: &[u8]| Err("no player installed".into())));
+    app.run("media.openExternal", json!({})).unwrap();
+    assert!(app.status.as_ref().is_some_and(|(s, _)| s.contains("no player installed")), "{:?}", app.status);
+    let downloaded: Rc<RefCell<Vec<String>>> = Rc::default();
+    let log = downloaded.clone();
+    app.services.open_external = None;
+    app.services.download = Some(Box::new(move |name: &str, _: &[u8]| log.borrow_mut().push(name.to_string())));
+    app.run("media.openExternal", json!({})).unwrap();
+    assert_eq!(downloaded.borrow().len(), 1, "the browser downloads it");
+    app.services.download = None;
+    app.status = None;
+    app.run("media.openExternal", json!({})).unwrap();
+    assert!(app.status.is_some(), "a host without either says so");
+}
+
 fn title_text(app: &SlideApp) -> String {
     let d = app.session.active().unwrap();
     let sh = &d.doc.slides[0].shapes[0];

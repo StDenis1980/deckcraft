@@ -790,3 +790,8 @@
 	Start from Beginning	Desde o principio
 	Add to Quick Access Toolbar	Engadir á barra de ferramentas de acceso rápido
 	Window title bar	Barra de título da xanela
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	Aquí non se pode reproducir o vídeo {codec}.
+	Open in the system player	Abrir no reprodutor do sistema
+	Couldn't open the media: {error}	Non se puido abrir o ficheiro multimedia: {error}
+	This build can't open media in another app.	Esta versión non pode abrir ficheiros multimedia noutra aplicación.

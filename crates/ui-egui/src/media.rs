@@ -10,6 +10,7 @@ use deckcraft_media::{AudioOut, ClipParams, Frame, PlayState, Player, VideoFeed,
 use deckcraft_model::{MediaClip, Presentation, Shape, ShapeId, ShapeKind};
 use egui::{Align2, Color32, CornerRadius, Pos2, Rect, Sense, Stroke, TextureHandle, Ui, pos2, vec2};
 
+use crate::i18n::{tf, tl};
 use crate::icons::{self, Icon};
 
 /// Who started a voice: the editor's control bar stops when you leave the slide, the slide show
@@ -22,6 +23,9 @@ pub enum Owner {
 
 struct Video {
     feed: Option<VideoFeed>,
+    /// Why no feed opened (the codec this build can't decode, a damaged file), shown instead of an
+    /// empty frame.
+    error: Option<String>,
     frame: Option<Arc<Frame>>,
     tex: Option<TextureHandle>,
 }
@@ -228,14 +232,19 @@ impl MediaHost {
         };
         let source_changed = self.owners.get(&id).is_some_and(|o| o.source != media_key);
         if clip.video && (source_changed || !self.videos.contains_key(&id)) {
-            let feed = match VideoFeed::new(bytes.clone()) {
-                Ok(f) => Some(f),
+            let (feed, error) = match VideoFeed::new(bytes.clone()) {
+                Ok(f) => (Some(f), None),
                 Err(e) => {
                     log::info!("video {id}: {e}");
-                    None
+                    // `Unsupported` names the codec ("H.264 video"); keep just the codec.
+                    let why = match e {
+                        deckcraft_media::MediaError::Unsupported(what) => what.strip_suffix(" video").unwrap_or(&what).to_string(),
+                        other => other.to_string(),
+                    };
+                    (None, Some(why))
                 }
             };
-            self.videos.insert(id, Video { feed, frame: None, tex: None });
+            self.videos.insert(id, Video { feed, error, frame: None, tex: None });
         } else if !clip.video {
             self.videos.remove(&id);
         }
@@ -281,6 +290,12 @@ impl MediaHost {
             self.pause(id);
         }
         self.player.seek(key(id), t);
+    }
+
+    /// Why the video of shape `id` can't play here (its codec, or what is wrong with the file), once
+    /// a play tried to open it.
+    pub fn video_error(&self, id: ShapeId) -> Option<&str> {
+        self.videos.get(&id).and_then(|v| v.error.as_deref())
     }
 
     /// The current video frame of shape `id`, once one has decoded.
@@ -415,7 +430,12 @@ fn crop_uv(crop: [f64; 4]) -> Rect {
 /// Draw the playing video frame of `id` into `rect`: letterboxed to the frame's aspect, or, when
 /// the video is cropped, the cropped part stretched over the whole box as PowerPoint shows it.
 pub fn paint_frame(painter: &egui::Painter, host: &MediaHost, id: ShapeId, rect: Rect, crop: [f64; 4]) -> bool {
-    let Some(tex) = host.texture(id) else { return false };
+    let Some(tex) = host.texture(id) else {
+        if let Some(why) = host.video_error(id) {
+            paint_unplayable(painter, rect, why);
+        }
+        return false;
+    };
     if crop.iter().any(|v| *v > 0.0) {
         painter.rect_filled(rect, CornerRadius::ZERO, Color32::BLACK);
         painter.image(tex.id(), rect, crop_uv(crop), Color32::WHITE);
@@ -428,6 +448,93 @@ pub fn paint_frame(painter: &egui::Painter, host: &MediaHost, id: ShapeId, rect:
     painter.rect_filled(rect, CornerRadius::ZERO, Color32::BLACK);
     painter.image(tex.id(), r, Rect::from_min_max(pos2(0.0, 0.0), pos2(1.0, 1.0)), Color32::WHITE);
     true
+}
+
+/// A video this build can't play: a band over the bottom of its box (over the poster) saying so
+/// and pointing to the system's player, instead of a frame that never comes.
+fn paint_unplayable(painter: &egui::Painter, rect: Rect, why: &str) {
+    if rect.width() < 40.0 || rect.height() < 24.0 {
+        return;
+    }
+    let size = (rect.height() / 12.0).clamp(9.0, 16.0);
+    let band = Rect::from_min_max(pos2(rect.min.x, rect.max.y - size * 3.6), rect.max).intersect(rect);
+    let painter = painter.with_clip_rect(rect);
+    painter.rect_filled(band, CornerRadius::ZERO, Color32::from_rgba_unmultiplied(20, 20, 24, 215));
+    let white = Color32::from_gray(240);
+    let wrap = (band.width() - 12.0).max(10.0);
+    let lines = format!("{}\n{}", tf("Can't play {codec} video here.", &[("codec", why)]), tl("Open in the system player"));
+    let galley = painter.layout(lines, egui::FontId::proportional(size), white, wrap);
+    painter.galley(pos2(band.min.x + 6.0, band.center().y - galley.size().y / 2.0), galley, white);
+}
+
+/// A safe file name for handing a clip to another app: the last path segment of `name` with
+/// anything a file system might refuse replaced, at most about 70 characters, and an extension
+/// from `content_type` when the name has none (players pick the decoder by it).
+pub fn external_file_name(name: &str, content_type: &str) -> String {
+    let base = name.rsplit(['/', '\\']).next().unwrap_or(name);
+    let clean: String = base.chars().map(|c| if c.is_alphanumeric() || matches!(c, '.' | '-' | '_' | ' ') { c } else { '_' }).collect();
+    let clean = clean.trim_matches(|c: char| c == '.' || c == ' ');
+    let (stem, ext) = match clean.rsplit_once('.') {
+        Some((stem, ext)) if !stem.is_empty() && !ext.is_empty() && ext.chars().count() <= 8 => (stem, ext.to_string()),
+        _ => (clean, extension_for(content_type)),
+    };
+    let stem: String = stem.chars().take(60).collect();
+    let stem = stem.trim_end_matches(['.', ' ']);
+    format!("{}.{}", if stem.is_empty() { "media" } else { stem }, ext)
+}
+
+/// The usual file extension of a media type (`video/mp4` → `mp4`).
+fn extension_for(content_type: &str) -> String {
+    let ct = content_type.split(';').next().unwrap_or("").trim().to_ascii_lowercase();
+    let known = match ct.as_str() {
+        "video/mp4" => "mp4",
+        "video/quicktime" => "mov",
+        "video/webm" => "webm",
+        "video/x-matroska" => "mkv",
+        "video/x-ms-wmv" | "video/x-ms-asf" => "wmv",
+        "video/x-msvideo" | "video/avi" => "avi",
+        "audio/mpeg" | "audio/mp3" => "mp3",
+        "audio/mp4" | "audio/x-m4a" => "m4a",
+        "audio/wav" | "audio/x-wav" | "audio/wave" => "wav",
+        "audio/x-ms-wma" => "wma",
+        _ => "",
+    };
+    if !known.is_empty() {
+        return known.into();
+    }
+    let sub: String = ct.rsplit('/').next().unwrap_or("").chars().filter(char::is_ascii_alphanumeric).take(8).collect();
+    if sub.is_empty() { "bin".into() } else { sub }
+}
+
+/// Writes `bytes` to the temporary folder as `name` (prefixed with a hash of the bytes, so two
+/// different clips called `media1.mp4` don't collide, and the same one is written once) and opens
+/// it with the system's default app: Media Player / Films & TV on Windows, QuickTime on macOS,
+/// whatever `xdg-open` picks elsewhere. Their codecs, and the patent licences for them, come with
+/// the operating system.
+#[cfg(not(target_arch = "wasm32"))]
+pub fn open_in_system_player(name: &str, bytes: &[u8]) -> Result<(), String> {
+    use std::hash::{Hash, Hasher};
+    let mut h = std::collections::hash_map::DefaultHasher::new();
+    bytes.hash(&mut h);
+    let dir = std::env::temp_dir().join("deckcraft-media");
+    std::fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
+    let path = dir.join(format!("{:016x}-{}", h.finish(), external_file_name(name, "")));
+    if !std::fs::metadata(&path).is_ok_and(|m| m.len() == bytes.len() as u64) {
+        std::fs::write(&path, bytes).map_err(|e| e.to_string())?;
+    }
+    // Explorer opens a file with its default app (and, unlike `cmd /c start`, needs no quoting).
+    #[cfg(target_os = "windows")]
+    let mut cmd = std::process::Command::new("explorer");
+    #[cfg(target_os = "macos")]
+    let mut cmd = std::process::Command::new("open");
+    #[cfg(not(any(target_os = "windows", target_os = "macos")))]
+    let mut cmd = std::process::Command::new("xdg-open");
+    let mut child = cmd.arg(&path).spawn().map_err(|e| e.to_string())?;
+    // Reap the launcher when it exits; the player itself outlives it.
+    let _ = std::thread::Builder::new().name("deckcraft-open-media".into()).spawn(move || {
+        let _ = child.wait();
+    });
+    Ok(())
 }
 
 /// Changes whenever a GIF shows another frame (part of the slide texture's cache key).
@@ -466,10 +573,14 @@ pub enum BarAction {
     Toggle,
     Seek(f64),
     Nudge(f64),
+    /// Open the clip in the system's player (`media.openExternal`).
+    OpenExternal,
 }
 
 /// PowerPoint-style media controls: play/pause, ¼-second nudges, a seekable timeline and the time.
-pub fn control_bar(ui: &mut Ui, rect: Rect, status: Option<&VoiceStatus>, clip: &MediaClip) -> Option<BarAction> {
+/// `video_error` (see [`MediaHost::video_error`]) adds a link under the bar that opens the clip in
+/// the system's player.
+pub fn control_bar(ui: &mut Ui, rect: Rect, status: Option<&VoiceStatus>, clip: &MediaClip, video_error: Option<&str>) -> Option<BarAction> {
     let painter = ui.painter_at(rect.expand(2.0));
     painter.rect_filled(rect, CornerRadius::same(4), Color32::from_rgba_unmultiplied(28, 28, 32, 230));
     let playing = status.is_some_and(|s| matches!(s.state, PlayState::Playing | PlayState::Loading));
@@ -552,7 +663,16 @@ pub fn control_bar(ui: &mut Ui, rect: Rect, status: Option<&VoiceStatus>, clip: 
             action = Some(BarAction::Seek(f * duration));
         }
     }
-    if let Some(err) = status.and_then(|s| s.error.as_ref()) {
+    if let Some(why) = video_error {
+        let text = format!("{} {}", tf("Can't play {codec} video here.", &[("codec", why)]), tl("Open in the system player"));
+        let link =
+            egui::Label::new(egui::RichText::new(text).size(11.0).color(Color32::from_rgb(0x8A, 0xB8, 0xFF)).underline()).sense(Sense::click());
+        let r = Rect::from_min_size(pos2(rect.min.x, rect.max.y + 3.0), vec2(rect.width().max(260.0), 16.0));
+        let resp = ui.put(r, link).on_hover_cursor(egui::CursorIcon::PointingHand);
+        if resp.clicked() {
+            action = Some(BarAction::OpenExternal);
+        }
+    } else if let Some(err) = status.and_then(|s| s.error.as_ref()) {
         painter.text(
             pos2(rect.min.x, rect.max.y + 3.0),
             Align2::LEFT_TOP,
@@ -766,6 +886,45 @@ mod tests {
         host.tick_clock(0.1, &mut s);
         host.sync_video_textures(&egui::Context::default());
         assert!(host.texture(id).is_none(), "no VP8 frame exists to show");
+    }
+
+    /// Names handed to another app keep only the last path segment, lose characters a file
+    /// system may refuse, stay short and always carry an extension.
+    #[test]
+    fn external_file_names_are_safe_and_keep_an_extension() {
+        assert_eq!(external_file_name("../../ppt/media/media1.mp4", "video/mp4"), "media1.mp4");
+        assert_eq!(external_file_name("C:\\x\\a:b*c?.MOV", ""), "a_b_c_.MOV");
+        assert_eq!(external_file_name("", "video/mp4"), "media.mp4");
+        assert_eq!(external_file_name("...", "video/quicktime"), "media.mov");
+        assert_eq!(external_file_name("clip", "video/x-matroska"), "clip.mkv");
+        assert_eq!(external_file_name("clip", "application/weird+stuff"), "clip.weirdstu");
+        assert_eq!(external_file_name("clip", ""), "clip.bin");
+        assert_eq!(external_file_name("Відео презентації.mp4", "video/mp4"), "Відео презентації.mp4");
+        let long = external_file_name(&format!("{}.mp4", "x".repeat(500)), "video/mp4");
+        assert_eq!(long, format!("{}.mp4", "x".repeat(60)));
+    }
+
+    /// A video whose codec this build can't decode (H.264 without the `patented-codecs` feature)
+    /// reports why, so the editor and the show can say so instead of showing an empty frame.
+    #[test]
+    fn an_undecodable_video_reports_its_codec() {
+        let bytes = include_bytes!("../../media/tests/fixtures/clip-h264.mp4");
+        let mut s = deckcraft_engine::Session::with_new();
+        let _ = s.execute("slide.new", &serde_json::json!({"layout": "blank"}));
+        let r =
+            s.execute("insert.video", &serde_json::json!({"name": "clip.mp4", "data": deckcraft_engine::cmd::base64_encode(bytes)})).expect("insert");
+        let (uid, doc) = s.active().map(|d| (d.uid, d.doc.clone())).expect("document");
+        let id = ShapeId(r["id"].as_u64().expect("id") as u32);
+        let clip = find_clip(&doc, id, Some(0)).expect("clip");
+        let mut host = MediaHost::new(None);
+        assert_eq!(host.video_error(id), None, "nothing tried yet");
+        host.play(uid, &doc, id, &clip, None, Owner::Editor);
+        if deckcraft_media::PATENTED_CODECS {
+            assert_eq!(host.video_error(id), None, "this build decodes H.264");
+        } else {
+            assert_eq!(host.video_error(id), Some("H.264"));
+            assert!(host.texture(id).is_none());
+        }
     }
 
     #[test]

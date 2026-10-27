@@ -418,7 +418,7 @@ pub fn ui(app: &mut SlideApp, ui: &mut Ui) {
                     ctx.request_repaint_after(std::time::Duration::from_millis(500));
                     let action = {
                         let status = app.media.status(id);
-                        crate::media::control_bar(ui, bar, status.as_ref(), &clip)
+                        crate::media::control_bar(ui, bar, status.as_ref(), &clip, app.media.video_error(id))
                     };
                     let pos = app.media.status(id).map(|s| s.position).unwrap_or(0.0);
                     match action {
@@ -427,6 +427,7 @@ pub fn ui(app: &mut SlideApp, ui: &mut Ui) {
                         Some(crate::media::BarAction::Nudge(dt)) => {
                             app.media.seek(doc_uid, &doc, id, &clip, (pos + dt).max(0.0), crate::media::Owner::Show)
                         }
+                        Some(crate::media::BarAction::OpenExternal) => app.open_media_externally(id, Some(idx)),
                         None => {}
                     }
                 }

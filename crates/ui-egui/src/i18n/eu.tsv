@@ -790,3 +790,8 @@
 	Start from Beginning	Hasieratik
 	Add to Quick Access Toolbar	Gehitu sarbide azkarreko tresna-barrara
 	Window title bar	Leihoaren titulu-barra
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	{codec} bideoa ezin da hemen erreproduzitu.
+	Open in the system player	Ireki sistemako erreproduzigailuan
+	Couldn't open the media: {error}	Ezin izan da multimedia-fitxategia ireki: {error}
+	This build can't open media in another app.	Bertsio honek ezin ditu multimedia-fitxategiak beste aplikazio batean ireki.

@@ -791,3 +791,8 @@
 	Start from Beginning	Od początku
 	Add to Quick Access Toolbar	Dodaj do paska narzędzi Szybki dostęp
 	Window title bar	Pasek tytułu okna
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	Nie można tu odtworzyć wideo {codec}.
+	Open in the system player	Otwórz w odtwarzaczu systemowym
+	Couldn't open the media: {error}	Nie udało się otworzyć pliku multimedialnego: {error}
+	This build can't open media in another app.	Ta wersja nie może otworzyć multimediów w innej aplikacji.

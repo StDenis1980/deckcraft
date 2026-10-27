@@ -11,6 +11,9 @@ pub type OpenAsyncFn = Box<dyn FnMut(&str, u64)>;
 
 pub type DownloadFn = Box<dyn FnMut(&str, &[u8])>;
 
+/// `(file name, bytes)` → opened, or why not.
+pub type OpenExternalFn = Box<dyn FnMut(&str, &[u8]) -> Result<(), String>>;
+
 /// A file the host finished reading for the request `id` from [`SlideApp::begin_external_file`].
 #[derive(Clone, Debug)]
 pub struct InboxFile {
@@ -47,6 +50,9 @@ pub struct Services {
     pub open_async: Option<OpenAsyncFn>,
     /// Hand bytes to the user as a named file (browser download).
     pub download: Option<DownloadFn>,
+    /// Open a named media file in the system's default player (desktop): how a build without the
+    /// patented codecs still shows an H.264 video. See [`crate::media::open_in_system_player`].
+    pub open_external: Option<OpenExternalFn>,
     pub inbox: Option<Inbox>,
     /// Image on the system clipboard (PNG bytes), when the host can read one.
     pub clipboard_image: Option<Box<dyn FnMut() -> Option<Vec<u8>>>>,

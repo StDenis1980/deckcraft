@@ -63,12 +63,16 @@ pub(super) fn media_bar(app: &mut SlideApp, ui: &mut Ui, xf: Xf) {
     let w = r.width().max(230.0);
     let bar = Rect::from_min_size(pos2(r.center().x - w / 2.0, r.max.y + 6.0), vec2(w, 26.0));
     let status = app.media.status(id);
-    match crate::media::control_bar(ui, bar, status.as_ref(), &clip) {
+    let video_error = app.media.video_error(id).map(str::to_string);
+    match crate::media::control_bar(ui, bar, status.as_ref(), &clip, video_error.as_deref()) {
         Some(crate::media::BarAction::Toggle) => app.media.toggle(uid, &doc, id, &clip, crate::media::Owner::Editor),
         Some(crate::media::BarAction::Seek(t)) => app.media.seek(uid, &doc, id, &clip, t, crate::media::Owner::Editor),
         Some(crate::media::BarAction::Nudge(dt)) => {
             let pos = status.map(|s| s.position).unwrap_or(0.0);
             app.media.seek(uid, &doc, id, &clip, (pos + dt).max(0.0), crate::media::Owner::Editor);
+        }
+        Some(crate::media::BarAction::OpenExternal) => {
+            let _ = app.run("media.openExternal", json!({"id": id}));
         }
         None => {}
     }
