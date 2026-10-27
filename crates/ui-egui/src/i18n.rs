@@ -314,6 +314,14 @@ mod tests {
     }
 
     #[test]
+    fn every_catalog_names_the_title_bar() {
+        // Screen readers announced the title bar's drag surface as "Window title bar" in every language.
+        for language in Language::ALL.into_iter().filter(|l| *l != Language::En) {
+            assert!(has(language, "Window title bar"), "{language:?}");
+        }
+    }
+
+    #[test]
     fn hostile_catalog_rows_are_skipped() {
         let c = Catalog::parse("# comment\n\nonly two\tcolumns\n\tempty\t\nctx\tHome\tX\n\tA\\nB\tА\\nБ\n\tA\\nB\tsecond\n\ttrail\\\tx\\q\\\n");
         assert_eq!(c.rows.get("A\nB").map(String::as_str), Some("А\nБ"));
