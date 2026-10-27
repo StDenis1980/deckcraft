@@ -1223,6 +1223,7 @@ dependencies = [
  "deckcraft-render",
  "deckcraft-text",
  "egui",
+ "egui-wgpu",
  "egui_kittest",
  "log",
  "serde",

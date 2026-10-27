@@ -25,7 +25,7 @@ fn text_pane_types_adds_and_demotes() {
     s.execute("insert.smartArt", &json!({"kind": "list", "items": ["Plan", "Build"]})).unwrap();
     let mut app = SlideApp::new(s, Services::default());
     app.ui.pane = Some("smartart".into());
-    let mut h = Harness::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
+    let mut h = crate::gpu_lock::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
         |ui, app: &mut SlideApp| {
             app.logic(ui.ctx());
             app.ui(ui);
@@ -58,7 +58,7 @@ fn home_convert_to_smartart_gallery_converts_the_text() {
     s.execute("slide.new", &json!({"layout": "blank"})).unwrap();
     s.execute("insert.textBox", &json!({"text": "Goals\nRevenue\nGrowth"})).unwrap();
     let app = SlideApp::new(s, Services::default());
-    let mut h = Harness::builder().with_size(egui::vec2(1600.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
+    let mut h = crate::gpu_lock::builder().with_size(egui::vec2(1600.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
         |ui, app: &mut SlideApp| {
             app.logic(ui.ctx());
             app.ui(ui);
@@ -84,7 +84,7 @@ fn layout_gallery_shows_cached_pictures_and_previews_on_hover() {
     s.execute("insert.smartArt", &json!({"kind": "process", "items": ["Plan", "Build", "Ship"]})).unwrap();
     let mut app = SlideApp::new(s, Services::default());
     app.ui.tab = "SmartArt Design".into();
-    let mut h = Harness::builder().with_size(egui::vec2(1600.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
+    let mut h = crate::gpu_lock::builder().with_size(egui::vec2(1600.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
         |ui, app: &mut SlideApp| {
             app.logic(ui.ctx());
             app.ui(ui);

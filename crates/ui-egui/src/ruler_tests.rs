@@ -42,7 +42,7 @@ fn drag_indents_add_move_and_remove_tabs_on_the_ruler() {
     s.execute("text.insert", &json!({"text": "Name\tRole\tTeam"})).unwrap();
     let mut app = SlideApp::new(s, Services::default());
     app.ui.ruler = true;
-    let mut h = Harness::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
+    let mut h = crate::gpu_lock::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
         |ui, app: &mut SlideApp| {
             app.logic(ui.ctx());
             app.ui(ui);
@@ -93,7 +93,7 @@ fn editing_harness() -> Harness<'static, SlideApp> {
     s.execute("text.insert", &json!({"text": "Item\t9.50"})).unwrap();
     let mut app = SlideApp::new(s, Services::default());
     app.ui.ruler = true;
-    let mut h = Harness::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
+    let mut h = crate::gpu_lock::builder().with_size(egui::vec2(1400.0, 900.0)).with_step_dt(1.0 / 60.0).build_ui_state(
         |ui, app: &mut SlideApp| {
             app.logic(ui.ctx());
             app.ui(ui);
