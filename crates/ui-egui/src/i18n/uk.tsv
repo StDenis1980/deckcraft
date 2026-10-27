@@ -677,3 +677,115 @@
 	Zoom In	Збільшити
 	Zoom Out	Зменшити
 	Zoom to	Масштаб до
+	Open	Відкрити
+	Info	Відомості
+	Save As	Зберегти як
+	Print	Друк
+	Account	Обліковий запис
+	PowerPoint Presentation (*.pptx)	Презентація PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	Відкривається в PowerPoint та інших програмах для презентацій
+	DeckCraft Presentation (*.deckcraft)	Презентація DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Власний формат DeckCraft: зберігається все
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Незмінна копія, що зберігає макет на будь-якому пристрої
+	Outline (*.txt)	Структура (*.txt)
+	The slide titles and bullet text as plain text	Заголовки слайдів і текст маркерів як звичайний текст
+	Outline/RTF (*.rtf)	Структура/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Заголовки слайдів і текст маркерів для текстових редакторів
+	PNG Picture (*.png)	Зображення PNG (*.png)
+	The current slide as a picture	Поточний слайд як зображення
+	JPEG Picture (*.jpg)	Зображення JPEG (*.jpg)
+	The current slide as a compressed picture	Поточний слайд як стиснене зображення
+	Add a title	Додайте назву
+	Subject	Тема
+	Specify the subject	Вкажіть тему
+	Tags	Теги
+	Add a tag	Додайте тег
+	Categories	Категорії
+	Add a category	Додайте категорію
+	Company	Організація
+	Specify the company	Вкажіть організацію
+	Add comments	Додайте коментарі
+	Author	Автор
+	Add an author	Додайте автора
+	Back	Назад
+	Blank Presentation	Пуста презентація
+	Sample deck: Northern Lights	Зразок: Північне сяйво
+	Presentations you open show up here. Use Open to browse for one.	Тут з'являтимуться відкриті вами презентації. Щоб знайти презентацію, скористайтеся «Відкрити».
+	More themes	Інші теми
+	More templates	Інші шаблони
+	Search for a file	Пошук файлу
+	More presentations	Інші презентації
+	Get help and support	Довідка й підтримка
+	Join the ArtCraft community on Discord	Приєднатися до спільноти ArtCraft у Discord
+	Search for themes and templates	Пошук тем і шаблонів
+	Browse	Огляд
+	There are no unsaved presentations to recover	Незбережених презентацій для відновлення немає
+	Presentations	Презентації
+	No presentation is open.	Жодної презентації не відкрито.
+	Not saved yet	Ще не збережено
+	Copied the path	Шлях скопійовано
+	Check for Issues	Перевірити наявність проблем
+	Inspect Presentation	Перевірка презентації
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Перед тим як поділитися, перевірте, чи немає в презентації того, що людям з інвалідністю може бути важко читати.
+	There are no unsaved changes.	Незбережених змін немає.
+	This presentation has unsaved changes. Revert goes back to the saved file.	У презентації є незбережені зміни. «Повернути» відновлює збережений файл.
+	This presentation has never been saved.	Цю презентацію ще ніколи не зберігали.
+	Revert	Повернути
+	Manage Presentation	Керування презентацією
+	Properties	Властивості
+	Hidden slides	Приховані слайди
+	Location	Розташування
+	Save as type	Тип файлу
+	Download	Завантажити
+	Download the file	Завантажити файл
+	Choose where to save	Виберіть, куди зберегти
+	Full Page Slides	Слайди на всю сторінку
+	Notes Pages	Сторінки нотаток
+	Handouts (1 slide per page)	Роздаткові матеріали (1 слайд на сторінку)
+	Handouts (2 slides per page)	Роздаткові матеріали (2 слайди на сторінку)
+	Handouts (3 slides per page)	Роздаткові матеріали (3 слайди на сторінку)
+	Handouts (4 slides per page)	Роздаткові матеріали (4 слайди на сторінку)
+	Handouts (6 slides per page)	Роздаткові матеріали (6 слайдів на сторінку)
+	Handouts (9 slides per page)	Роздаткові матеріали (9 слайдів на сторінку)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft друкує через PDF: файл відкривається у вашому переглядачі PDF, де ви вибираєте принтер.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft друкує через PDF: файл завантажується, і його можна надрукувати з браузера чи переглядача PDF.
+	Settings	Параметри
+	Print All Slides	Друкувати всі слайди
+	Print Current Slide	Друкувати поточний слайд
+	Custom Range	Власний діапазон
+	Print range	Діапазон друку
+	Print layout	Макет друку
+	Paper size	Розмір паперу
+	Landscape Orientation	Альбомна орієнтація
+	Portrait Orientation	Книжкова орієнтація
+	Orientation	Орієнтація
+	Edit Header & Footer	Змінити колонтитули
+	Nothing to print: every slide in the range is hidden.	Нічого друкувати: усі слайди в діапазоні приховані.
+	Previous Page	Попередня сторінка
+	{n} of {total}	{n} з {total}
+	Next Page	Наступна сторінка
+	Create PDF Document	Створити документ PDF
+	Keeps the layout, fonts and pictures	Зберігає макет, шрифти й зображення
+	Opens on any device with a PDF viewer	Відкривається на будь-якому пристрої з переглядачем PDF
+	The presentation keeps its own file	Презентація зберігає власний файл
+	Create PDF	Створити PDF
+	Several slides on each page of a PDF	Кілька слайдів на кожній сторінці PDF
+	Three a page leaves lines for notes	Три на сторінці залишають рядки для нотаток
+	Print them for your audience	Роздрукуйте їх для слухачів
+	{n} slides per page	Слайдів на сторінку: {n}
+	Slides per page	Слайдів на сторінку
+	Appearance	Вигляд
+	Dark	Темний
+	Light	Світлий
+	User Information	Відомості про користувача
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	У DeckCraft немає облікових записів: входити нікуди не потрібно, а ваші презентації лишаються на вашому пристрої.
+	Product Information	Відомості про продукт
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Відкритий код за ліцензією MIT OR Apache-2.0. Не пов'язано з Microsoft.
+	The version, the people and models who built it, and where to find us.	Версія, люди й моделі, що її створили, і де нас знайти.
+	Join our community on Discord	Приєднуйтеся до нашої спільноти в Discord
+	Source on GitHub	Вихідний код на GitHub
+	Undo	Скасувати
+	Redo	Повторити
+	Start from Beginning	З початку
+	Add to Quick Access Toolbar	Додати на панель швидкого доступу

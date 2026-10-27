@@ -96,6 +96,24 @@ fn page_ids_round_trip_and_unknown_ids_are_refused() {
     assert_eq!(format_bytes(33_485), "32.7 KB");
 }
 
+/// Home, the side menu and the quick access toolbar follow the interface language (they were
+/// English in every language in the second preview).
+#[test]
+fn the_backstage_and_quick_access_toolbar_are_translated() {
+    let mut h = harness(new_app());
+    h.state_mut().run("app.language", serde_json::json!({"language": "uk"})).unwrap();
+    h.run_steps(2);
+    assert!(h.query_by_label_contains("Скасувати").is_some(), "the Undo button's name");
+    h.get_by_label("Файл").click();
+    h.run_steps(3);
+    assert_eq!(page(&h), Some(Page::Home));
+    for label in ["Пуста презентація", "Відкрити", "Обліковий запис", "Параметри"] {
+        assert!(h.query_by_label(label).is_some(), "{label} on Home");
+    }
+    assert!(h.query_by_label("Blank Presentation").is_none());
+    crate::i18n::set_current(crate::i18n::Language::En);
+}
+
 /// The File tab opens Home in place of the ribbon; Esc and the back arrow return.
 #[test]
 fn the_file_tab_opens_the_backstage_and_esc_or_back_returns() {

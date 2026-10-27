@@ -677,3 +677,115 @@
 	Zoom In	Amplia
 	Zoom Out	Redueix
 	Zoom to	Zoom a
+	Open	Obre
+	Info	Informació
+	Save As	Desa com a
+	Print	Imprimeix
+	Account	Compte
+	PowerPoint Presentation (*.pptx)	Presentació de PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	S'obre al PowerPoint i en altres aplicacions de presentacions
+	DeckCraft Presentation (*.deckcraft)	Presentació de DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Format propi de DeckCraft: es conserva tot
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Una còpia fixa que conserva el disseny en qualsevol dispositiu
+	Outline (*.txt)	Esquema (*.txt)
+	The slide titles and bullet text as plain text	Els títols de les diapositives i el text de les pics com a text pla
+	Outline/RTF (*.rtf)	Esquema/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Els títols de les diapositives i el text de les pics per a processadors de text
+	PNG Picture (*.png)	Imatge PNG (*.png)
+	The current slide as a picture	La diapositiva actual com a imatge
+	JPEG Picture (*.jpg)	Imatge JPEG (*.jpg)
+	The current slide as a compressed picture	La diapositiva actual com a imatge comprimida
+	Add a title	Afegiu un títol
+	Subject	Assumpte
+	Specify the subject	Especifiqueu l'assumpte
+	Tags	Etiquetes
+	Add a tag	Afegiu una etiqueta
+	Categories	Categories
+	Add a category	Afegiu una categoria
+	Company	Organització
+	Specify the company	Especifiqueu l'organització
+	Add comments	Afegiu comentaris
+	Author	Autor
+	Add an author	Afegiu un autor
+	Back	Enrere
+	Blank Presentation	Presentació en blanc
+	Sample deck: Northern Lights	Exemple: Aurores boreals
+	Presentations you open show up here. Use Open to browse for one.	Les presentacions que obriu apareixeran aquí. Feu servir Obre per cercar-ne una.
+	More themes	Més temes
+	More templates	Més plantilles
+	Search for a file	Cerca un fitxer
+	More presentations	Més presentacions
+	Get help and support	Obteniu ajuda i suport
+	Join the ArtCraft community on Discord	Uniu-vos a la comunitat d'ArtCraft a Discord
+	Search for themes and templates	Cerca temes i plantilles
+	Browse	Navega
+	There are no unsaved presentations to recover	No hi ha presentacions sense desar per recuperar
+	Presentations	Presentacions
+	No presentation is open.	No hi ha cap presentació oberta.
+	Not saved yet	Encara no s'ha desat
+	Copied the path	S'ha copiat el camí
+	Check for Issues	Comprova si hi ha problemes
+	Inspect Presentation	Inspecciona la presentació
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Abans de compartir-la, comproveu si la presentació té elements que a les persones amb discapacitat els pugui costar llegir.
+	There are no unsaved changes.	No hi ha canvis sense desar.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Aquesta presentació té canvis sense desar. Reverteix torna al fitxer desat.
+	This presentation has never been saved.	Aquesta presentació no s'ha desat mai.
+	Revert	Reverteix
+	Manage Presentation	Gestiona la presentació
+	Properties	Propietats
+	Hidden slides	Diapositives ocultes
+	Location	Ubicació
+	Save as type	Tipus de fitxer
+	Download	Baixa
+	Download the file	Baixa el fitxer
+	Choose where to save	Trieu on desar
+	Full Page Slides	Diapositives de pàgina completa
+	Notes Pages	Pàgines de notes
+	Handouts (1 slide per page)	Documents (1 diapositiva per pàgina)
+	Handouts (2 slides per page)	Documents (2 diapositives per pàgina)
+	Handouts (3 slides per page)	Documents (3 diapositives per pàgina)
+	Handouts (4 slides per page)	Documents (4 diapositives per pàgina)
+	Handouts (6 slides per page)	Documents (6 diapositives per pàgina)
+	Handouts (9 slides per page)	Documents (9 diapositives per pàgina)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft imprimeix a través d'un PDF: s'obre al vostre visualitzador de PDF, on trieu la impressora.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft imprimeix a través d'un PDF: es baixa, a punt per imprimir des del navegador o el visualitzador de PDF.
+	Settings	Configuració
+	Print All Slides	Imprimeix totes les diapositives
+	Print Current Slide	Imprimeix la diapositiva actual
+	Custom Range	Interval personalitzat
+	Print range	Interval d'impressió
+	Print layout	Disseny d'impressió
+	Paper size	Mida del paper
+	Landscape Orientation	Orientació horitzontal
+	Portrait Orientation	Orientació vertical
+	Orientation	Orientació
+	Edit Header & Footer	Edita la capçalera i el peu de pàgina
+	Nothing to print: every slide in the range is hidden.	No hi ha res per imprimir: totes les diapositives de l'interval són ocultes.
+	Previous Page	Pàgina anterior
+	{n} of {total}	{n} de {total}
+	Next Page	Pàgina següent
+	Create PDF Document	Crea un document PDF
+	Keeps the layout, fonts and pictures	Conserva el disseny, els tipus de lletra i les imatges
+	Opens on any device with a PDF viewer	S'obre en qualsevol dispositiu amb un visualitzador de PDF
+	The presentation keeps its own file	La presentació conserva el seu propi fitxer
+	Create PDF	Crea un PDF
+	Several slides on each page of a PDF	Diverses diapositives a cada pàgina d'un PDF
+	Three a page leaves lines for notes	Tres per pàgina deixen línies per a notes
+	Print them for your audience	Imprimiu-los per al públic
+	{n} slides per page	{n} diapositives per pàgina
+	Slides per page	Diapositives per pàgina
+	Appearance	Aparença
+	Dark	Fosc
+	Light	Clar
+	User Information	Informació de l'usuari
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft no té comptes: no cal iniciar la sessió enlloc i les vostres presentacions es queden al dispositiu.
+	Product Information	Informació del producte
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Codi obert amb llicència MIT OR Apache-2.0. Sense afiliació amb Microsoft.
+	The version, the people and models who built it, and where to find us.	La versió, les persones i els models que l'han creada, i on trobar-nos.
+	Join our community on Discord	Uniu-vos a la nostra comunitat a Discord
+	Source on GitHub	Codi font a GitHub
+	Undo	Desfés
+	Redo	Refés
+	Start from Beginning	Des del principi
+	Add to Quick Access Toolbar	Afegeix a la barra d'eines d'accés ràpid

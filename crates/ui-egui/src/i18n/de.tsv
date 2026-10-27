@@ -678,3 +678,115 @@
 	Zoom In	Vergrößern
 	Zoom Out	Verkleinern
 	Zoom to	Zoom auf
+	Open	Öffnen
+	Info	Informationen
+	Save As	Speichern unter
+	Print	Drucken
+	Account	Konto
+	PowerPoint Presentation (*.pptx)	PowerPoint-Präsentation (*.pptx)
+	Opens in PowerPoint and other presentation apps	Lässt sich in PowerPoint und anderen Präsentations-Apps öffnen
+	DeckCraft Presentation (*.deckcraft)	DeckCraft-Präsentation (*.deckcraft)
+	DeckCraft's own format: everything is kept	Das eigene Format von DeckCraft: alles bleibt erhalten
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Eine feste Kopie, die ihr Layout auf jedem Gerät behält
+	Outline (*.txt)	Gliederung (*.txt)
+	The slide titles and bullet text as plain text	Folientitel und Aufzählungstext als reiner Text
+	Outline/RTF (*.rtf)	Gliederung/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Folientitel und Aufzählungstext für Textverarbeitungen
+	PNG Picture (*.png)	PNG-Bild (*.png)
+	The current slide as a picture	Die aktuelle Folie als Bild
+	JPEG Picture (*.jpg)	JPEG-Bild (*.jpg)
+	The current slide as a compressed picture	Die aktuelle Folie als komprimiertes Bild
+	Add a title	Titel hinzufügen
+	Subject	Betreff
+	Specify the subject	Betreff angeben
+	Tags	Tags
+	Add a tag	Tag hinzufügen
+	Categories	Kategorien
+	Add a category	Kategorie hinzufügen
+	Company	Firma
+	Specify the company	Firma angeben
+	Add comments	Kommentare hinzufügen
+	Author	Autor
+	Add an author	Autor hinzufügen
+	Back	Zurück
+	Blank Presentation	Leere Präsentation
+	Sample deck: Northern Lights	Beispiel: Nordlichter
+	Presentations you open show up here. Use Open to browse for one.	Geöffnete Präsentationen erscheinen hier. Mit „Öffnen“ suchen Sie eine.
+	More themes	Weitere Designs
+	More templates	Weitere Vorlagen
+	Search for a file	Nach einer Datei suchen
+	More presentations	Weitere Präsentationen
+	Get help and support	Hilfe und Support
+	Join the ArtCraft community on Discord	Der ArtCraft-Community auf Discord beitreten
+	Search for themes and templates	Designs und Vorlagen suchen
+	Browse	Durchsuchen
+	There are no unsaved presentations to recover	Keine nicht gespeicherten Präsentationen zum Wiederherstellen
+	Presentations	Präsentationen
+	No presentation is open.	Keine Präsentation geöffnet.
+	Not saved yet	Noch nicht gespeichert
+	Copied the path	Pfad kopiert
+	Check for Issues	Auf Probleme überprüfen
+	Inspect Presentation	Präsentation prüfen
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Prüfen Sie vor dem Teilen, ob die Präsentation Inhalte enthält, die für Menschen mit Behinderungen schwer lesbar sein könnten.
+	There are no unsaved changes.	Keine ungespeicherten Änderungen.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Diese Präsentation hat ungespeicherte Änderungen. „Zurücksetzen“ kehrt zur gespeicherten Datei zurück.
+	This presentation has never been saved.	Diese Präsentation wurde noch nie gespeichert.
+	Revert	Zurücksetzen
+	Manage Presentation	Präsentation verwalten
+	Properties	Eigenschaften
+	Hidden slides	Ausgeblendete Folien
+	Location	Speicherort
+	Save as type	Dateityp
+	Download	Herunterladen
+	Download the file	Datei herunterladen
+	Choose where to save	Speicherort wählen
+	Full Page Slides	Ganzseitige Folien
+	Notes Pages	Notizenseiten
+	Handouts (1 slide per page)	Handzettel (1 Folie pro Seite)
+	Handouts (2 slides per page)	Handzettel (2 Folien pro Seite)
+	Handouts (3 slides per page)	Handzettel (3 Folien pro Seite)
+	Handouts (4 slides per page)	Handzettel (4 Folien pro Seite)
+	Handouts (6 slides per page)	Handzettel (6 Folien pro Seite)
+	Handouts (9 slides per page)	Handzettel (9 Folien pro Seite)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft druckt über ein PDF: Es öffnet sich in Ihrem PDF-Viewer, wo Sie den Drucker wählen.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft druckt über ein PDF: Es wird heruntergeladen und lässt sich aus dem Browser oder PDF-Viewer drucken.
+	Settings	Einstellungen
+	Print All Slides	Alle Folien drucken
+	Print Current Slide	Aktuelle Folie drucken
+	Custom Range	Benutzerdefinierter Bereich
+	Print range	Druckbereich
+	Print layout	Drucklayout
+	Paper size	Papierformat
+	Landscape Orientation	Querformat
+	Portrait Orientation	Hochformat
+	Orientation	Ausrichtung
+	Edit Header & Footer	Kopf- und Fußzeile bearbeiten
+	Nothing to print: every slide in the range is hidden.	Nichts zu drucken: Alle Folien im Bereich sind ausgeblendet.
+	Previous Page	Vorherige Seite
+	{n} of {total}	{n} von {total}
+	Next Page	Nächste Seite
+	Create PDF Document	PDF-Dokument erstellen
+	Keeps the layout, fonts and pictures	Behält Layout, Schriftarten und Bilder bei
+	Opens on any device with a PDF viewer	Lässt sich auf jedem Gerät mit PDF-Viewer öffnen
+	The presentation keeps its own file	Die Präsentation behält ihre eigene Datei
+	Create PDF	PDF erstellen
+	Several slides on each page of a PDF	Mehrere Folien auf jeder Seite eines PDFs
+	Three a page leaves lines for notes	Drei pro Seite lassen Linien für Notizen
+	Print them for your audience	Drucken Sie sie für Ihr Publikum
+	{n} slides per page	{n} Folien pro Seite
+	Slides per page	Folien pro Seite
+	Appearance	Darstellung
+	Dark	Dunkel
+	Light	Hell
+	User Information	Benutzerinformationen
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft hat keine Konten: Es gibt nichts, wo Sie sich anmelden müssten, und Ihre Präsentationen bleiben auf Ihrem Gerät.
+	Product Information	Produktinformationen
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Open Source unter MIT OR Apache-2.0. Nicht mit Microsoft verbunden.
+	The version, the people and models who built it, and where to find us.	Die Version, die Menschen und Modelle, die es gebaut haben, und wo Sie uns finden.
+	Join our community on Discord	Unserer Community auf Discord beitreten
+	Source on GitHub	Quellcode auf GitHub
+	Undo	Rückgängig
+	Redo	Wiederholen
+	Start from Beginning	Von Anfang an
+	Add to Quick Access Toolbar	Zur Symbolleiste für den Schnellzugriff hinzufügen

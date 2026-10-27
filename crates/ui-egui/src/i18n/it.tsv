@@ -678,3 +678,115 @@
 	Zoom In	Ingrandisci
 	Zoom Out	Riduci
 	Zoom to	Zoom a
+	Open	Apri
+	Info	Informazioni
+	Save As	Salva con nome
+	Print	Stampa
+	Account	Account
+	PowerPoint Presentation (*.pptx)	Presentazione PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	Si apre in PowerPoint e in altre app per presentazioni
+	DeckCraft Presentation (*.deckcraft)	Presentazione DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Formato nativo di DeckCraft: si conserva tutto
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Una copia fissa che mantiene il layout su qualsiasi dispositivo
+	Outline (*.txt)	Struttura (*.txt)
+	The slide titles and bullet text as plain text	I titoli delle diapositive e il testo degli elenchi come testo semplice
+	Outline/RTF (*.rtf)	Struttura/RTF (*.rtf)
+	The slide titles and bullet text for word processors	I titoli delle diapositive e il testo degli elenchi per i programmi di videoscrittura
+	PNG Picture (*.png)	Immagine PNG (*.png)
+	The current slide as a picture	La diapositiva corrente come immagine
+	JPEG Picture (*.jpg)	Immagine JPEG (*.jpg)
+	The current slide as a compressed picture	La diapositiva corrente come immagine compressa
+	Add a title	Aggiungi un titolo
+	Subject	Oggetto
+	Specify the subject	Specifica l'oggetto
+	Tags	Tag
+	Add a tag	Aggiungi un tag
+	Categories	Categorie
+	Add a category	Aggiungi una categoria
+	Company	Società
+	Specify the company	Specifica la società
+	Add comments	Aggiungi commenti
+	Author	Autore
+	Add an author	Aggiungi un autore
+	Back	Indietro
+	Blank Presentation	Presentazione vuota
+	Sample deck: Northern Lights	Esempio: Aurora boreale
+	Presentations you open show up here. Use Open to browse for one.	Le presentazioni che apri compaiono qui. Usa Apri per cercarne una.
+	More themes	Altri temi
+	More templates	Altri modelli
+	Search for a file	Cerca un file
+	More presentations	Altre presentazioni
+	Get help and support	Ottieni aiuto e supporto
+	Join the ArtCraft community on Discord	Unisciti alla community di ArtCraft su Discord
+	Search for themes and templates	Cerca temi e modelli
+	Browse	Sfoglia
+	There are no unsaved presentations to recover	Non ci sono presentazioni non salvate da recuperare
+	Presentations	Presentazioni
+	No presentation is open.	Nessuna presentazione aperta.
+	Not saved yet	Non ancora salvata
+	Copied the path	Percorso copiato
+	Check for Issues	Verifica la presenza di problemi
+	Inspect Presentation	Controlla presentazione
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Prima di condividerla, verifica che la presentazione non contenga elementi difficili da leggere per le persone con disabilità.
+	There are no unsaved changes.	Non ci sono modifiche non salvate.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Questa presentazione ha modifiche non salvate. Ripristina torna al file salvato.
+	This presentation has never been saved.	Questa presentazione non è mai stata salvata.
+	Revert	Ripristina
+	Manage Presentation	Gestisci presentazione
+	Properties	Proprietà
+	Hidden slides	Diapositive nascoste
+	Location	Percorso
+	Save as type	Tipo file
+	Download	Scarica
+	Download the file	Scarica il file
+	Choose where to save	Scegli dove salvare
+	Full Page Slides	Diapositive a pagina intera
+	Notes Pages	Pagine note
+	Handouts (1 slide per page)	Stampati (1 diapositiva per pagina)
+	Handouts (2 slides per page)	Stampati (2 diapositive per pagina)
+	Handouts (3 slides per page)	Stampati (3 diapositive per pagina)
+	Handouts (4 slides per page)	Stampati (4 diapositive per pagina)
+	Handouts (6 slides per page)	Stampati (6 diapositive per pagina)
+	Handouts (9 slides per page)	Stampati (9 diapositive per pagina)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft stampa tramite un PDF: si apre nel tuo visualizzatore PDF, dove scegli la stampante.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft stampa tramite un PDF: viene scaricato, pronto da stampare dal browser o dal visualizzatore PDF.
+	Settings	Impostazioni
+	Print All Slides	Stampa tutte le diapositive
+	Print Current Slide	Stampa la diapositiva corrente
+	Custom Range	Intervallo personalizzato
+	Print range	Intervallo di stampa
+	Print layout	Layout di stampa
+	Paper size	Formato carta
+	Landscape Orientation	Orientamento orizzontale
+	Portrait Orientation	Orientamento verticale
+	Orientation	Orientamento
+	Edit Header & Footer	Modifica intestazione e piè di pagina
+	Nothing to print: every slide in the range is hidden.	Niente da stampare: tutte le diapositive dell'intervallo sono nascoste.
+	Previous Page	Pagina precedente
+	{n} of {total}	{n} di {total}
+	Next Page	Pagina successiva
+	Create PDF Document	Crea documento PDF
+	Keeps the layout, fonts and pictures	Mantiene layout, caratteri e immagini
+	Opens on any device with a PDF viewer	Si apre su qualsiasi dispositivo con un visualizzatore PDF
+	The presentation keeps its own file	La presentazione mantiene il proprio file
+	Create PDF	Crea PDF
+	Several slides on each page of a PDF	Più diapositive su ogni pagina di un PDF
+	Three a page leaves lines for notes	Tre per pagina lasciano righe per gli appunti
+	Print them for your audience	Stampali per il tuo pubblico
+	{n} slides per page	{n} diapositive per pagina
+	Slides per page	Diapositive per pagina
+	Appearance	Aspetto
+	Dark	Scuro
+	Light	Chiaro
+	User Information	Informazioni utente
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft non ha account: non c'è nulla a cui accedere e le tue presentazioni restano sul tuo dispositivo.
+	Product Information	Informazioni sul prodotto
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Open source con licenza MIT OR Apache-2.0. Non affiliato a Microsoft.
+	The version, the people and models who built it, and where to find us.	La versione, le persone e i modelli che l'hanno creata e dove trovarci.
+	Join our community on Discord	Unisciti alla nostra community su Discord
+	Source on GitHub	Codice sorgente su GitHub
+	Undo	Annulla
+	Redo	Ripeti
+	Start from Beginning	Dall'inizio
+	Add to Quick Access Toolbar	Aggiungi alla barra di accesso rapido
