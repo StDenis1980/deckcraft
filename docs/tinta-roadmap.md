@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-10-27 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created.
+> **Status:** 2026-10-27 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player.
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -26,6 +26,17 @@ crashing on Windows.
 | 6 | Tinta presentation templates (our design, azulejo motifs) | fork | 2 |
 | 7 | Depth: font weights (#69), chart data, the Animation Pane, presenter view on the second display | upstream | 2–3 |
 | 8 | Opening .odp and legacy .ppt | upstream | 3 |
+
+## Stage 1 progress
+
+- 2026-10-27: synced with upstream 88c2cef (upstream split the big UI files into modules; the
+  fork's translations moved with them). #60 (save prompt on close) and #53 (image paste) are
+  already fixed upstream. A video this build can't decode (H.264/HEVC without
+  `patented-codecs`) now says so over its poster, and the control bar's link runs
+  `media.openExternal`, which opens the clip in the system's player (Media Player on Windows,
+  whose codec licence the OS carries; a download on the web). In-slide decoding through Media
+  Foundation would need `unsafe` code, which the workspace forbids, so it waits for an owner and
+  upstream decision. Next: media playback options lost on .pptx save (#74).
 
 ## Suite-wide work (all five Tinta Office apps)
 
