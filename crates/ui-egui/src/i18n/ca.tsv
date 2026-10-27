@@ -790,3 +790,8 @@
 	Start from Beginning	Des del principi
 	Add to Quick Access Toolbar	Afegeix a la barra d'eines d'accés ràpid
 	Window title bar	Barra de títol de la finestra
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	Aquí no es pot reproduir el vídeo {codec}.
+	Open in the system player	Obre al reproductor del sistema
+	Couldn't open the media: {error}	No s'ha pogut obrir el fitxer multimèdia: {error}
+	This build can't open media in another app.	Aquesta versió no pot obrir fitxers multimèdia en una altra aplicació.

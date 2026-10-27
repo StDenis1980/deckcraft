@@ -790,3 +790,8 @@
 	Start from Beginning	З початку
 	Add to Quick Access Toolbar	Додати на панель швидкого доступу
 	Window title bar	Рядок заголовка вікна
+# Video this build can't decode: open it in the system player
+	Can't play {codec} video here.	Тут не можна відтворити відео {codec}.
+	Open in the system player	Відкрити в системному програвачі
+	Couldn't open the media: {error}	Не вдалося відкрити медіафайл: {error}
+	This build can't open media in another app.	Ця версія не може відкрити медіафайл в іншій програмі.

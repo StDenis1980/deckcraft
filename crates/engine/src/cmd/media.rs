@@ -33,6 +33,15 @@ pub fn specs() -> Vec<CommandSpec> {
             has_doc,
             poster_frame
         ),
+        cmd!(
+            noundo "media.openExternal",
+            "Open in System Player",
+            [],
+            None,
+            "{id?} → {id}: hands the clip to the system's player (for codecs this build can't decode)",
+            has_doc,
+            open_external
+        ),
         cmd!(noundo "media.gifPlay", "Play/Pause GIF", [], None, "{id?, play?: bool (default: toggle)} → {id, playing}", has_doc, gif_play),
     ]
 }
@@ -78,6 +87,12 @@ fn toggle(s: &mut Session, p: &Value) -> Result<Value> {
 }
 fn stop(s: &mut Session, p: &Value) -> Result<Value> {
     request(s, p, "media.stop", "stop", None)
+}
+/// Asks the UI host to open the clip in the operating system's player, whose codecs (and their
+/// patent licences) come with the system: the way to show an H.264 or HEVC video in a build
+/// without the `patented-codecs` feature.
+fn open_external(s: &mut Session, p: &Value) -> Result<Value> {
+    request(s, p, "media.openExternal", "external", None)
 }
 fn seek(s: &mut Session, p: &Value) -> Result<Value> {
     let ms = ms_param(p, "ms").ok_or_else(|| bad("media.seek", "missing `ms`"))?;
@@ -245,6 +260,24 @@ mod tests {
         for key in ["durationMs", "width", "height"] {
             assert_eq!(after[key], before[key], "{key}");
         }
+    }
+
+    /// `media.openExternal` asks the host to open the clip in the system's player; it needs a
+    /// media shape like the other playback commands.
+    #[test]
+    fn open_external_asks_the_host_for_the_clip() {
+        let mut s = Session::with_new();
+        let _ = s.execute("slide.new", &json!({"layout": "blank"}));
+        assert!(s.execute("media.openExternal", &json!({})).is_err(), "no media yet");
+        let clip = include_bytes!("../../../media/tests/fixtures/clip-h264.mp4");
+        let r = s.execute("insert.video", &json!({"name": "clip.mp4", "data": base64_encode(clip)})).expect("insert");
+        let id = ShapeId(r["id"].as_u64().expect("id") as u32);
+        s.ui_requests.clear();
+        let r = s.execute("media.openExternal", &json!({})).expect("open");
+        assert_eq!(r["id"], id.0);
+        assert_eq!(s.ui_requests, vec![UiRequest::Media { action: "external".into(), shape: id, ms: None }]);
+        let sh = s.execute("shape.insert", &json!({"preset": "rect", "rect": [0, 0, 10, 10]})).expect("shape");
+        assert!(s.execute("media.openExternal", &json!({"id": sh["id"]})).is_err(), "not a media shape");
     }
 
     #[test]
