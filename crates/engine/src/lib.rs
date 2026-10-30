@@ -28,6 +28,7 @@ pub mod sounds;
 pub mod spell;
 pub mod templates;
 pub mod thesaurus;
+pub mod tinta_reports;
 pub mod tools;
 
 use std::sync::Arc;
@@ -362,6 +363,9 @@ pub struct Prefs {
     /// The unit the rulers, the Format pane and the size dialogs show (Preferences); the deck
     /// itself always stores points.
     pub units: deckcraft_geom::Unit,
+    /// Tinta Office: whether error reports may be sent (`file.errorReports`).
+    #[serde(deserialize_with = "tinta_reports::lenient")]
+    pub tinta_reports: tinta_reports::ReportsPrefs,
 }
 
 impl Default for Prefs {
@@ -386,6 +390,7 @@ impl Default for Prefs {
             undo_limit: 500,
             recovery_minutes: 1.0,
             units: deckcraft_geom::Unit::Inches,
+            tinta_reports: tinta_reports::ReportsPrefs::default(),
         }
     }
 }

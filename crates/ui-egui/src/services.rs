@@ -53,6 +53,9 @@ pub struct Services {
     /// Open a named media file in the system's default player (desktop): how a build without the
     /// patented codecs still shows an H.264 video. See [`crate::media::open_in_system_player`].
     pub open_external: Option<OpenExternalFn>,
+    /// Tinta Office: where the desktop app keeps error reports, set only by builds that can send
+    /// them (`tinta_reports_ui`).
+    pub error_reports_dir: Option<std::path::PathBuf>,
     pub inbox: Option<Inbox>,
     /// Image on the system clipboard (PNG bytes), when the host can read one.
     pub clipboard_image: Option<Box<dyn FnMut() -> Option<Vec<u8>>>>,

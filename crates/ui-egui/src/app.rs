@@ -342,6 +342,7 @@ impl SlideApp {
         dialogs::show(self, &ctx);
         #[cfg(not(target_arch = "wasm32"))]
         updates_ui::show(self, &ctx);
+        crate::tinta_reports_ui::first_start(self, &ctx);
         menus::palette(self, &ctx);
         for url in std::mem::take(&mut self.pending_urls) {
             ctx.open_url(egui::OpenUrl::new_tab(url));
