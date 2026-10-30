@@ -45,6 +45,7 @@ mod ime_hooks;
 pub mod panels;
 mod services;
 mod state;
+mod tinta_reports_ui;
 
 pub use app::key_name;
 #[cfg(test)]

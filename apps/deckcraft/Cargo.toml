@@ -30,6 +30,10 @@ rfd = { workspace = true }
 arboard = { workspace = true, features = ["image-data"] }
 image = { workspace = true }
 cpal = "0.16"
+# Tinta Office error reports (`tinta_report.rs`): the same TLS set-up as craft-update, so nothing
+# new enters the tree.
+ureq = { version = "3", default-features = false, features = ["rustls-no-provider", "_ring", "gzip", "platform-verifier"] }
+getrandom = "0.4"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 # Finder double-click, Open With, Dock drops and `open -a DeckCraft deck.pptx` arrive as a

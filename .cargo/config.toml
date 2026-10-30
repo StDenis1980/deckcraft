@@ -10,6 +10,8 @@ DECKCRAFT_BRAND_APP_ID = "io.github.stdenis1980.tintapresenta"
 DECKCRAFT_BRAND_PUBLISHER = "Tinta Office"
 DECKCRAFT_BRAND_WEBSITE = "https://github.com/StDenis1980/deckcraft"
 DECKCRAFT_BRAND_GITHUB = "https://github.com/StDenis1980/deckcraft"
+# Tinta Office error reports (apps/deckcraft/src/tinta_report.rs); unset, the app never asks or sends.
+TINTA_REPORT_URL = "https://report.tintaoffice.com"
 
 [alias]
 xtask = "run --package xtask --"

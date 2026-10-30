@@ -25,6 +25,7 @@ mod graphics;
 mod logging;
 #[cfg(not(target_arch = "wasm32"))]
 mod pasteboard;
+mod tinta_report;
 
 use deckcraft_engine::{Session, brand};
 use deckcraft_ui_egui::{Services, SlideApp};
@@ -40,14 +41,19 @@ impl eframe::App for App {
     fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         #[cfg(target_os = "macos")]
         apple_events::poll(&self.1, &mut self.0, ctx);
+        tinta_report::busy();
         self.0.logic(ctx);
+        tinta_report::tick(&mut self.0);
+        tinta_report::idle();
     }
     /// Forward native raw input to the wrapped application once per pass.
     fn raw_input_hook(&mut self, ctx: &egui::Context, raw: &mut egui::RawInput) {
         self.0.raw_input_hook(ctx, raw);
     }
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        tinta_report::busy();
         self.0.ui(ui);
+        tinta_report::idle();
     }
     fn on_exit(&mut self) {
         save_prefs(&self.0);
@@ -132,6 +138,7 @@ fn services() -> Services {
         audio_out: std::env::var_os("DECKCRAFT_NO_AUDIO")
             .is_none()
             .then(|| Box::new(audio::CpalOut::default()) as Box<dyn deckcraft_media::AudioOut>),
+        error_reports_dir: tinta_report::dir(config_dir(), std::env::var_os("DECKCRAFT_NO_PREFS").is_none()),
         ..Default::default()
     }
 }
@@ -222,6 +229,10 @@ fn main() -> eframe::Result {
                 log::warn!("no log file: no settings directory (HOME, XDG_CONFIG_HOME or APPDATA is not set)");
             }
         }
+    }
+    // Tinta Office: error reports, sent only with consent (asked at the first start).
+    if let Some(dir) = tinta_report::dir(config_dir(), std::env::var_os("DECKCRAFT_NO_PREFS").is_none()) {
+        tinta_report::install(dir, config_dir().map(|d| d.join(logging::LOG_DIR).join(logging::LOG_FILE)), "release");
     }
     let mut options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()

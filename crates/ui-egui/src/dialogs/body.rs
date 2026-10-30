@@ -1330,6 +1330,7 @@ pub(super) fn body(app: &mut SlideApp, ui: &mut Ui, d: &mut Dialog) -> bool {
                 // unnamed input in egui 0.37's accessibility tree.
                 let _ = ui.add(egui::TextEdit::singleline(&mut app.session.prefs.author)).labelled_by(label.id);
             });
+            crate::tinta_reports_ui::preferences(app, ui);
             let (ok, cancel) = buttons(ui, "Done");
             if cancel {
                 restore_preferences(app, d);

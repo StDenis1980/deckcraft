@@ -995,10 +995,12 @@ dependencies = [
  "eframe",
  "egui",
  "fmv-macos-events",
+ "getrandom 0.4.3",
  "image",
  "log",
  "rfd",
  "serde_json",
+ "ureq",
  "winit",
  "winresource",
 ]
