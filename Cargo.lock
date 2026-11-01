@@ -991,6 +991,7 @@ dependencies = [
  "cpal",
  "craft-update",
  "deckcraft-engine",
+ "deckcraft-mcp",
  "deckcraft-media",
  "deckcraft-ui-egui",
  "eframe",
