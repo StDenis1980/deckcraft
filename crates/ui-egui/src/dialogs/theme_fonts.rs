@@ -1,4 +1,5 @@
-use super::*;
+use super::{Dialog, SlideApp, Tokens, Ui, Value, buttons, json, vec2};
+use crate::i18n::tl;
 
 fn seed_theme_fonts(d: &mut Dialog) {
     if d.fields.contains_key("seeded") {

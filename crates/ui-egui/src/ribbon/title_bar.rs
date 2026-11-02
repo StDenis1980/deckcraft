@@ -1,4 +1,5 @@
-use super::*;
+use super::{Align2, Icon, Rect, Sense, SlideApp, Tokens, Ui, icon_toggle, json, pos2, theme, vec2};
+use crate::i18n::tl;
 
 pub const TITLE_H: f32 = 38.0;
 

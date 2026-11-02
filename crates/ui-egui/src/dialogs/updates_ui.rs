@@ -2,19 +2,20 @@
 //! prompt that offers to update and restart. The flow itself is `craft_update::updater::Updater`.
 
 use craft_update::updater::{Action, Status, Updater};
+use craft_update::{CheckResultDialog, CheckResultResponse};
 
 use crate::SlideApp;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-/// The app the update check works on: the release, or a rebranded build pointed at its own
-/// repository (`crates/brand`), so it never offers or installs the release's downloads in place of
-/// its own.
+/// The app the update check works on: the release ([`crate::UPDATE_APP`]), or a rebranded build
+/// pointed at its own repository (`crates/brand`), so it never offers or installs the release's
+/// downloads in place of its own.
 pub fn update_app() -> &'static craft_update::App {
     use deckcraft_engine::brand;
     static APP: std::sync::OnceLock<craft_update::App> = std::sync::OnceLock::new();
     APP.get_or_init(|| {
-        let release = craft_update::suite::DECKCRAFT;
+        let release = crate::UPDATE_APP;
         if !brand::REBRANDED {
             return release;
         }
@@ -29,11 +30,13 @@ pub(crate) struct Runtime {
     /// The desktop host turns the check at start on; tests and the web build leave it off.
     enabled: bool,
     check_requested: bool,
+    /// A manual check's result dialog is showing (checking, up to date or failed).
+    result_open: bool,
 }
 
 impl Default for Runtime {
     fn default() -> Self {
-        Self { updater: Updater::new(update_app(), VERSION), enabled: false, check_requested: false }
+        Self { updater: Updater::new(update_app(), VERSION), enabled: false, check_requested: false, result_open: false }
     }
 }
 
@@ -45,7 +48,7 @@ pub(crate) fn enable(app: &mut SlideApp) {
 pub(crate) fn request_check(app: &mut SlideApp) {
     if !matches!(app.updates_rt.updater.status(), Status::Checking) {
         app.updates_rt.check_requested = true;
-        app.notify("Checking for updates…");
+        app.updates_rt.result_open = true;
     }
 }
 
@@ -57,15 +60,6 @@ pub(crate) fn tick(app: &mut SlideApp, ctx: &egui::Context) {
         rt.updater.check_at_start(ctx);
     }
     rt.updater.tick(ctx);
-    let outcome = match rt.updater.status() {
-        Status::UpToDate => Some(format!("{} {VERSION} is up to date.", deckcraft_engine::brand::NAME)),
-        Status::Failed(e) => Some(format!("Could not check for updates: {e}")),
-        Status::Idle | Status::Checking => None,
-    };
-    if let Some(message) = outcome {
-        rt.updater.dismiss_status();
-        app.notify(message);
-    }
 }
 
 pub(crate) fn show(app: &mut SlideApp, ctx: &egui::Context) {
@@ -76,6 +70,14 @@ pub(crate) fn show(app: &mut SlideApp, ctx: &egui::Context) {
         // The app's close path asks about unsaved work; the restart helper relaunches once the process exits.
         Action::Close => ctx.send_viewport_cmd(egui::ViewportCommand::Close),
         Action::None => {}
+    }
+    let rt = &mut app.updates_rt;
+    if rt.result_open {
+        match CheckResultDialog::new(update_app(), VERSION).show(ctx, rt.updater.status()) {
+            CheckResultResponse::Close => rt.result_open = false,
+            CheckResultResponse::CheckAgain => rt.check_requested = true,
+            CheckResultResponse::None => {}
+        }
     }
 }
 

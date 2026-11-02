@@ -1,4 +1,5 @@
-use super::*;
+use super::{Icon, ShapeKind, SlideApp, Ui, big, big_button, group, json, rows, run};
+use crate::i18n::tl;
 
 pub(super) fn playback(app: &mut SlideApp, ui: &mut Ui) {
     let m = app

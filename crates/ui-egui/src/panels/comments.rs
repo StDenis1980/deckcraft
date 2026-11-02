@@ -1,4 +1,5 @@
-use super::*;
+use super::{Align2, Color32, CornerRadius, Sense, SlideApp, Stroke, Tokens, Ui, Value, json, run, theme, vec2};
+use crate::i18n::tl;
 
 /// Review › Compare: the revised copy's slide-level changes; click to go there, Accept to take it,
 /// Reject to drop it.

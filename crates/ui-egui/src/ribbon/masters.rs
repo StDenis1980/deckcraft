@@ -1,4 +1,5 @@
-use super::*;
+use super::{Icon, SlideApp, Target, Ui, big, big_button, group, json, rows, run};
+use crate::i18n::tl;
 
 /// Preserve, and whether the open master or layout has a title or any footer placeholder.
 fn master_checks(app: &SlideApp) -> (bool, bool, bool) {

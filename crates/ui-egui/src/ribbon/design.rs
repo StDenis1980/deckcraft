@@ -1,4 +1,8 @@
-use super::*;
+use super::{
+    Align2, Color32, CornerRadius, Icon, Rect, Sense, SlideApp, Stroke, Tokens, Ui, big, big_button, enabled, group, json, pos2, run, scheme,
+    small_button, theme, vec2, widgets,
+};
+use crate::i18n::tl;
 
 // ---------- Design ----------
 

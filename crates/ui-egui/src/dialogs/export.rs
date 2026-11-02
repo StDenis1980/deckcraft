@@ -1,4 +1,5 @@
-use super::*;
+use super::{Dialog, SlideApp, Ui, Value, check, field, json, num, vec2};
+use crate::i18n::tl;
 
 /// The export dialog's Animated GIF options (size, seconds per slide, loop, slide range, hidden
 /// slides) as `file.export` params; a slide range that doesn't fit the deck is an error message.

@@ -1,4 +1,4 @@
-use super::*;
+use super::{Deserialize, LayoutId, MasterId, Serialize, SlideId, Target, qat, theme};
 
 /// The operation the user asked for. Kept with the request so a late completion does not
 /// guess a command from the file name.
@@ -76,6 +76,9 @@ pub struct UiState {
     pub sorter_zoom: f32,
     pub recent: Vec<String>,
     pub presenter_view: bool,
+    /// Set Up Slide Show ▸ Keep mouse cursor visible: full-screen shows never hide a still pointer,
+    /// for decks with clickable choices (#1445).
+    pub show_keep_cursor: bool,
     pub ui_scale: f32,
     /// Format Shape pane: tab (`fill`, `effects`, `size`, `picture`, `text`).
     pub format_tab: String,
@@ -91,7 +94,7 @@ pub struct UiState {
     pub comment_focus: Option<(usize, usize)>,
     /// Quick Access Toolbar buttons, left to right.
     pub qat: Vec<qat::QatItem>,
-    /// Interface language: [`i18n::AUTO`] (the system's, the default) or a language code (`uk`).
+    /// Interface language: [`crate::i18n::AUTO`] (the system's, the default) or a language code (`uk`).
     pub language: String,
 }
 
@@ -117,6 +120,7 @@ impl Default for UiState {
             sorter_zoom: 1.0,
             recent: vec![],
             presenter_view: true,
+            show_keep_cursor: false,
             ui_scale: 1.0,
             format_tab: "fill".into(),
             smartart_row: 0,
@@ -125,7 +129,7 @@ impl Default for UiState {
             grayscale: false,
             comment_focus: None,
             qat: qat::defaults(),
-            language: i18n::AUTO.into(),
+            language: crate::i18n::AUTO.into(),
         }
     }
 }
@@ -155,7 +159,7 @@ impl UiState {
             self.format_tab = d.format_tab;
         }
         self.pane = self.pane.filter(short);
-        self.language = i18n::normalize_pref(&self.language).unwrap_or(i18n::AUTO).into();
+        self.language = crate::i18n::normalize_pref(&self.language).unwrap_or(crate::i18n::AUTO).into();
         self.recent.retain(|p| !p.is_empty() && p.len() <= 4096 && !p.contains('\0'));
         self.recent.dedup();
         self.recent.truncate(RECENT_MAX);
