@@ -1,4 +1,6 @@
-use super::*;
+#[cfg(not(target_arch = "wasm32"))]
+use super::updates_ui;
+use super::{SlideApp, UI_COMMANDS, Value, ViewMode, backstage, dialogs, doc_window, json, media, qat, theme};
 
 fn grid_options_touched(p: &Value) -> bool {
     ["spacing", "snap", "smartGuides", "gridlines", "guides"].iter().any(|k| p.get(*k).is_some())
@@ -154,14 +156,14 @@ impl SlideApp {
             }
             "view.grayscale" => self.ui.grayscale = self.flag(p, self.ui.grayscale),
             "app.language" => {
-                let pref = p.get("language").and_then(Value::as_str).unwrap_or(i18n::AUTO);
-                let Some(code) = i18n::normalize_pref(pref) else {
-                    let codes: Vec<&str> = i18n::Language::ALL.iter().map(|l| l.code()).collect();
+                let pref = p.get("language").and_then(Value::as_str).unwrap_or(crate::i18n::AUTO);
+                let Some(code) = crate::i18n::normalize_pref(pref) else {
+                    let codes: Vec<&str> = crate::i18n::Language::ALL.iter().map(|l| l.code()).collect();
                     return Err(format!("unknown language \"{pref}\" (auto, {})", codes.join(", ")));
                 };
                 if self.ui.language != code {
                     self.ui.language = code.into();
-                    i18n::set_current(i18n::resolve(code));
+                    crate::i18n::set_current(crate::i18n::resolve(code));
                     // Slide renders hold placeholder prompts in the old language.
                     self.textures.invalidate();
                 }
@@ -175,7 +177,17 @@ impl SlideApp {
                     self.start_show(from, false);
                 }
             }
-            "show.presenter" => self.ui.presenter_view = self.flag(p, self.ui.presenter_view),
+            "show.presenter" => {
+                self.ui.presenter_view = self.flag(p, self.ui.presenter_view);
+                // The browser build has one viewport: presenter view is drawn inside the page.
+                return Ok(json!({"on": self.ui.presenter_view, "window": !cfg!(target_arch = "wasm32")}));
+            }
+            "show.keepCursor" => {
+                self.ui.show_keep_cursor = self.flag(p, self.ui.show_keep_cursor);
+                if let Some(s) = self.show.as_mut() {
+                    s.keep_cursor = self.ui.show_keep_cursor;
+                }
+            }
             "show.end" => {
                 self.show = None;
                 self.media.stop_owned(media::Owner::Show);
@@ -279,7 +291,7 @@ impl SlideApp {
                 self.dialog = Some(dialogs::Dialog::new(d));
             }
             "app.links" => {
-                use deckcraft_engine::links::*;
+                use deckcraft_engine::links::{APP_PAGE, APPS, DISCORD, GITHUB, WEBSITE};
                 return Ok(json!({"discord": DISCORD, "website": WEBSITE, "apps": APPS, "appPage": APP_PAGE, "github": GITHUB}));
             }
             _ => return Err(format!("unknown UI command `{id}`")),

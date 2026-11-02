@@ -1,4 +1,5 @@
-use super::*;
+use super::{Icon, SlideApp, Target, Ui, big_button, big_button_ex, group, json, rows, run, theme};
+use crate::i18n::tl;
 
 pub(super) fn view(app: &mut SlideApp, ui: &mut Ui) {
     use crate::ViewMode;

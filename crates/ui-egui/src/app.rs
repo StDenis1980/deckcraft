@@ -2,12 +2,18 @@ use super::clock::{monotonic_secs, now_ms};
 use super::ime_hooks::ime_in_ui_pass_key;
 use super::services::{InboxEvent, Services};
 use super::state::{FilePlace, FilePurpose, ImeDescriptorKey, ImeDestination, ImeTerminalStamp, LocatedPlace, RECENT_MAX, UiState, ViewMode};
-use super::*;
+#[cfg(not(target_arch = "wasm32"))]
+use super::updates_ui;
+use super::{
+    AnimPreview, ControlRequest, FileTarget, HashMap, ImeCancelled, ImeComposition, ImeResetPhase, ImeTerminalPending, InputTarget, Mods,
+    PendingFile, Perf, Receiver, Session, SlideApp, Target, UI_COMMANDS, UiRequest, Value, backstage, branded, canvas, capture, dialogs, doc_window,
+    eyedropper, json, media, menus, notes, panes, preview, qat, ribbon, selpane, show, sorter, status, textures, theme, thumbs, toast, uifonts,
+};
 
 mod clipboard;
 mod commands;
 mod control;
-mod files;
+pub(crate) mod files;
 mod frame;
 mod ime;
 mod input;
@@ -24,10 +30,15 @@ pub use keys::key_name;
 const STATUS_LINGER_MS: f64 = 6000.0;
 
 impl SlideApp {
+    /// Remove temporary PDFs created for printing.
+    pub fn cleanup_print_previews(&mut self) {
+        self.print_previews.cleanup();
+    }
+
     /// Build application UI state, taking ownership of audio output and initialising media, dialogs,
     /// synthetic input, and timing fields.
     pub fn new(session: Session, mut services: Services) -> Self {
-        deckcraft_render::set_prompt_text(i18n::prompt_text);
+        deckcraft_render::set_prompt_text(crate::i18n::prompt_text);
         let audio_out = services.audio_out.take();
         SlideApp {
             last_fill: serde_json::json!("accent1"),
@@ -72,6 +83,7 @@ impl SlideApp {
             integrated_titlebar: false,
             backstage: None,
             pending_urls: vec![],
+            print_previews: files::PrintPreviews::default(),
             #[cfg(not(target_arch = "wasm32"))]
             updates_rt: updates_ui::Runtime::default(),
             pending_copy: None,
@@ -193,7 +205,7 @@ impl SlideApp {
     /// opening/inbox results, screenshot completions/deadlines, AutoRecover pacing and media
     /// clocks. UI events are handled in [`Self::ui`], where a forced hidden paint also arrives.
     pub fn logic(&mut self, ctx: &egui::Context) {
-        i18n::set_current(i18n::resolve(&self.ui.language));
+        crate::i18n::set_current(crate::i18n::resolve(&self.ui.language));
         if !Self::root_viewport_admitted(ctx) {
             log::debug!("ignoring SlideApp::logic for render-only viewport {:?}", ctx.viewport_id());
             return;
@@ -270,7 +282,7 @@ impl SlideApp {
     /// Run the admitted root UI pass, including setup gating, panels, canvas, dialogs, overlays, and
     /// show mode.
     fn ui_inner(&mut self, ui: &mut egui::Ui) {
-        i18n::set_current(i18n::resolve(&self.ui.language));
+        crate::i18n::set_current(crate::i18n::resolve(&self.ui.language));
         let ctx = ui.ctx().clone();
         self.ime_frame_viewport = Some(ctx.viewport_id());
         self.ime_pending = None;

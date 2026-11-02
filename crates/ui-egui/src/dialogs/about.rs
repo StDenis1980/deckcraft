@@ -1,4 +1,5 @@
-use super::*;
+use super::{Color32, CornerRadius, Rect, Sense, SlideApp, Stroke, Tokens, Ui, pos2, theme, vec2};
+use crate::i18n::tl;
 
 /// Room the About credits need for their table; the About tab keeps its compact size.
 pub(super) const CREDITS_SIZE: egui::Vec2 = vec2(640.0, 380.0);
@@ -81,7 +82,8 @@ mod about_credits_tests {
     use egui_kittest::Harness;
     use egui_kittest::kittest::Queryable;
 
-    use super::{CREDITS_SIZE, Dialog, credits_block};
+    use super::{CREDITS_SIZE, credits_block};
+    use crate::dialogs::Dialog;
     use crate::{Services, SlideApp};
 
     fn tab_of(h: &Harness<'_, SlideApp>) -> String {

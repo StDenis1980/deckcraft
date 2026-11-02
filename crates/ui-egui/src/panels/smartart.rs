@@ -1,4 +1,5 @@
-use super::*;
+use super::{SlideApp, Tokens, Ui, Value, json, run};
+use crate::i18n::tl;
 
 /// SmartArt Text Pane: one line per node, indented by level. Enter adds a line after, Tab and
 /// Shift+Tab demote and promote, Backspace in an empty line removes it.
