@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-03 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage.
+> **Status:** 2026-11-03 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta.
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -45,12 +45,12 @@ the last releases are from 2026-10-26/27. So November is about delivery, not new
 
 Suite priorities for November (stage 1), in order:
 
-1. **Preview 3 for all five apps, 10–14 November**, after the 9 November upstream sync: Windows MSI
+1. **Preview 3 for all five apps on 12 November**, after the 9 November upstream sync: Windows MSI
    and portable, Linux .deb, AppImage and .flatpak, the extra dictionary pack as its own file,
    release notes in es/uk/en, the site's Download section; every installer smoke-tested on the
    owner's PC first.
-2. **Closed beta in Spain** from Preview 3: a sign-up form on tintaoffice.com (none yet), a page for
-   testers (what to check, how to report), 20–50 autónomos and 1–2 gestorías, Ukrainians in Spain
+2. **Closed beta in Spain** from Preview 3: a sign-up form on tintaoffice.com/beta and a guide
+   for testers at /beta/testers/ (what to check, how to report), 20–50 autónomos and 1–2 gestorías, Ukrainians in Spain
    as testers; weekly triage of error reports and issues.
 3. **Tinta Presenta catches up** (it has barely moved since 2026-10-27): #74, a .pptx test set, #70/#77.
 4. **Tinta Correo finishes M5**: calendar and contacts from .pst, export, the Outlook migration guide.
@@ -76,8 +76,17 @@ This app's next steps:
 | 2 — December 2026 – January 2027 | Tinta presentation templates (our design, azulejo motifs); vector PDF and handout printing |
 | 3 — 2027 | Animation Pane, presenter view on the second display; .odp and legacy .ppt |
 
-Owner decisions still open: the Preview 3 date, code signing for Windows by 1 December (Certum Open
-Source or Azure Trusted Signing), the beta sign-up channel, which apps enter the public beta, time
+Code signing for Windows, decided 2026-11-03: Certum Open Source, registered at the start of January
+2027 once the owner has his new ID card (December); Preview 3 and the closed beta stay unsigned.
+Certum's identity check takes days to two weeks, so signed installers are expected late January,
+before the public beta in February.
+
+Beta sign-up, decided 2026-11-03: a form on tintaoffice.com
+([tintaoffice.com/beta](https://tintaoffice.com/beta/), with a testers' guide at `/beta/testers/`).
+
+Preview 3 date, decided 2026-11-03: 12 November 2026.
+
+Owner decisions still open: which apps enter the public beta, time
 for the Ukrainian review, the video channel and playlists.
 
 ## Suite-wide work (all five Tinta Office apps)
@@ -94,7 +103,7 @@ the most ready apps), **3** = 2027 (1.0). Dates are indicative.
 | Linux | 1 | AppImage + .deb with Tinta names for all five (built in the cloud); Flatpak in stage 2. |
 | Flatpak | 2 | Bundle manifest under the Tinta id (`packaging/linux/flatpak/io.github.stdenis1980.tintapresenta.bundle.yml`, generated from upstream's by `packaging/linux/tinta-flatpak.sh generate`; `tinta-flatpak.sh bundle` turns the Linux tarball into a `.flatpak`). Requested by Vilna OS (tintaoffice-web#14): bundles in releases by April 2027; Flathub only with Denys's approval. |
 | Windows installers | 1 | Desktop shortcuts for Texto and Calculo; Presenta registered for .pptx. |
-| Code signing | 2 | Windows (Certum Open Source or Azure Trusted Signing; scripts exist), macOS (Apple Developer + notarization). Owner decision and payment. |
+| Code signing | 2 | Windows: Certum Open Source (decided 2026-11-03), registration early January 2027, signed installers before the February public beta; scripts exist. macOS (Apple Developer + notarization) later. |
 | Automated tests | 1–2 | Coverage audit per app; tests for every fork change (brand, languages, installers); a smoke test of each release installer on Windows; investigate the flaky tests upstream. |
 | User guide | 2 | A short "first steps" guide per app in Spanish and Ukrainian on tintaoffice.com (Correo has one). |
 | Fork documentation | 1 | This file: what the fork changes, how to build a release, how to sync. |
