@@ -1,0 +1,808 @@
+# Lietuvių (lt) interface catalog for DeckCraft (Tinta Presenta). Machine-assisted (AI); needs native review.
+# craft-i18n catalog format. Written from the meaning of the English text; rows shared with the
+# Tinta forks of PdfCraft, WordCraft and GridCraft reuse their wording. No other product's localisation.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Fiksuota data (tuščia = atnaujinti automatiškai):
+	  Footer text:	  Poraštės tekstas:
+	  Format:	  Formatas:
+	  Present  	  Rodyti  
+	 (not checked)	 (netikrinta)
+	(no spelling suggestions)	(rašybos pasiūlymų nėra)
+	(none)	(nėra)
+	+ Add	+ Pridėti
+	+ New Comment	+ Naujas komentaras
+	+ Row	+ Eilutė
+	+ Series	+ Seka
+	3-D	3D
+	3-D Format	3D formatas
+	3-D Rotation	3D pasukimas
+	[No Sound]	[Be garso]
+	[Stop Previous Sound]	[Sustabdyti ankstesnį garsą]
+	About DeckCraft	Apie DeckCraft
+	Accept\nAll	Priimti\nviską
+	Accessibility Checker	Prieinamumo tikrintuvas
+	Action	Veiksmas
+	Action Settings	Veiksmo parametrai
+	Action Settings…	Veiksmo parametrai…
+	Add	Pridėti
+	Add a title with a picture or some text to get layout ideas.	Pridėkite pavadinimą su paveikslėliu ar tekstu, kad gautumėte maketo idėjų.
+	Add Pictures…	Pridėti paveikslėlių…
+	Add Point	Pridėti tašką
+	Add Section	Pridėti sekciją
+	Add Shape	Pridėti figūrą
+	Add to Dictionary	Įtraukti į žodyną
+	Add\nAnimation	Pridėti\nanimaciją
+	Address:	Adresas:
+	After:	Po:
+	Album theme	Albumo tema
+	Align	Lygiuoti
+	Align Left	Lygiuoti kairėje
+	Align Right	Lygiuoti dešinėje
+	Align Text	Lygiuoti tekstą
+	Alignment	Lygiuotė
+	Alignment:	Lygiuotė:
+	ALL pictures black and white	VISI paveikslėliai nespalvoti
+	All slides	Visos skaidrės
+	Alt Text	Alternatyvusis tekstas
+	Alt text	Alternatyvusis tekstas
+	Alt\nText	Alternatyvusis\ntekstas
+	An open-source, clean-room project. Not affiliated with Microsoft.	Atvirojo kodo „švarios patalpos“ projektas. Nesusijęs su „Microsoft“.
+	Angle	Kampas
+	Animation Painter (double-click to keep it on)	Animacijos teptukas (dukart spustelėkite, kad liktų įjungtas)
+	Animation\nPainter	Animacijos\nteptukas
+	Animation\nPane	Animacijų\nsritis
+	Animations	Animacijos
+	Applies to this presentation's theme colours.	Taikoma šio pristatymo temos spalvoms.
+	Apply	Taikyti
+	Apply to All	Taikyti visoms
+	Apply to:	Taikyti:
+	Apply\nTo All	Taikyti\nvisoms
+	Arrange	Išdėstyti
+	Arrows	Rodyklės
+	Artistic\nEffects	Meniniai\nefektai
+	As:	Kaip:
+	Audio	Garsas
+	AutoCorrect	Automatinis taisymas
+	AutoCorrect as you type	Automatiškai taisyti rašant
+	AutoCorrect Options…	Automatinio taisymo parinktys…
+	Automatic	Automatiškai
+	Automatic (system language)	Automatiškai (sistemos kalba)
+	Automatic bulleted and numbered lists	Automatiniai ženklinti ir numeruoti sąrašai
+	Available formats:	Galimi formatai:
+	Back (Esc)	Atgal (Esc)
+	Background\nStyles	Fono\nstiliai
+	Banded Columns	Juostiniai stulpeliai
+	Banded Rows	Juostinės eilutės
+	Based on DeckCraft by the ArtCraft team.	Sukurta pagal „ArtCraft“ komandos DeckCraft.
+	Baseline	Bazinė linija
+	Bevel	Nuožulna
+	Body:	Tekstas:
+	Bold	Pusjuodis
+	Borders	Kraštinės
+	Bring Forward	Perkelti pirmyn
+	Bring to Front	Perkelti į priekį
+	Bring\nForward	Perkelti\npirmyn
+	Browse for Themes…	Ieškoti temų…
+	Bullets	Ženklinimas
+	Bullets and Numbering	Ženklinimas ir numeravimas
+	Bullets and Numbering…	Ženklinimas ir numeravimas…
+	Cameo	Portretas
+	Camera capture is not available yet	Fotografavimas kamera dar negalimas
+	Cancel	Atšaukti
+	Capitalize first letter of sentences	Sakinius pradėti didžiąja raide
+	Capitalize names of days	Dienų pavadinimus rašyti didžiąja raide
+	Caps	Didžiosios
+	Captions under pictures	Antraštės po paveikslėliais
+	Cell Margins	Langelio paraštės
+	Center	Centruoti
+	Centimeters	Centimetrai
+	Change Case	Keisti raidžių dydį
+	Change Colors	Keisti spalvas
+	Change File Type	Keisti failo tipą
+	Change Picture	Keisti paveikslėlį
+	Change Picture…	Keisti paveikslėlį…
+	Change Shape	Keisti figūrą
+	Change to:	Keisti į:
+	Change\nChart Type	Keisti\ndiagramos tipą
+	Character Spacing	Simbolių tarpai
+	Chart	Diagrama
+	Chart cell	Diagramos langelis
+	Chart Data	Diagramos duomenys
+	Chart Design	Diagramos dizainas
+	Check\nAccessibility	Tikrinti\npritaikymą neįgaliesiems
+	Choose a SmartArt Graphic	Pasirinkite SmartArt grafiką
+	Choosing a presentation to reuse needs the desktop app	Norint pasirinkti pristatymą pakartotiniam naudojimui, reikia darbalaukio programos
+	Choosing a sound file needs the desktop app	Norint pasirinkti garso failą, reikia darbalaukio programos
+	Clear All	Išvalyti viską
+	Clear All Formatting	Valyti visą formatavimą
+	Click a colour in the picture to make it transparent	Spustelėkite spalvą paveikslėlyje, kad ji taptų skaidri
+	Click a symbol to insert it at the insertion point.	Spustelėkite simbolį, kad įterptumėte jį žymeklio vietoje.
+	Click icon to add chart	Spustelėkite piktogramą, kad pridėtumėte diagramą
+	Click icon to add media	Spustelėkite piktogramą, kad pridėtumėte mediją
+	Click icon to add picture	Spustelėkite piktogramą, kad pridėtumėte paveikslėlį
+	Click icon to add SmartArt graphic	Spustelėkite piktogramą, kad pridėtumėte SmartArt grafiką
+	Click icon to add table	Spustelėkite piktogramą, kad pridėtumėte lentelę
+	Click the slide to take the colour under the pointer	Spustelėkite skaidrę, kad paimtumėte spalvą po žymekliu
+	Click to add notes	Spustelėkite, kad pridėtumėte pastabų
+	Click to add subtitle	Spustelėkite, kad pridėtumėte paantraštę
+	Click to add text	Spustelėkite, kad pridėtumėte tekstą
+	Click to add title	Spustelėkite, kad pridėtumėte pavadinimą
+	Click to change this one; Shift-click to change all	Spustelėkite, kad pakeistumėte šį; Shift+spustelėjimas pakeičia visus
+	Close	Užverti
+	Close\nMaster View	Uždaryti\nšablono rodinį
+	Color	Spalva
+	Color:	Spalva:
+	Colors	Spalvos
+	Columns	Stulpeliai
+	Comment	Komentaras
+	Comments	Komentarai
+	Compare	Palyginti
+	Compare this presentation with a revised copy from Review › Compare.	Palyginkite šį pristatymą su peržiūrėta kopija per Peržiūra › Lyginti.
+	Compress Pictures	Glaudinti paveikslėlius
+	Convert	Konvertuoti
+	Convert to Shapes	Konvertuoti į figūras
+	Convert to SmartArt	Konvertuoti į SmartArt
+	Convert to Text	Konvertuoti į tekstą
+	Copy	Kopijuoti
+	Copy path	Kopijuoti kelią
+	Correct accidental use of cAPS LOCK key	Taisyti atsitiktinį cAPS LOCK klavišo naudojimą
+	Correct TWo INitial CApitals	Taisyti DVI PIrmąsias DIdžiąsias raides
+	Corrections	Pataisos
+	Create	Kurti
+	Create a PDF Document	Kurti PDF dokumentą
+	Create Handouts	Kurti dalomąją medžiagą
+	Create New Theme Colors	Kurti naujas temos spalvas
+	Create New Theme Fonts	Kurti naujus temos šriftus
+	Crop	Apkarpyti
+	Crop to Shape	Apkarpyti pagal figūrą
+	Custom character:	Pasirinktinis simbolis:
+	Custom Shows	Pasirinktiniai rodymai
+	Custom\nShow	Pasirinktinis\nrodymas
+	Customize Colors…	Tinkinti spalvas…
+	Customize Fonts…	Tinkinti šriftus…
+	Customize Quick Access Toolbar	Tinkinti sparčiosios prieigos įrankių juostą
+	Cut	Iškirpti
+	Dark appearance	Tamsi išvaizda
+	Dark\nMode	Tamsusis\nrežimas
+	Dash	Brūkšnys
+	Dashes	Brūkšniai
+	Date	Data
+	Date &\nTime	Data ir\nlaikas
+	Date and Time	Data ir laikas
+	Date and time	Data ir laikas
+	Decrease Font Size	Mažinti šriftą
+	Decrease List Level	Mažinti sąrašo lygį
+	Default tab stops (in):	Numatytosios tabuliavimo žymės (col.):
+	Delay:	Delsa:
+	Delete	Naikinti
+	Delete Columns	Naikinti stulpelius
+	Delete Point	Naikinti tašką
+	Delete Repeated Word	Naikinti pasikartojantį žodį
+	Delete Rows	Naikinti eilutes
+	Delete Segment	Naikinti atkarpą
+	Delete Slide	Naikinti skaidrę
+	Delete Table	Naikinti lentelę
+	Demote	Pažeminti
+	Design	Dizainas
+	Design\nIdeas	Dizaino\nidėjos
+	Direction	Kryptis
+	Display	Rodymas
+	Display drawing guides on screen	Rodyti braižymo kreipiamąsias ekrane
+	Display grid on screen	Rodyti tinklelį ekrane
+	Distribute Columns	Paskirstyti stulpelius
+	Distribute Horizontally	Paskirstyti horizontaliai
+	Distribute Rows	Paskirstyti eilutes
+	Distribute Vertically	Paskirstyti vertikaliai
+	Do not check spelling or grammar	Netikrinti rašybos ir gramatikos
+	Don't Save	Neįrašyti
+	Don't show on title slide	Nerodyti pavadinimo skaidrėje
+	Done	Atlikta
+	Draw	Brėžti
+	Draw Table	Braižyti lentelę
+	Duplicate Selected Slides	Dubliuoti pažymėtas skaidres
+	Duplicate Slide	Dubliuoti skaidrę
+	Duration:	Trukmė:
+	e.g. 1-3, 5	pvz., 1-3, 5
+	Edit Alt Text…	Redaguoti alternatyvųjį tekstą…
+	Edit Photo Album…	Redaguoti nuotraukų albumą…
+	Edit Points	Redaguoti taškus
+	Edit Text	Redaguoti tekstą
+	Edit the data: first row = series names, first column = categories.	Redaguokite duomenis: pirma eilutė = sekų pavadinimai, pirmas stulpelis = kategorijos.
+	Edit\nData	Redaguoti\nduomenis
+	Edit\nShape	Redaguoti\nfigūrą
+	Editing	Redaguoti
+	Effect\nOptions	Efekto\nparinktys
+	Effects	Efektai
+	Email Address	El. pašto adresas
+	Email address:	El. pašto adresas:
+	End Review	Baigti peržiūrą
+	End trim (s):	Pabaigos apkarpymas (s):
+	End\nReview	Baigti\nperžiūrą
+	Equation	Lygtis
+	Eraser	Trintukas
+	Exit Edit Points	Baigti taškų redagavimą
+	Export	Eksportuoti
+	Export the presentation as:	Eksportuoti pristatymą kaip:
+	Eyedropper	Pipetė
+	Fade in (s):	Išryškėjimas (s):
+	Fade out (s):	Išblukimas (s):
+	File	Failas
+	Fill	Pildyti
+	Find	Rasti
+	Find and Replace	Rasti ir pakeisti
+	Find Next	Rasti kitą
+	Find what:	Ko ieškoti:
+	Find whole words only	Ieškoti tik ištisų žodžių
+	First Column	Pirmas stulpelis
+	Fit	Pritaikyti
+	Fit slide to current window	Pritaikyti skaidrę prie esamo lango
+	Fit to\nWindow	Pritaikyti\nlangui
+	Flip Horizontal	Apversti horizontaliai
+	Flip Vertical	Apversti vertikaliai
+	Follow Path	Sekti keliu
+	Font	Šriftas
+	Font Color	Šrifto spalva
+	Font name	Šrifto pavadinimas
+	Fonts	Šriftai
+	Font…	Šriftas…
+	Footer	Poraštė
+	Footers	Poraštės
+	Format	Formatas
+	Format Background…	Formatuoti foną…
+	Format Painter (double-click to keep it on)	Formato teptukas (dukart spustelėkite, kad liktų įjungtas)
+	Format Shape…	Formatuoti figūrą…
+	Format\nBackground	Formatuoti\nfoną
+	Format\nPane	Formatavimo\nsritis
+	Frame shape	Rėmelio forma
+	Frame Slides	Įrėminti skaidres
+	From slide:	Nuo skaidrės:
+	From the top-left corner of the slide	Nuo viršutinio kairiojo skaidrės kampo
+	From\nBeginning	Nuo\npradžios
+	From\nCurrent Slide	Nuo dabartinės\nskaidrės
+	General	Bendrieji
+	Glow	Švytėjimas
+	Grab bag	Vardų rinkinys
+	Gradient stops	Gradiento taškai
+	Gradient…	Gradientas…
+	Grayscale	Pilkumo tonai
+	Grid and Guides	Tinklelis ir kreipiamosios
+	Grid Options	Tinklelio parinktys
+	Grid\nOptions	Tinklelio\nparinktys
+	Gridlines	Tinklelio linijos
+	Group	Grupuoti
+	Group Objects	Grupuoti objektus
+	Guides	Kreipiamosios
+	Handout Master	Dalomosios medžiagos šablonas
+	Handout\nMaster	Dalomosios\nmedžiagos šablonas
+	Header	Antraštė
+	Header &\nFooter	Antraštė ir\nporaštė
+	Header and Footer	Antraštė ir poraštė
+	Header Row	Antraštės eilutė
+	Heading and body fonts for this presentation.	Šio pristatymo antraščių ir teksto šriftai.
+	Heading:	Antraštė:
+	Height:	Aukštis:
+	Hide All	Slėpti viską
+	Hide background graphics	Slėpti fono grafiką
+	Hide During Show	Slėpti rodymo metu
+	Hide\nSlide	Slėpti\nskaidrę
+	Highlight click	Paryškinti spustelėjimą
+	Home	Pradžia
+	How would you describe this object and its context to someone who is blind or has low vision?	Kaip apibūdintumėte šį objektą ir jo kontekstą neregiui ar silpnaregiui žmogui?
+	Hyperlink to:	Saitas su:
+	Icons	Piktogramos
+	Ignore All	Nepaisyti visų
+	Inches	Coliai
+	Include hidden slides	Įtraukti paslėptas skaidres
+	Increase Font Size	Didinti šriftą
+	Increase List Level	Didinti sąrašo lygį
+	Indentation	Įtrauka
+	Ink to Math (coming soon)	Rašalas į matematiką (netrukus)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Rašalas į figūrą: nupieštos linijos, stačiakampiai, ovalai ir trikampiai paverčiami figūromis
+	Ink to Text (coming soon)	Rašalas į tekstą (netrukus)
+	Ink to\nMath	Rašalas į\nmatematiką
+	Ink to\nShape	Rašalas į\nfigūrą
+	Ink to\nText	Rašalas į\ntekstą
+	Insert	Įterpti
+	Insert Hyperlink	Įterpti saitą
+	Insert Picture	Įterpti paveikslėlį
+	Insert picture from file…	Įterpti paveikslėlį iš failo…
+	Insert Table	Įterpti lentelę
+	Insert Table…	Įterpti lentelę…
+	Insert\nAbove	Įterpti\nvirš
+	Insert\nBelow	Įterpti\npo
+	Insert\nLayout	Įterpti\nmaketą
+	Insert\nLeft	Įterpti\nkairėje
+	Insert\nPlaceholder	Įterpti\nvietos rezervavimo ženklą
+	Insert\nRight	Įterpti\ndešinėje
+	Insert…	Įterpti…
+	Interface Language	Sąsajos kalba
+	Interface language:	Sąsajos kalba:
+	Italic	Kursyvas
+	Justify	Abipusė lygiuotė
+	Keep source formatting	Išlaikyti šaltinio formatavimą
+	Landscape	Gulsčias
+	Language	Kalba
+	Language:	Kalba:
+	Last Column	Paskutinis stulpelis
+	Layout	Maketas
+	Layouts	Maketai
+	Learn\nMore	Sužinoti\ndaugiau
+	Leave the slide background out: only what is on the slide is drawn	Be skaidrės fono: piešiama tik tai, kas yra skaidrėje
+	Less Brightness	Mažiau ryškumo
+	Less Contrast	Mažiau kontrasto
+	Light/Dark appearance	Šviesi/tamsi išvaizda
+	Line	Linija
+	Line Spacing	Eilučių tarpai
+	Line spacing	Eilučių intervalas
+	Line Spacing Options…	Eilučių tarpų parinktys…
+	Link	Saitas
+	Link…	Saitas…
+	Lock aspect ratio	Užrakinti kraštinių santykį
+	Loop continuously until 'Esc'	Kartoti nuolat iki „Esc“
+	Loop forever	Kartoti be galo
+	Loop Until Next Sound	Kartoti iki kito garso
+	Loop until Stopped	Kartoti iki sustabdymo
+	Margins (pt)	Paraštės (pt)
+	Mark as decorative	Pažymėti kaip dekoratyvų
+	Match case	Skirti didžiąsias ir mažąsias raides
+	Maximize content (else ensure fit)	Maksimizuoti turinį (kitaip užtikrinti tilpimą)
+	Measurement units:	Matavimo vienetai:
+	Merge Shapes	Sujungti figūras
+	Merge\nCells	Sulieti\nlangelius
+	Merge\nShapes	Sujungti\nfigūras
+	Mirror	Veidrodis
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	Mėnesių pavadinimai ir AM/PM pateikiami anglų kalbai. Kitose kalbose pateikiama skaitinė data ir 24 valandų laikas.
+	More Brightness	Daugiau ryškumo
+	More Colors… #	Daugiau spalvų… #
+	More Columns…	Daugiau stulpelių…
+	More Contrast	Daugiau kontrasto
+	Move Down	Perkelti žemyn
+	Move Section Down	Perkelti sekciją žemyn
+	Move Section Up	Perkelti sekciją aukštyn
+	Move Up	Perkelti aukštyn
+	Name	Pavadinimas
+	Name:	Pavadinimas:
+	New	Naujas
+	New Comment	Naujas komentaras
+	New Photo Album…	Naujas nuotraukų albumas…
+	New show name:	Naujo rodymo pavadinimas:
+	New Slide	Nauja skaidrė
+	New Slide (⇧⌘N)	Nauja skaidrė (⇧⌘N)
+	New Text Box	Naujas teksto laukas
+	New\nComment	Naujas\nkomentaras
+	New\nSlide	Nauja\nskaidrė
+	New\nWindow	Naujas\nlangas
+	Next	Pirmyn
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	Pritaikymo neįgaliesiems problemų nerasta. Žmonėms su negalia neturėtų būti sunku skaityti šį dokumentą.
+	No comments.	Komentarų nėra.
+	No contributor data was built into this copy.	Šioje programos kopijoje nėra duomenų apie bendraautorius.
+	No differences left.	Skirtumų neliko.
+	No Glow	Be švytėjimo
+	No icons match.	Atitinkančių piktogramų nėra.
+	No line	Be linijos
+	No model credits were built into this copy.	Šioje programos kopijoje nėra naudotų modelių sąrašo.
+	No notes.	Pastabų nėra.
+	No pictures yet	Paveikslėlių dar nėra
+	None	Nėra
+	Normal	Įprastas
+	Not a copy of this presentation: slides are matched by position.	Ne šio pristatymo kopija: skaidrės gretinamos pagal padėtį.
+	Notes	Pastabos
+	Notes Master	Pastabų šablonas
+	Notes\nMaster	Pastabų\nšablonas
+	Number of columns:	Stulpelių skaičius:
+	Number of rows:	Eilučių skaičius:
+	Number:	Skaičius:
+	Numbering	Numeravimas
+	OK	Gerai
+	On Click of… (none)	Spustelėjus… (nieko)
+	On Mouse Click	Spustelėjus pele
+	Open a presentation from a folder (Ctrl+O)	Atidaryti pristatymą iš aplanko (Ctrl+O)
+	Open another window on this presentation	Atidaryti kitą šio pristatymo langą
+	Open file location	Atidaryti failo vietą
+	Options	Parinktys
+	Order Objects	Rikiuoti objektus
+	Ordinals (1st) with superscript	Kelintiniai skaitvardžiai (1st) viršutiniu indeksu
+	Orientation:	Padėtis:
+	Other Sound…	Kitas garsas…
+	Outline	Kontūras
+	Page Setup…	Puslapio sąranka…
+	Paragraph	Pastraipa
+	Paragraph…	Pastraipa…
+	Paste	Įdėti
+	Paste (⌘V)	Įklijuoti (⌘V)
+	Paste and Match Formatting	Įklijuoti ir suderinti formatavimą
+	Paste Formatting	Įklijuoti formatavimą
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Įklijuokite arba įveskite struktūrą. Eilutės be įtraukos tampa skaidrių pavadinimais; eilutės su tabuliavimo įtrauka tampa ženklinimo punktais.
+	Paste Special	Specialusis įklijavimas
+	Paste Special…	Specialusis įklijavimas…
+	Pattern	Šablonas
+	Pen Color	Rašiklio spalva
+	Pen Style	Rašiklio stilius
+	Pen Weight	Rašiklio storis
+	Percent:	Procentai:
+	Photo Album	Nuotraukų albumas
+	Photo Album options	Nuotraukų albumo parinktys
+	Photo Album…	Nuotraukų albumas…
+	Photo\nAlbum	Nuotraukų\nalbumas
+	Pick a design for this slide. Ideas are generated on your device.	Pasirinkite šios skaidrės dizainą. Idėjos kuriamos jūsų įrenginyje.
+	Pick a graphic; type one item per line.	Pasirinkite grafiką; kiekvienoje eilutėje įveskite po vieną elementą.
+	Picture	Paveikslėlis
+	Picture Border	Paveikslėlio kraštinė
+	Picture Format	Paveikslėlio formatas
+	Picture layout	Paveikslėlių maketas
+	Picture source	Paveikslėlių šaltinis
+	Pictures	Paveikslėliai
+	Pictures in album	Paveikslėliai albume
+	Play Across Slides	Leisti per visas skaidres
+	Play from\nCurrent Slide	Leisti nuo\ndabartinės skaidrės
+	Play from\nStart	Leisti nuo\npradžios
+	Play Full Screen	Leisti visame ekrane
+	Play Narrations	Leisti įgarsinimus
+	Play this slide's animations on the canvas	Leisti šios skaidrės animacijas drobėje
+	Playback	Atkūrimas
+	Portrait	Stačias
+	Position	Padėtis
+	Position Objects	Išdėstyti objektus
+	Post	Skelbti
+	Preferences	Nuostatos
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Pristatymai ir skaidrių rodymai, sukurti iš naujo grynu Rust.
+	Presenter\nView	Pranešėjo\nrodinys
+	Preserve	Išsaugoti
+	Preset gradients	Iš anksto nustatyti gradientai
+	Preview	Peržiūra
+	Previous	Ankstesnis
+	Print Hidden Slides	Spausdinti paslėptas skaidres
+	Print layout:	Spausdinimo maketas:
+	Program:	Programa:
+	Promote	Paaukštinti
+	pt	pt
+	Put a picture in the selected node's picture placeholder	Įdėti paveikslėlį į pažymėto mazgo paveikslėlio vietą
+	Quick\nStyles	Greitieji\nstiliai
+	Reading View	Skaitymo rodinys
+	Recent	Paskiausiai naudoti
+	Recolor	Perdažyti
+	Record	Įrašyti
+	Recording narration needs audio capture (coming soon)	Įgarsinimui įrašyti reikia garso įrašymo (netrukus)
+	Recover Unsaved Presentations	Atkurti neįrašytus pristatymus
+	Reflection	Atspindys
+	Regroup	Pergrupuoti
+	Rehearse\nTimings	Repetuoti\nlaiką
+	Remove	Pašalinti
+	Remove All Sections	Šalinti visas sekcijas
+	Remove bullets and numbering	Šalinti ženklinimą ir numeravimą
+	Remove from Quick Access Toolbar	Šalinti iš sparčiosios prieigos įrankių juostos
+	Remove from Recent	Pašalinti iš paskiausiai naudotų failų
+	Remove Section	Šalinti sekciją
+	Remove Section & Slides	Šalinti sekciją ir skaidres
+	Remove stop	Šalinti tašką
+	Remove the picture style	Šalinti paveikslėlio stilių
+	Remove\nBackground	Šalinti\nfoną
+	Rename	Pervadinti
+	Rename Layout	Pervardyti maketą
+	Rename Section	Pervardyti sekciją
+	Rename Section…	Pervardyti sekciją…
+	Repeated word	Pasikartojantis žodis
+	Replace	Pakeisti
+	Replace All	Pakeisti visus
+	Replace Font	Pakeisti šriftą
+	Replace Fonts…	Pakeisti šriftus…
+	Replace fractions (1/2) with fraction characters (½)	Keisti trupmenas (1/2) trupmenų simboliais (½)
+	Replace straight quotes with smart quotes	Keisti tiesiąsias kabutes tipografinėmis
+	Replace text as you type	Keisti tekstą rašant
+	Replace with:	Pakeisti į:
+	Replace:	Pakeisti:
+	Replace…	Pakeisti…
+	Reply…	Atsakyti…
+	Rescan Installed Fonts	Iš naujo nuskaityti įdiegtus šriftus
+	Reset	Atkurti
+	Reset 3-D	Atkurti 3D
+	Reset Background	Atkurti foną
+	Reset Effects	Atkurti efektus
+	Reset Picture	Atkurti paveikslėlį
+	Reset Slide	Atkurti skaidrę
+	Reset Slide Background	Atkurti skaidrės foną
+	Reset to Defaults	Atkurti numatytuosius
+	Reuse Slides	Pakartotinai naudoti skaidres
+	Reverse the order	Apversti tvarką
+	Review	Peržiūrėti
+	Rewind after Playing	Atsukti po atkūrimo
+	Right-click any ribbon button to add it.	Dešiniuoju pelės mygtuku spustelėkite bet kurį juostelės mygtuką, kad jį pridėtumėte.
+	Rotate	Pasukti
+	Rotate Left	Pasukti kairėn
+	Rotate Left 90°	Pasukti kairėn 90°
+	Rotate Right	Pasukti dešinėn
+	Rotate Right 90°	Pasukti dešinėn 90°
+	Rotate with shape	Sukti kartu su figūra
+	Ruler	Liniuotė
+	Save	Įrašyti
+	Screenshot	Ekrano kopija
+	Screenshot (not available yet)	Ekrano kopija (dar negalima)
+	ScreenTip:	Ekrano patarimas:
+	Scroll ribbon left	Slinkti juostelę kairėn
+	Scroll ribbon right	Slinkti juostelę dešinėn
+	Search commands (⇧⌘P)	Ieškoti komandų (⇧⌘P)
+	Search commands…	Ieškoti komandų…
+	Search icons	Ieškoti piktogramų
+	Seconds per slide:	Sekundžių skaidrei:
+	Section	Sekcija
+	Select	Žymėti
+	Select a chart first.	Pirmiausia pažymėkite diagramą.
+	Select a shape to format it.	Pažymėkite figūrą, kad ją formatuotumėte.
+	Select a SmartArt graphic to edit its text.	Pažymėkite SmartArt grafiką, kad redaguotumėte jo tekstą.
+	Select an object on the slide and add an animation from the Animations tab.	Pažymėkite objektą skaidrėje ir pridėkite animaciją skirtuke Animacijos.
+	Selection Pane…	Žymėjimo sritis…
+	Selection\nPane	Žymėjimo\nsritis
+	Send Backward	Perkelti atgal
+	Send to Back	Perkelti į galą
+	Send\nBackward	Perkelti\natgal
+	Set	Nustatyti
+	Set as Default Shape	Nustatyti kaip numatytąją figūrą
+	Set Transparent Color	Nustatyti skaidrią spalvą
+	Set Up Slide Show	Nustatyti skaidrių rodymą
+	Set Up\nSlide Show	Nustatyti\nrodymą
+	Shading	Šešėliavimas
+	Shadow	Šešėlis
+	Shape Effects	Figūros efektai
+	Shape Fill	Figūros užpildas
+	Shape Format	Figūros formatas
+	Shape Outline	Figūros kontūras
+	Shape\nStyles	Figūrų\nstiliai
+	Shapes	Figūros
+	Show	Rodyti
+	Show All	Rodyti viską
+	Show Media Controls	Rodyti medijos valdiklius
+	Show smart guides	Rodyti išmaniąsias kreipiamąsias
+	Show type	Rodymo tipas
+	Show without animation	Rodyti be animacijos
+	Show without narration	Rodyti be įgarsinimo
+	Show\nComments	Rodyti\nkomentarus
+	Size	Dydis
+	Size (% of text):	Dydis (% teksto):
+	Size and Position	Dydis ir padėtis
+	Size and Position…	Dydis ir padėtis…
+	Size:	Dydis:
+	Slide Master	Skaidrių šablonas
+	Slide number	Skaidrės numeris
+	Slide Show	Skaidrių rodymas
+	Slide Size	Skaidrės dydis
+	Slide Sorter	Skaidrių rikiuotė
+	Slide text	Skaidrės tekstas
+	Slide title	Skaidrės pavadinimas
+	Slide {n} of {total}	Skaidrė {n} iš {total}
+	Slide\nMaster	Skaidrių\nšablonas
+	Slide\nNumber	Skaidrės\nnumeris
+	Slide\nSize	Skaidrės\ndydis
+	Slides	Skaidrės
+	Slides (e.g. 1,3,5):	Skaidrės (pvz., 1,3,5):
+	Slides from Outline	Skaidrės iš struktūros
+	Slides from Outline…	Skaidrės iš struktūros…
+	Slides sized for:	Skaidrių dydis skirtas:
+	Slides:	Skaidrės:
+	SmartArt	SmartArt
+	SmartArt Design	SmartArt dizainas
+	SmartArt items	SmartArt elementai
+	SmartArt Styles	SmartArt stiliai
+	SmartArt text	SmartArt tekstas
+	Snap	Pritraukti
+	Snap objects to grid	Pritraukti objektus prie tinklelio
+	Snap objects to other objects	Pritraukti objektus prie kitų objektų
+	Soft Edges	Švelnūs kraštai
+	Solid line	Ištisinė linija
+	Sort	Rūšiuoti
+	Sound:	Garsas:
+	Spacing	Tarpai
+	Spacing (in):	Tarpai (col.):
+	Spacing (pt):	Tarpai (pt):
+	Special	Specialusis
+	Spelling	Rašyba
+	Spelling is checked for languages marked (dictionary).	Rašyba tikrinama kalboms, pažymėtoms (žodynas).
+	Split\nCells	Skaidyti\nlangelius
+	Standard (4:3)	Standartinis (4:3)
+	Standard Colors	Standartinės spalvos
+	Start at:	Pradėti nuo:
+	Start Automatically	Pradėti automatiškai
+	Start time (s):	Pradžios laikas (s):
+	Start:	Pradžia:
+	Strikethrough	Perbraukti
+	Subscript	Apatinis indeksas
+	Superscript	Viršutinis indeksas
+	Symbol	Simbolis
+	Tab stop position (in):	Tabuliavimo žymės padėtis (col.):
+	Tab stops:	Tabuliavimo žymės:
+	Table	Lentelė
+	Table Design	Lentelės dizainas
+	Tabs	Tabuliavimas
+	Tabs…	Tabuliavimas…
+	Templates	Šablonai
+	Text Box	Teksto laukas
+	Text box:	Teksto laukas:
+	Text Direction	Teksto kryptis
+	Text Effects	Teksto efektai
+	Text Fill	Teksto užpildas
+	Text Highlight Color	Teksto paryškinimo spalva
+	Text Outline	Teksto kontūras
+	Text\nBox	Teksto\nlaukas
+	Text\nPane	Teksto\nsritis
+	The spelling check is complete. No issues found.	Rašybos tikrinimas baigtas. Problemų nerasta.
+	Theme Colors	Temos spalvos
+	Themes	Temos
+	Themes (whole presentation)	Temos (visas pristatymas)
+	Thesaurus	Tezauras
+	This Document	Šis dokumentas
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Šis pristatymas neturi pasirinktinių rodymų (Skaidrių rodymas ▸ Pasirinktinis rodymas).
+	Tile picture as texture	Kartoti paveikslėlį kaip tekstūrą
+	Title	Pavadinimas
+	To slide:	Iki skaidrės:
+	Total Row	Sumų eilutė
+	Transform	Transformuoti
+	Transitions	Perėjimai
+	Translate	Versti
+	Translation needs a language model (not bundled)	Vertimui reikia kalbos modelio (nepridėtas)
+	Transparency	Skaidrumas
+	Transparent background	Skaidrus fonas
+	Trigger	Paleidiklis
+	Trim	Apkarpyti
+	Trim Media	Apkarpyti mediją
+	Type	Tipas
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Įveskite lygtį linijine forma (pvz., a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Įveskite ir sutvarkykite diagramos tekstą
+	Type your text here	Įveskite tekstą čia
+	Underline	Pabraukti
+	Ungroup	Išgrupuoti
+	Update automatically	Atnaujinti automatiškai
+	Use Timings	Naudoti laiką
+	Use timings, if present	Naudoti laiką, jei nustatytas
+	Vertical alignment	Vertikalusis lygiavimas
+	Video	Vaizdo įrašas
+	View	Rodinys
+	Volume	Garsumas
+	Warp	Iškraipymas
+	Web Page or File	Tinklalapis arba failas
+	Weight	Storis
+	Whole presentation	Visas pristatymas
+	Widescreen (16:9)	Platusis ekranas (16:9)
+	Width	Plotis
+	Width (pixels):	Plotis (pikseliai):
+	Width:	Plotis:
+	Width: 	Plotis: 
+	With	Su
+	With:	Su:
+	WordArt	WordArt
+	Wrap text in shape	Laužyti tekstą figūroje
+	Your changes will be lost if you don't save them.	Jei pakeitimų neįrašysite, jie bus prarasti.
+	Your name (comments):	Jūsų vardas (komentarai):
+	Zoom	Mastelis
+	Zoom In	Didinti
+	Zoom Out	Mažinti
+	Zoom to	Mastelis iki
+	Open	Atverti
+	Info	Informacija
+	Save As	Įrašyti kaip
+	Print	Spausdinti
+	Account	Paskyra
+	PowerPoint Presentation (*.pptx)	PowerPoint pristatymas (*.pptx)
+	Opens in PowerPoint and other presentation apps	Atidaromas PowerPoint ir kitose pristatymų programose
+	DeckCraft Presentation (*.deckcraft)	DeckCraft pristatymas (*.deckcraft)
+	DeckCraft's own format: everything is kept	DeckCraft formatas: išsaugoma viskas
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Fiksuota kopija, išlaikanti maketą bet kuriame įrenginyje
+	Outline (*.txt)	Struktūra (*.txt)
+	The slide titles and bullet text as plain text	Skaidrių pavadinimai ir punktų tekstas kaip grynasis tekstas
+	Outline/RTF (*.rtf)	Struktūra/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Skaidrių pavadinimai ir punktų tekstas teksto rengyklėms
+	PNG Picture (*.png)	PNG paveikslėlis (*.png)
+	The current slide as a picture	Dabartinė skaidrė kaip paveikslėlis
+	JPEG Picture (*.jpg)	JPEG paveikslėlis (*.jpg)
+	The current slide as a compressed picture	Dabartinė skaidrė kaip suglaudintas paveikslėlis
+	Add a title	Pridėti pavadinimą
+	Subject	Tema
+	Specify the subject	Nurodyti temą
+	Tags	Žymos
+	Add a tag	Pridėti žymą
+	Categories	Kategorijos
+	Add a category	Pridėti kategoriją
+	Company	Įmonė
+	Specify the company	Nurodyti įmonę
+	Add comments	Pridėti komentarus
+	Author	Autorius
+	Add an author	Pridėti autorių
+	Back	Atgal
+	Blank Presentation	Tuščias pristatymas
+	Sample deck: Northern Lights	Pavyzdinis pristatymas: Šiaurės pašvaistė
+	Presentations you open show up here. Use Open to browse for one.	Čia rodomi atidaryti pristatymai. Norėdami jo ieškoti, naudokite Atidaryti.
+	More themes	Daugiau temų
+	More templates	Daugiau šablonų
+	Search for a file	Ieškoti failo
+	More presentations	Daugiau pristatymų
+	Get help and support	Gauti pagalbos ir palaikymo
+	Join the ArtCraft community on Discord	Prisijunkite prie ArtCraft bendruomenės Discord
+	Search for themes and templates	Ieškoti temų ir šablonų
+	Browse	Naršyti
+	There are no unsaved presentations to recover	Nėra neįrašytų pristatymų, kuriuos būtų galima atkurti
+	Presentations	Pristatymai
+	No presentation is open.	Neatidarytas joks pristatymas.
+	Not saved yet	Dar neįrašyta
+	Copied the path	Kelias nukopijuotas
+	Check for Issues	Tikrinti, ar nėra problemų
+	Inspect Presentation	Tikrinti pristatymą
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Prieš bendrindami patikrinkite, ar pristatyme nėra to, ką žmonėms su negalia būtų sunku perskaityti.
+	There are no unsaved changes.	Neįrašytų pakeitimų nėra.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Šiame pristatyme yra neįrašytų pakeitimų. Grąžinimas atkuria įrašytą failą.
+	This presentation has never been saved.	Šis pristatymas dar niekada nebuvo įrašytas.
+	Revert	Grąžinti įrašytą versiją
+	Manage Presentation	Tvarkyti pristatymą
+	Properties	Ypatybės
+	Hidden slides	Paslėptos skaidrės
+	Location	Vieta
+	Save as type	Failo tipas
+	Download	Atsisiųsti
+	Download the file	Atsisiųsti failą
+	Choose where to save	Pasirinkite, kur įrašyti
+	Full Page Slides	Skaidrės per visą puslapį
+	Notes Pages	Pastabų puslapiai
+	Handouts (1 slide per page)	Dalomoji medžiaga (1 skaidrė puslapyje)
+	Handouts (2 slides per page)	Dalomoji medžiaga (2 skaidrės puslapyje)
+	Handouts (3 slides per page)	Dalomoji medžiaga (3 skaidrės puslapyje)
+	Handouts (4 slides per page)	Dalomoji medžiaga (4 skaidrės puslapyje)
+	Handouts (6 slides per page)	Dalomoji medžiaga (6 skaidrės puslapyje)
+	Handouts (9 slides per page)	Dalomoji medžiaga (9 skaidrės puslapyje)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft spausdina per PDF: jis atidaromas PDF žiūryklėje, kur pasirenkate spausdintuvą.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft spausdina per PDF: jis atsisiunčiamas ir paruoštas spausdinti iš naršyklės ar PDF žiūryklės.
+	Settings	Nuostatos
+	Print All Slides	Spausdinti visas skaidres
+	Print Current Slide	Spausdinti dabartinę skaidrę
+	Custom Range	Pasirinktinis diapazonas
+	Print range	Spausdinimo diapazonas
+	Print layout	Spausdinimo maketas
+	Paper size	Popieriaus dydis
+	Landscape Orientation	Gulsčias orientavimas
+	Portrait Orientation	Stačias orientavimas
+	Orientation	Orientavimas
+	Edit Header & Footer	Redaguoti antraštę ir poraštę
+	Nothing to print: every slide in the range is hidden.	Nėra ką spausdinti: visos diapazono skaidrės paslėptos.
+	Previous Page	Ankstesnis puslapis
+	{n} of {total}	{n} iš {total}
+	Next Page	Kitas puslapis
+	Create PDF Document	Kurti PDF dokumentą
+	Keeps the layout, fonts and pictures	Išlaiko maketą, šriftus ir paveikslėlius
+	Opens on any device with a PDF viewer	Atidaromas bet kuriame įrenginyje su PDF žiūrykle
+	The presentation keeps its own file	Pristatymas išlaiko savo failą
+	Create PDF	Kurti PDF
+	Several slides on each page of a PDF	Kelios skaidrės kiekviename PDF puslapyje
+	Three a page leaves lines for notes	Trys puslapyje palieka eilučių pastaboms
+	Print them for your audience	Atsispausdinkite juos auditorijai
+	{n} slides per page	Skaidrių puslapyje: {n}
+	Slides per page	Skaidrių puslapyje
+	Appearance	Išvaizda
+	Dark	Tamsi
+	Light	Šviesi
+	User Information	Naudotojo informacija
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft neturi paskyrų: niekur nereikia prisijungti, o jūsų pristatymai lieka jūsų įrenginyje.
+	Product Information	Produkto informacija
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Atvirasis kodas pagal MIT ARBA Apache-2.0. Nesusijęs su „Microsoft“.
+	The version, the people and models who built it, and where to find us.	Versija, ją kūrę žmonės ir modeliai bei kur mus rasti.
+	Join our community on Discord	Prisijunkite prie mūsų bendruomenės Discord
+	Source on GitHub	Šaltinio kodas GitHub
+	Undo	Anuliuoti
+	Redo	Pakartoti
+	Start from Beginning	Pradėti nuo pradžios
+	Add to Quick Access Toolbar	Įtraukti į sparčiosios prieigos įrankių juostą
+	Window title bar	Lango pavadinimo juosta
+	Can't play {codec} video here.	{codec} vaizdo įrašo čia paleisti negalima.
+	Open in the system player	Atidaryti sistemos leistuve
+	Couldn't open the media: {error}	Nepavyko atidaryti medijos: {error}
+	This build can't open media in another app.	Ši versija negali atidaryti medijos kitoje programoje.
+	Send error reports automatically?	Siųsti klaidų ataskaitas automatiškai?
+	When the app crashes or stops responding, it can send a report so the problem gets fixed without you writing to us. A report holds the app version, the system, the language, where in the code the error happened and the last lines of the technical log. Never the text of your documents, file names, folders, e-mail addresses or passwords.	Kai programa užstringa ar nustoja reaguoti, ji gali išsiųsti ataskaitą, kad problema būtų ištaisyta jums mums nerašant. Ataskaitoje yra programos versija, sistema, kalba, kodo vieta, kur įvyko klaida, ir paskutinės techninio žurnalo eilutės. Niekada – jūsų dokumentų tekstas, failų pavadinimai, aplankai, el. pašto adresai ar slaptažodžiai.
+	Reports go to Tinta Office (report.tintaoffice.com, stored in the EU) and are deleted after 90 days. You can change this at any time in File › Options › General and delete your reports from the server there. Details: tintaoffice.com/aviso-legal	Ataskaitos siunčiamos Tinta Office (report.tintaoffice.com, saugomos ES) ir ištrinamos po 90 dienų. Tai galite bet kada pakeisti Failas › Parinktys › Bendra ir ten ištrinti savo ataskaitas iš serverio. Išsamiau: tintaoffice.com/aviso-legal
+	Yes, send reports	Taip, siųsti ataskaitas
+	No	Ne
+	Error reports	Klaidų ataskaitos
+	Send error reports automatically	Automatiškai siųsti klaidų ataskaitas
+	Installation id: {id}	Diegimo ID: {id}
+	Delete my reports from the server	Ištrinti mano ataskaitas iš serverio
+	Deletion requested: it completes the next time the app is online.	Ištrynimas užsakytas: jis bus baigtas, kai programa kitą kartą prisijungs prie interneto.
+	Open the reports folder	Atidaryti ataskaitų aplanką
