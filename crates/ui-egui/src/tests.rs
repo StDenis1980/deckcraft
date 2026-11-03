@@ -1815,7 +1815,17 @@ fn app_language_switches_the_interface_to_ukrainian_and_back() {
     if let Ok(path) = std::env::var("DECKCRAFT_CA_SHOT") {
         harness.render().unwrap().save(path).unwrap();
     }
-    for (code, insert) in [("gl", "Inserir"), ("eu", "Txertatu"), ("it", "Inserisci"), ("fr", "Insérer"), ("de", "Einfügen"), ("pl", "Wstaw")] {
+    for (code, insert) in [
+        ("gl", "Inserir"),
+        ("eu", "Txertatu"),
+        ("it", "Inserisci"),
+        ("fr", "Insérer"),
+        ("de", "Einfügen"),
+        ("pl", "Wstaw"),
+        ("ro", "Inserare"),
+        ("cs", "Vložení"),
+        ("lt", "Įterpti"),
+    ] {
         harness.state_mut().run("app.language", json!({"language": code})).unwrap();
         harness.run_steps(2);
         // German uses "Einfügen" for both the Insert tab and Paste, so match any node.

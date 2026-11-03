@@ -1,0 +1,808 @@
+# Čeština (cs) interface catalog for DeckCraft (Tinta Presenta). Machine-assisted (AI); needs native review.
+# craft-i18n catalog format. Written from the meaning of the English text; rows shared with the
+# Tinta forks of PdfCraft, WordCraft and GridCraft reuse their wording. No other product's localisation.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Pevné datum (prázdné = automatická aktualizace):
+	  Footer text:	  Text zápatí:
+	  Format:	  Formát:
+	  Present  	  Prezentovat  
+	 (not checked)	 (nekontrolováno)
+	(no spelling suggestions)	(žádné návrhy pravopisu)
+	(none)	(žádné)
+	+ Add	+ Přidat
+	+ New Comment	+ Nový komentář
+	+ Row	+ Řádek
+	+ Series	+ Řada
+	3-D	3D
+	3-D Format	Formát 3D
+	3-D Rotation	Otočení 3D
+	[No Sound]	[Bez zvuku]
+	[Stop Previous Sound]	[Zastavit předchozí zvuk]
+	About DeckCraft	O aplikaci DeckCraft
+	Accept\nAll	Přijmout\nvše
+	Accessibility Checker	Kontrola přístupnosti
+	Action	Akce
+	Action Settings	Nastavení akce
+	Action Settings…	Nastavení akce…
+	Add	Přidat
+	Add a title with a picture or some text to get layout ideas.	Přidejte nadpis s obrázkem nebo textem a získáte nápady na rozložení.
+	Add Pictures…	Přidat obrázky…
+	Add Point	Přidat bod
+	Add Section	Přidat oddíl
+	Add Shape	Přidat tvar
+	Add to Dictionary	Přidat do slovníku
+	Add\nAnimation	Přidat\nanimaci
+	Address:	Adresa:
+	After:	Za:
+	Album theme	Motiv alba
+	Align	Zarovnat
+	Align Left	Zarovnat vlevo
+	Align Right	Zarovnat vpravo
+	Align Text	Zarovnat text
+	Alignment	Zarovnání
+	Alignment:	Zarovnání:
+	ALL pictures black and white	VŠECHNY obrázky černobíle
+	All slides	Všechny snímky
+	Alt Text	Alternativní text
+	Alt text	Alternativní text
+	Alt\nText	Alternativní\ntext
+	An open-source, clean-room project. Not affiliated with Microsoft.	Open-source projekt typu clean-room. Není spojen se společností Microsoft.
+	Angle	Úhel
+	Animation Painter (double-click to keep it on)	Kopírovat animaci (poklepáním zůstane zapnuté)
+	Animation\nPainter	Kopírovat\nanimaci
+	Animation\nPane	Podokno\nanimací
+	Animations	Animace
+	Applies to this presentation's theme colours.	Platí pro barvy motivu této prezentace.
+	Apply	Použít
+	Apply to All	Použít u všech
+	Apply to:	Použít na:
+	Apply\nTo All	Použít\nu všech
+	Arrange	Uspořádat
+	Arrows	Šipky
+	Artistic\nEffects	Umělecké\nefekty
+	As:	Jako:
+	Audio	Zvuk
+	AutoCorrect	Automatické opravy
+	AutoCorrect as you type	Automatické opravy při psaní
+	AutoCorrect Options…	Možnosti automatických oprav…
+	Automatic	Automaticky
+	Automatic (system language)	Automaticky (jazyk systému)
+	Automatic bulleted and numbered lists	Automatické odrážkové a číslované seznamy
+	Available formats:	Dostupné formáty:
+	Back (Esc)	Zpět (Esc)
+	Background\nStyles	Styly\npozadí
+	Banded Columns	Pruhované sloupce
+	Banded Rows	Pruhované řádky
+	Based on DeckCraft by the ArtCraft team.	Založeno na aplikaci DeckCraft od týmu ArtCraft.
+	Baseline	Účaří
+	Bevel	Zkosení
+	Body:	Tělo:
+	Bold	Tučné
+	Borders	Ohraničení
+	Bring Forward	Přenést blíž
+	Bring to Front	Přenést do popředí
+	Bring\nForward	Přenést\nblíž
+	Browse for Themes…	Vyhledat motivy…
+	Bullets	Odrážky
+	Bullets and Numbering	Odrážky a číslování
+	Bullets and Numbering…	Odrážky a číslování…
+	Cameo	Portrét
+	Camera capture is not available yet	Záznam z kamery zatím není k dispozici
+	Cancel	Zrušit
+	Capitalize first letter of sentences	Velké první písmeno ve větách
+	Capitalize names of days	Velké první písmeno v názvech dnů
+	Caps	Velká písmena
+	Captions under pictures	Titulky pod obrázky
+	Cell Margins	Okraje buňky
+	Center	Na střed
+	Centimeters	Centimetry
+	Change Case	Změnit velikost písmen
+	Change Colors	Změnit barvy
+	Change File Type	Změnit typ souboru
+	Change Picture	Změnit obrázek
+	Change Picture…	Změnit obrázek…
+	Change Shape	Změnit tvar
+	Change to:	Změnit na:
+	Change\nChart Type	Změnit\ntyp grafu
+	Character Spacing	Proložení znaků
+	Chart	Graf
+	Chart cell	Buňka grafu
+	Chart Data	Data grafu
+	Chart Design	Návrh grafu
+	Check\nAccessibility	Kontrola\npřístupnosti
+	Choose a SmartArt Graphic	Zvolte obrázek SmartArt
+	Choosing a presentation to reuse needs the desktop app	Výběr prezentace k opakovanému použití vyžaduje desktopovou aplikaci
+	Choosing a sound file needs the desktop app	Výběr zvukového souboru vyžaduje desktopovou aplikaci
+	Clear All	Vymazat vše
+	Clear All Formatting	Vymazat veškeré formátování
+	Click a colour in the picture to make it transparent	Klepnutím na barvu v obrázku ji zprůhledníte
+	Click a symbol to insert it at the insertion point.	Klepnutím na symbol jej vložíte na místo kurzoru.
+	Click icon to add chart	Klepnutím na ikonu přidáte graf
+	Click icon to add media	Klepnutím na ikonu přidáte médium
+	Click icon to add picture	Klepnutím na ikonu přidáte obrázek
+	Click icon to add SmartArt graphic	Klepnutím na ikonu přidáte obrázek SmartArt
+	Click icon to add table	Klepnutím na ikonu přidáte tabulku
+	Click the slide to take the colour under the pointer	Klepnutím na snímek převezmete barvu pod ukazatelem
+	Click to add notes	Klepnutím přidáte poznámky
+	Click to add subtitle	Klepnutím přidáte podnadpis
+	Click to add text	Klepnutím přidáte text
+	Click to add title	Klepnutím přidáte nadpis
+	Click to change this one; Shift-click to change all	Klepnutím změníte tento; Shift+klepnutím změníte všechny
+	Close	Zavřít
+	Close\nMaster View	Zavřít\nzobrazení předlohy
+	Color	Barva
+	Color:	Barva:
+	Colors	Barvy
+	Columns	Sloupce
+	Comment	Komentář
+	Comments	Komentáře
+	Compare	Porovnat
+	Compare this presentation with a revised copy from Review › Compare.	Porovnejte tuto prezentaci s revidovanou kopií pomocí Revize › Porovnat.
+	Compress Pictures	Komprimovat obrázky
+	Convert	Převést
+	Convert to Shapes	Převést na tvary
+	Convert to SmartArt	Převést na SmartArt
+	Convert to Text	Převést na text
+	Copy	Kopírovat
+	Copy path	Kopírovat cestu
+	Correct accidental use of cAPS LOCK key	Opravovat nechtěné použití klávesy cAPS LOCK
+	Correct TWo INitial CApitals	Opravovat DVě POčáteční VElká písmena
+	Corrections	Opravy
+	Create	Vytvořit
+	Create a PDF Document	Vytvořit dokument PDF
+	Create Handouts	Vytvořit podklady
+	Create New Theme Colors	Vytvořit nové barvy motivu
+	Create New Theme Fonts	Vytvořit nová písma motivu
+	Crop	Oříznout
+	Crop to Shape	Oříznout na tvar
+	Custom character:	Vlastní znak:
+	Custom Shows	Vlastní prezentace
+	Custom\nShow	Vlastní\nprezentace
+	Customize Colors…	Přizpůsobit barvy…
+	Customize Fonts…	Přizpůsobit písma…
+	Customize Quick Access Toolbar	Přizpůsobit panel nástrojů Rychlý přístup
+	Cut	Vyjmout
+	Dark appearance	Tmavý vzhled
+	Dark\nMode	Tmavý\nrežim
+	Dash	Pomlčka
+	Dashes	Čárkování
+	Date	Datum
+	Date &\nTime	Datum\na čas
+	Date and Time	Datum a čas
+	Date and time	Datum a čas
+	Decrease Font Size	Zmenšit velikost písma
+	Decrease List Level	Snížit úroveň seznamu
+	Default tab stops (in):	Výchozí zarážky tabulátoru (in):
+	Delay:	Zpoždění:
+	Delete	Odstranit
+	Delete Columns	Odstranit sloupce
+	Delete Point	Odstranit bod
+	Delete Repeated Word	Odstranit opakované slovo
+	Delete Rows	Odstranit řádky
+	Delete Segment	Odstranit segment
+	Delete Slide	Odstranit snímek
+	Delete Table	Odstranit tabulku
+	Demote	Snížit úroveň
+	Design	Návrh
+	Design\nIdeas	Návrhy\nrozložení
+	Direction	Směr
+	Display	Zobrazení
+	Display drawing guides on screen	Zobrazit vodítka kreslení na obrazovce
+	Display grid on screen	Zobrazit mřížku na obrazovce
+	Distribute Columns	Rovnoměrně rozložit sloupce
+	Distribute Horizontally	Rozložit vodorovně
+	Distribute Rows	Rovnoměrně rozložit řádky
+	Distribute Vertically	Rozložit svisle
+	Do not check spelling or grammar	Nekontrolovat pravopis ani mluvnici
+	Don't Save	Neukládat
+	Don't show on title slide	Nezobrazovat na úvodním snímku
+	Done	Hotovo
+	Draw	Kreslení
+	Draw Table	Nakreslit tabulku
+	Duplicate Selected Slides	Duplikovat vybrané snímky
+	Duplicate Slide	Duplikovat snímek
+	Duration:	Doba trvání:
+	e.g. 1-3, 5	např. 1-3, 5
+	Edit Alt Text…	Upravit alternativní text…
+	Edit Photo Album…	Upravit fotoalbum…
+	Edit Points	Upravit body
+	Edit Text	Upravit text
+	Edit the data: first row = series names, first column = categories.	Upravte data: první řádek = názvy řad, první sloupec = kategorie.
+	Edit\nData	Upravit\ndata
+	Edit\nShape	Upravit\ntvar
+	Editing	Úpravy
+	Effect\nOptions	Možnosti\nefektu
+	Effects	Efekty
+	Email Address	E-mailová adresa
+	Email address:	E-mailová adresa:
+	End Review	Ukončit revizi
+	End trim (s):	Oříznutí konce (s):
+	End\nReview	Ukončit\nrevizi
+	Equation	Rovnice
+	Eraser	Guma
+	Exit Edit Points	Ukončit úpravu bodů
+	Export	Exportovat
+	Export the presentation as:	Exportovat prezentaci jako:
+	Eyedropper	Kapátko
+	Fade in (s):	Postupné zesílení (s):
+	Fade out (s):	Postupné zeslabení (s):
+	File	Soubor
+	Fill	Výplň
+	Find	Najít
+	Find and Replace	Najít a nahradit
+	Find Next	Najít další
+	Find what:	Najít:
+	Find whole words only	Pouze celá slova
+	First Column	První sloupec
+	Fit	Přizpůsobit
+	Fit slide to current window	Přizpůsobit snímek aktuálnímu oknu
+	Fit to\nWindow	Přizpůsobit\noknu
+	Flip Horizontal	Převrátit vodorovně
+	Flip Vertical	Převrátit svisle
+	Follow Path	Sledovat cestu
+	Font	Písmo
+	Font Color	Barva písma
+	Font name	Název písma
+	Fonts	Písma
+	Font…	Písmo…
+	Footer	Zápatí
+	Footers	Zápatí
+	Format	Formát
+	Format Background…	Formátovat pozadí…
+	Format Painter (double-click to keep it on)	Štětec formátu (dvojklikem zůstane zapnutý)
+	Format Shape…	Formátovat tvar…
+	Format\nBackground	Formátovat\npozadí
+	Format\nPane	Podokno\nformátu
+	Frame shape	Tvar rámečku
+	Frame Slides	Orámovat snímky
+	From slide:	Od snímku:
+	From the top-left corner of the slide	Od levého horního rohu snímku
+	From\nBeginning	Od\nzačátku
+	From\nCurrent Slide	Od aktuálního\nsnímku
+	General	Obecné
+	Glow	Záře
+	Grab bag	Různé
+	Gradient stops	Zarážky přechodu
+	Gradient…	Přechod…
+	Grayscale	Stupně šedi
+	Grid and Guides	Mřížka a vodítka
+	Grid Options	Možnosti mřížky
+	Grid\nOptions	Možnosti\nmřížky
+	Gridlines	Mřížka
+	Group	Seskupit
+	Group Objects	Seskupit objekty
+	Guides	Vodítka
+	Handout Master	Předloha podkladů
+	Handout\nMaster	Předloha\npodkladů
+	Header	Záhlaví
+	Header &\nFooter	Záhlaví a\nzápatí
+	Header and Footer	Záhlaví a zápatí
+	Header Row	Řádek záhlaví
+	Heading and body fonts for this presentation.	Písma nadpisů a textu této prezentace.
+	Heading:	Nadpis:
+	Height:	Výška:
+	Hide All	Skrýt vše
+	Hide background graphics	Skrýt grafiku pozadí
+	Hide During Show	Skrýt během prezentace
+	Hide\nSlide	Skrýt\nsnímek
+	Highlight click	Zvýraznit klepnutí
+	Home	Domů
+	How would you describe this object and its context to someone who is blind or has low vision?	Jak byste tento objekt a jeho kontext popsali nevidomému nebo slabozrakému člověku?
+	Hyperlink to:	Hypertextový odkaz na:
+	Icons	Ikony
+	Ignore All	Ignorovat vše
+	Inches	Palce
+	Include hidden slides	Zahrnout skryté snímky
+	Increase Font Size	Zvětšit velikost písma
+	Increase List Level	Zvýšit úroveň seznamu
+	Indentation	Odsazení
+	Ink to Math (coming soon)	Rukopis na matematiku (již brzy)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Rukopis na tvar: nakreslené čáry, obdélníky, ovály a trojúhelníky se změní na tvary
+	Ink to Text (coming soon)	Rukopis na text (již brzy)
+	Ink to\nMath	Rukopis na\nrovnici
+	Ink to\nShape	Rukopis na\ntvar
+	Ink to\nText	Rukopis na\ntext
+	Insert	Vložení
+	Insert Hyperlink	Vložit hypertextový odkaz
+	Insert Picture	Vložit obrázek
+	Insert picture from file…	Vložit obrázek ze souboru…
+	Insert Table	Vložit tabulku
+	Insert Table…	Vložit tabulku…
+	Insert\nAbove	Vložit\nnad
+	Insert\nBelow	Vložit\npod
+	Insert\nLayout	Vložit\nrozložení
+	Insert\nLeft	Vložit\nvlevo
+	Insert\nPlaceholder	Vložit\nzástupný symbol
+	Insert\nRight	Vložit\nvpravo
+	Insert…	Vložit…
+	Interface Language	Jazyk rozhraní
+	Interface language:	Jazyk rozhraní:
+	Italic	Kurzíva
+	Justify	Do bloku
+	Keep source formatting	Zachovat formátování zdroje
+	Landscape	Na šířku
+	Language	Jazyk
+	Language:	Jazyk:
+	Last Column	Poslední sloupec
+	Layout	Rozvržení
+	Layouts	Rozvržení
+	Learn\nMore	Další\ninformace
+	Leave the slide background out: only what is on the slide is drawn	Bez pozadí snímku: kreslí se jen to, co je na snímku
+	Less Brightness	Menší jas
+	Less Contrast	Menší kontrast
+	Light/Dark appearance	Světlý/tmavý vzhled
+	Line	Čára
+	Line Spacing	Řádkování
+	Line spacing	Řádkování
+	Line Spacing Options…	Možnosti řádkování…
+	Link	Odkaz
+	Link…	Odkaz…
+	Lock aspect ratio	Zamknout poměr stran
+	Loop continuously until 'Esc'	Opakovat, dokud nestisknete Esc
+	Loop forever	Opakovat stále
+	Loop Until Next Sound	Opakovat do dalšího zvuku
+	Loop until Stopped	Opakovat do zastavení
+	Margins (pt)	Okraje (pt)
+	Mark as decorative	Označit jako dekorativní
+	Match case	Rozlišovat malá a velká písmena
+	Maximize content (else ensure fit)	Maximalizovat obsah (jinak zajistit přizpůsobení)
+	Measurement units:	Jednotky měření:
+	Merge Shapes	Sloučit tvary
+	Merge\nCells	Sloučit\nbuňky
+	Merge\nShapes	Sloučit\ntvary
+	Mirror	Zrcadlit
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	Názvy měsíců a AM/PM jsou uvedeny pro angličtinu. Ostatní jazyky uvádějí číselné datum a 24hodinový čas.
+	More Brightness	Větší jas
+	More Colors… #	Další barvy… #
+	More Columns…	Další sloupce…
+	More Contrast	Větší kontrast
+	Move Down	Přesunout dolů
+	Move Section Down	Přesunout oddíl dolů
+	Move Section Up	Přesunout oddíl nahoru
+	Move Up	Přesunout nahoru
+	Name	Jméno
+	Name:	Název:
+	New	Nový
+	New Comment	Nový komentář
+	New Photo Album…	Nové fotoalbum…
+	New show name:	Název nové prezentace:
+	New Slide	Nový snímek
+	New Slide (⇧⌘N)	Nový snímek (⇧⌘N)
+	New Text Box	Nové textové pole
+	New\nComment	Nový\nkomentář
+	New\nSlide	Nový\nsnímek
+	New\nWindow	Nové\nokno
+	Next	Další
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	Nebyly nalezeny žádné problémy s usnadněním. Lidé s postižením by neměli mít potíže s četbou tohoto dokumentu.
+	No comments.	Žádné komentáře.
+	No contributor data was built into this copy.	Tato kopie neobsahuje údaje o přispěvatelích.
+	No differences left.	Nezbývají žádné rozdíly.
+	No Glow	Bez záře
+	No icons match.	Žádné ikony neodpovídají.
+	No line	Bez čáry
+	No model credits were built into this copy.	Tato kopie neobsahuje uvedení modelů.
+	No notes.	Žádné poznámky.
+	No pictures yet	Zatím žádné obrázky
+	None	Žádné
+	Normal	Normální
+	Not a copy of this presentation: slides are matched by position.	Není kopií této prezentace: snímky se párují podle pořadí.
+	Notes	Poznámky
+	Notes Master	Předloha poznámek
+	Notes\nMaster	Předloha\npoznámek
+	Number of columns:	Počet sloupců:
+	Number of rows:	Počet řádků:
+	Number:	Číslo:
+	Numbering	Číslování
+	OK	OK
+	On Click of… (none)	Při klepnutí na… (nic)
+	On Mouse Click	Při klepnutí myší
+	Open a presentation from a folder (Ctrl+O)	Otevřít prezentaci ze složky (Ctrl+O)
+	Open another window on this presentation	Otevřít další okno s touto prezentací
+	Open file location	Otevřít umístění souboru
+	Options	Možnosti
+	Order Objects	Seřadit objekty
+	Ordinals (1st) with superscript	Řadové číslovky (1st) jako horní index
+	Orientation:	Orientace:
+	Other Sound…	Jiný zvuk…
+	Outline	Osnova
+	Page Setup…	Vzhled stránky…
+	Paragraph	Odstavec
+	Paragraph…	Odstavec…
+	Paste	Vložit
+	Paste (⌘V)	Vložit (⌘V)
+	Paste and Match Formatting	Vložit a sloučit formátování
+	Paste Formatting	Vložit formátování
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Vložte nebo napište osnovu. Neodsazené řádky se stanou nadpisy snímků; řádky odsazené tabulátorem se stanou odrážkami.
+	Paste Special	Vložit jinak
+	Paste Special…	Vložit jinak…
+	Pattern	Vzorek
+	Pen Color	Barva pera
+	Pen Style	Styl pera
+	Pen Weight	Tloušťka pera
+	Percent:	Procento:
+	Photo Album	Fotoalbum
+	Photo Album options	Možnosti fotoalba
+	Photo Album…	Fotoalbum…
+	Photo\nAlbum	Foto-\nalbum
+	Pick a design for this slide. Ideas are generated on your device.	Vyberte návrh pro tento snímek. Nápady se vytvářejí ve vašem zařízení.
+	Pick a graphic; type one item per line.	Vyberte obrázek; na každý řádek napište jednu položku.
+	Picture	Obrázek
+	Picture Border	Ohraničení obrázku
+	Picture Format	Formát obrázku
+	Picture layout	Rozložení obrázků
+	Picture source	Zdroj obrázků
+	Pictures	Obrázky
+	Pictures in album	Obrázky v albu
+	Play Across Slides	Přehrávat napříč snímky
+	Play from\nCurrent Slide	Přehrát od\naktuálního snímku
+	Play from\nStart	Přehrát od\nzačátku
+	Play Full Screen	Přehrát na celou obrazovku
+	Play Narrations	Přehrát komentáře
+	Play this slide's animations on the canvas	Přehrát animace tohoto snímku na plátně
+	Playback	Přehrávání
+	Portrait	Na výšku
+	Position	Pozice
+	Position Objects	Umístit objekty
+	Post	Odeslat
+	Preferences	Předvolby
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Prezentace a promítání snímků, vytvořené od základu v čistém Rustu.
+	Presenter\nView	Zobrazení\nprezentujícího
+	Preserve	Zachovat
+	Preset gradients	Předdefinované přechody
+	Preview	Náhled
+	Previous	Předchozí
+	Print Hidden Slides	Tisknout skryté snímky
+	Print layout:	Rozložení tisku:
+	Program:	Program:
+	Promote	Zvýšit úroveň
+	pt	b.
+	Put a picture in the selected node's picture placeholder	Vložit obrázek do zástupného symbolu obrázku ve vybraném uzlu
+	Quick\nStyles	Rychlé\nstyly
+	Reading View	Zobrazení pro čtení
+	Recent	Nedávné
+	Recolor	Přebarvit
+	Record	Záznam
+	Recording narration needs audio capture (coming soon)	Nahrávání komentáře vyžaduje záznam zvuku (již brzy)
+	Recover Unsaved Presentations	Obnovit neuložené prezentace
+	Reflection	Odraz
+	Regroup	Znovu seskupit
+	Rehearse\nTimings	Vyzkoušet\nčasování
+	Remove	Odebrat
+	Remove All Sections	Odebrat všechny oddíly
+	Remove bullets and numbering	Odebrat odrážky a číslování
+	Remove from Quick Access Toolbar	Odebrat z panelu nástrojů Rychlý přístup
+	Remove from Recent	Odebrat z nedávných souborů
+	Remove Section	Odebrat oddíl
+	Remove Section & Slides	Odebrat oddíl a snímky
+	Remove stop	Odebrat bod
+	Remove the picture style	Odebrat styl obrázku
+	Remove\nBackground	Odebrat\npozadí
+	Rename	Přejmenovat
+	Rename Layout	Přejmenovat rozložení
+	Rename Section	Přejmenovat oddíl
+	Rename Section…	Přejmenovat oddíl…
+	Repeated word	Opakované slovo
+	Replace	Nahradit
+	Replace All	Nahradit vše
+	Replace Font	Nahradit písmo
+	Replace Fonts…	Nahradit písma…
+	Replace fractions (1/2) with fraction characters (½)	Nahrazovat zlomky (1/2) znaky zlomků (½)
+	Replace straight quotes with smart quotes	Nahrazovat rovné uvozovky typografickými
+	Replace text as you type	Nahrazovat text při psaní
+	Replace with:	Nahradit čím:
+	Replace:	Nahradit:
+	Replace…	Nahradit…
+	Reply…	Odpovědět…
+	Rescan Installed Fonts	Znovu prohledat nainstalovaná písma
+	Reset	Obnovit
+	Reset 3-D	Obnovit 3D
+	Reset Background	Obnovit pozadí
+	Reset Effects	Obnovit efekty
+	Reset Picture	Obnovit obrázek
+	Reset Slide	Obnovit snímek
+	Reset Slide Background	Obnovit pozadí snímku
+	Reset to Defaults	Obnovit výchozí
+	Reuse Slides	Znovu použít snímky
+	Reverse the order	Obrátit pořadí
+	Review	Revize
+	Rewind after Playing	Po přehrání převinout
+	Right-click any ribbon button to add it.	Klepněte pravým tlačítkem na libovolné tlačítko pásu karet a přidejte ho.
+	Rotate	Otočit
+	Rotate Left	Otočit doleva
+	Rotate Left 90°	Otočit doleva o 90°
+	Rotate Right	Otočit doprava
+	Rotate Right 90°	Otočit doprava o 90°
+	Rotate with shape	Otáčet s tvarem
+	Ruler	Pravítko
+	Save	Uložit
+	Screenshot	Snímek obrazovky
+	Screenshot (not available yet)	Snímek obrazovky (zatím nedostupný)
+	ScreenTip:	Popis:
+	Scroll ribbon left	Posunout pás karet doleva
+	Scroll ribbon right	Posunout pás karet doprava
+	Search commands (⇧⌘P)	Hledat příkazy (⇧⌘P)
+	Search commands…	Hledat příkazy…
+	Search icons	Hledat ikony
+	Seconds per slide:	Sekund na snímek:
+	Section	Oddíl
+	Select	Vybrat
+	Select a chart first.	Nejprve vyberte graf.
+	Select a shape to format it.	Vyberte tvar, který chcete formátovat.
+	Select a SmartArt graphic to edit its text.	Vyberte obrázek SmartArt, jehož text chcete upravit.
+	Select an object on the slide and add an animation from the Animations tab.	Vyberte objekt na snímku a přidejte animaci z karty Animace.
+	Selection Pane…	Podokno výběru…
+	Selection\nPane	Podokno\nvýběru
+	Send Backward	Přenést dál
+	Send to Back	Přesunout do pozadí
+	Send\nBackward	Přesunout\ndál
+	Set	Nastavit
+	Set as Default Shape	Nastavit jako výchozí tvar
+	Set Transparent Color	Nastavit průhlednou barvu
+	Set Up Slide Show	Nastavení prezentace
+	Set Up\nSlide Show	Nastavit\nprezentaci
+	Shading	Stínování
+	Shadow	Stín
+	Shape Effects	Efekty tvarů
+	Shape Fill	Výplň tvaru
+	Shape Format	Formát tvaru
+	Shape Outline	Obrys tvaru
+	Shape\nStyles	Styly\ntvarů
+	Shapes	Tvary
+	Show	Zobrazit
+	Show All	Zobrazit vše
+	Show Media Controls	Zobrazit ovládací prvky médií
+	Show smart guides	Zobrazit inteligentní vodítka
+	Show type	Typ prezentace
+	Show without animation	Prezentace bez animací
+	Show without narration	Prezentace bez komentáře
+	Show\nComments	Zobrazit\nkomentáře
+	Size	Velikost
+	Size (% of text):	Velikost (% textu):
+	Size and Position	Velikost a umístění
+	Size and Position…	Velikost a umístění…
+	Size:	Velikost:
+	Slide Master	Předloha snímků
+	Slide number	Číslo snímku
+	Slide Show	Prezentace
+	Slide Size	Velikost snímku
+	Slide Sorter	Řazení snímků
+	Slide text	Text snímku
+	Slide title	Nadpis snímku
+	Slide {n} of {total}	Snímek {n} z {total}
+	Slide\nMaster	Předloha\nsnímků
+	Slide\nNumber	Číslo\nsnímku
+	Slide\nSize	Velikost\nsnímku
+	Slides	Snímky
+	Slides (e.g. 1,3,5):	Snímky (např. 1,3,5):
+	Slides from Outline	Snímky z osnovy
+	Slides from Outline…	Snímky z osnovy…
+	Slides sized for:	Velikost snímků pro:
+	Slides:	Snímky:
+	SmartArt	SmartArt
+	SmartArt Design	Návrh SmartArt
+	SmartArt items	Položky SmartArt
+	SmartArt Styles	Styly SmartArt
+	SmartArt text	Text SmartArt
+	Snap	Přichytit
+	Snap objects to grid	Přichytit objekty k mřížce
+	Snap objects to other objects	Přichytit objekty k jiným objektům
+	Soft Edges	Měkké okraje
+	Solid line	Plná čára
+	Sort	Seřadit
+	Sound:	Zvuk:
+	Spacing	Mezery
+	Spacing (in):	Mezery (in):
+	Spacing (pt):	Mezery (b.):
+	Special	Speciální
+	Spelling	Pravopis
+	Spelling is checked for languages marked (dictionary).	Pravopis se kontroluje u jazyků označených (slovník).
+	Split\nCells	Rozdělit\nbuňky
+	Standard (4:3)	Standardní (4:3)
+	Standard Colors	Standardní barvy
+	Start at:	Začít od:
+	Start Automatically	Spustit automaticky
+	Start time (s):	Čas začátku (s):
+	Start:	Začátek:
+	Strikethrough	Přeškrtnuté
+	Subscript	Dolní index
+	Superscript	Horní index
+	Symbol	Symbol
+	Tab stop position (in):	Pozice zarážky (in):
+	Tab stops:	Zarážky:
+	Table	Tabulka
+	Table Design	Návrh tabulky
+	Tabs	Tabulátory
+	Tabs…	Tabulátory…
+	Templates	Šablony
+	Text Box	Textové pole
+	Text box:	Textové pole:
+	Text Direction	Směr textu
+	Text Effects	Textové efekty
+	Text Fill	Výplň textu
+	Text Highlight Color	Barva zvýraznění textu
+	Text Outline	Obrys textu
+	Text\nBox	Textové\npole
+	Text\nPane	Podokno\ntextu
+	The spelling check is complete. No issues found.	Kontrola pravopisu je dokončena. Nebyly nalezeny žádné problémy.
+	Theme Colors	Barvy motivu
+	Themes	Motivy
+	Themes (whole presentation)	Motivy (celá prezentace)
+	Thesaurus	Tezaurus
+	This Document	Tento dokument
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Tato prezentace nemá žádné vlastní prezentace (Prezentace ▸ Vlastní prezentace).
+	Tile picture as texture	Vytvořit z obrázku dlaždicovou texturu
+	Title	Název
+	To slide:	Po snímek:
+	Total Row	Řádek součtů
+	Transform	Transformace
+	Transitions	Přechody
+	Translate	Přeložit
+	Translation needs a language model (not bundled)	Překlad vyžaduje jazykový model (není součástí)
+	Transparency	Průhlednost
+	Transparent background	Průhledné pozadí
+	Trigger	Aktivační událost
+	Trim	Oříznout
+	Trim Media	Oříznout médium
+	Type	Typ
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Napište rovnici v lineárním tvaru (např. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Napište a uspořádejte text diagramu
+	Type your text here	Sem napište text
+	Underline	Podtržené
+	Ungroup	Oddělit
+	Update automatically	Aktualizovat automaticky
+	Use Timings	Použít časování
+	Use timings, if present	Použít časování, pokud existuje
+	Vertical alignment	Svislé zarovnání
+	Video	Video
+	View	Zobrazení
+	Volume	Ročník
+	Warp	Pokřivení
+	Web Page or File	Webová stránka nebo soubor
+	Weight	Tloušťka
+	Whole presentation	Celá prezentace
+	Widescreen (16:9)	Širokoúhlý (16:9)
+	Width	Šířka
+	Width (pixels):	Šířka (pixely):
+	Width:	Šířka:
+	Width: 	Šířka: 
+	With	S
+	With:	Čím:
+	WordArt	WordArt
+	Wrap text in shape	Zalomit text do tvaru
+	Your changes will be lost if you don't save them.	Pokud změny neuložíte, budou ztraceny.
+	Your name (comments):	Vaše jméno (komentáře):
+	Zoom	Lupa
+	Zoom In	Přiblížit
+	Zoom Out	Oddálit
+	Zoom to	Přiblížit na
+	Open	Otevřít
+	Info	Informace
+	Save As	Uložit jako
+	Print	Tisk
+	Account	Účet
+	PowerPoint Presentation (*.pptx)	Prezentace PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	Otevře se v PowerPointu a dalších prezentačních aplikacích
+	DeckCraft Presentation (*.deckcraft)	Prezentace DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Vlastní formát DeckCraft: zachová se vše
+	PDF (*.pdf)	Soubor PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	Pevná kopie, která si zachová rozložení na každém zařízení
+	Outline (*.txt)	Osnova (*.txt)
+	The slide titles and bullet text as plain text	Nadpisy snímků a text odrážek jako prostý text
+	Outline/RTF (*.rtf)	Osnova/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Nadpisy snímků a text odrážek pro textové editory
+	PNG Picture (*.png)	Obrázek PNG (*.png)
+	The current slide as a picture	Aktuální snímek jako obrázek
+	JPEG Picture (*.jpg)	Obrázek JPEG (*.jpg)
+	The current slide as a compressed picture	Aktuální snímek jako komprimovaný obrázek
+	Add a title	Přidat název
+	Subject	Předmět
+	Specify the subject	Zadat předmět
+	Tags	Tagy
+	Add a tag	Přidat značku
+	Categories	Kategorie
+	Add a category	Přidat kategorii
+	Company	Společnost
+	Specify the company	Zadat společnost
+	Add comments	Přidat komentáře
+	Author	Autor
+	Add an author	Přidat autora
+	Back	Zpět
+	Blank Presentation	Prázdná prezentace
+	Sample deck: Northern Lights	Ukázková prezentace: Polární záře
+	Presentations you open show up here. Use Open to browse for one.	Zde se zobrazí prezentace, které otevřete. Prezentaci najdete pomocí Otevřít.
+	More themes	Další motivy
+	More templates	Další šablony
+	Search for a file	Hledat soubor
+	More presentations	Další prezentace
+	Get help and support	Získat pomoc a podporu
+	Join the ArtCraft community on Discord	Připojte se ke komunitě ArtCraft na Discordu
+	Search for themes and templates	Hledat motivy a šablony
+	Browse	Procházet
+	There are no unsaved presentations to recover	Nejsou žádné neuložené prezentace k obnovení
+	Presentations	Prezentace
+	No presentation is open.	Není otevřena žádná prezentace.
+	Not saved yet	Dosud neuloženo
+	Copied the path	Cesta byla zkopírována
+	Check for Issues	Zkontrolovat problémy
+	Inspect Presentation	Zkontrolovat prezentaci
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Před sdílením zkontrolujte, zda prezentace neobsahuje nic, co by lidé s postižením mohli obtížně číst.
+	There are no unsaved changes.	Nejsou žádné neuložené změny.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Tato prezentace obsahuje neuložené změny. Vrátit se obnoví uložený soubor.
+	This presentation has never been saved.	Tato prezentace nebyla nikdy uložena.
+	Revert	Vrátit k uložené verzi
+	Manage Presentation	Spravovat prezentaci
+	Properties	Vlastnosti
+	Hidden slides	Skryté snímky
+	Location	Umístění
+	Save as type	Typ souboru
+	Download	Stáhnout
+	Download the file	Stáhnout soubor
+	Choose where to save	Zvolte, kam uložit
+	Full Page Slides	Snímky na celou stránku
+	Notes Pages	Stránky s poznámkami
+	Handouts (1 slide per page)	Podklady (1 snímek na stránku)
+	Handouts (2 slides per page)	Podklady (2 snímky na stránku)
+	Handouts (3 slides per page)	Podklady (3 snímky na stránku)
+	Handouts (4 slides per page)	Podklady (4 snímky na stránku)
+	Handouts (6 slides per page)	Podklady (6 snímků na stránku)
+	Handouts (9 slides per page)	Podklady (9 snímků na stránku)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft tiskne přes PDF: otevře se v prohlížeči PDF, kde zvolíte tiskárnu.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft tiskne přes PDF: stáhne se a můžete ho vytisknout z prohlížeče nebo prohlížeče PDF.
+	Settings	Nastavení
+	Print All Slides	Tisknout všechny snímky
+	Print Current Slide	Tisknout aktuální snímek
+	Custom Range	Vlastní rozsah
+	Print range	Rozsah tisku
+	Print layout	Rozložení tisku
+	Paper size	Velikost papíru
+	Landscape Orientation	Orientace na šířku
+	Portrait Orientation	Orientace na výšku
+	Orientation	Orientace
+	Edit Header & Footer	Upravit záhlaví a zápatí
+	Nothing to print: every slide in the range is hidden.	Není co tisknout: všechny snímky v rozsahu jsou skryté.
+	Previous Page	Předchozí stránka
+	{n} of {total}	{n} z {total}
+	Next Page	Další stránka
+	Create PDF Document	Vytvořit dokument PDF
+	Keeps the layout, fonts and pictures	Zachová rozložení, písma a obrázky
+	Opens on any device with a PDF viewer	Otevře se na každém zařízení s prohlížečem PDF
+	The presentation keeps its own file	Prezentace si ponechá vlastní soubor
+	Create PDF	Vytvořit PDF
+	Several slides on each page of a PDF	Několik snímků na každé stránce PDF
+	Three a page leaves lines for notes	Tři na stránku ponechají řádky na poznámky
+	Print them for your audience	Vytiskněte je pro posluchače
+	{n} slides per page	Snímků na stránku: {n}
+	Slides per page	Snímků na stránku
+	Appearance	Vzhled
+	Dark	Tmavý
+	Light	Světlý
+	User Information	Informace o uživateli
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft nemá žádné účty: není se kam přihlašovat a vaše prezentace zůstávají ve vašem zařízení.
+	Product Information	Informace o produktu
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Open source pod licencí MIT NEBO Apache-2.0. Není spojeno se společností Microsoft.
+	The version, the people and models who built it, and where to find us.	Verze, lidé a modely, kteří ji vytvořili, a kde nás najdete.
+	Join our community on Discord	Připojte se k naší komunitě na Discordu
+	Source on GitHub	Zdrojový kód na GitHubu
+	Undo	Zpět
+	Redo	Znovu
+	Start from Beginning	Spustit od začátku
+	Add to Quick Access Toolbar	Přidat na panel nástrojů Rychlý přístup
+	Window title bar	Záhlaví okna
+	Can't play {codec} video here.	Video {codec} zde nelze přehrát.
+	Open in the system player	Otevřít v systémovém přehrávači
+	Couldn't open the media: {error}	Médium nelze otevřít: {error}
+	This build can't open media in another app.	Toto sestavení nemůže otevírat média v jiné aplikaci.
+	Send error reports automatically?	Odesílat zprávy o chybách automaticky?
+	When the app crashes or stops responding, it can send a report so the problem gets fixed without you writing to us. A report holds the app version, the system, the language, where in the code the error happened and the last lines of the technical log. Never the text of your documents, file names, folders, e-mail addresses or passwords.	Když aplikace spadne nebo přestane reagovat, může odeslat zprávu, aby se problém opravil, aniž byste nám museli psát. Zpráva obsahuje verzi aplikace, systém, jazyk, místo v kódu, kde k chybě došlo, a poslední řádky technického protokolu. Nikdy text vašich dokumentů, názvy souborů, složky, e-mailové adresy ani hesla.
+	Reports go to Tinta Office (report.tintaoffice.com, stored in the EU) and are deleted after 90 days. You can change this at any time in File › Options › General and delete your reports from the server there. Details: tintaoffice.com/aviso-legal	Zprávy putují do Tinta Office (report.tintaoffice.com, uloženy v EU) a po 90 dnech se mažou. Toto nastavení můžete kdykoli změnit v Soubor › Možnosti › Obecné a tam také smazat své zprávy ze serveru. Podrobnosti: tintaoffice.com/aviso-legal
+	Yes, send reports	Ano, odesílat zprávy
+	No	Ne
+	Error reports	Zprávy o chybách
+	Send error reports automatically	Automaticky odesílat zprávy o chybách
+	Installation id: {id}	ID instalace: {id}
+	Delete my reports from the server	Smazat mé zprávy ze serveru
+	Deletion requested: it completes the next time the app is online.	Smazání vyžádáno: dokončí se, až bude aplikace příště online.
+	Open the reports folder	Otevřít složku se zprávami

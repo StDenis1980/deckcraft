@@ -1,0 +1,808 @@
+# Română (ro) interface catalog for DeckCraft (Tinta Presenta). Machine-assisted (AI); needs native review.
+# craft-i18n catalog format. Written from the meaning of the English text; rows shared with the
+# Tinta forks of PdfCraft, WordCraft and GridCraft reuse their wording. No other product's localisation.
+# Columns, separated by a TAB:  context <TAB> English source text <TAB> translation
+#   context  empty here. escapes  \n  \t  \\  inside a column. {name} placeholders must appear in
+#            both columns, and a trailing "…" in one needs one in the other.
+#   Lines starting with # and blank lines are ignored. A missing entry shows in English.
+	  Fixed date (empty = update automatically):	  Dată fixă (gol = actualizare automată):
+	  Footer text:	  Text subsol:
+	  Format:	  Format:
+	  Present  	  Prezentare  
+	 (not checked)	 (neverificat)
+	(no spelling suggestions)	(nicio sugestie de ortografie)
+	(none)	(niciunul)
+	+ Add	+ Adăugare
+	+ New Comment	+ Comentariu nou
+	+ Row	+ Rând
+	+ Series	+ Serie
+	3-D	3D
+	3-D Format	Format 3D
+	3-D Rotation	Rotație 3D
+	[No Sound]	[Fără sunet]
+	[Stop Previous Sound]	[Oprire sunet anterior]
+	About DeckCraft	Despre DeckCraft
+	Accept\nAll	Acceptare\ntoate
+	Accessibility Checker	Verificator de accesibilitate
+	Action	Acțiune
+	Action Settings	Setări acțiune
+	Action Settings…	Setări acțiune…
+	Add	Adăugare
+	Add a title with a picture or some text to get layout ideas.	Adăugați un titlu cu o imagine sau un text pentru a primi idei de aspect.
+	Add Pictures…	Adăugare imagini…
+	Add Point	Adăugare punct
+	Add Section	Adăugare secțiune
+	Add Shape	Adăugare formă
+	Add to Dictionary	Adăugați în dicționar
+	Add\nAnimation	Adăugare\nanimație
+	Address:	Adresă:
+	After:	După:
+	Album theme	Temă album
+	Align	Aliniere
+	Align Left	Aliniere la stânga
+	Align Right	Aliniere la dreapta
+	Align Text	Aliniere text
+	Alignment	Aliniere
+	Alignment:	Aliniere:
+	ALL pictures black and white	TOATE imaginile alb-negru
+	All slides	Toate diapozitivele
+	Alt Text	Text alternativ
+	Alt text	Text alternativ
+	Alt\nText	Text\nalternativ
+	An open-source, clean-room project. Not affiliated with Microsoft.	Un proiect open-source, clean-room. Neafiliat cu Microsoft.
+	Angle	Unghi
+	Animation Painter (double-click to keep it on)	Descriptor animație (dublu clic pentru a-l menține activ)
+	Animation\nPainter	Descriptor\nanimație
+	Animation\nPane	Panou\nanimații
+	Animations	Animații
+	Applies to this presentation's theme colours.	Se aplică culorilor temei acestei prezentări.
+	Apply	Aplicare
+	Apply to All	Aplicare la toate
+	Apply to:	Aplicați la:
+	Apply\nTo All	Aplicare\nla toate
+	Arrange	Aranjare
+	Arrows	Săgeți
+	Artistic\nEffects	Efecte\nartistice
+	As:	Ca:
+	Audio	Audio
+	AutoCorrect	Corectare automată
+	AutoCorrect as you type	AutoCorecție în timpul tastării
+	AutoCorrect Options…	Opțiuni AutoCorecție…
+	Automatic	Automat
+	Automatic (system language)	Automat (limba sistemului)
+	Automatic bulleted and numbered lists	Liste automate cu marcatori și numerotate
+	Available formats:	Formate disponibile:
+	Back (Esc)	Înapoi (Esc)
+	Background\nStyles	Stiluri\nfundal
+	Banded Columns	Coloane alternante
+	Banded Rows	Rânduri alternante
+	Based on DeckCraft by the ArtCraft team.	Bazat pe DeckCraft, de echipa ArtCraft.
+	Baseline	Linie de bază
+	Bevel	Teșitură
+	Body:	Corp:
+	Bold	Aldin
+	Borders	Borduri
+	Bring Forward	Aducere în față
+	Bring to Front	Aducere în prim-plan
+	Bring\nForward	Aducere\nîn față
+	Browse for Themes…	Răsfoire teme…
+	Bullets	Marcatori
+	Bullets and Numbering	Marcatori și numerotare
+	Bullets and Numbering…	Marcatori și numerotare…
+	Cameo	Cameo
+	Camera capture is not available yet	Captura cu camera nu este încă disponibilă
+	Cancel	Anulare
+	Capitalize first letter of sentences	Prima literă a propozițiilor cu majusculă
+	Capitalize names of days	Numele zilelor cu majusculă
+	Caps	Majuscule
+	Captions under pictures	Legende sub imagini
+	Cell Margins	Margini celulă
+	Center	Centru
+	Centimeters	Centimetri
+	Change Case	Schimbare majuscule
+	Change Colors	Schimbare culori
+	Change File Type	Schimbare tip de fișier
+	Change Picture	Schimbare imagine
+	Change Picture…	Schimbare imagine…
+	Change Shape	Schimbare formă
+	Change to:	Modificare în:
+	Change\nChart Type	Schimbare\ntip grafic
+	Character Spacing	Spațiere caractere
+	Chart	Grafic
+	Chart cell	Celulă diagramă
+	Chart Data	Date diagramă
+	Chart Design	Design grafic
+	Check\nAccessibility	Verificare\naccesibilitate
+	Choose a SmartArt Graphic	Alegeți un grafic SmartArt
+	Choosing a presentation to reuse needs the desktop app	Alegerea unei prezentări de reutilizat necesită aplicația desktop
+	Choosing a sound file needs the desktop app	Alegerea unui fișier de sunet necesită aplicația desktop
+	Clear All	Golire totală
+	Clear All Formatting	Ștergere toată formatarea
+	Click a colour in the picture to make it transparent	Faceți clic pe o culoare din imagine pentru a o face transparentă
+	Click a symbol to insert it at the insertion point.	Faceți clic pe un simbol pentru a-l insera la punctul de inserare.
+	Click icon to add chart	Faceți clic pe pictogramă pentru a adăuga o diagramă
+	Click icon to add media	Faceți clic pe pictogramă pentru a adăuga media
+	Click icon to add picture	Faceți clic pe pictogramă pentru a adăuga o imagine
+	Click icon to add SmartArt graphic	Faceți clic pe pictogramă pentru a adăuga un grafic SmartArt
+	Click icon to add table	Faceți clic pe pictogramă pentru a adăuga un tabel
+	Click the slide to take the colour under the pointer	Faceți clic pe diapozitiv pentru a prelua culoarea de sub indicator
+	Click to add notes	Faceți clic pentru a adăuga note
+	Click to add subtitle	Faceți clic pentru a adăuga subtitlul
+	Click to add text	Faceți clic pentru a adăuga text
+	Click to add title	Faceți clic pentru a adăuga titlul
+	Click to change this one; Shift-click to change all	Clic pentru a modifica acesta; Shift-clic pentru a le modifica pe toate
+	Close	Închidere
+	Close\nMaster View	Închidere\nvizualizare coordonator
+	Color	Culoare
+	Color:	Culoare:
+	Colors	Culori
+	Columns	Coloane
+	Comment	Comentariu
+	Comments	Comentarii
+	Compare	Comparare
+	Compare this presentation with a revised copy from Review › Compare.	Comparați această prezentare cu o copie revizuită din Revizuire › Comparare.
+	Compress Pictures	Comprimare imagini
+	Convert	Conversie
+	Convert to Shapes	Conversie în forme
+	Convert to SmartArt	Conversie în SmartArt
+	Convert to Text	Conversie în text
+	Copy	Copiere
+	Copy path	Copiere cale
+	Correct accidental use of cAPS LOCK key	Corectare utilizare accidentală a tastei cAPS LOCK
+	Correct TWo INitial CApitals	Corectează DOuă MAjuscule inițiale
+	Corrections	Corecturi
+	Create	Creare
+	Create a PDF Document	Creare document PDF
+	Create Handouts	Creare documente imprimate
+	Create New Theme Colors	Creare culori noi pentru temă
+	Create New Theme Fonts	Creare fonturi noi pentru temă
+	Crop	Decupare
+	Crop to Shape	Decupare la formă
+	Custom character:	Caracter particularizat:
+	Custom Shows	Expuneri particularizate
+	Custom\nShow	Expunere\nparticularizată
+	Customize Colors…	Particularizare culori…
+	Customize Fonts…	Particularizare fonturi…
+	Customize Quick Access Toolbar	Personalizare bară de acces rapid
+	Cut	Decupare
+	Dark appearance	Aspect întunecat
+	Dark\nMode	Mod\nîntunecat
+	Dash	Liniuță
+	Dashes	Liniuțe
+	Date	Dată
+	Date &\nTime	Dată și\noră
+	Date and Time	Data și ora
+	Date and time	Dată și oră
+	Decrease Font Size	Micșorare font
+	Decrease List Level	Micșorare nivel listă
+	Default tab stops (in):	Taburi implicite (in):
+	Delay:	Întârziere:
+	Delete	Ștergere
+	Delete Columns	Ștergere coloane
+	Delete Point	Ștergere punct
+	Delete Repeated Word	Ștergere cuvânt repetat
+	Delete Rows	Ștergere rânduri
+	Delete Segment	Ștergere segment
+	Delete Slide	Ștergere diapozitiv
+	Delete Table	Ștergere tabel
+	Demote	Retrogradare
+	Design	Proiectare
+	Design\nIdeas	Idei de\nproiectare
+	Direction	Direcție
+	Display	Afișare
+	Display drawing guides on screen	Afișare ghidaje de desenare pe ecran
+	Display grid on screen	Afișare grilă pe ecran
+	Distribute Columns	Distribuire coloane
+	Distribute Horizontally	Distribuire pe orizontală
+	Distribute Rows	Distribuire rânduri
+	Distribute Vertically	Distribuire pe verticală
+	Do not check spelling or grammar	Nu verifica ortografia și gramatica
+	Don't Save	Nu salva
+	Don't show on title slide	Nu se afișează pe diapozitivul titlu
+	Done	Gata
+	Draw	Desenare
+	Draw Table	Desenare tabel
+	Duplicate Selected Slides	Dublare diapozitive selectate
+	Duplicate Slide	Dublare diapozitiv
+	Duration:	Durată:
+	e.g. 1-3, 5	ex. 1-3, 5
+	Edit Alt Text…	Editare text alternativ…
+	Edit Photo Album…	Editare album foto…
+	Edit Points	Editare puncte
+	Edit Text	Editare text
+	Edit the data: first row = series names, first column = categories.	Editați datele: primul rând = nume de serii, prima coloană = categorii.
+	Edit\nData	Editare\ndate
+	Edit\nShape	Editare\nformă
+	Editing	Editare
+	Effect\nOptions	Opțiuni\nefecte
+	Effects	Efecte
+	Email Address	Adresă de e-mail
+	Email address:	Adresă de e-mail:
+	End Review	Încheiere revizuire
+	End trim (s):	Decupare la final (s):
+	End\nReview	Încheiere\nrevizuire
+	Equation	Ecuație
+	Eraser	Radieră
+	Exit Edit Points	Ieșire din editare puncte
+	Export	Exportare
+	Export the presentation as:	Exportare prezentare ca:
+	Eyedropper	Pipetă
+	Fade in (s):	Apariție treptată (s):
+	Fade out (s):	Dispariție treptată (s):
+	File	Fișier
+	Fill	Completare
+	Find	Căutare
+	Find and Replace	Căutare și înlocuire
+	Find Next	Căutare următorul
+	Find what:	Căutați:
+	Find whole words only	Numai cuvinte întregi
+	First Column	Prima coloană
+	Fit	Potrivire
+	Fit slide to current window	Potrivire diapozitiv la fereastra curentă
+	Fit to\nWindow	Potrivire la\nfereastră
+	Flip Horizontal	Răsturnare orizontală
+	Flip Vertical	Răsturnare verticală
+	Follow Path	Urmare traseu
+	Font	Font
+	Font Color	Culoare font
+	Font name	Nume font
+	Fonts	Fonturi
+	Font…	Font…
+	Footer	Subsol
+	Footers	Subsoluri
+	Format	Format
+	Format Background…	Formatare fundal…
+	Format Painter (double-click to keep it on)	Pensulă de formatare (dublu clic pentru a o menține activă)
+	Format Shape…	Formatare formă…
+	Format\nBackground	Formatare\nfundal
+	Format\nPane	Panou\nformatare
+	Frame shape	Formă cadru
+	Frame Slides	Încadrare diapozitive
+	From slide:	De la diapozitivul:
+	From the top-left corner of the slide	Din colțul stânga-sus al diapozitivului
+	From\nBeginning	De la\nînceput
+	From\nCurrent Slide	De la diapozitivul\ncurent
+	General	General
+	Glow	Strălucire
+	Grab bag	Diverse
+	Gradient stops	Puncte de degrade
+	Gradient…	Gradient…
+	Grayscale	Tonuri de gri
+	Grid and Guides	Grilă și ghidaje
+	Grid Options	Opțiuni grilă
+	Grid\nOptions	Opțiuni\ngrilă
+	Gridlines	Linii de grilă
+	Group	Grupare
+	Group Objects	Grupare obiecte
+	Guides	Ghidaje
+	Handout Master	Coordonator documente imprimate
+	Handout\nMaster	Coordonator\ndocumente imprimate
+	Header	Antet
+	Header &\nFooter	Antet și\nsubsol
+	Header and Footer	Antet și subsol
+	Header Row	Rând de antet
+	Heading and body fonts for this presentation.	Fonturile pentru titluri și corp ale acestei prezentări.
+	Heading:	Titlu:
+	Height:	Înălțime:
+	Hide All	Ascundere toate
+	Hide background graphics	Ascundere grafică de fundal
+	Hide During Show	Ascundere în timpul expunerii
+	Hide\nSlide	Ascundere\ndiapozitiv
+	Highlight click	Evidențiere clic
+	Home	Pornire
+	How would you describe this object and its context to someone who is blind or has low vision?	Cum ați descrie acest obiect și contextul său unei persoane nevăzătoare sau cu deficiențe de vedere?
+	Hyperlink to:	Hyperlink către:
+	Icons	Pictograme
+	Ignore All	Ignorați toate
+	Inches	Inchi
+	Include hidden slides	Includere diapozitive ascunse
+	Increase Font Size	Mărire font
+	Increase List Level	Mărire nivel listă
+	Indentation	Indentare
+	Ink to Math (coming soon)	Cerneală în ecuație (în curând)
+	Ink to Shape: turn drawn lines, rectangles, ovals and triangles into shapes	Cerneală în formă: transformă liniile, dreptunghiurile, ovalele și triunghiurile desenate în forme
+	Ink to Text (coming soon)	Cerneală în text (în curând)
+	Ink to\nMath	Cerneală în\nmatematică
+	Ink to\nShape	Cerneală în\nformă
+	Ink to\nText	Cerneală\nîn text
+	Insert	Inserare
+	Insert Hyperlink	Inserare hyperlink
+	Insert Picture	Inserare imagine
+	Insert picture from file…	Inserare imagine din fișier…
+	Insert Table	Inserare tabel
+	Insert Table…	Inserare tabel…
+	Insert\nAbove	Inserare\ndeasupra
+	Insert\nBelow	Inserare\ndedesubt
+	Insert\nLayout	Inserare\naspect
+	Insert\nLeft	Inserare\nla stânga
+	Insert\nPlaceholder	Inserare\nsubstituent
+	Insert\nRight	Inserare\nla dreapta
+	Insert…	Inserare…
+	Interface Language	Limba interfeței
+	Interface language:	Limba interfeței:
+	Italic	Cursiv
+	Justify	Aliniere stânga-dreapta
+	Keep source formatting	Păstrare formatare sursă
+	Landscape	Peisaj
+	Language	Limbă
+	Language:	Limbă:
+	Last Column	Ultima coloană
+	Layout	Aspect
+	Layouts	Aspecte
+	Learn\nMore	Aflați\nmai multe
+	Leave the slide background out: only what is on the slide is drawn	Fără fundalul diapozitivului: se desenează doar ce este pe diapozitiv
+	Less Brightness	Luminozitate mai mică
+	Less Contrast	Contrast mai mic
+	Light/Dark appearance	Aspect luminos/întunecat
+	Line	Linie
+	Line Spacing	Spațiere între rânduri
+	Line spacing	Spațiere între rânduri
+	Line Spacing Options…	Opțiuni spațiere între rânduri…
+	Link	Link
+	Link…	Link…
+	Lock aspect ratio	Blochează raportul de aspect
+	Loop continuously until 'Esc'	Repetare continuă până la „Esc”
+	Loop forever	Repetare la nesfârșit
+	Loop Until Next Sound	Repetare până la următorul sunet
+	Loop until Stopped	Repetare până la oprire
+	Margins (pt)	Margini (pt)
+	Mark as decorative	Marcați ca decorativ
+	Match case	Potrivire majuscule/minuscule
+	Maximize content (else ensure fit)	Maximizare conținut (altfel asigurare încadrare)
+	Measurement units:	Unități de măsură:
+	Merge Shapes	Îmbinare forme
+	Merge\nCells	Îmbinare\ncelule
+	Merge\nShapes	Îmbinare\nforme
+	Mirror	Oglindire
+	Month names and AM/PM are listed for English. Other languages list the numeric date and 24-hour time.	Numele lunilor și AM/PM sunt listate pentru engleză. Celelalte limbi listează data numerică și ora în format de 24 de ore.
+	More Brightness	Luminozitate mai mare
+	More Colors… #	Mai multe culori… #
+	More Columns…	Mai multe coloane…
+	More Contrast	Contrast mai mare
+	Move Down	Mutare în jos
+	Move Section Down	Mutare secțiune în jos
+	Move Section Up	Mutare secțiune în sus
+	Move Up	Mutare în sus
+	Name	Nume
+	Name:	Nume:
+	New	Nou
+	New Comment	Comentariu nou
+	New Photo Album…	Album foto nou…
+	New show name:	Nume expunere nouă:
+	New Slide	Diapozitiv nou
+	New Slide (⇧⌘N)	Diapozitiv nou (⇧⌘N)
+	New Text Box	Casetă text nouă
+	New\nComment	Comentariu\nnou
+	New\nSlide	Diapozitiv\nnou
+	New\nWindow	Fereastră\nnouă
+	Next	Următorul
+	No accessibility issues found. People with disabilities should not have difficulty reading this document.	Nu s-au găsit probleme de accesibilitate. Persoanele cu dizabilități nu ar trebui să aibă dificultăți la citirea acestui document.
+	No comments.	Niciun comentariu.
+	No contributor data was built into this copy.	Această copie nu include date despre contribuitori.
+	No differences left.	Nu au mai rămas diferențe.
+	No Glow	Fără strălucire
+	No icons match.	Nicio pictogramă nu se potrivește.
+	No line	Fără linie
+	No model credits were built into this copy.	Această copie nu include mențiuni despre modele.
+	No notes.	Nicio notă.
+	No pictures yet	Încă nicio imagine
+	None	Niciunul
+	Normal	Normală
+	Not a copy of this presentation: slides are matched by position.	Nu este o copie a acestei prezentări: diapozitivele sunt asociate după poziție.
+	Notes	Note
+	Notes Master	Coordonator note
+	Notes\nMaster	Coordonator\nnote
+	Number of columns:	Număr de coloane:
+	Number of rows:	Număr de rânduri:
+	Number:	Număr:
+	Numbering	Numerotare
+	OK	OK
+	On Click of… (none)	La clic pe… (niciunul)
+	On Mouse Click	La clic de mouse
+	Open a presentation from a folder (Ctrl+O)	Deschideți o prezentare dintr-un folder (Ctrl+O)
+	Open another window on this presentation	Deschideți altă fereastră pentru această prezentare
+	Open file location	Deschidere locație fișier
+	Options	Opțiuni
+	Order Objects	Ordonare obiecte
+	Ordinals (1st) with superscript	Numerale ordinale (1st) cu exponent
+	Orientation:	Orientare:
+	Other Sound…	Alt sunet…
+	Outline	Contur
+	Page Setup…	Configurare pagină…
+	Paragraph	Paragraf
+	Paragraph…	Paragraf…
+	Paste	Lipire
+	Paste (⌘V)	Lipire (⌘V)
+	Paste and Match Formatting	Lipire și potrivire formatare
+	Paste Formatting	Lipire formatare
+	Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.	Lipiți sau tastați o schiță. Rândurile neindentate devin titluri de diapozitive; rândurile indentate cu Tab devin marcatori.
+	Paste Special	Lipire specială
+	Paste Special…	Lipire specială…
+	Pattern	Model
+	Pen Color	Culoare stilou
+	Pen Style	Stil stilou
+	Pen Weight	Grosime stilou
+	Percent:	Procent:
+	Photo Album	Album foto
+	Photo Album options	Opțiuni album foto
+	Photo Album…	Album foto…
+	Photo\nAlbum	Album\nfoto
+	Pick a design for this slide. Ideas are generated on your device.	Alegeți un design pentru acest diapozitiv. Ideile sunt generate pe dispozitivul dvs.
+	Pick a graphic; type one item per line.	Alegeți un grafic; tastați câte un element pe rând.
+	Picture	Imagine
+	Picture Border	Bordură imagine
+	Picture Format	Format imagine
+	Picture layout	Aspect imagine
+	Picture source	Sursă imagini
+	Pictures	Imagini
+	Pictures in album	Imagini în album
+	Play Across Slides	Redare pe toate diapozitivele
+	Play from\nCurrent Slide	Redare de la\ndiapozitivul curent
+	Play from\nStart	Redare de la\nînceput
+	Play Full Screen	Redare pe ecran complet
+	Play Narrations	Redare narațiuni
+	Play this slide's animations on the canvas	Redați animațiile acestui diapozitiv pe pânză
+	Playback	Redare
+	Portrait	Portret
+	Position	Poziție
+	Position Objects	Poziționare obiecte
+	Post	Publicare
+	Preferences	Preferințe
+	Presentations and slide shows, rebuilt from scratch in pure Rust.	Prezentări și expuneri de diapozitive, reconstruite de la zero în Rust pur.
+	Presenter\nView	Vizualizare\nprezentator
+	Preserve	Păstrare
+	Preset gradients	Degradeuri presetate
+	Preview	Previzualizare
+	Previous	Anteriorul
+	Print Hidden Slides	Imprimare diapozitive ascunse
+	Print layout:	Aspect imprimare:
+	Program:	Program:
+	Promote	Promovare
+	pt	pt
+	Put a picture in the selected node's picture placeholder	Puneți o imagine în substituentul de imagine al nodului selectat
+	Quick\nStyles	Stiluri\nrapide
+	Reading View	Vizualizare citire
+	Recent	Recente
+	Recolor	Recolorare
+	Record	Înregistrare
+	Recording narration needs audio capture (coming soon)	Înregistrarea narațiunii necesită captură audio (în curând)
+	Recover Unsaved Presentations	Recuperare prezentări nesalvate
+	Reflection	Reflexie
+	Regroup	Regrupare
+	Rehearse\nTimings	Repetiție\ncronometrare
+	Remove	Eliminare
+	Remove All Sections	Eliminare toate secțiunile
+	Remove bullets and numbering	Eliminare marcatori și numerotare
+	Remove from Quick Access Toolbar	Eliminare din bara de acces rapid
+	Remove from Recent	Eliminare din recente
+	Remove Section	Eliminare secțiune
+	Remove Section & Slides	Eliminare secțiune și diapozitive
+	Remove stop	Eliminare oprire
+	Remove the picture style	Eliminare stil imagine
+	Remove\nBackground	Eliminare\nfundal
+	Rename	Redenumire
+	Rename Layout	Redenumire aspect
+	Rename Section	Redenumire secțiune
+	Rename Section…	Redenumire secțiune…
+	Repeated word	Cuvânt repetat
+	Replace	Înlocuire
+	Replace All	Înlocuire totală
+	Replace Font	Înlocuire font
+	Replace Fonts…	Înlocuire fonturi…
+	Replace fractions (1/2) with fraction characters (½)	Înlocuire fracții (1/2) cu caractere fracție (½)
+	Replace straight quotes with smart quotes	Înlocuire ghilimele drepte cu ghilimele tipografice
+	Replace text as you type	Înlocuiți textul pe măsură ce scrieți
+	Replace with:	Înlocuiește cu:
+	Replace:	Înlocuiește:
+	Replace…	Înlocuire…
+	Reply…	Răspuns…
+	Rescan Installed Fonts	Rescanare fonturi instalate
+	Reset	Resetare
+	Reset 3-D	Resetare 3D
+	Reset Background	Resetare fundal
+	Reset Effects	Resetare efecte
+	Reset Picture	Resetare imagine
+	Reset Slide	Resetare diapozitiv
+	Reset Slide Background	Resetare fundal diapozitiv
+	Reset to Defaults	Resetare la valorile implicite
+	Reuse Slides	Reutilizare diapozitive
+	Reverse the order	Inversare ordine
+	Review	Revizuire
+	Rewind after Playing	Derulare înapoi după redare
+	Right-click any ribbon button to add it.	Faceți clic dreapta pe orice buton din panglică pentru a-l adăuga.
+	Rotate	Rotire
+	Rotate Left	Rotire la stânga
+	Rotate Left 90°	Rotire la stânga cu 90°
+	Rotate Right	Rotire la dreapta
+	Rotate Right 90°	Rotire la dreapta cu 90°
+	Rotate with shape	Rotire odată cu forma
+	Ruler	Riglă
+	Save	Salvare
+	Screenshot	Captură de ecran
+	Screenshot (not available yet)	Captură de ecran (încă indisponibilă)
+	ScreenTip:	Sfat ecran:
+	Scroll ribbon left	Derulare panglică la stânga
+	Scroll ribbon right	Derulare panglică la dreapta
+	Search commands (⇧⌘P)	Căutare comenzi (⇧⌘P)
+	Search commands…	Căutare comenzi…
+	Search icons	Căutați pictograme
+	Seconds per slide:	Secunde pe diapozitiv:
+	Section	Secțiune
+	Select	Selectare
+	Select a chart first.	Selectați mai întâi o diagramă.
+	Select a shape to format it.	Selectați o formă pentru a o formata.
+	Select a SmartArt graphic to edit its text.	Selectați un grafic SmartArt pentru a-i edita textul.
+	Select an object on the slide and add an animation from the Animations tab.	Selectați un obiect de pe diapozitiv și adăugați o animație din fila Animații.
+	Selection Pane…	Panou de selecție…
+	Selection\nPane	Panou de\nselecție
+	Send Backward	Trimitere în spate
+	Send to Back	Trimitere în fundal
+	Send\nBackward	Trimitere\nînapoi
+	Set	Setare
+	Set as Default Shape	Setare ca formă implicită
+	Set Transparent Color	Setare culoare transparentă
+	Set Up Slide Show	Configurare expunere diapozitive
+	Set Up\nSlide Show	Configurare\nexpunere
+	Shading	Umbrire
+	Shadow	Umbră
+	Shape Effects	Efecte de formă
+	Shape Fill	Umplere formă
+	Shape Format	Format formă
+	Shape Outline	Contur formă
+	Shape\nStyles	Stiluri\nformă
+	Shapes	Forme
+	Show	Afișare
+	Show All	Afișare toate
+	Show Media Controls	Afișare controale media
+	Show smart guides	Afișare ghidaje inteligente
+	Show type	Tip expunere
+	Show without animation	Expunere fără animație
+	Show without narration	Expunere fără narațiune
+	Show\nComments	Afișare\ncomentarii
+	Size	Dimensiune
+	Size (% of text):	Dimensiune (% din text):
+	Size and Position	Dimensiune și poziție
+	Size and Position…	Dimensiune și poziție…
+	Size:	Dimensiune:
+	Slide Master	Coordonator diapozitive
+	Slide number	Număr diapozitiv
+	Slide Show	Expunere diapozitive
+	Slide Size	Dimensiune diapozitiv
+	Slide Sorter	Sortare diapozitive
+	Slide text	Text diapozitiv
+	Slide title	Titlu diapozitiv
+	Slide {n} of {total}	Diapozitivul {n} din {total}
+	Slide\nMaster	Coordonator\ndiapozitive
+	Slide\nNumber	Număr\ndiapozitiv
+	Slide\nSize	Dimensiune\ndiapozitiv
+	Slides	Diapozitive
+	Slides (e.g. 1,3,5):	Diapozitive (ex. 1,3,5):
+	Slides from Outline	Diapozitive din schiță
+	Slides from Outline…	Diapozitive din schiță…
+	Slides sized for:	Dimensiune diapozitive pentru:
+	Slides:	Diapozitive:
+	SmartArt	SmartArt
+	SmartArt Design	Design SmartArt
+	SmartArt items	Elemente SmartArt
+	SmartArt Styles	Stiluri SmartArt
+	SmartArt text	Text SmartArt
+	Snap	Fixare
+	Snap objects to grid	Fixare obiecte la grilă
+	Snap objects to other objects	Fixare obiecte la alte obiecte
+	Soft Edges	Margini estompate
+	Solid line	Linie continuă
+	Sort	Sortare
+	Sound:	Sunet:
+	Spacing	Spațiere
+	Spacing (in):	Spațiere (in):
+	Spacing (pt):	Spațiere (pt):
+	Special	Special
+	Spelling	Ortografie
+	Spelling is checked for languages marked (dictionary).	Ortografia se verifică pentru limbile marcate (dicționar).
+	Split\nCells	Scindare\ncelule
+	Standard (4:3)	Standard (4:3)
+	Standard Colors	Culori standard
+	Start at:	Începe de la:
+	Start Automatically	Pornire automată
+	Start time (s):	Moment de pornire (s):
+	Start:	Pornire:
+	Strikethrough	Tăiere cu o linie
+	Subscript	Indice
+	Superscript	Exponent
+	Symbol	Simbol
+	Tab stop position (in):	Poziție tabulator (in):
+	Tab stops:	Tabulatori:
+	Table	Tabel
+	Table Design	Design tabel
+	Tabs	Tabulatori
+	Tabs…	Tabulatori…
+	Templates	Șabloane
+	Text Box	Casetă de text
+	Text box:	Casetă text:
+	Text Direction	Direcție text
+	Text Effects	Efecte de text
+	Text Fill	Umplere text
+	Text Highlight Color	Culoare de evidențiere text
+	Text Outline	Contur text
+	Text\nBox	Casetă\nde text
+	Text\nPane	Panou\ntext
+	The spelling check is complete. No issues found.	Verificarea ortografică s-a încheiat. Nu s-au găsit probleme.
+	Theme Colors	Culori de temă
+	Themes	Teme
+	Themes (whole presentation)	Teme (întreaga prezentare)
+	Thesaurus	Dicționar de sinonime
+	This Document	Acest document
+	This presentation has no custom shows (Slide Show ▸ Custom Slide Show).	Această prezentare nu are expuneri particularizate (Expunere diapozitive ▸ Expunere particularizată).
+	Tile picture as texture	Imagine în mozaic ca textură
+	Title	Titlu
+	To slide:	Până la diapozitivul:
+	Total Row	Rând total
+	Transform	Transformare
+	Transitions	Tranziții
+	Translate	Traducere
+	Translation needs a language model (not bundled)	Traducerea necesită un model lingvistic (neinclus)
+	Transparency	Transparență
+	Transparent background	Fundal transparent
+	Trigger	Declanșator
+	Trim	Decupare
+	Trim Media	Decupare media
+	Type	Tip
+	Type an equation in linear form (e.g. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).	Tastați o ecuație în formă liniară (ex. a^2+b^2=c^2, x=(-b±√(b^2-4ac))/2a).
+	Type and organise the diagram's text	Tastați și organizați textul diagramei
+	Type your text here	Tastați textul aici
+	Underline	Subliniere
+	Ungroup	Anulare grupare
+	Update automatically	Actualizare automată
+	Use Timings	Utilizare cronometrări
+	Use timings, if present	Utilizare cronometrări, dacă există
+	Vertical alignment	Aliniere verticală
+	Video	Video
+	View	Vizualizare
+	Volume	Volum
+	Warp	Deformare
+	Web Page or File	Pagină web sau fișier
+	Weight	Grosime
+	Whole presentation	Întreaga prezentare
+	Widescreen (16:9)	Ecran lat (16:9)
+	Width	Lățime
+	Width (pixels):	Lățime (pixeli):
+	Width:	Lățime:
+	Width: 	Lățime: 
+	With	Cu
+	With:	Cu:
+	WordArt	WordArt
+	Wrap text in shape	Încadrare text în formă
+	Your changes will be lost if you don't save them.	Modificările se vor pierde dacă nu le salvați.
+	Your name (comments):	Numele dvs. (comentarii):
+	Zoom	Zoom
+	Zoom In	Mărire
+	Zoom Out	Micșorare
+	Zoom to	Zoom la
+	Open	Deschidere
+	Info	Informații
+	Save As	Salvare ca
+	Print	Imprimare
+	Account	Cont
+	PowerPoint Presentation (*.pptx)	Prezentare PowerPoint (*.pptx)
+	Opens in PowerPoint and other presentation apps	Se deschide în PowerPoint și în alte aplicații de prezentare
+	DeckCraft Presentation (*.deckcraft)	Prezentare DeckCraft (*.deckcraft)
+	DeckCraft's own format: everything is kept	Formatul propriu DeckCraft: se păstrează totul
+	PDF (*.pdf)	PDF (*.pdf)
+	A fixed copy that keeps its layout on any device	O copie fixă care își păstrează aspectul pe orice dispozitiv
+	Outline (*.txt)	Schiță (*.txt)
+	The slide titles and bullet text as plain text	Titlurile diapozitivelor și textul marcatorilor ca text simplu
+	Outline/RTF (*.rtf)	Schiță/RTF (*.rtf)
+	The slide titles and bullet text for word processors	Titlurile diapozitivelor și textul marcatorilor pentru procesoare de text
+	PNG Picture (*.png)	Imagine PNG (*.png)
+	The current slide as a picture	Diapozitivul curent ca imagine
+	JPEG Picture (*.jpg)	Imagine JPEG (*.jpg)
+	The current slide as a compressed picture	Diapozitivul curent ca imagine comprimată
+	Add a title	Adăugați un titlu
+	Subject	Subiect
+	Specify the subject	Specificați subiectul
+	Tags	Etichete
+	Add a tag	Adăugați o etichetă
+	Categories	Categorii
+	Add a category	Adăugați o categorie
+	Company	Companie
+	Specify the company	Specificați compania
+	Add comments	Adăugare comentarii
+	Author	Autor
+	Add an author	Adăugați un autor
+	Back	Înapoi
+	Blank Presentation	Prezentare necompletată
+	Sample deck: Northern Lights	Prezentare exemplu: Aurora boreală
+	Presentations you open show up here. Use Open to browse for one.	Prezentările pe care le deschideți apar aici. Utilizați Deschidere pentru a căuta una.
+	More themes	Mai multe teme
+	More templates	Mai multe șabloane
+	Search for a file	Căutați un fișier
+	More presentations	Mai multe prezentări
+	Get help and support	Obțineți ajutor și asistență
+	Join the ArtCraft community on Discord	Alăturați-vă comunității ArtCraft pe Discord
+	Search for themes and templates	Căutați teme și șabloane
+	Browse	Răsfoire
+	There are no unsaved presentations to recover	Nu există prezentări nesalvate de recuperat
+	Presentations	Prezentări
+	No presentation is open.	Nicio prezentare nu este deschisă.
+	Not saved yet	Încă nesalvat
+	Copied the path	Calea a fost copiată
+	Check for Issues	Căutare probleme
+	Inspect Presentation	Inspectare prezentare
+	Before you share it, check the presentation for things people with disabilities might find hard to read.	Înainte de a o partaja, verificați prezentarea pentru elemente pe care persoanele cu dizabilități le-ar putea citi greu.
+	There are no unsaved changes.	Nu există modificări nesalvate.
+	This presentation has unsaved changes. Revert goes back to the saved file.	Această prezentare are modificări nesalvate. Revenire readuce fișierul salvat.
+	This presentation has never been saved.	Această prezentare nu a fost salvată niciodată.
+	Revert	Revenire la versiunea salvată
+	Manage Presentation	Gestionare prezentare
+	Properties	Proprietăți
+	Hidden slides	Diapozitive ascunse
+	Location	Locație
+	Save as type	Tip fișier
+	Download	Descărcare
+	Download the file	Descărcați fișierul
+	Choose where to save	Alegeți unde se salvează
+	Full Page Slides	Diapozitive pe pagină întreagă
+	Notes Pages	Pagini de note
+	Handouts (1 slide per page)	Documente imprimate (1 diapozitiv pe pagină)
+	Handouts (2 slides per page)	Documente imprimate (2 diapozitive pe pagină)
+	Handouts (3 slides per page)	Documente imprimate (3 diapozitive pe pagină)
+	Handouts (4 slides per page)	Documente imprimate (4 diapozitive pe pagină)
+	Handouts (6 slides per page)	Documente imprimate (6 diapozitive pe pagină)
+	Handouts (9 slides per page)	Documente imprimate (9 diapozitive pe pagină)
+	DeckCraft prints through a PDF: it opens in your PDF viewer, where you choose the printer.	DeckCraft imprimă printr-un PDF: acesta se deschide în vizualizatorul PDF, unde alegeți imprimanta.
+	DeckCraft prints through a PDF: it downloads, ready to print from your browser or PDF viewer.	DeckCraft imprimă printr-un PDF: acesta se descarcă, gata de imprimat din browser sau din vizualizatorul PDF.
+	Settings	Setări
+	Print All Slides	Imprimare toate diapozitivele
+	Print Current Slide	Imprimare diapozitiv curent
+	Custom Range	Interval particularizat
+	Print range	Interval de imprimare
+	Print layout	Aspect imprimare
+	Paper size	Dimensiune hârtie
+	Landscape Orientation	Orientare peisaj
+	Portrait Orientation	Orientare portret
+	Orientation	Orientare
+	Edit Header & Footer	Editare antet și subsol
+	Nothing to print: every slide in the range is hidden.	Nimic de imprimat: fiecare diapozitiv din interval este ascuns.
+	Previous Page	Pagina anterioară
+	{n} of {total}	{n} din {total}
+	Next Page	Pagina următoare
+	Create PDF Document	Creare document PDF
+	Keeps the layout, fonts and pictures	Păstrează aspectul, fonturile și imaginile
+	Opens on any device with a PDF viewer	Se deschide pe orice dispozitiv cu un vizualizator PDF
+	The presentation keeps its own file	Prezentarea își păstrează propriul fișier
+	Create PDF	Creare PDF
+	Several slides on each page of a PDF	Mai multe diapozitive pe fiecare pagină a unui PDF
+	Three a page leaves lines for notes	Trei pe pagină lasă rânduri pentru note
+	Print them for your audience	Imprimați-le pentru public
+	{n} slides per page	{n} diapozitive pe pagină
+	Slides per page	Diapozitive pe pagină
+	Appearance	Aspect
+	Dark	Întunecată
+	Light	Luminoasă
+	User Information	Informații utilizator
+	DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.	DeckCraft nu are conturi: nu trebuie să vă conectați nicăieri, iar prezentările rămân pe dispozitivul dvs.
+	Product Information	Informații despre produs
+	Open source under MIT OR Apache-2.0. Not affiliated with Microsoft.	Open source sub MIT SAU Apache-2.0. Neafiliat cu Microsoft.
+	The version, the people and models who built it, and where to find us.	Versiunea, oamenii și modelele care l-au construit și unde ne găsiți.
+	Join our community on Discord	Alăturați-vă comunității noastre pe Discord
+	Source on GitHub	Cod sursă pe GitHub
+	Undo	Anulare acțiune
+	Redo	Refacere
+	Start from Beginning	Pornire de la început
+	Add to Quick Access Toolbar	Adăugați în bara de acces rapid
+	Window title bar	Bara de titlu a ferestrei
+	Can't play {codec} video here.	Videoclipul {codec} nu poate fi redat aici.
+	Open in the system player	Deschidere în playerul sistemului
+	Couldn't open the media: {error}	Nu s-a putut deschide media: {error}
+	This build can't open media in another app.	Această versiune nu poate deschide media în altă aplicație.
+	Send error reports automatically?	Trimiteți automat rapoarte de erori?
+	When the app crashes or stops responding, it can send a report so the problem gets fixed without you writing to us. A report holds the app version, the system, the language, where in the code the error happened and the last lines of the technical log. Never the text of your documents, file names, folders, e-mail addresses or passwords.	Când aplicația se blochează sau nu mai răspunde, poate trimite un raport, astfel încât problema să fie rezolvată fără să ne scrieți. Un raport conține versiunea aplicației, sistemul, limba, locul din cod unde a apărut eroarea și ultimele rânduri din jurnalul tehnic. Niciodată textul documentelor, numele fișierelor, folderele, adresele de e-mail sau parolele.
+	Reports go to Tinta Office (report.tintaoffice.com, stored in the EU) and are deleted after 90 days. You can change this at any time in File › Options › General and delete your reports from the server there. Details: tintaoffice.com/aviso-legal	Rapoartele ajung la Tinta Office (report.tintaoffice.com, stocate în UE) și sunt șterse după 90 de zile. Puteți modifica oricând această opțiune în Fișier › Opțiuni › General și vă puteți șterge acolo rapoartele de pe server. Detalii: tintaoffice.com/aviso-legal
+	Yes, send reports	Da, trimite rapoarte
+	No	Nu
+	Error reports	Rapoarte de erori
+	Send error reports automatically	Trimitere automată rapoarte de erori
+	Installation id: {id}	ID instalare: {id}
+	Delete my reports from the server	Ștergeți rapoartele mele de pe server
+	Deletion requested: it completes the next time the app is online.	Ștergere solicitată: se finalizează data viitoare când aplicația este online.
+	Open the reports folder	Deschidere folder rapoarte

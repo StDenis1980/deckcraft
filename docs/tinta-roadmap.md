@@ -22,7 +22,7 @@ crashing on Windows.
 | 2 | MP4 through the operating system's codecs (Media Foundation on Windows, AVFoundation on macOS), whose patent licence the OS carries; until then a clear message instead of an empty frame | fork, then upstream | 1–2 |
 | 3 | Real .pptx: a test set of decks, round-trip losses (#70, #74, #77), EMF and SVG pictures | upstream | 1–2 |
 | 4 | Vector PDF and handout printing | upstream | 2 |
-| 5 | Presenta's translations (only in this fork, 9 languages) offered upstream, so syncs stop conflicting | upstream | 1 |
+| 5 | Presenta's translations (only in this fork, 12 languages) offered upstream, so syncs stop conflicting | upstream | 1 |
 | 6 | Tinta presentation templates (our design, azulejo motifs) | fork | 2 |
 | 7 | Depth: font weights (#69), chart data, the Animation Pane, presenter view on the second display | upstream | 2–3 |
 | 8 | Opening .odp and legacy .ppt | upstream | 3 |
