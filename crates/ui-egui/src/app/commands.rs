@@ -234,6 +234,8 @@ impl SlideApp {
                 return Ok(json!({"printed": self.print_pdf(p.clone())}));
             }
             "app.about" => self.dialog = Some(dialogs::Dialog::new("about")),
+            // Tinta Office: the dialog opens on the next frame.
+            "app.feedback" => self.tinta_feedback.request(),
             "app.checkUpdates" => {
                 #[cfg(not(target_arch = "wasm32"))]
                 updates_ui::request_check(self);

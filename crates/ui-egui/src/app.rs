@@ -51,6 +51,7 @@ impl SlideApp {
             control_rx: None,
             squiggles: Default::default(),
             dialog: None,
+            tinta_feedback: Default::default(),
             thesaurus_query: String::new(),
             show: None,
             anim_preview: None,
@@ -355,6 +356,7 @@ impl SlideApp {
         #[cfg(not(target_arch = "wasm32"))]
         updates_ui::show(self, &ctx);
         crate::tinta_reports_ui::first_start(self, &ctx);
+        self.tinta_feedback.show(&ctx, crate::i18n::current().code());
         menus::palette(self, &ctx);
         for url in std::mem::take(&mut self.pending_urls) {
             ctx.open_url(egui::OpenUrl::new_tab(url));

@@ -1288,6 +1288,7 @@ dependencies = [
  "egui-wgpu",
  "egui_kittest",
  "log",
+ "png",
  "serde",
  "serde_json",
  "skrifa 0.47.0",

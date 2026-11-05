@@ -55,6 +55,7 @@ mod ime_hooks;
 pub mod panels;
 mod services;
 mod state;
+pub mod tinta_feedback;
 mod tinta_reports_ui;
 
 pub use app::key_name;
@@ -152,6 +153,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ),
     ("app.about", "About DeckCraft", None, "{}"),
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
+    ("app.feedback", "Send Feedback…", None, "{} — Tinta Office: opens the feedback dialog when this build can send"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
     ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu|it|fr|de|pl}"),
@@ -243,6 +245,8 @@ pub struct SlideApp {
     /// Spelling squiggles, checked on a worker thread.
     pub squiggles: squiggles::Squiggles,
     pub dialog: Option<dialogs::Dialog>,
+    /// Tinta Office: the Send feedback dialog ([`tinta_feedback`]); the desktop app sends.
+    pub tinta_feedback: tinta_feedback::Feedback,
     /// The word looked up in the Thesaurus pane.
     pub thesaurus_query: String,
     pub show: Option<show::Show>,
