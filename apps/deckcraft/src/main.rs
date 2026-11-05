@@ -25,6 +25,7 @@ mod graphics;
 mod logging;
 #[cfg(not(target_arch = "wasm32"))]
 mod pasteboard;
+mod tinta_feedback_send;
 mod tinta_report;
 
 use deckcraft_engine::{Session, brand};
@@ -44,6 +45,7 @@ impl eframe::App for App {
         tinta_report::busy();
         self.0.logic(ctx);
         tinta_report::tick(&mut self.0);
+        tinta_feedback_send::tick(&mut self.0.tinta_feedback, deckcraft_ui_egui::i18n::current().code());
         tinta_report::idle();
     }
     /// Forward native raw input to the wrapped application once per pass.

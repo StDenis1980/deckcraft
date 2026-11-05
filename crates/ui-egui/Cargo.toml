@@ -9,6 +9,8 @@ description = "DeckCraft egui frontend (PowerPoint-style UI); swappable — noth
 workspace = true
 
 [dependencies]
+# Tinta Office: the feedback dialog encodes its window screenshot as PNG.
+png = "0.18"
 deckcraft-geom = { workspace = true }
 deckcraft-color = { workspace = true }
 deckcraft-model = { workspace = true }

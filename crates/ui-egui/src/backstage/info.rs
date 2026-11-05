@@ -237,6 +237,13 @@ pub(super) fn account(app: &mut SlideApp, ui: &mut Ui) {
             ) {
                 let _ = app.run("app.about", json!({}));
             }
+            if app.tinta_feedback.available {
+                let lang = crate::i18n::current().code();
+                let send = crate::tinta_feedback::tr(lang, crate::tinta_feedback::BUTTON);
+                if task(ui, Icon::CommentsBubble, send, send, crate::tinta_feedback::tr(lang, crate::tinta_feedback::IDEA), true) {
+                    app.tinta_feedback.request();
+                }
+            }
             if deckcraft_engine::brand::REBRANDED {
                 ui.hyperlink_to(tl("Get help and support"), deckcraft_engine::brand::SUPPORT);
             } else {
