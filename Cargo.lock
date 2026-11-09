@@ -1035,15 +1035,18 @@ dependencies = [
  "cpal",
  "craft-update",
  "deckcraft-engine",
+ "deckcraft-mcp",
  "deckcraft-media",
  "deckcraft-ui-egui",
  "eframe",
  "egui",
  "fmv-macos-events",
+ "getrandom 0.4.3",
  "image",
  "log",
  "rfd",
  "serde_json",
+ "ureq",
  "winit",
  "winresource",
 ]
@@ -1074,6 +1077,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "deckcraft-brand"
+version = "0.15.0"
+
+[[package]]
 name = "deckcraft-cli"
 version = "0.15.0"
 dependencies = [
@@ -1096,6 +1103,7 @@ version = "0.15.0"
 dependencies = [
  "chrono",
  "deckcraft-anim",
+ "deckcraft-brand",
  "deckcraft-color",
  "deckcraft-fonts",
  "deckcraft-format",
@@ -1132,6 +1140,7 @@ dependencies = [
 name = "deckcraft-format"
 version = "0.15.0"
 dependencies = [
+ "deckcraft-brand",
  "deckcraft-model",
  "serde",
  "serde_json",
@@ -1258,6 +1267,7 @@ dependencies = [
 name = "deckcraft-pptx"
 version = "0.15.0"
 dependencies = [
+ "deckcraft-brand",
  "deckcraft-color",
  "deckcraft-engine",
  "deckcraft-geom",
@@ -1319,12 +1329,15 @@ dependencies = [
  "deckcraft-render",
  "deckcraft-text",
  "egui",
+ "egui-wgpu",
  "egui_extras",
  "egui_kittest",
  "log",
+ "png",
  "serde",
  "serde_json",
  "skrifa 0.47.0",
+ "sys-locale",
  "toml",
  "web-time",
 ]

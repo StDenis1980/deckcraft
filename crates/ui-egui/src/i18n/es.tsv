@@ -803,3 +803,8 @@
 	Delete my reports from the server	Borrar mis informes del servidor
 	Deletion requested: it completes the next time the app is online.	Borrado solicitado: se completará la próxima vez que el programa tenga conexión.
 	Open the reports folder	Abrir la carpeta de informes
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Acerca de
+	Credits	Créditos
+	The people and models who built DeckCraft.	Las personas y los modelos que crearon DeckCraft.
+	Save to the page	Guardar en la página

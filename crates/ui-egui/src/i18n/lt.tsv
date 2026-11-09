@@ -806,3 +806,8 @@
 	Delete my reports from the server	Ištrinti mano ataskaitas iš serverio
 	Deletion requested: it completes the next time the app is online.	Ištrynimas užsakytas: jis bus baigtas, kai programa kitą kartą prisijungs prie interneto.
 	Open the reports folder	Atidaryti ataskaitų aplanką
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Apie
+	Credits	Padėkos
+	The people and models who built DeckCraft.	Žmonės ir modeliai, sukūrę DeckCraft.
+	Save to the page	Įrašyti puslapyje

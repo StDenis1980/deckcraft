@@ -806,3 +806,8 @@
 	Delete my reports from the server	Ezabatu nire txostenak zerbitzaritik
 	Deletion requested: it completes the next time the app is online.	Ezabatzea eskatuta: programak konexioa duen hurrengo aldian osatuko da.
 	Open the reports folder	Ireki txostenen karpeta
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Honi buruz
+	Credits	Kredituak
+	The people and models who built DeckCraft.	DeckCraft sortu duten pertsonak eta ereduak.
+	Save to the page	Gorde orrian

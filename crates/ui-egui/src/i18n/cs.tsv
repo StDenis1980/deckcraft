@@ -806,3 +806,8 @@
 	Delete my reports from the server	Smazat mé zprávy ze serveru
 	Deletion requested: it completes the next time the app is online.	Smazání vyžádáno: dokončí se, až bude aplikace příště online.
 	Open the reports folder	Otevřít složku se zprávami
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	O aplikaci
+	Credits	Poděkování
+	The people and models who built DeckCraft.	Lidé a modely, kteří vytvořili DeckCraft.
+	Save to the page	Uložit na stránku

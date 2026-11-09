@@ -109,7 +109,7 @@ fn the_backstage_and_quick_access_toolbar_are_translated() {
     h.get_by_label("Файл").click();
     h.run_steps(3);
     assert_eq!(page(&h), Some(Page::Home));
-    for label in ["Пуста презентація", "Відкрити", "Обліковий запис", "Параметри"] {
+    for label in ["Пуста презентація", "Відкрити", "Про програму", "Параметри"] {
         assert!(h.query_by_label(label).is_some(), "{label} on Home");
     }
     assert!(h.query_by_label("Blank Presentation").is_none());
@@ -798,7 +798,9 @@ fn about_has_product_links_and_credits_without_account_controls() {
     assert_eq!(page(&h), Some(Page::About));
     assert!(h.query_by_label("User Information").is_none());
     assert!(h.query_by_label("Source on GitHub").is_some());
-    assert!(h.query_by_label("Join our community on Discord").is_some());
+    // Tinta Office: a rebranded build links its own help and support instead of the Discord.
+    let community = if deckcraft_engine::brand::REBRANDED { "Get help and support" } else { "Join our community on Discord" };
+    assert!(h.query_by_label(community).is_some());
     assert!(h.query_all_by_label("Appearance").next().is_some());
     click_on_page(&h, "Credits");
     h.run_steps(3);
