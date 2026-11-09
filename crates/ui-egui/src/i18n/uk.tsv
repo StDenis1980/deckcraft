@@ -806,3 +806,8 @@
 	Delete my reports from the server	Видалити мої звіти із сервера
 	Deletion requested: it completes the next time the app is online.	Видалення запитано: воно завершиться, коли програма наступного разу буде в мережі.
 	Open the reports folder	Відкрити папку звітів
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Про програму
+	Credits	Подяки
+	The people and models who built DeckCraft.	Люди й моделі, що створили DeckCraft.
+	Save to the page	Зберегти на сторінку

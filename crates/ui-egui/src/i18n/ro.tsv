@@ -806,3 +806,8 @@
 	Delete my reports from the server	Ștergeți rapoartele mele de pe server
 	Deletion requested: it completes the next time the app is online.	Ștergere solicitată: se finalizează data viitoare când aplicația este online.
 	Open the reports folder	Deschidere folder rapoarte
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Despre
+	Credits	Mulțumiri
+	The people and models who built DeckCraft.	Oamenii și modelele care au creat DeckCraft.
+	Save to the page	Salvează în pagină

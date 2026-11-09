@@ -168,15 +168,28 @@ pub(super) fn save_as(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: 
             })
             .response
             .widget_info(|| egui::WidgetInfo::labeled(egui::Role::ComboBox, true, tl("Save as type")));
-        let web = app.services.pick_save.is_none();
+        // A page that keeps the files (`host_save`) saves; plain web downloads.
+        let web = app.services.pick_save.is_none() && app.services.host_save.is_none();
         let label = tl(if web { "Download" } else { "Save" });
         let save = ui.add(egui::Button::new(RichText::new(label).color(t.accent_text)).fill(t.accent).min_size(vec2(84.0, 26.0)));
-        if save.on_hover_text(tl(if web { "Download the file" } else { "Choose where to save" })).clicked() {
+        if save
+            .on_hover_text(tl(if web {
+                "Download the file"
+            } else if app.services.host_save.is_some() {
+                "Save to the page"
+            } else {
+                "Choose where to save"
+            }))
+            .clicked()
+        {
             let fmt = bs.file_type;
             let done = if matches!(fmt, "pptx" | "deckcraft") {
-                let before = app.session.active().map(|d| (d.path.clone(), d.is_dirty()));
+                // A save bumps the revision, also one under the same name that leaves the path
+                // and the dirty flag as they were; a cancelled dialog or a failed save doesn't.
+                let snapshot = |app: &SlideApp| app.session.active().map(|d| (d.path.clone(), d.is_dirty(), d.revision));
+                let before = snapshot(app);
                 app.save_as_dialog(fmt);
-                web || app.session.active().map(|d| (d.path.clone(), d.is_dirty())) != before
+                web || snapshot(app) != before
             } else {
                 app.export_as(fmt, json!({}))
             };
@@ -191,33 +204,14 @@ pub(super) fn save_as(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: 
     }
 }
 
-/// Account: the interface's appearance and what DeckCraft is. DeckCraft has no accounts, so
-/// there is nothing to sign in to.
-pub(super) fn account(app: &mut SlideApp, ui: &mut Ui) {
+/// Product information, project links, credits and appearance preferences.
+pub(super) fn about(app: &mut SlideApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    ui.horizontal_top(|ui| {
+    // Side by side needs 480 + 40 + 340 points; stack the columns when the page is narrower.
+    let layout = if ui.available_width() >= 860.0 { egui::Layout::left_to_right(egui::Align::Min) } else { egui::Layout::top_down(egui::Align::Min) };
+    ui.with_layout(layout, |ui| {
         ui.vertical(|ui| {
-            ui.set_width(340.0);
-            heading(ui, "Appearance");
-            let dark = app.ui.brightness == theme::Brightness::Dark;
-            craft_ui::ComboBox::from_id_salt("backstage_appearance")
-                .width(260.0)
-                .selected_text(tl(if dark { "Dark" } else { "Light" }))
-                .show_ui(ui, |ui| {
-                    for (on, label) in [(false, "Light"), (true, "Dark")] {
-                        if ui.selectable_label(dark == on, tl(label)).clicked() {
-                            let _ = app.run("view.dark", json!({"on": on}));
-                        }
-                    }
-                })
-                .response
-                .widget_info(|| egui::WidgetInfo::labeled(egui::Role::ComboBox, true, tl("Appearance")));
-            ui.add_space(16.0);
-            heading(ui, "User Information");
-            dim(ui, "DeckCraft has no accounts: there is nothing to sign in to, and your presentations stay on your device.");
-        });
-        ui.add_space(40.0);
-        ui.vertical(|ui| {
+            ui.set_width(480.0);
             heading(ui, "Product Information");
             ui.horizontal(|ui| {
                 let (r, _) = ui.allocate_exact_size(vec2(40.0, 40.0), Sense::hover());
@@ -230,9 +224,9 @@ pub(super) fn account(app: &mut SlideApp, ui: &mut Ui) {
             if task(
                 ui,
                 Icon::Help,
-                deckcraft_engine::brand::rebrand_static(tl("About DeckCraft")),
-                deckcraft_engine::brand::rebrand_static(tl("About DeckCraft")),
-                "The version, the people and models who built it, and where to find us.",
+                tl("Credits"),
+                tl("Credits"),
+                deckcraft_engine::brand::rebrand_static("The people and models who built DeckCraft."),
                 true,
             ) {
                 let _ = app.run("app.about", json!({}));
@@ -250,6 +244,24 @@ pub(super) fn account(app: &mut SlideApp, ui: &mut Ui) {
                 ui.hyperlink_to(tl("Join our community on Discord"), deckcraft_engine::links::DISCORD);
             }
             ui.hyperlink_to(tl("Source on GitHub"), deckcraft_engine::links::GITHUB);
+        });
+        ui.add_space(40.0);
+        ui.vertical(|ui| {
+            ui.set_width(340.0);
+            heading(ui, "Appearance");
+            let dark = app.ui.brightness == theme::Brightness::Dark;
+            craft_ui::ComboBox::from_id_salt("backstage_appearance")
+                .width(260.0)
+                .selected_text(tl(if dark { "Dark" } else { "Light" }))
+                .show_ui(ui, |ui| {
+                    for (on, label) in [(false, "Light"), (true, "Dark")] {
+                        if ui.selectable_label(dark == on, tl(label)).clicked() {
+                            let _ = app.run("view.dark", json!({"on": on}));
+                        }
+                    }
+                })
+                .response
+                .widget_info(|| egui::WidgetInfo::labeled(egui::Role::ComboBox, true, tl("Appearance")));
         });
     });
 }

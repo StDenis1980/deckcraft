@@ -807,3 +807,8 @@
 	Delete my reports from the server	Elimina le mie segnalazioni dal server
 	Deletion requested: it completes the next time the app is online.	Eliminazione richiesta: verrà completata la prossima volta che l'app sarà online.
 	Open the reports folder	Apri la cartella delle segnalazioni
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Informazioni
+	Credits	Riconoscimenti
+	The people and models who built DeckCraft.	Le persone e i modelli che hanno creato DeckCraft.
+	Save to the page	Salva nella pagina

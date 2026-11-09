@@ -807,3 +807,8 @@
 	Delete my reports from the server	Meine Berichte vom Server löschen
 	Deletion requested: it completes the next time the app is online.	Löschung angefordert: Sie wird abgeschlossen, sobald die App das nächste Mal online ist.
 	Open the reports folder	Berichtsordner öffnen
+# About page (upstream sync 2026-11-09; AI-assisted, not yet native-reviewed)
+	About	Info
+	Credits	Mitwirkende
+	The people and models who built DeckCraft.	Die Menschen und Modelle, die DeckCraft entwickelt haben.
+	Save to the page	Auf der Seite speichern
