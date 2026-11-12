@@ -41,7 +41,11 @@ fn clips(nodes: impl Fn(u32, u32) -> String) -> Vec<MediaClip> {
         let mut d = vec![];
         f.read_to_end(&mut d).expect("read");
         if f.name() == "ppt/slides/slide1.xml" {
-            let s = String::from_utf8(d).expect("utf8");
+            let mut s = String::from_utf8(d).expect("utf8");
+            // The export writes the clips' own (default) settings; replace them with the node under test.
+            if let (Some(a), Some(b)) = (s.find("<p:timing>"), s.find("</p:timing>")) {
+                s.replace_range(a..b + "</p:timing>".len(), "");
+            }
             assert!(!s.contains("<p:timing"));
             let end = s.rfind("</p:sld>").expect("end");
             d = format!("{}{timing}{}", &s[..end], &s[end..]).into_bytes();
@@ -73,4 +77,106 @@ fn muted_audio_has_no_volume_and_other_clips_keep_theirs() {
     let c = clips(|_, a| node("audio", "", a, r#" vol="50000" mute="1""#, ""));
     assert_eq!(c[0].volume, 1.0);
     assert_eq!((c[1].volume, c[1].loop_play, c[1].full_screen), (0.0, false, false));
+}
+
+/// Two clips on a slide, one with every playback option PowerPoint keeps in the timing tree set
+/// and one left at the defaults, exported and imported again (#74).
+fn round_trip(
+    film: MediaClip,
+    sound: MediaClip,
+    anims: Vec<deckcraft_model::anim::Animation>,
+) -> (Vec<MediaClip>, Vec<deckcraft_model::anim::Animation>, String) {
+    let mut p = defaults::new_presentation(None);
+    let video = p.add_media("clip.mp4", "video/mp4", b"video".to_vec()).expect("media");
+    let audio = p.add_media("clip.m4a", "audio/mp4", b"audio".to_vec()).expect("media");
+    let mut ids = vec![];
+    for clip in [MediaClip { media: video, ..film }, MediaClip { media: audio, ..sound }] {
+        let id = ShapeId(p.alloc_id().expect("id"));
+        ids.push(id);
+        let s = deckcraft_model::Shape {
+            id,
+            name: "Clip".into(),
+            xfrm: Some(Xfrm::new(40.0, 40.0, 200.0, 100.0)),
+            kind: ShapeKind::Media(clip),
+            ..Default::default()
+        };
+        Arc::make_mut(&mut p.slides[0]).shapes.push(s);
+    }
+    Arc::make_mut(&mut p.slides[0]).animations = anims
+        .into_iter()
+        .map(|mut a| {
+            a.shape = ids[a.shape.0 as usize];
+            a
+        })
+        .collect();
+    let bytes = deckcraft_pptx::export(&p).expect("export");
+    let mut z = zip::ZipArchive::new(Cursor::new(&bytes)).expect("zip");
+    let mut xml = String::new();
+    z.by_name("ppt/slides/slide1.xml").expect("slide").read_to_string(&mut xml).expect("read");
+    let q = deckcraft_pptx::import(&bytes).expect("import");
+    let clips = q.slides[0]
+        .shapes
+        .iter()
+        .filter_map(|s| match &s.kind {
+            ShapeKind::Media(m) => Some(m.clone()),
+            _ => None,
+        })
+        .collect();
+    (clips, q.slides[0].animations.clone(), xml)
+}
+
+#[test]
+fn every_playback_option_survives_a_pptx_round_trip() {
+    let film = MediaClip {
+        video: true,
+        volume: 0.4,
+        autoplay: true,
+        loop_play: true,
+        rewind: true,
+        play_across_slides: true,
+        hide_while_not_playing: true,
+        full_screen: true,
+        ..Default::default()
+    };
+    let sound = MediaClip { video: false, volume: 1.0, ..Default::default() };
+    let (c, anims, xml) = round_trip(film, sound, vec![]);
+    let f = &c[0];
+    assert_eq!(f.volume, 0.4);
+    assert_eq!(
+        (f.autoplay, f.loop_play, f.rewind, f.play_across_slides, f.hide_while_not_playing, f.full_screen),
+        (true, true, true, true, true, true),
+        "{xml}"
+    );
+    let s = &c[1];
+    assert_eq!(s.volume, 1.0);
+    assert_eq!(
+        (s.autoplay, s.loop_play, s.rewind, s.play_across_slides, s.hide_while_not_playing, s.full_screen),
+        (false, false, false, false, false, false),
+        "defaults stay defaults"
+    );
+    assert!(anims.is_empty(), "Start Automatically is the clip's flag, not an Animation Pane entry: {anims:?}");
+    assert!(xml.contains("<p:video fullScrn=\"1\">") && xml.contains("<p:audio>"), "{xml}");
+    assert!(xml.contains(r#"cmd="playFrom(0.0)""#), "autoplay is a Play effect in the main sequence: {xml}");
+}
+
+#[test]
+fn a_muted_clip_and_a_play_effect_of_its_own_round_trip() {
+    use deckcraft_model::anim::{AnimClass, AnimStart, Animation};
+    let film = MediaClip { video: true, volume: 0.0, autoplay: true, ..Default::default() };
+    let sound = MediaClip { video: false, volume: 1.0, ..Default::default() };
+    // The video has its own On Click Play effect: it stays in the pane and is not doubled.
+    let play = Animation {
+        shape: ShapeId(0),
+        class: AnimClass::Media,
+        effect: "play".into(),
+        option: String::new(),
+        start: AnimStart::OnClick,
+        ..Default::default()
+    };
+    let (c, anims, xml) = round_trip(film, sound, vec![play]);
+    assert_eq!(c[0].volume, 0.0);
+    assert!(xml.contains(r#"mute="1""#), "{xml}");
+    assert_eq!(anims.len(), 1, "{anims:?}");
+    assert_eq!((anims[0].class, anims[0].start), (AnimClass::Media, AnimStart::OnClick));
+    assert!(!c[0].autoplay, "an On Click Play is not Start Automatically");
 }

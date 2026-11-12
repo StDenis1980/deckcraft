@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-03 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta.
+> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74).
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -37,6 +37,12 @@ crashing on Windows.
   whose codec licence the OS carries; a download on the web). In-slide decoding through Media
   Foundation would need `unsafe` code, which the workspace forbids, so it waits for an owner and
   upstream decision. Next: media playback options lost on .pptx save (#74).
+- 2026-11-12 (Preview 4): media playback options survive a .pptx save (#74). The writer now
+  emits each clip's `p:video`/`p:audio` > `p:cMediaNode` (volume, mute, Play Across Slides,
+  Hide While Not Playing, Loop until Stopped, Rewind after Playing, Play Full Screen) and Start
+  Automatically as a Play effect at the head of the main sequence; the reader turns that effect
+  back into the flag. Rewind is written as the node's `fill="remove"` from the spec; it still
+  needs a check in PowerPoint itself. Offer upstream.
 
 ## Plan revision 2 (2026-11-03, approved by the owner)
 
