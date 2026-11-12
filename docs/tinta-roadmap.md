@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74).
+> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec.
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -43,6 +43,13 @@ crashing on Windows.
   Automatically as a Play effect at the head of the main sequence; the reader turns that effect
   back into the flag. Rewind is written as the node's `fill="remove"` from the spec; it still
   needs a check in PowerPoint itself. Offer upstream.
+- 2026-11-12 (Preview 4): a test set of decks written by hand from ECMA-376
+  (`crates/pptx/tests/spec/`, run by `tests/it/spec_corpus.rs`): text (runs, levels, uk/es,
+  links, lists), shapes (presets, gradients, connectors, groups, freeforms), a table with merged
+  cells, pictures (crop, alt text, a shared image), a video (poster, trim, bookmark, playback
+  options), animations with a timed transition, and hidden slides, sections, notes and a slide
+  jump. Each deck is checked on import and after a save and reopen. All seven pass today; new
+  losses found in real decks get a deck here first. Next: #70 and #77.
 
 ## Plan revision 2 (2026-11-03, approved by the owner)
 
