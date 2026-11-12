@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec.
+> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec; 2026-11-12 MP4 → WebM conversion with the person's own FFmpeg (owner decision of 2026-11-05).
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -19,7 +19,7 @@ crashing on Windows.
 | # | Task | Where | Stage |
 |---|---|---|---|
 | 1 | No data loss, no crashes: the save prompt on close (#60), Windows GPU crashes (#40, #59), image paste (#53); investigate the STATUS_ACCESS_VIOLATION in parallel tests on the owner's PC | upstream + checks on the PC | 1 |
-| 2 | MP4 through the operating system's codecs (Media Foundation on Windows, AVFoundation on macOS), whose patent licence the OS carries; until then a clear message instead of an empty frame | fork, then upstream | 1–2 |
+| 2 | MP4 that plays: converted to WebM (VP9/Opus) with the FFmpeg the person installed (done 2026-11-12, see below); in-slide decoding through the operating system's codecs needs `unsafe`, so it stays an upstream decision | fork, then upstream | 1–2 |
 | 3 | Real .pptx: a test set of decks, round-trip losses (#70, #74, #77), EMF and SVG pictures | upstream | 1–2 |
 | 4 | Vector PDF and handout printing | upstream | 2 |
 | 5 | Presenta's translations (only in this fork, 12 languages) offered upstream, so syncs stop conflicting | upstream | 1 |
@@ -50,6 +50,20 @@ crashing on Windows.
   options), animations with a timed transition, and hidden slides, sections, notes and a slide
   jump. Each deck is checked on import and after a save and reopen. All seven pass today; new
   losses found in real decks get a deck here first. Next: #70 and #77.
+
+- 2026-11-12: **MP4 → WebM conversion** (owner decision of 2026-11-05: the person's own FFmpeg,
+  never shipped by us). Inserting a clip this build can't play (H.264, HEVC, AAC, WMV…) asks
+  whether to convert it ("Always convert without asking" turns the question off); the link under
+  the media bar of such a clip converts it on demand. FFmpeg runs as a separate program on a
+  temporary copy (VP9 + Opus, at most 1920×1080), with a progress window and Cancel; the result is
+  checked with our own decoders and replaces the clip as one undo step, keeping its options.
+  Without FFmpeg the app shows the install command for the system and a "Choose FFmpeg…" button.
+  Commands: `media.convert` (waits; CLI and MCP), `media.replace`, `media.convertOptions`;
+  `media.info` gains `needsConversion`. The FFmpeg path is never a command parameter. The Flatpak
+  build can't reach the system's FFmpeg and says to install the .deb or .rpm package instead
+  (owner decision of 2026-11-12; no `flatpak-spawn --host` permission). Code:
+  `crates/media/src/transcode.rs`, `crates/engine/src/tinta_convert.rs`,
+  `crates/ui-egui/src/tinta_convert.rs`.
 
 ## Plan revision 2 (2026-11-03, approved by the owner)
 

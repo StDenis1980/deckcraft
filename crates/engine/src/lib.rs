@@ -28,6 +28,7 @@ pub mod sounds;
 pub mod spell;
 pub mod templates;
 pub mod thesaurus;
+pub mod tinta_convert;
 pub mod tinta_reports;
 pub mod tools;
 
@@ -366,6 +367,9 @@ pub struct Prefs {
     /// Tinta Office: whether error reports may be sent (`file.errorReports`).
     #[serde(deserialize_with = "tinta_reports::lenient")]
     pub tinta_reports: tinta_reports::ReportsPrefs,
+    /// Tinta Presenta: converting clips this build can't play (`media.convertOptions`).
+    #[serde(deserialize_with = "tinta_convert::lenient")]
+    pub tinta_convert: tinta_convert::ConvertPrefs,
 }
 
 impl Default for Prefs {
@@ -391,6 +395,7 @@ impl Default for Prefs {
             recovery_minutes: 1.0,
             units: deckcraft_geom::Unit::Inches,
             tinta_reports: tinta_reports::ReportsPrefs::default(),
+            tinta_convert: tinta_convert::ConvertPrefs::default(),
         }
     }
 }

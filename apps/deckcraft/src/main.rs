@@ -131,6 +131,8 @@ fn services(native_wayland: bool) -> Services {
                     &["wav", "mp3", "m4a", "m4b", "aac", "flac", "ogg", "oga", "opus", "aif", "aiff", "aifc", "caf", "wma", "weba", "mka"],
                 ),
                 "video" => d.add_filter("Video", &["mp4", "m4v", "mov", "webm", "mkv", "wmv"]),
+                "ffmpeg" if cfg!(windows) => d.add_filter("FFmpeg", &["exe"]),
+                "ffmpeg" => d,
                 "theme" => d.add_filter("Themes and presentations", &["thmx", "pptx", "potx", "ppsx"]).add_filter("Office Theme", &["thmx"]),
                 _ => d
                     .add_filter("Presentations", &["deckcraft", "pptx", "potx", "ppsx"])
@@ -147,6 +149,7 @@ fn services(native_wayland: bool) -> Services {
         clipboard_html: pasteboard.then(|| Box::new(pasteboard::html) as Box<dyn FnMut() -> Option<String>>),
         clipboard_set_html: pasteboard.then(|| Box::new(pasteboard::set_html) as Box<dyn FnMut(&str, &str) -> bool>),
         open_external: Some(Box::new(deckcraft_ui_egui::media::open_in_system_player)),
+        convert_media: true,
         // Media is mixed and clocked by the output device; `DECKCRAFT_NO_AUDIO` plays silently.
         audio_out: std::env::var_os("DECKCRAFT_NO_AUDIO")
             .is_none()

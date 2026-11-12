@@ -600,6 +600,9 @@ impl SlideApp {
                         self.save_as_dialog("deckcraft");
                     }
                 }
+                UiRequest::Media { action, shape, .. } if action == deckcraft_engine::tinta_convert::OFFER => {
+                    crate::tinta_convert::offer(self, shape)
+                }
                 UiRequest::Media { action, shape, .. } if action == "external" => {
                     let slide = self.session.active().map(|d| d.selection.slide);
                     self.open_media_externally(shape, slide);
