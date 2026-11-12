@@ -121,6 +121,29 @@ folders. Use both together.
   256 KiB and no further, whatever the file claims to be; a longer one stops the server too.
 - Like the roots, the list holds the in-process server: `--connect` with it is an error.
 
+## What each command may do (Tinta)
+
+Every command in `list_commands` (and the `deckcraft://commands` resource) carries a `risk` object, so a
+permission layer such as Vilna OS's Herkos can grade a call before it runs (tintaoffice-web#26):
+
+| Flag | Set when the command… |
+|---|---|
+| `reads_document` / `changes_document` | reads / changes the open presentation |
+| `reads_disk` / `writes_disk` | reads / writes files (still held to the automation roots) |
+| `network` | may reach the network |
+| `print` | prints |
+| `sign` | signs with a certificate |
+| `other_program` | hands something to another program on the computer |
+| `runs_commands` | runs other commands (macros, scripts), each still held to `--allow-commands` |
+| `ui_only` | changes only the window |
+
+The flags come from hand-reviewed tables in `crates/engine/src/tinta_risk.rs`. Command ids and MCP
+tool names are kept stable between versions: `docs/tinta-commands.tsv` (every command id with its
+flags) and `docs/tinta-mcp-tools.tsv` (every MCP tool) are snapshots, and a test fails when a
+command or tool is added, renamed or removed, or a flag changes, until the snapshot is regenerated
+on purpose (`TINTA_UPDATE_SNAPSHOT=1`). A rename or removal is noted in the release notes and, where
+possible, the old id is kept as deprecated for one version.
+
 ## Tools
 
 | Tool | What it does |

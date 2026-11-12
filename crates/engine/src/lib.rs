@@ -30,6 +30,7 @@ pub mod spell;
 pub mod templates;
 pub mod thesaurus;
 pub mod tinta_reports;
+pub mod tinta_risk;
 pub mod tools;
 
 use std::sync::Arc;
