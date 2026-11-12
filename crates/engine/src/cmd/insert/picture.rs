@@ -227,6 +227,7 @@ fn media(s: &mut Session, p: &Value, video: bool) -> Result<Value> {
     let clip = MediaClip { media, video, poster, volume: 1.0, duration_ms, width, height, ..Default::default() };
     let id = add_shape(s, "insert.media", Shape { xfrm: Some(rect), kind: ShapeKind::Media(clip), descr: name, ..Default::default() }, true)?;
     if let Some(w) = &warning {
+        crate::tinta_convert::offer(s, id);
         s.ui_requests.push(crate::UiRequest::Message { text: w.clone() });
     }
     let mut r =

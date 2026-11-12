@@ -64,6 +64,11 @@ pub(super) fn media_bar(app: &mut SlideApp, ui: &mut Ui, xf: Xf) {
     let bar = Rect::from_min_size(pos2(r.center().x - w / 2.0, r.max.y + 6.0), vec2(w, 26.0));
     let status = app.media.status(id);
     let video_error = app.media.video_error(id).map(str::to_string);
+    // Tinta Presenta: a clip that doesn't play (no picture, or no sound) can be converted to WebM.
+    let unplayable = video_error.is_some() || status.as_ref().is_some_and(|s| s.error.is_some());
+    if unplayable && crate::tinta_convert::available(app) && convert_link(ui, bar) {
+        crate::tinta_convert::convert_now(app, id);
+    }
     match crate::media::control_bar(ui, bar, status.as_ref(), &clip, video_error.as_deref()) {
         Some(crate::media::BarAction::Toggle) => app.media.toggle(uid, &doc, id, &clip, crate::media::Owner::Editor),
         Some(crate::media::BarAction::Seek(t)) => app.media.seek(uid, &doc, id, &clip, t, crate::media::Owner::Editor),
@@ -76,4 +81,15 @@ pub(super) fn media_bar(app: &mut SlideApp, ui: &mut Ui, xf: Xf) {
         }
         None => {}
     }
+}
+
+/// Tinta Presenta: the "Convert to WebM" link under the media bar's own note. `true` when clicked.
+fn convert_link(ui: &mut Ui, bar: Rect) -> bool {
+    let text = crate::tinta_convert::tr(crate::i18n::current().code(), crate::tinta_convert::LINK);
+    let link =
+        egui::Label::new(egui::RichText::new(text).size(11.0).color(egui::Color32::from_rgb(0x8A, 0xB8, 0xFF)).underline()).sense(Sense::click());
+    let r = Rect::from_min_size(pos2(bar.min.x, bar.max.y + 21.0), vec2(bar.width().max(260.0), 16.0));
+    let resp = ui.put(r, link);
+    resp.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Link, true, crate::tinta_convert::LINK));
+    resp.clicked()
 }

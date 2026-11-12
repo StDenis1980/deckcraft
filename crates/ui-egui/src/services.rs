@@ -59,6 +59,9 @@ pub struct Services {
     /// Open a named media file in the system's default player (desktop): how a build without the
     /// patented codecs still shows an H.264 video. See [`crate::media::open_in_system_player`].
     pub open_external: Option<OpenExternalFn>,
+    /// Tinta Presenta: the desktop app can convert clips it can't play to WebM with the FFmpeg
+    /// installed on the computer ([`crate::tinta_convert`]).
+    pub convert_media: bool,
     /// Tinta Office: where the desktop app keeps error reports, set only by builds that can send
     /// them (`tinta_reports_ui`).
     pub error_reports_dir: Option<std::path::PathBuf>,
