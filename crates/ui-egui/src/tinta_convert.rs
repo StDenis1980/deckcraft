@@ -235,6 +235,12 @@ fn apply(app: &mut SlideApp, clip: &Clip, path: &std::path::Path) -> bool {
 pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
     let lang = crate::i18n::current().code();
     poll(app);
+    progress_window(app, ctx, lang);
+    // Never on top of another question (the first-start error-report one, a dialog, feedback):
+    // the offer waits until that one is answered.
+    if another_modal(app) {
+        return;
+    }
     if app.tinta_convert.dialog.is_none()
         && let Some(clip) = app.tinta_convert.queue.pop_front()
     {
@@ -247,7 +253,6 @@ pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
             app.tinta_convert.queue.push_front(clip);
         }
     }
-    progress_window(app, ctx, lang);
     if let Some(dialog) = app.tinta_convert.dialog.clone() {
         let modal = egui::Modal::new(egui::Id::unique("tinta.convert")).show(ctx, |ui| {
             ui.set_width(460.0);
@@ -259,6 +264,12 @@ pub fn show(app: &mut SlideApp, ctx: &egui::Context) {
             act(app, dialog, action);
         }
     }
+}
+
+/// Whether another modal question is showing.
+fn another_modal(app: &SlideApp) -> bool {
+    let first_start = crate::tinta_reports_ui::available(app) && app.session.prefs.tinta_reports.consent.is_none();
+    first_start || app.dialog.is_some() || app.tinta_feedback.is_open()
 }
 
 fn poll(app: &mut SlideApp) {

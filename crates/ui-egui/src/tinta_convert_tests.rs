@@ -211,3 +211,30 @@ fn screenshots() {
         save(&mut h, &format!("done-{lang}.png"));
     }
 }
+
+#[test]
+fn the_offer_waits_for_another_dialog_to_close() {
+    if deckcraft_media::PATENTED_CODECS {
+        return;
+    }
+    let mut s = Session::with_new();
+    s.execute("slide.new", &json!({"layout": "blank"})).unwrap();
+    s.prefs.tinta_convert.ffmpeg_path = "/nonexistent/ffmpeg".into();
+    let app = SlideApp::new(s, Services { convert_media: true, ..Default::default() });
+    let mut h = Harness::builder().with_size(vec2(1400.0, 900.0)).build_ui_state(
+        |ui, app: &mut SlideApp| {
+            app.logic(ui.ctx());
+            app.ui(ui);
+        },
+        app,
+    );
+    h.run_steps(2);
+    h.state_mut().dialog = Some(crate::dialogs::Dialog::new("about"));
+    h.state_mut().run("insert.video", json!({"name": "clip.mp4", "data": deckcraft_engine::cmd::base64_encode(H264)})).unwrap();
+    h.run_steps(3);
+    assert!(h.state().tinta_convert.dialog.is_none(), "not on top of the other dialog");
+    assert_eq!(h.state().tinta_convert.queue.len(), 1);
+    h.state_mut().dialog = None;
+    h.run_steps(3);
+    assert!(matches!(&h.state().tinta_convert.dialog, Some(Dialog::Offer(_))));
+}
