@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 MP4 → WebM conversion with the person's own FFmpeg (owner decision of 2026-11-05).
+> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec; 2026-11-12 MP4 → WebM conversion with the person's own FFmpeg (owner decision of 2026-11-05).
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -37,6 +37,19 @@ crashing on Windows.
   whose codec licence the OS carries; a download on the web). In-slide decoding through Media
   Foundation would need `unsafe` code, which the workspace forbids, so it waits for an owner and
   upstream decision. Next: media playback options lost on .pptx save (#74).
+- 2026-11-12 (Preview 4): media playback options survive a .pptx save (#74). The writer now
+  emits each clip's `p:video`/`p:audio` > `p:cMediaNode` (volume, mute, Play Across Slides,
+  Hide While Not Playing, Loop until Stopped, Rewind after Playing, Play Full Screen) and Start
+  Automatically as a Play effect at the head of the main sequence; the reader turns that effect
+  back into the flag. Rewind is written as the node's `fill="remove"` from the spec; it still
+  needs a check in PowerPoint itself. Offer upstream.
+- 2026-11-12 (Preview 4): a test set of decks written by hand from ECMA-376
+  (`crates/pptx/tests/spec/`, run by `tests/it/spec_corpus.rs`): text (runs, levels, uk/es,
+  links, lists), shapes (presets, gradients, connectors, groups, freeforms), a table with merged
+  cells, pictures (crop, alt text, a shared image), a video (poster, trim, bookmark, playback
+  options), animations with a timed transition, and hidden slides, sections, notes and a slide
+  jump. Each deck is checked on import and after a save and reopen. All seven pass today; new
+  losses found in real decks get a deck here first. Next: #70 and #77.
 
 - 2026-11-12: **MP4 → WebM conversion** (owner decision of 2026-11-05: the person's own FFmpeg,
   never shipped by us). Inserting a clip this build can't play (H.264, HEVC, AAC, WMV…) asks
@@ -47,7 +60,8 @@ crashing on Windows.
   Without FFmpeg the app shows the install command for the system and a "Choose FFmpeg…" button.
   Commands: `media.convert` (waits; CLI and MCP), `media.replace`, `media.convertOptions`;
   `media.info` gains `needsConversion`. The FFmpeg path is never a command parameter. The Flatpak
-  build can't reach the system's FFmpeg and says so (open question for the owner). Code:
+  build can't reach the system's FFmpeg and says to install the .deb or .rpm package instead
+  (owner decision of 2026-11-12; no `flatpak-spawn --host` permission). Code:
   `crates/media/src/transcode.rs`, `crates/engine/src/tinta_convert.rs`,
   `crates/ui-egui/src/tinta_convert.rs`.
 
