@@ -2,7 +2,8 @@
 //! whether asked for directly (`run_command`), in a `batch`, through a dedicated tool
 //! (`add_slide`, `save_presentation`…) or through `call_app`; gestures, which change the
 //! presentation without naming a command, are refused; and `list_commands` shows only what may run.
-//! With `--automation-write-root`, the write root itself is not a file to save.
+//! With `--automation-write-root`, the write root itself is not a file to save (its `.saving` sibling
+//! would land outside it).
 
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
@@ -150,8 +151,8 @@ fn the_write_root_itself_is_not_a_destination() {
     let roots = AutomationRoots::new(std::slice::from_ref(&root), std::slice::from_ref(&root)).unwrap();
     let mut srv = Server::new(Box::new(Headless::with_document().with_automation_roots(roots)));
     ok(&mut srv, "new_presentation", json!({}));
-    refused(&mut srv, "save_presentation", json!({"path": s(&root)}), "the write root itself is not a file to write");
-    refused(&mut srv, "export", json!({"path": s(&root)}), "the write root itself is not a file to write");
+    refused(&mut srv, "save_presentation", json!({"path": s(&root)}), "outside the write root");
+    refused(&mut srv, "export", json!({"path": s(&root)}), "outside the write root");
     ok(&mut srv, "save_presentation", json!({"path": s(&root.join("deck.pptx"))}));
     let mut names: Vec<_> = std::fs::read_dir(&base).unwrap().map(|e| e.unwrap().file_name().into_string().unwrap()).collect();
     names.sort();
