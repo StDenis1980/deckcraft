@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Title and Content: both placeholders take their position from the master through the layout. -->
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr>
+        <p:spPr/>
+        <p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="uk-UA" dirty="0"/><a:t>Квартальний звіт</a:t></a:r></a:p></p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="3" name="Content Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph idx="1"/></p:nvPr></p:nvSpPr>
+        <p:spPr/>
+        <p:txBody><a:bodyPr><a:normAutofit/></a:bodyPr><a:lstStyle/>
+          <a:p><a:r><a:rPr lang="es-ES" b="1" dirty="0"/><a:t>Ventas</a:t></a:r><a:r><a:rPr lang="es-ES" dirty="0"/><a:t> en España: </a:t></a:r><a:r><a:rPr lang="es-ES" i="1" u="sng" sz="3200" dirty="0"><a:solidFill><a:schemeClr val="accent2"/></a:solidFill></a:rPr><a:t>+12 %</a:t></a:r></a:p>
+          <a:p><a:pPr lvl="1"/><a:r><a:rPr lang="es-ES" dirty="0"/><a:t>Señal ñ, acentos á é í ó ú</a:t></a:r></a:p>
+          <a:p><a:pPr lvl="1"/><a:r><a:rPr lang="uk-UA" dirty="0"/><a:t>Україна: ґ є і ї</a:t></a:r></a:p>
+          <a:p><a:r><a:rPr lang="en-US" dirty="0"><a:hlinkClick r:id="rId2"/></a:rPr><a:t>tintaoffice.com</a:t></a:r></a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr>
+</p:sld>

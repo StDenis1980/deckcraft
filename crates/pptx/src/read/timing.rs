@@ -204,8 +204,9 @@ fn behaviour_auto_reverses(c: &El) -> bool {
     !behaviours.is_empty() && behaviours.iter().all(|b| b.child("cTn").and_then(|t| t.bool("autoRev")).unwrap_or(false))
 }
 
-/// Volume, mute, Loop until Stopped, Hide While Not Playing and Play Full Screen live in the timing tree
-/// (`p:video`/`p:audio` > `p:cMediaNode`), not on the picture: copy them onto the target's `MediaClip`.
+/// Volume, mute, Play Across Slides, Loop until Stopped, Rewind after Playing, Hide While Not
+/// Playing and Play Full Screen live in the timing tree (`p:video`/`p:audio` > `p:cMediaNode`), not
+/// on the picture: copy them onto the target's `MediaClip`.
 pub fn media_settings(timing: &El, ctx: &IdCtx, shapes: &mut [Shape]) {
     let mut nodes = vec![];
     for tag in ["video", "audio"] {
@@ -227,9 +228,36 @@ pub fn media_settings(timing: &El, ctx: &IdCtx, shapes: &mut [Shape]) {
         if cm.child("cTn").and_then(|c| c.attr("repeatCount")) == Some("indefinite") {
             clip.loop_play = true;
         }
+        if cm.child("cTn").and_then(|c| c.attr("fill")) == Some("remove") {
+            clip.rewind = true;
+        }
+        if cm.u32("numSld").is_some_and(|n| n > 1) {
+            clip.play_across_slides = true;
+        }
         if node.bool("fullScrn") == Some(true) {
             clip.full_screen = true;
         }
+    }
+}
+
+/// Start Automatically: an untriggered Play effect on a clip among the effects that start with the
+/// slide (before the first On Click) is the clip's `autoplay` flag, not an Animation Pane entry.
+/// The writer emits it the same way, so the flag round-trips without growing the pane.
+pub fn autoplay_from_effects(animations: &mut Vec<Animation>, shapes: &mut [Shape]) {
+    let lead = animations.iter().take_while(|a| a.start != AnimStart::OnClick && a.trigger.is_none()).count();
+    let mut i = 0;
+    let mut seen = 0;
+    while i < animations.len() && seen < lead {
+        seen += 1;
+        let Some(a) = animations.get(i) else { break };
+        let is_play = a.class == AnimClass::Media && a.effect == "play" && a.trigger.is_none() && a.delay_ms == 0;
+        let id = a.shape;
+        if is_play && let Some(ShapeKind::Media(clip)) = find_shape_mut(shapes, id).map(|s| &mut s.kind) {
+            clip.autoplay = true;
+            animations.remove(i);
+            continue;
+        }
+        i += 1;
     }
 }
 

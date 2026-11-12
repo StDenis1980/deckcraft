@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- A 3x3 table: header row with a cell spanning two columns, a cell spanning two rows, cell fills
+     and borders, and the first-row / banded-rows flags. -->
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>
+      <p:graphicFrame>
+        <p:nvGraphicFramePr><p:cNvPr id="2" name="Table 1"/><p:cNvGraphicFramePr><a:graphicFrameLocks noGrp="1"/></p:cNvGraphicFramePr><p:nvPr/></p:nvGraphicFramePr>
+        <p:xfrm><a:off x="1270000" y="1270000"/><a:ext cx="7620000" cy="1905000"/></p:xfrm>
+        <a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/table">
+          <a:tbl>
+            <a:tblPr firstRow="1" bandRow="1"/>
+            <a:tblGrid><a:gridCol w="2540000"/><a:gridCol w="2540000"/><a:gridCol w="2540000"/></a:tblGrid>
+            <a:tr h="635000">
+              <a:tc gridSpan="2"><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="es-ES" b="1"/><a:t>Región</a:t></a:r></a:p></a:txBody><a:tcPr><a:solidFill><a:srgbClr val="23395B"/></a:solidFill></a:tcPr></a:tc>
+              <a:tc hMerge="1"><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:endParaRPr lang="es-ES"/></a:p></a:txBody><a:tcPr/></a:tc>
+              <a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="es-ES" b="1"/><a:t>Total</a:t></a:r></a:p></a:txBody><a:tcPr anchor="ctr"/></a:tc>
+            </a:tr>
+            <a:tr h="635000">
+              <a:tc rowSpan="2"><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="es-ES"/><a:t>Valencia</a:t></a:r></a:p></a:txBody><a:tcPr anchor="ctr"/></a:tc>
+              <a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="es-ES"/><a:t>Sagunto</a:t></a:r></a:p></a:txBody><a:tcPr/></a:tc>
+              <a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:pPr algn="r"/><a:r><a:rPr lang="es-ES"/><a:t>1.250</a:t></a:r></a:p></a:txBody>
+                <a:tcPr><a:lnB w="28575"><a:solidFill><a:srgbClr val="D9822B"/></a:solidFill></a:lnB><a:solidFill><a:srgbClr val="EEF1F5"/></a:solidFill></a:tcPr></a:tc>
+            </a:tr>
+            <a:tr h="635000">
+              <a:tc vMerge="1"><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:endParaRPr lang="es-ES"/></a:p></a:txBody><a:tcPr/></a:tc>
+              <a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="es-ES"/><a:t>Gandía</a:t></a:r></a:p></a:txBody><a:tcPr/></a:tc>
+              <a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p><a:pPr algn="r"/><a:r><a:rPr lang="es-ES"/><a:t>980</a:t></a:r></a:p></a:txBody><a:tcPr/></a:tc>
+            </a:tr>
+          </a:tbl>
+        </a:graphicData></a:graphic>
+      </p:graphicFrame>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr>
+</p:sld>
