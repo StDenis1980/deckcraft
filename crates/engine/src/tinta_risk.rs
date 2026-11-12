@@ -133,7 +133,8 @@ mod tests {
             std::fs::write(SNAPSHOT, &now).unwrap();
             return;
         }
-        let saved = std::fs::read_to_string(SNAPSHOT).unwrap_or_default();
+        // A Windows checkout may give the snapshot CRLF line endings.
+        let saved = std::fs::read_to_string(SNAPSHOT).unwrap_or_default().replace("\r\n", "\n");
         if saved != now {
             let old: std::collections::BTreeSet<&str> = saved.lines().collect();
             let new: std::collections::BTreeSet<&str> = now.lines().collect();
