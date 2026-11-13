@@ -51,7 +51,9 @@ folders:
   inserted, so playing them later reads nothing from disk.
 - Every file a command writes must lie inside the **write root**: `save_presentation`, `export`
   (every format, and every slide of an image export), `file.save`, `file.saveAs`, `file.export`,
-  and `render_slide` with a `path`, plus the `.saving` temporary file a save goes through.
+  and a slide rendered to a `path` (`call_app` with `ui.render` or `app.renderSlide`; `render_slide`
+  itself returns the picture and takes no `path`), plus the `.saving` temporary file a save goes
+  through.
 - Read and write access are separate. Give the same folder twice for both; a root left out grants
   none of its access (with only `--automation-read-root`, nothing can be written to disk). Without
   either flag nothing changes.
@@ -82,6 +84,65 @@ engine from touching the file system on its own.
 The checks hold for every thread of the server process. A path is checked, then opened: another
 program that swaps a link in between can still win that race, so the roots keep an agent to the
 files it was given rather than guarding against other software on the computer.
+
+## Confining commands
+
+```sh
+deckcraft-cli mcp --automation-read-root /work/project --automation-write-root /work/project/out \
+    --allow-commands "slide.*, text.*, format.*, insert.textBox, edit.select, document.inspect, file.new, file.save, file.export"
+deckcraft-cli mcp --allow-commands @allowed.txt   # one id or group.* per line, # comments
+```
+
+`--allow-commands` keeps the agent to the commands it was given, the way the roots keep it to
+folders. Use both together.
+
+- Every command a client asks for must be on the list: `run_command`, each command of `batch`
+  (which stops at the first one off the list, or skips it with `keepGoing`), `call_app`, and the
+  commands behind the dedicated tools (`new_presentation` is `file.new`, `open_presentation`
+  `file.open`, `save_presentation` `file.save`, `export` `file.export`, `inspect_document`
+  `document.inspect`, `add_slide` `slide.new`, `add_shape` `shape.insert`, `add_text_box`
+  `insert.textBox`…). A command off the list is an ordinary tool error:
+  ``command `slide.delete` is not allowed: it is not on this session's --allow-commands list``.
+- Gestures (`pointer`, `key`, `type_text`, `select_tool`) are refused while a list is in force:
+  they change the deck without naming a command (a drag moves a shape, a shortcut runs whatever it
+  is bound to), so the list could not hold them. Use the commands behind them by name
+  (`text.insert`, `shape.insert`, `edit.select`…).
+- Commands a command runs itself (typing `* ` turning a paragraph into a list) are part of the
+  command that was allowed and aren't checked again. `render_slide` draws the deck without a
+  command and stays available when it returns the picture; writing it to a `path` (`call_app`
+  with `ui.render` or `app.renderSlide`) is an export and needs `file.export` on the list.
+- `list_commands` shows only the commands the client may run.
+- A list names ids (`format.bold`) and groups (`format.*`: every command whose id starts with
+  `format.`), separated by commas, spaces or new lines. An unknown id, a group that matches no
+  command, an empty list, or the flag without a list or given twice stops the server at startup.
+- An `@FILE` list must be a regular file (or a link to one). A pipe, socket or device found at the
+  first check stops the server without being opened; the check and the open are not atomic, so
+  another program that swaps a FIFO in between can still make the open wait. It is read up to
+  256 KiB and no further, whatever the file claims to be; a longer one stops the server too.
+- Like the roots, the list holds the in-process server: `--connect` with it is an error.
+
+## What each command may do (Tinta)
+
+Every command in `list_commands` (and the `deckcraft://commands` resource) carries a `risk` object, so a
+permission layer such as Vilna OS's Herkos can grade a call before it runs (tintaoffice-web#26):
+
+| Flag | Set when the command… |
+|---|---|
+| `reads_document` / `changes_document` | reads / changes the open presentation |
+| `reads_disk` / `writes_disk` | reads / writes files (still held to the automation roots) |
+| `network` | may reach the network |
+| `print` | prints |
+| `sign` | signs with a certificate |
+| `other_program` | hands something to another program on the computer |
+| `runs_commands` | runs other commands (macros, scripts), each still held to `--allow-commands` |
+| `ui_only` | changes only the window |
+
+The flags come from hand-reviewed tables in `crates/engine/src/tinta_risk.rs`. Command ids and MCP
+tool names are kept stable between versions: `docs/tinta-commands.tsv` (every command id with its
+flags) and `docs/tinta-mcp-tools.tsv` (every MCP tool) are snapshots, and a test fails when a
+command or tool is added, renamed or removed, or a flag changes, until the snapshot is regenerated
+on purpose (`TINTA_UPDATE_SNAPSHOT=1`). A rename or removal is noted in the release notes and, where
+possible, the old id is kept as deprecated for one version.
 
 ## Tools
 

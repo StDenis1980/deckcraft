@@ -8,6 +8,7 @@
 #![forbid(unsafe_code)]
 
 pub mod cmd;
+pub mod command_access;
 pub mod compare;
 pub mod connect;
 pub mod drawtable;
@@ -30,6 +31,7 @@ pub mod templates;
 pub mod thesaurus;
 pub mod tinta_convert;
 pub mod tinta_reports;
+pub mod tinta_risk;
 pub mod tools;
 
 use std::sync::Arc;
