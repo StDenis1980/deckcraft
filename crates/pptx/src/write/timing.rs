@@ -592,8 +592,80 @@ fn shape_index<'a>(shapes: &'a [Shape], depth: usize, out: &mut std::collections
     }
 }
 
-/// Write `p:timing` for a slide's animations.
+/// The audio and video shapes of a slide in document order (groups included).
+fn media_shapes<'a>(shapes: &'a [Shape], depth: usize, out: &mut Vec<&'a Shape>) {
+    if depth > 64 {
+        return;
+    }
+    for s in shapes {
+        if matches!(s.kind, ShapeKind::Media(_)) {
+            out.push(s);
+        }
+        media_shapes(s.children(), depth + 1, out);
+    }
+}
+
+/// Start Automatically (`MediaClip::autoplay`) is, in the file, a Play media effect at the head of
+/// the main sequence that starts with the slide. Clips that already have an untriggered Play effect
+/// keep it instead. The reader turns the effect back into the flag.
+fn autoplay_effects(media: &[&Shape], anims: &[Animation]) -> Vec<Animation> {
+    media
+        .iter()
+        .filter(|s| matches!(&s.kind, ShapeKind::Media(m) if m.autoplay))
+        .filter(|s| !anims.iter().any(|a| a.shape == s.id && a.class == AnimClass::Media && a.effect == "play" && a.trigger.is_none()))
+        .map(|s| Animation {
+            shape: s.id,
+            class: AnimClass::Media,
+            effect: "play".into(),
+            option: String::new(),
+            start: AnimStart::WithPrevious,
+            duration_ms: 1,
+            preset_id: Some(1),
+            ..Default::default()
+        })
+        .collect()
+}
+
+/// The playback options PowerPoint keeps in the timing tree (ECMA-376 §19.5.18 `cMediaNode`,
+/// `p:video`/`p:audio`): volume, Play Across Slides (`numSld`), Hide While Not Playing
+/// (`showWhenStopped`), Loop until Stopped (`repeatCount`), Rewind after Playing (`fill`:
+/// `remove` returns the clip to its start, `hold` keeps the last frame) and Play Full Screen.
+fn media_node(w: &mut W, ids: &mut Ids, spid: u32, m: &deckcraft_model::MediaClip) {
+    let tag = if m.video { "p:video" } else { "p:audio" };
+    let vol = if m.volume.is_finite() { (m.volume.clamp(0.0, 1.0) * 100_000.0).round() as i64 } else { 100_000 };
+    w.open(tag, A::new().t("fullScrn", m.video && m.full_screen));
+    w.open(
+        "p:cMediaNode",
+        A::new()
+            .a("vol", vol)
+            .t("mute", vol == 0)
+            .o("numSld", m.play_across_slides.then_some(999))
+            .o("showWhenStopped", m.hide_while_not_playing.then_some(0)),
+    );
+    w.open(
+        "p:cTn",
+        A::new()
+            .a("id", ids.next())
+            .o("repeatCount", m.loop_play.then_some("indefinite"))
+            .a("fill", if m.rewind { "remove" } else { "hold" })
+            .o("display", m.hide_while_not_playing.then_some(0)),
+    );
+    w.open0("p:stCondLst");
+    w.empty("p:cond", A::new().a("delay", "indefinite"));
+    w.close("p:stCondLst");
+    w.close("p:cTn");
+    w.open0("p:tgtEl");
+    w.empty("p:spTgt", A::new().a("spid", spid));
+    w.close("p:tgtEl");
+    w.close("p:cMediaNode");
+    w.close(tag);
+}
+
+/// Write `p:timing` for a slide's animations and its media's playback options.
 pub fn timing(w: &mut W, x: &mut Exp, anims: &[Animation], shapes: &[Shape], idmap: &IdMap) {
+    let mut media = vec![];
+    media_shapes(shapes, 0, &mut media);
+    let auto = autoplay_effects(&media, anims);
     let mut grp_count: std::collections::HashMap<u32, u32> = Default::default();
     let mut main: Vec<Eff> = vec![];
     let mut triggered: Vec<(u32, Vec<Eff>)> = vec![];
@@ -605,7 +677,7 @@ pub fn timing(w: &mut W, x: &mut Exp, anims: &[Animation], shapes: &[Shape], idm
     let mut roles_of: std::collections::HashMap<ShapeId, Vec<BuildRole>> = Default::default();
     let mut effect_count = 0usize;
     let mut warned = false;
-    for a in anims.iter().take(10_000) {
+    for a in auto.iter().chain(anims.iter()).take(10_000) {
         if effect_count >= MAX_EFFECTS {
             if !warned {
                 log::warn!("pptx: more than {MAX_EFFECTS} animation effects; the rest are left out");
@@ -686,7 +758,15 @@ pub fn timing(w: &mut W, x: &mut Exp, anims: &[Animation], shapes: &[Shape], idm
             None => main.extend(effs),
         }
     }
-    if main.is_empty() && triggered.is_empty() {
+    let media: Vec<(u32, &deckcraft_model::MediaClip)> = media
+        .iter()
+        .filter_map(|s| match &s.kind {
+            ShapeKind::Media(m) => Some((idmap.get(s.id)?, m)),
+            _ => None,
+        })
+        .take(10_000)
+        .collect();
+    if main.is_empty() && triggered.is_empty() && media.is_empty() {
         return;
     }
     let mut ids = Ids(0);
@@ -756,6 +836,9 @@ pub fn timing(w: &mut W, x: &mut Exp, anims: &[Animation], shapes: &[Shape], idm
         trig_cond(w);
         w.close("p:nextCondLst");
         w.close("p:seq");
+    }
+    for (spid, m) in media {
+        media_node(w, &mut ids, spid, m);
     }
     w.close("p:childTnLst");
     w.close("p:cTn");

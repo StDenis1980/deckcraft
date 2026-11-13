@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Preset geometry with an adjust value, a gradient, rotation and flip, a dashed connector with
+     arrowheads, a theme-styled shape (p:style) and a group whose children are scaled 2x. -->
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="2" name="Rounded Rectangle 1"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+        <p:spPr><a:xfrm><a:off x="635000" y="635000"/><a:ext cx="2540000" cy="1270000"/></a:xfrm><a:prstGeom prst="roundRect"><a:avLst><a:gd name="adj" fmla="val 30000"/></a:avLst></a:prstGeom><a:solidFill><a:srgbClr val="1F5FA8"/></a:solidFill><a:ln w="25400"><a:solidFill><a:srgbClr val="1B1F2A"/></a:solidFill><a:prstDash val="dash"/></a:ln></p:spPr>
+        <p:txBody><a:bodyPr anchor="ctr"/><a:lstStyle/><a:p><a:pPr algn="ctr"/><a:r><a:rPr lang="en-US"><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill></a:rPr><a:t>Rounded</a:t></a:r></a:p></p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="3" name="Oval 2"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+        <p:spPr><a:xfrm><a:off x="3810000" y="635000"/><a:ext cx="1270000" cy="1270000"/></a:xfrm><a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+          <a:gradFill rotWithShape="1"><a:gsLst><a:gs pos="0"><a:srgbClr val="D9822B"/></a:gs><a:gs pos="100000"><a:srgbClr val="9B3D6E"/></a:gs></a:gsLst><a:lin ang="5400000" scaled="0"/></a:gradFill><a:ln><a:noFill/></a:ln></p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="4" name="Right Arrow 3"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+        <p:spPr><a:xfrm rot="2700000" flipH="1"><a:off x="5715000" y="635000"/><a:ext cx="1905000" cy="635000"/></a:xfrm><a:prstGeom prst="rightArrow"><a:avLst/></a:prstGeom></p:spPr>
+        <p:style><a:lnRef idx="2"><a:schemeClr val="accent1"><a:shade val="50000"/></a:schemeClr></a:lnRef><a:fillRef idx="1"><a:schemeClr val="accent3"/></a:fillRef><a:effectRef idx="0"><a:schemeClr val="accent1"/></a:effectRef><a:fontRef idx="minor"><a:schemeClr val="lt1"/></a:fontRef></p:style>
+      </p:sp>
+      <p:cxnSp>
+        <p:nvCxnSpPr><p:cNvPr id="5" name="Straight Arrow Connector 4"/><p:cNvCxnSpPr><a:stCxn id="2" idx="3"/><a:endCxn id="3" idx="2"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr>
+        <p:spPr><a:xfrm><a:off x="3175000" y="1270000"/><a:ext cx="635000" cy="0"/></a:xfrm><a:prstGeom prst="straightConnector1"><a:avLst/></a:prstGeom>
+          <a:ln w="19050"><a:solidFill><a:schemeClr val="accent2"/></a:solidFill><a:prstDash val="sysDot"/><a:headEnd type="oval"/><a:tailEnd type="triangle" w="lg" len="lg"/></a:ln></p:spPr>
+      </p:cxnSp>
+      <p:grpSp>
+        <p:nvGrpSpPr><p:cNvPr id="6" name="Group 5"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>
+        <p:grpSpPr><a:xfrm><a:off x="635000" y="3175000"/><a:ext cx="2540000" cy="1270000"/><a:chOff x="0" y="0"/><a:chExt cx="1270000" cy="635000"/></a:xfrm></p:grpSpPr>
+        <p:sp>
+          <p:nvSpPr><p:cNvPr id="7" name="Rectangle 6"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+          <p:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="635000" cy="635000"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val="accent4"/></a:solidFill></p:spPr>
+        </p:sp>
+        <p:sp>
+          <p:nvSpPr><p:cNvPr id="8" name="Triangle 7"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+          <p:spPr><a:xfrm><a:off x="635000" y="0"/><a:ext cx="635000" cy="635000"/></a:xfrm><a:prstGeom prst="triangle"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val="accent5"><a:lumMod val="75000"/></a:schemeClr></a:solidFill></p:spPr>
+        </p:sp>
+      </p:grpSp>
+      <p:sp>
+        <p:nvSpPr><p:cNvPr id="9" name="Freeform 8"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+        <p:spPr><a:xfrm><a:off x="5080000" y="3175000"/><a:ext cx="1270000" cy="1270000"/></a:xfrm>
+          <a:custGeom><a:avLst/><a:gdLst/><a:ahLst/><a:cxnLst/><a:rect l="0" t="0" r="r" b="b"/><a:pathLst><a:path w="100" h="100"><a:moveTo><a:pt x="0" y="100"/></a:moveTo><a:lnTo><a:pt x="50" y="0"/></a:lnTo><a:cubicBezTo><a:pt x="70" y="30"/><a:pt x="90" y="60"/><a:pt x="100" y="100"/></a:cubicBezTo><a:close/></a:path></a:pathLst></a:custGeom>
+          <a:solidFill><a:schemeClr val="accent6"/></a:solidFill></p:spPr>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr>
+</p:sld>

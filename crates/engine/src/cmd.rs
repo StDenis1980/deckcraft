@@ -194,6 +194,7 @@ pub fn command_specs() -> &'static [CommandSpec] {
         v.extend(zoom::specs());
         v.extend(compress::specs());
         v.extend(crate::tinta_reports::specs());
+        v.extend(crate::tinta_convert::specs());
         v
     })
 }

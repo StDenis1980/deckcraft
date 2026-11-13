@@ -22,6 +22,8 @@ pub mod feed;
 mod mp4guard;
 pub mod player;
 pub mod probe;
+#[cfg(not(target_arch = "wasm32"))]
+pub mod transcode;
 pub mod video;
 mod yuv;
 

@@ -24,7 +24,7 @@ pub(crate) const FOLDER: &str = "Open the reports folder";
 #[cfg(test)]
 pub(crate) const STRINGS: [&str; 11] = [TITLE, WHAT, RIGHTS, YES, NO, SECTION, CHECKBOX, ID, FORGET, PENDING, FOLDER];
 
-fn available(app: &SlideApp) -> bool {
+pub(crate) fn available(app: &SlideApp) -> bool {
     app.services.error_reports_dir.is_some()
 }
 
