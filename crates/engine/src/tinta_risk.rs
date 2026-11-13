@@ -58,8 +58,9 @@ const PRINT: &[&str] = &[];
 /// Commands that sign with a certificate.
 const SIGN: &[&str] = &[];
 
-/// Commands that hand something to another program on the computer.
-const OTHER_PROGRAM: &[&str] = &["media.openExternal"];
+/// Commands that hand something to another program on the computer: the system's player, and the
+/// FFmpeg the person installed (`media.convert` waits for it; which program runs is never a parameter).
+const OTHER_PROGRAM: &[&str] = &["media.openExternal", "media.convert"];
 
 /// Commands that run other commands (macros). Each step is still held to `--allow-commands`.
 const RUNS_COMMANDS: &[&str] = &[];

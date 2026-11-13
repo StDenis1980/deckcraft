@@ -164,6 +164,8 @@ master.insertPlaceholder	changes_document,reads_document
 master.placeholders	changes_document,reads_document
 master.preserve	changes_document,reads_document
 master.renameLayout	changes_document,reads_document
+media.convert	changes_document,other_program,reads_document
+media.convertOptions	reads_document
 media.gifPlay	reads_document
 media.info	reads_document
 media.openExternal	other_program,reads_document
@@ -171,6 +173,7 @@ media.options	changes_document,reads_document
 media.pause	reads_document
 media.play	reads_document
 media.posterFrame	changes_document,reads_document
+media.replace	changes_document,reads_document
 media.seek	reads_document
 media.stop	reads_document
 media.toggle	reads_document
