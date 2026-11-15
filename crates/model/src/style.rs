@@ -181,6 +181,9 @@ pub struct PictureFill {
     /// picture; the original is kept to change or remove the effect.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub artistic: Option<Artistic>,
+    /// The SVG version of the picture (`asvg:svgBlip`); `media` is then its raster fallback.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub svg: Option<MediaId>,
 }
 
 /// An applied artistic effect: its `a14` name (e.g. `artisticBlur`) and the original picture.

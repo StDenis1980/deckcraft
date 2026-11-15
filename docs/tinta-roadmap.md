@@ -1,6 +1,6 @@
 # Tinta Presenta — Tinta Office roadmap
 
-> **Status:** 2026-11-12 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec; 2026-11-12 MP4 → WebM conversion with the person's own FFmpeg (owner decision of 2026-11-05); 2026-11-12 agent permissions for Vilna OS: risk per command, `--allow-commands`, repeated roots, name snapshots.
+> **Status:** 2026-11-15 · approved by the owner (Denys) · **Revision history:** 2026-10-27 created; 2026-10-27 stage 1 started: upstream sync (88c2cef), unplayable videos say why and open in the system player; 2026-11-03 Flatpak bundle manifest under the Tinta id; 2026-11-03 plan revision 2 (owner-approved): Preview 3 and a closed beta first, stage gates, next steps per stage; 2026-11-03 owner decisions recorded: Preview 3 on 12 November, Certum signing from January, beta sign-up form on tintaoffice.com/beta; 2026-11-12 Preview 4 work: media playback options kept in .pptx (#74); 2026-11-12 a .pptx test set written from the spec; 2026-11-12 MP4 → WebM conversion with the person's own FFmpeg (owner decision of 2026-11-05); 2026-11-12 agent permissions for Vilna OS: risk per command, `--allow-commands`, repeated roots, name snapshots; 2026-11-15 SVG pictures: kept in .pptx, drawn, insertable; #70 and #77 found already fixed.
 
 Tinta Presenta is the Tinta Office build of DeckCraft and replaces Microsoft PowerPoint. Upstream keeps the
 feature-parity roadmap ([ROADMAP.md](../ROADMAP.md), [roadmap.md](roadmap.md),
@@ -50,6 +50,18 @@ crashing on Windows.
   options), animations with a timed transition, and hidden slides, sections, notes and a slide
   jump. Each deck is checked on import and after a save and reopen. All seven pass today; new
   losses found in real decks get a deck here first. Next: #70 and #77.
+- 2026-11-15 (Preview 4): **SVG pictures.** PowerPoint keeps an SVG icon as a PNG fallback with the
+  SVG in an `asvg:svgBlip` extension; DeckCraft dropped the SVG on every save and could only show
+  the fallback. Now the SVG is read, saved back beside its fallback and drawn on the slide
+  (`resvg` 0.45, Apache-2.0 OR MIT), and an inserted or changed SVG file gets its PNG fallback
+  made, as PowerPoint does. The SVG may reach nothing outside itself (no files, no nested SVG);
+  PNG, JPEG, GIF and WebP pictures embedded in it are drawn within a size cap read from their
+  header; SVGZ is refused and sizes are capped. Not drawn yet: text inside an SVG (it needs fonts
+  given to `resvg`). New test deck `svg`.
+  Already done, nothing to change: #77 (animation rewind, upstream PR #83) and #70 (comment
+  threads: the modern `p188` part is written beside the legacy one), both in the code since the
+  last sync, with their tests (`anim_auto_reverse.rs`, `comments.rs`). EMF and WMF pictures were
+  already drawn (`deckcraft-metafile`); EMF+ records are still not.
 
 - 2026-11-12: **MP4 → WebM conversion** (owner decision of 2026-11-05: the person's own FFmpeg,
   never shipped by us). Inserting a clip this build can't play (H.264, HEVC, AAC, WMV…) asks

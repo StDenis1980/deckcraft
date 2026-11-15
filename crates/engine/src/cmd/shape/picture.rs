@@ -1,4 +1,4 @@
-use super::{NO_ID_SPACE, Result, Session, Value, bad, bool_or, bool_param, edit_geometry, edit_shapes, f64_param, json};
+use super::{Result, Session, Value, bool_or, bool_param, edit_geometry, edit_shapes, f64_param, json};
 
 pub(super) fn crop(s: &mut Session, p: &Value) -> Result<Value> {
     let c = [f64_param(p, "left"), f64_param(p, "top"), f64_param(p, "right"), f64_param(p, "bottom")];
@@ -60,12 +60,13 @@ pub(super) fn picture_reset(s: &mut Session, p: &Value) -> Result<Value> {
 pub(super) fn picture_change(s: &mut Session, p: &Value) -> Result<Value> {
     let (name, bytes) = crate::cmd::insert::media_bytes(p, "picture.change")?;
     let ct = crate::cmd::insert::content_type(&name, &bytes);
-    let media = s.edit(|doc, _| doc.add_media(&name, ct, bytes).ok_or_else(|| bad("picture.change", NO_ID_SPACE)))?;
+    let (media, svg) = crate::cmd::insert::add_picture_media(s, "picture.change", &name, ct, bytes)?;
     edit_shapes(s, p, "picture.change", |sh| {
         if let deckcraft_model::ShapeKind::Picture { fill } = &mut sh.kind {
             fill.media = media;
             fill.crop = [0.0; 4];
             fill.artistic = None;
+            fill.svg = svg;
         }
         Ok(())
     })

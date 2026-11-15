@@ -7069,3 +7069,37 @@ fn shape_adjust_and_quick_style_reject_invalid_index() {
     assert_eq!(s.doc().unwrap().shape(id).unwrap().style, before.style);
     s.execute("shape.adjust", &json!({"value": 0.4})).unwrap();
 }
+
+/// Inserting an SVG keeps it as PowerPoint does: a PNG fallback as the picture, the SVG beside
+/// it, sized from the SVG; Change Picture to an SVG does the same, and to a PNG drops the SVG.
+#[test]
+fn an_inserted_svg_keeps_its_svg_beside_a_png_fallback() {
+    let svg = |c: &str| {
+        format!("<svg xmlns='http://www.w3.org/2000/svg' width='96' height='48'><rect width='96' height='48' fill='{c}'/></svg>").into_bytes()
+    };
+    let mut s = session();
+    let id = s.execute("insert.picture", &json!({"data": cmd::base64_encode(&svg("red")), "name": "icon.svg"})).unwrap()["id"].clone();
+    let pic = |s: &Session| {
+        let doc = s.doc().unwrap();
+        let sh = doc.shapes().iter().find(|sh| json!(sh.id) == id).unwrap().clone();
+        let deckcraft_model::ShapeKind::Picture { fill } = &sh.kind else { panic!("not a picture") };
+        let media = |m| doc.doc.media(m).map(|m| (m.content_type.clone(), m.data.to_vec()));
+        (sh.xfrm.unwrap(), media(fill.media).unwrap(), fill.svg.and_then(media))
+    };
+    let (x, (ct, png), svg_media) = pic(&s);
+    assert_eq!(ct, "image/png");
+    let img = image::load_from_memory(&png).unwrap();
+    assert_eq!((img.width(), img.height()), (256, 128), "drawn at twice its size, at least 256 px");
+    assert_eq!(svg_media, Some(("image/svg+xml".to_string(), svg("red"))));
+    assert_eq!((x.w, x.h), (72.0, 36.0), "its own size: 96 × 48 CSS px");
+
+    s.execute("edit.select", &json!({"ids": [id]})).unwrap();
+    s.execute("picture.change", &json!({"data": cmd::base64_encode(&svg("blue")), "name": "b.svg"})).unwrap();
+    assert_eq!(pic(&s).2.map(|m| m.1), Some(svg("blue")));
+    let png = pic(&s).1.1;
+    s.execute("picture.change", &json!({"data": cmd::base64_encode(&png), "name": "c.png"})).unwrap();
+    assert_eq!(pic(&s).2, None, "a raster picture has no SVG");
+
+    // An SVG that can't be drawn is refused, as an unreadable picture is.
+    assert!(s.execute("insert.picture", &json!({"data": cmd::base64_encode(b"<svg"), "name": "bad.svg"})).is_err());
+}

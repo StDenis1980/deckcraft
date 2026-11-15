@@ -1,7 +1,7 @@
 //! Every [`MediaId`] the model can reference, found by type rather than by scanning JSON keys.
 //!
 //! One walker, written once ([`walkers!`]) and expanded twice: [`visit`] reads ids, [`visit_mut`]
-//! rewrites them in place. It covers pictures (and their artistic-effect originals), picture fills
+//! rewrites them in place. It covers pictures (and their artistic-effect originals and SVG versions), picture fills
 //! wherever a fill can sit (shapes, lines, text runs, table cells and styles, chart series and
 //! points, backgrounds, theme format schemes), media clips and their posters, 3-D models, OLE and
 //! SmartArt previews and kept parts, SmartArt node pictures, picture bullets, hyperlink, transition and
@@ -30,6 +30,9 @@ macro_rules! walkers {
             f(&$($m)? p.media);
             if let Some(a) = &$($m)? p.artistic {
                 f(&$($m)? a.original);
+            }
+            if let Some(svg) = &$($m)? p.svg {
+                f(svg);
             }
         }
 
@@ -337,7 +340,11 @@ mod tests {
         let mut s = (*p.slides.first().cloned().unwrap_or_default()).clone();
         let pic = Shape {
             kind: ShapeKind::Picture {
-                fill: PictureFill { artistic: Some(Artistic { effect: "artisticBlur".into(), original: MediaId(9002) }), ..pf(9001) },
+                fill: PictureFill {
+                    artistic: Some(Artistic { effect: "artisticBlur".into(), original: MediaId(9002) }),
+                    svg: Some(MediaId(9011)),
+                    ..pf(9001)
+                },
             },
             ..Default::default()
         };
@@ -378,10 +385,10 @@ mod tests {
         let p = deck();
         let mut got = presentation_media(&p);
         got.sort();
-        assert_eq!(got, (9001..=9010).map(MediaId).collect::<Vec<_>>());
+        assert_eq!(got, (9001..=9011).map(MediaId).collect::<Vec<_>>());
         let mut slide = p.slides.first().map(|s| slide_media(s)).unwrap_or_default();
         slide.sort();
-        assert_eq!(slide, (9001..=9008).map(MediaId).collect::<Vec<_>>());
+        assert_eq!(slide, (9001..=9008).chain([9011]).map(MediaId).collect::<Vec<_>>());
     }
 
     #[test]
@@ -391,7 +398,7 @@ mod tests {
         visit_mut::slide(&mut s, &mut |id: &mut MediaId| id.0 += 100);
         let mut got = slide_media(&s);
         got.sort();
-        assert_eq!(got, (9101..=9108).map(MediaId).collect::<Vec<_>>());
+        assert_eq!(got, (9101..=9108).chain([9111]).map(MediaId).collect::<Vec<_>>());
     }
 
     /// SmartArt and OLE objects keep their parts as media items (#209); those count as used.

@@ -34,6 +34,10 @@ fn read(path: &Path) -> Vec<u8> {
 }
 
 /// A 4x4 PNG of one colour, made here so the corpus holds no binary files.
+/// The SVG icon of the `svg` deck: a blue circle.
+const SVG: &[u8] =
+    br##"<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#1F5FA8"/></svg>"##;
+
 fn png() -> Vec<u8> {
     let mut out = Cursor::new(vec![]);
     image::DynamicImage::ImageRgb8(image::RgbImage::from_pixel(4, 4, image::Rgb([0xD9, 0x82, 0x2B])))
@@ -155,6 +159,7 @@ fn package(deck: &Deck) -> Vec<u8> {
     let wants = |part: &str| files.iter().any(|(n, d)| n.ends_with(".rels") && String::from_utf8_lossy(d).contains(part));
     let media: Vec<(&str, Vec<u8>)> = [
         ("image1.png", wants("media/image1.png").then(png)),
+        ("image2.svg", wants("media/image2.svg").then(|| SVG.to_vec())),
         ("media1.mp4", wants("media/media1.mp4").then(|| include_bytes!("../../../media/tests/fixtures/clip-h264.mp4").to_vec())),
     ]
     .into_iter()
@@ -165,7 +170,7 @@ fn package(deck: &Deck) -> Vec<u8> {
     }
 
     let mut ct = String::from(
-        r#"<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Default Extension="mp4" ContentType="video/mp4"/>"#,
+        r#"<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Default Extension="mp4" ContentType="video/mp4"/><Default Extension="svg" ContentType="image/svg+xml"/>"#,
     );
     for (part, ty) in &overrides {
         ct.push_str(&format!(r#"<Override PartName="{part}" ContentType="{ty}"/>"#));
@@ -308,6 +313,18 @@ fn pictures_with_crop_alt_text_and_a_shared_image() {
         assert_eq!(fill.media, other.media, "{when}: one image, two pictures");
         assert!(p.media(fill.media).is_some_and(|m| m.data.starts_with(b"\x89PNG")), "{when}");
         assert!(matches!(&named(sh, "Picture 2").geom, Geom::Preset { name, .. } if name == "ellipse"), "{when}");
+    });
+}
+
+#[test]
+fn an_svg_icon_keeps_its_svg_beside_its_png_fallback() {
+    let deck = Deck { name: "svg", layouts: &[2], size: WIDE, sections: &[] };
+    check_deck(&deck, |p, when| {
+        let icon = named(&p.slides[0].shapes, "Graphic 1");
+        let ShapeKind::Picture { fill } = &icon.kind else { panic!("{when}: {:?}", icon.kind) };
+        assert!(p.media(fill.media).is_some_and(|m| m.data.starts_with(b"\x89PNG")), "{when}: the fallback");
+        let svg = fill.svg.and_then(|id| p.media(id));
+        assert!(svg.is_some_and(|m| m.data.as_slice() == SVG && m.content_type == "image/svg+xml"), "{when}: the SVG");
     });
 }
 
