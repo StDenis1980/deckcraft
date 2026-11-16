@@ -79,7 +79,9 @@ fn fitted(s: &Session, bytes: &[u8]) -> (f64, f64) {
         .with_guessed_format()
         .ok()
         .and_then(|r| r.into_dimensions().ok())
-        .map(|(w, h)| (w as f64 * 0.75, h as f64 * 0.75))
+        .map(|(w, h)| (w as f64, h as f64))
+        .or_else(|| deckcraft_render::svg_natural_size(bytes))
+        .map(|(w, h)| (w * 0.75, h * 0.75))
         .unwrap_or((288.0, 216.0));
     let size = s.active().map(|d| d.doc.slide_size).unwrap_or(deckcraft_model::defaults::WIDE);
     let k = (size.width * 0.9 / w.max(1.0)).min(size.height * 0.9 / h.max(1.0)).min(1.0);
@@ -92,7 +94,7 @@ pub(super) fn picture(s: &mut Session, p: &Value) -> Result<Value> {
     if !ct.starts_with("image/") {
         return Err(bad("insert.picture", format!("{name} is not a picture")));
     }
-    if ct != "image/svg+xml" && deckcraft_render::decode_image(&bytes).is_none() {
+    if deckcraft_render::decode_image(&bytes).is_none() {
         return Err(EngineError::Other(format!("{name}: the picture can't be read")));
     }
     let (w, h) = fitted(s, &bytes);
@@ -127,10 +129,10 @@ pub(super) fn picture(s: &mut Session, p: &Value) -> Result<Value> {
         }
         _ => [0.0; 4],
     };
-    let media = s.edit(|doc, _| doc.add_media(&name, ct, bytes).ok_or_else(|| bad("insert.picture", NO_ID_SPACE)))?;
+    let (media, svg) = add_picture_media(s, "insert.picture", &name, ct, bytes)?;
     let shape = Shape {
         xfrm: Some(rect),
-        kind: ShapeKind::Picture { fill: PictureFill { media, crop, ..Default::default() } },
+        kind: ShapeKind::Picture { fill: PictureFill { media, crop, svg, ..Default::default() } },
         descr: name.clone(),
         ..Default::default()
     };
@@ -156,6 +158,33 @@ pub(super) fn picture(s: &mut Session, p: &Value) -> Result<Value> {
     }
     let id = add_shape(s, "insert.picture", shape, true)?;
     Ok(json!({"id": id}))
+}
+
+/// Longest side of the PNG stored beside an inserted SVG picture.
+const SVG_FALLBACK_SIDE: (u32, u32) = (256, 2048);
+
+/// Add a picture's bytes to the deck: the media to show, and for an SVG its SVG version. An SVG
+/// is kept as PowerPoint keeps one, beside a PNG of it for readers that can't draw SVG
+/// (`asvg:svgBlip` in the .pptx), drawn at twice its own size within [`SVG_FALLBACK_SIDE`].
+pub(crate) fn add_picture_media(
+    s: &mut Session,
+    cmd: &str,
+    name: &str,
+    ct: &str,
+    bytes: Vec<u8>,
+) -> Result<(deckcraft_model::MediaId, Option<deckcraft_model::MediaId>)> {
+    if ct != "image/svg+xml" {
+        return s.edit(|doc, _| doc.add_media(name, ct, bytes).map(|m| (m, None)).ok_or_else(|| bad(cmd, NO_ID_SPACE)));
+    }
+    let (w, h) = deckcraft_render::svg_natural_size(&bytes).ok_or_else(|| EngineError::Other(format!("{name}: the picture can't be read")))?;
+    let side = (w.max(h) * 2.0).round().clamp(SVG_FALLBACK_SIDE.0 as f64, SVG_FALLBACK_SIDE.1 as f64) as u32;
+    let png = deckcraft_render::svg_to_png(&bytes, side).ok_or_else(|| EngineError::Other(format!("{name}: the picture can't be read")))?;
+    let stem = std::path::Path::new(name).file_stem().map(|n| n.to_string_lossy().to_string()).unwrap_or_else(|| "image".into());
+    s.edit(|doc, _| {
+        let fallback = doc.add_media(&format!("{stem}.png"), "image/png", png).ok_or_else(|| bad(cmd, NO_ID_SPACE))?;
+        let svg = doc.add_media(name, ct, bytes).ok_or_else(|| bad(cmd, NO_ID_SPACE))?;
+        Ok((fallback, Some(svg)))
+    })
 }
 
 fn media(s: &mut Session, p: &Value, video: bool) -> Result<Value> {

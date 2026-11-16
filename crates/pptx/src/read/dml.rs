@@ -158,6 +158,10 @@ pub fn blip_fill(imp: &mut Imp, part: &Part, bf: &El) -> Option<PictureFill> {
     {
         pf.artistic = Some(deckcraft_model::style::Artistic { effect, original });
     }
+    // An SVG picture: the blip is its PNG fallback and the SVG rides in an `asvg:svgBlip`.
+    if let Some(svg) = blip.and_then(|b| b.child("extLst")).and_then(|x| x.find("svgBlip")) {
+        pf.svg = media_ref(imp, part, svg);
+    }
     if let Some(b) = blip {
         for e in b.elements() {
             match e.local() {

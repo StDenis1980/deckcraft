@@ -25,7 +25,7 @@ pub use chart::chart_type;
 use chart::{chart, chart_data, chart_options, chart_type_cmd};
 use links::{action_button, hyperlink, shape_action};
 pub use picture::content_type;
-pub(crate) use picture::media_bytes;
+pub(crate) use picture::{add_picture_media, media_bytes};
 use picture::{audio, picture, video};
 use text_fields::{date_time, slide_number, symbol, word_art};
 

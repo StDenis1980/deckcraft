@@ -811,6 +811,39 @@ fn animated_gif_shows_the_frame_for_its_time() {
     assert!(gif_frame(&std::sync::Arc::new(b"\x89PNG".to_vec()), &adj, 0.0).is_none());
 }
 
+/// An SVG picture draws its SVG, not the raster fallback beside it; the fallback stands in for an
+/// unreadable SVG and under an artistic effect (which was made from it).
+#[test]
+fn an_svg_picture_draws_its_svg_and_falls_back_to_its_png() {
+    let mut p = Presentation::default();
+    let mut png = std::io::Cursor::new(Vec::new());
+    image::DynamicImage::ImageRgb8(image::RgbImage::from_pixel(4, 4, image::Rgb([255, 0, 0])))
+        .write_to(&mut png, image::ImageFormat::Png)
+        .expect("png");
+    let fallback = p.add_media("a.png", "image/png", png.into_inner()).expect("media");
+    let blue = br##"<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="#0000ff"/></svg>"##;
+    let svg = p.add_media("a.svg", "image/svg+xml", blue.to_vec()).expect("media");
+    let broken = p.add_media("b.svg", "image/svg+xml", b"<svg".to_vec()).expect("media");
+    let at = |p: &mut Presentation, fill: deckcraft_model::style::PictureFill| {
+        let sh = Shape { id: ShapeId(601), xfrm: Some(Xfrm::new(0.0, 0.0, 960.0, 540.0)), kind: ShapeKind::Picture { fill }, ..Default::default() };
+        std::sync::Arc::make_mut(&mut p.slides[0]).shapes = vec![sh];
+        render_slide(p, 0, &RenderOpts { scale: 0.1, ..Default::default() }).pixel(48, 27)
+    };
+    let is_blue = |px: [u8; 4]| px[2] > 200 && px[0] < 60;
+    let is_red = |px: [u8; 4]| px[0] > 200 && px[2] < 60;
+    let pf = |svg| deckcraft_model::style::PictureFill { media: fallback, svg, ..Default::default() };
+    assert!(is_blue(at(&mut p, pf(Some(svg)))), "the SVG is drawn");
+    assert!(is_red(at(&mut p, pf(None))), "no SVG: the picture itself");
+    assert!(is_red(at(&mut p, pf(Some(broken)))), "an unreadable SVG: its fallback");
+    let art = deckcraft_model::style::Artistic { effect: "artisticBlur".into(), original: fallback };
+    assert!(
+        is_red(at(&mut p, deckcraft_model::style::PictureFill { artistic: Some(art), ..pf(Some(svg)) })),
+        "an artistic effect shows its own picture"
+    );
+    // A deck that stored the SVG itself as the picture draws it too.
+    assert!(is_blue(at(&mut p, deckcraft_model::style::PictureFill { media: svg, ..Default::default() })));
+}
+
 #[test]
 fn morph_path_ends_match_the_slides() {
     let from = Xfrm::new(100.0, 100.0, 200.0, 200.0);
