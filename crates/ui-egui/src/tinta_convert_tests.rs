@@ -40,13 +40,17 @@ fn media_name(h: &Harness<'_, SlideApp>, id: ShapeId) -> String {
     d.doc.media(clip.media).unwrap().name.clone()
 }
 
-/// Steps the app until the conversion has ended (at most 60 s).
-fn finish(h: &mut Harness<'_, SlideApp>) {
+/// Steps the app until the conversion has ended (at most 60 s), and returns the status message as
+/// it stood on the frame the conversion ended. The status bar drops a message after a few seconds,
+/// and a loaded machine (a full parallel test run) can take longer than that to step a few frames,
+/// so reading it afterwards made the test flaky.
+fn finish(h: &mut Harness<'_, SlideApp>) -> Option<String> {
     for _ in 0..1200 {
         h.run_steps(1);
         if h.state().tinta_convert.running.is_none() {
+            let status = h.state().status.as_ref().map(|(s, _)| s.clone());
             h.run_steps(2);
-            return;
+            return status;
         }
         std::thread::sleep(std::time::Duration::from_millis(50));
     }
@@ -134,12 +138,12 @@ fn a_converted_clip_replaces_the_original_and_undo_brings_it_back() {
     h.get_by_label("Convert").click();
     h.run_steps(2);
     assert!(h.state().tinta_convert.running.is_some(), "{:?}", h.state().tinta_convert);
-    finish(&mut h);
+    let status = finish(&mut h);
     assert!(h.state().tinta_convert.dialog.is_none(), "{:?}", h.state().tinta_convert);
     assert_eq!(media_name(&h, id), "clip.webm");
     let info = h.state_mut().run("media.info", json!({"id": id})).unwrap();
     assert_eq!(info["needsConversion"], false);
-    assert!(h.state().status.as_ref().is_some_and(|(s, _)| s.contains("converted")), "{:?}", h.state().status);
+    assert!(status.as_ref().is_some_and(|s| s.contains("converted")), "{status:?}");
     h.state_mut().run("edit.undo", json!({})).unwrap();
     assert_eq!(media_name(&h, id), "clip.mp4");
 }
