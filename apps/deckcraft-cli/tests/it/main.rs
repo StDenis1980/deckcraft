@@ -1,3 +1,5 @@
+use std::ffi::OsString;
+
 mod cli;
 #[cfg(unix)]
 mod closed_stdout;
@@ -8,3 +10,7 @@ mod damaged;
 mod mcp_allow_commands;
 #[allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 mod mcp_roots;
+
+fn deckcraft_cli() -> OsString {
+    std::env::var_os("NEXTEST_BIN_EXE_deckcraft_cli").unwrap_or_else(|| env!("CARGO_BIN_EXE_deckcraft-cli").into())
+}

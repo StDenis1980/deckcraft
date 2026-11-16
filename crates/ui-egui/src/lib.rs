@@ -160,7 +160,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu|it|fr|de|pl}"),
     ("app.openDialog", "Open…", None, "{purpose?}"),
     ("app.insertPictureDialog", "Picture from File…", None, "{}"),
-    ("app.smartArtPictureDialog", "Insert Picture in SmartArt…", None, "{id?, index}"),
+    ("app.smartArtPictureDialog", "Insert Picture in Diagram…", None, "{id?, index}"),
     ("app.changePictureDialog", "Change Picture…", None, "{}"),
     ("app.insertAudioDialog", "Audio from File…", None, "{}"),
     ("app.reuseSlidesDialog", "Reuse Slides…", None, "{keepFormatting?: bool}"),
@@ -297,7 +297,8 @@ pub struct SlideApp {
     ribbon_scroll: HashMap<String, u32>,
     /// Monotonic identity for a new slide show instance (`start_show`).
     show_instance: u64,
-    /// Monotonic identity for a new background-open attempt.
+    /// Monotonic identity for a new background-open attempt (the web build has no threads).
+    #[cfg(not(target_arch = "wasm32"))]
     opening_generation: u64,
     /// Canvas screen rect and points-per-slide-point scale (for control & tests).
     pub canvas_rect: Option<egui::Rect>,

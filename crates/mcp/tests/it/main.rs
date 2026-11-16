@@ -6,4 +6,6 @@ mod automation_roots;
 mod allowed_commands;
 
 #[allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
+mod batch_budget;
+#[allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 mod tinta_tools_snapshot;

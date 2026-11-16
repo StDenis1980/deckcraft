@@ -10,8 +10,10 @@ workspace = true
 
 [dependencies]
 deckcraft-brand = { workspace = true }
+craft-deckcraft-format = { workspace = true }
+craft-rtf = { workspace = true }
 deckcraft-model = { workspace = true }
-serde = { workspace = true }
+
+[dev-dependencies]
 serde_json = { workspace = true }
 zip = { workspace = true }
-thiserror = { workspace = true }

@@ -10,6 +10,7 @@ workspace = true
 
 [dependencies]
 deckcraft-brand = { workspace = true }
+craft-mime = { workspace = true }
 deckcraft-geom = { workspace = true }
 deckcraft-color = { workspace = true }
 deckcraft-model = { workspace = true }

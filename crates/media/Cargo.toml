@@ -9,14 +9,10 @@ description = "DeckCraft media: probing, audio decoding (MP3, WAV, AIFF, FLAC, A
 workspace = true
 
 [dependencies]
-deckcraft-isobmff = { workspace = true }
-deckcraft-matroska = { workspace = true }
-deckcraft-ogg = { workspace = true }
-deckcraft-opus = { workspace = true }
-deckcraft-h264 = { workspace = true, optional = true }
-deckcraft-hevc = { workspace = true, optional = true }
-deckcraft-vp9 = { workspace = true }
-deckcraft-av1 = { workspace = true }
+# Containers (MP4/MOV, Matroska/WebM, Ogg), the Opus decoder and the video decoders, shared with the other Craft apps.
+craft-media = { workspace = true, features = ["isobmff", "matroska", "ogg"] }
+craft-audio = { workspace = true }
+craft-video = { workspace = true }
 thiserror = { workspace = true }
 log = { workspace = true }
 image = { workspace = true }
@@ -30,4 +26,4 @@ symphonia = { version = "0.5.5", default-features = false, features = ["adpcm", 
 # but reported as not decodable, and VP9, AV1, Opus, Vorbis, FLAC, MP3, ALAC and PCM still play.
 # `cargo test -p deckcraft-media --features patented-codecs` runs their tests.
 default = []
-patented-codecs = ["dep:deckcraft-h264", "dep:deckcraft-hevc", "symphonia/aac"]
+patented-codecs = ["craft-video/h264-decode", "craft-video/hevc-decode", "symphonia/aac"]
