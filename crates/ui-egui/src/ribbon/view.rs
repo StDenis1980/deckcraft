@@ -94,6 +94,10 @@ pub(super) fn view(app: &mut SlideApp, ui: &mut Ui) {
         if big_button_ex(ui, Icon::Palette, "Dark\nMode", true, false, dark).0.clicked() {
             let _ = app.run("view.dark", json!({}));
         }
+        let tinta = app.ui.tinta_look;
+        if big_button_ex(ui, Icon::Sparkle, crate::tinta_theme::BUTTON, true, false, tinta).0.clicked() {
+            let _ = app.run("view.tintaLook", json!({}));
+        }
     });
 }
 

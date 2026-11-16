@@ -17,6 +17,9 @@ impl SlideApp {
             ctx.request_discard("install interface fonts before layout");
             return false;
         }
+        if crate::tinta_theme::set(self.ui.tinta_look) {
+            self.restyle = true;
+        }
         if self.restyle {
             theme::apply(ctx, &theme::Tokens::for_brightness(self.ui.brightness));
             self.restyle = false;

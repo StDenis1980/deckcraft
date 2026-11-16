@@ -238,6 +238,8 @@ fn app_icon() -> Option<egui::IconData> {
 /// Install logging, parse startup arguments and environment, launch the native app, and
 /// propagate an eframe startup failure.
 fn main() -> eframe::Result {
+    // Tinta Office: this app shows the Tinta look (tests and examples keep the classic one).
+    deckcraft_ui_egui::tinta_theme::allow();
     // First, so every start-up record (and the engine's panic hook, installed with the first
     // Session) is captured; see `logging`.
     let logger = logging::install();

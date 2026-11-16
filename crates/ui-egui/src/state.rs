@@ -51,6 +51,8 @@ pub enum ViewMode {
 #[serde(default, rename_all = "camelCase")]
 pub struct UiState {
     pub brightness: theme::Brightness,
+    /// Tinta Office: the Tinta look on or off ([`crate::tinta_theme`]); on unless turned off.
+    pub tinta_look: bool,
     pub tab: String,
     pub ribbon_collapsed: bool,
     pub view: ViewMode,
@@ -102,6 +104,7 @@ impl Default for UiState {
     fn default() -> Self {
         UiState {
             brightness: theme::Brightness::Light,
+            tinta_look: true,
             tab: "Home".into(),
             ribbon_collapsed: false,
             view: ViewMode::Normal,

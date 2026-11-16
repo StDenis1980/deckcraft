@@ -58,6 +58,7 @@ mod state;
 pub mod tinta_convert;
 pub mod tinta_feedback;
 mod tinta_reports_ui;
+pub mod tinta_theme;
 
 pub use app::key_name;
 #[cfg(test)]
@@ -132,6 +133,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("view.collapseRibbon", "Collapse the Ribbon", Some("Cmd+F1"), "{}"),
     ("view.dark", "Dark Mode", None, "{on?: bool}"),
     ("view.grayscale", "Grayscale", None, "{on?: bool}"),
+    ("view.tintaLook", "Tinta Office Look", None, "{on?: bool}"),
     ("view.newWindow", "New Window", None, "{on?: bool, slide?: index, delta?: int}"),
     ("show.start", "Slide Show", Some("F5"), "{from?: index, custom?: name}"),
     (
