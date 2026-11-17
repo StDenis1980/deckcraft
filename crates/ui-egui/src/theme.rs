@@ -124,12 +124,13 @@ impl Tokens {
         }
     }
     pub fn get(ctx: &egui::Context) -> Self {
-        if ctx.global_style().visuals.dark_mode { Self::dark() } else { Self::light() }
+        crate::tinta_theme::tokens(if ctx.global_style().visuals.dark_mode { Self::dark() } else { Self::light() })
     }
 }
 
 /// Apply tokens to egui's style.
 pub fn apply(ctx: &egui::Context, t: &Tokens) {
+    let t = &crate::tinta_theme::tokens(*t);
     let mut v = if t.dark { Visuals::dark() } else { Visuals::light() };
     v.panel_fill = t.chrome;
     v.window_fill = t.card;
@@ -158,6 +159,7 @@ pub fn apply(ctx: &egui::Context, t: &Tokens) {
     v.widgets.open.weak_bg_fill = t.pressed;
     v.window_shadow = egui::epaint::Shadow { offset: [0, 4], blur: 18, spread: 0, color: t.shadow };
     v.popup_shadow = egui::epaint::Shadow { offset: [0, 3], blur: 12, spread: 0, color: t.shadow };
+    crate::tinta_theme::visuals(&mut v, t);
     ctx.set_visuals(v);
     ctx.global_style_mut(|s| {
         s.spacing.item_spacing = egui::vec2(6.0, 4.0);

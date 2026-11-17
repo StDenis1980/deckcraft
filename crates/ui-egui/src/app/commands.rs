@@ -160,6 +160,7 @@ impl SlideApp {
                 self.restyle = true;
             }
             "view.grayscale" => self.ui.grayscale = self.flag(p, self.ui.grayscale),
+            "view.tintaLook" => self.ui.tinta_look = self.flag(p, self.ui.tinta_look),
             "app.language" => {
                 let pref = p.get("language").and_then(Value::as_str).unwrap_or(crate::i18n::AUTO);
                 let Some(code) = crate::i18n::normalize_pref(pref) else {
