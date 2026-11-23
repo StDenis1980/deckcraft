@@ -94,9 +94,15 @@
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".pptx" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".potx" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".ppsx" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".ppt" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".pot" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\deckcraft.exe\SupportedTypes" Name=".pps" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\.pptx\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\.potx\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Classes\.ppsx\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.ppt\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.pot\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\.pps\OpenWithProgids" Name="TintaPresenta.Presentation" Value="" Type="string" />
 
         <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\deckcraft.exe" Value="[#AppExe]" Type="string" />
 

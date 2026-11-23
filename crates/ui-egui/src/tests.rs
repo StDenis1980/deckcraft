@@ -130,6 +130,27 @@ fn open_external_hands_the_clip_to_the_system_player() {
     assert!(app.status.is_some(), "a host without either says so");
 }
 
+/// Every type File › Save As and Export › Change File Type list is one `export_as` writes:
+/// a listed type it doesn't know would only say "can't export" (#2019).
+#[test]
+fn every_listed_save_type_exports() {
+    use std::cell::RefCell;
+    use std::rc::Rc;
+    let got: Rc<RefCell<Vec<String>>> = Rc::default();
+    let log = got.clone();
+    let services = Services { download: Some(Box::new(move |name: &str, _: &[u8]| log.borrow_mut().push(name.to_string()))), ..Default::default() };
+    let mut app = SlideApp::new(Session::with_new(), services);
+    app.session.execute("slide.new", &json!({})).unwrap();
+    for (id, _, _) in crate::backstage::SAVE_TYPES {
+        assert!(app.export_as(id, json!({})), "{id} exports");
+    }
+    let title = app.session.active().unwrap().title();
+    let got = got.borrow();
+    for name in [format!("{title}1.jpg"), format!("{title}2.jpg"), format!("{title}1.png"), format!("{title}2.png")] {
+        assert!(got.contains(&name), "{name} downloaded, got {got:?}");
+    }
+}
+
 fn title_text(app: &SlideApp) -> String {
     let d = app.session.active().unwrap();
     let sh = &d.doc.slides[0].shapes[0];
