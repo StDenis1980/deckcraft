@@ -218,6 +218,10 @@ pub fn tl(english: &str) -> &str {
 /// `english` in `language`: its translation (with the product name rebranded), or `english`
 /// itself when there is none.
 pub fn tr(language: Language, english: &str) -> &str {
+    // Tinta Office: translated in its own module, not in the shared catalogues.
+    if english == crate::tinta_share::MENU {
+        return crate::tinta_share::tr(language.code(), crate::tinta_share::MENU);
+    }
     match language.catalog().and_then(|c| c.rows.get(english)) {
         Some(text) => deckcraft_engine::brand::rebrand_static(text.as_str()),
         None => english,
