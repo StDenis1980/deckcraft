@@ -32,6 +32,7 @@ pub mod thesaurus;
 pub mod tinta_convert;
 pub mod tinta_reports;
 pub mod tinta_risk;
+pub mod tinta_templates;
 pub mod tools;
 
 use std::sync::Arc;

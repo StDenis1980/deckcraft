@@ -15,6 +15,7 @@ use crate::cmd::{bad, slide::find_layout};
 
 /// One slide of a starter: a layout, a title, text for each non-title placeholder in order, and
 /// optional speaker notes.
+#[derive(Clone, Copy)]
 pub struct SlideSeed {
     pub layout: &'static str,
     pub title: &'static str,
@@ -23,6 +24,7 @@ pub struct SlideSeed {
 }
 
 /// A starter deck shown in the template gallery.
+#[derive(Clone, Copy)]
 pub struct Starter {
     pub name: &'static str,
     pub summary: &'static str,
@@ -169,7 +171,18 @@ const STARTERS: &[Starter] = &[
 
 /// The starter gallery, in the order File › New shows it.
 pub fn starters() -> &'static [Starter] {
-    STARTERS
+    // Tinta Office: the Tinta starters come first (crate::tinta_templates).
+    static ALL: std::sync::LazyLock<Vec<Starter>> =
+        std::sync::LazyLock::new(|| crate::tinta_templates::STARTERS.iter().chain(STARTERS).copied().collect());
+    &ALL
+}
+
+/// The theme `starter` opens on (Tinta Office: a Tinta theme when it is not a built-in one).
+pub fn theme_of(starter: &Starter) -> Option<deckcraft_model::Theme> {
+    deckcraft_model::theme::builtin_themes()
+        .into_iter()
+        .find(|t| t.name.eq_ignore_ascii_case(starter.theme))
+        .or_else(|| crate::tinta_templates::theme(starter.theme))
 }
 
 /// Starters whose name, summary, theme or a slide title contains `query` (empty matches all).
@@ -207,10 +220,7 @@ pub fn build(name: &str, size: Size) -> Result<Presentation> {
         let names = starters().iter().map(|t| t.name).collect::<Vec<_>>().join(", ");
         bad("file.new", format!("no template `{name}`; use {names}"))
     })?;
-    let theme = deckcraft_model::theme::builtin_themes()
-        .into_iter()
-        .find(|t| t.name.eq_ignore_ascii_case(starter.theme))
-        .ok_or_else(|| bad("file.new", format!("template `{}` names a missing theme `{}`", starter.name, starter.theme)))?;
+    let theme = theme_of(starter).ok_or_else(|| bad("file.new", format!("template `{}` names a missing theme `{}`", starter.name, starter.theme)))?;
     let mut doc = defaults::blank_presentation(size, theme, false);
     for seed in starter.slides {
         let key = Value::String(seed.layout.to_string());
@@ -237,6 +247,7 @@ pub fn build(name: &str, size: Size) -> Result<Presentation> {
         }
         doc.slides.push(Arc::new(slide));
     }
+    crate::tinta_templates::decorate(starter.name, &mut doc);
     Ok(doc)
 }
 

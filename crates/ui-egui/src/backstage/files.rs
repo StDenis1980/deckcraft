@@ -76,7 +76,7 @@ fn template_tiles(app: &mut SlideApp, ui: &mut Ui, query: &str, limit: usize) ->
     ui.horizontal_wrapped(|ui| {
         ui.spacing_mut().item_spacing = vec2(10.0, 10.0);
         for starter in list.into_iter().take(limit) {
-            let theme = deckcraft_model::theme::builtin_themes().into_iter().find(|th| th.name == starter.theme);
+            let theme = deckcraft_engine::templates::theme_of(starter);
             if tile(ui, starter.name, theme.as_ref(), false).on_hover_text(starter.summary).clicked() {
                 let _ = app.run("file.new", json!({"template": starter.name}));
             }
