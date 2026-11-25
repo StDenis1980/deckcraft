@@ -180,9 +180,13 @@ impl SlideApp {
         }
     }
 
-    /// The file name a save or export suggests: the presentation's title with `ext`.
-    fn suggested_name(&self, ext: &str) -> String {
-        let name = self.session.active().map(|d| d.title()).unwrap_or_else(|| "Presentation".into());
+    /// The file name a save or export suggests: `name` (typed on the Save As page) or else the
+    /// presentation's title, with `ext`.
+    fn suggested_name(&self, name: Option<&str>, ext: &str) -> String {
+        let name = match name.map(str::trim).filter(|n| !n.is_empty()) {
+            Some(n) => n.strip_suffix(&format!(".{ext}")).unwrap_or(n).to_string(),
+            None => self.session.active().map(|d| d.title()).unwrap_or_else(|| "Presentation".into()),
+        };
         format!("{name}.{ext}")
     }
 
@@ -191,6 +195,11 @@ impl SlideApp {
     /// on the web. `extra` adds `file.export` params (the PDF's layout, slides…). The
     /// presentation keeps its own file. Returns whether a file was written or handed over.
     pub fn export_as(&mut self, fmt: &str, extra: Value) -> bool {
+        self.export_as_named(fmt, extra, None)
+    }
+
+    /// [`Self::export_as`], the save picker suggesting `name` (the Save As page's file name).
+    pub fn export_as_named(&mut self, fmt: &str, extra: Value, name: Option<&str>) -> bool {
         let Some(slide) = self.session.active().map(|d| d.selection.slide) else { return false };
         let (ext, format, all) = match fmt {
             "pdf" => ("pdf", "pdf", false),
@@ -208,7 +217,7 @@ impl SlideApp {
                 return false;
             }
         };
-        let suggested = self.suggested_name(ext);
+        let suggested = self.suggested_name(name, ext);
         if let Some(pick) = self.services.pick_save.as_mut() {
             let Some(path) = pick(&suggested) else { return false };
             let mut params = json!({"path": path, "format": format, "all": all});
@@ -456,9 +465,13 @@ impl SlideApp {
     }
 
     pub fn save_as_dialog(&mut self, format: &str) {
-        let name = self.session.active().map(|d| d.title()).unwrap_or_else(|| "Presentation".into());
+        self.save_as_dialog_named(format, None);
+    }
+
+    /// [`Self::save_as_dialog`], the save picker suggesting `name` (the Save As page's file name).
+    pub fn save_as_dialog_named(&mut self, format: &str, name: Option<&str>) {
         let ext = if format == "pptx" { "pptx" } else { "deckcraft" };
-        let suggested = format!("{name}.{ext}");
+        let suggested = self.suggested_name(name, ext);
         if let Some(pick) = self.services.pick_save.as_mut() {
             if let Some(path) = pick(&suggested) {
                 match self.session.execute("file.saveAs", &json!({"path": path})) {

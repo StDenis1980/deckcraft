@@ -155,6 +155,13 @@ pub(super) fn save_as(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: 
     ui.label(RichText::new(&title).font(theme::font(15.0)).color(t.text));
     dim(ui, path.as_deref().unwrap_or("Not saved yet"));
     ui.add_space(14.0);
+    // The file's name, as in PowerPoint's Save As: typed here, it is what the save picker suggests.
+    dim(ui, "File name");
+    let name = bs.file_name.get_or_insert_with(|| title.clone());
+    let name_field = ui.add(egui::TextEdit::singleline(name).hint_text(title.as_str()).desired_width(340.0));
+    name_field.widget_info(|| egui::WidgetInfo::labeled(egui::Role::TextInput, true, tl("File name")));
+    let enter = name_field.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter));
+    ui.add_space(8.0);
     let current = SAVE_TYPES.iter().find(|s| s.0 == bs.file_type).map_or(SAVE_TYPES[0].1, |s| s.1);
     let current = deckcraft_engine::brand::rebrand_static(tl(current));
     ui.horizontal(|ui| {
@@ -185,17 +192,19 @@ pub(super) fn save_as(app: &mut SlideApp, ui: &mut Ui, bs: &mut Backstage, out: 
                 "Choose where to save"
             }))
             .clicked()
+            || enter
         {
             let fmt = bs.file_type;
+            let name = bs.file_name.clone();
             let done = if matches!(fmt, "pptx" | "deckcraft") {
                 // A save bumps the revision, also one under the same name that leaves the path
                 // and the dirty flag as they were; a cancelled dialog or a failed save doesn't.
                 let snapshot = |app: &SlideApp| app.session.active().map(|d| (d.path.clone(), d.is_dirty(), d.revision));
                 let before = snapshot(app);
-                app.save_as_dialog(fmt);
+                app.save_as_dialog_named(fmt, name.as_deref());
                 web || snapshot(app) != before
             } else {
-                app.export_as(fmt, json!({}))
+                app.export_as_named(fmt, json!({}), name.as_deref())
             };
             if done {
                 out.close = true;
