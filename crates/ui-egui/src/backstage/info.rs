@@ -242,6 +242,13 @@ pub(super) fn about(app: &mut SlideApp, ui: &mut Ui) {
                     app.tinta_feedback.request();
                 }
             }
+            if crate::tinta_whats_new::available() {
+                let lang = crate::i18n::current().code();
+                let title = crate::tinta_whats_new::tr(lang, crate::tinta_whats_new::MENU);
+                if task(ui, Icon::Sparkle, title, title, crate::tinta_whats_new::tr(lang, crate::tinta_whats_new::TITLE), true) {
+                    let _ = app.run("app.whatsNew", json!({}));
+                }
+            }
             if deckcraft_engine::brand::REBRANDED {
                 ui.hyperlink_to(tl("Get help and support"), deckcraft_engine::brand::SUPPORT);
             } else {

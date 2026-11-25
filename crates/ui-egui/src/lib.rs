@@ -59,6 +59,7 @@ pub mod tinta_convert;
 pub mod tinta_feedback;
 mod tinta_reports_ui;
 pub mod tinta_theme;
+pub mod tinta_whats_new;
 
 pub use app::key_name;
 #[cfg(test)]
@@ -157,6 +158,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.about", "About DeckCraft", None, "{}"),
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.feedback", "Send Feedback…", None, "{} — Tinta Office: opens the feedback dialog when this build can send"),
+    ("app.whatsNew", "What's New", None, "{} — Tinta Office: opens the What's new window (an error where this build has none)"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
     ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu|it|fr|de|pl}"),
