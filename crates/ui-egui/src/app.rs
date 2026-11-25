@@ -372,6 +372,7 @@ impl SlideApp {
         if let Some(said) = self.tinta_share.take(&ctx, crate::i18n::current().code()) {
             self.notify(said);
         }
+        crate::tinta_whats_new::show(&ctx, crate::i18n::current().code());
         crate::tinta_convert::show(self, &ctx);
         menus::palette(self, &ctx);
         for url in std::mem::take(&mut self.pending_urls) {

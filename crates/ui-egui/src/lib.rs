@@ -60,6 +60,7 @@ pub mod tinta_feedback;
 mod tinta_reports_ui;
 pub mod tinta_share;
 pub mod tinta_theme;
+pub mod tinta_whats_new;
 
 pub use app::key_name;
 #[cfg(test)]
@@ -159,6 +160,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.feedback", "Send Feedback…", None, "{} — Tinta Office: opens the feedback dialog when this build can send"),
     ("app.shareTinta", "Share Tinta Office", None, "{} → {url} — Tinta Office: copies the website's link to the clipboard on the next frame"),
+    ("app.whatsNew", "What's New", None, "{} — Tinta Office: opens the What's new window (an error where this build has none)"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
     ("app.language", "Interface Language", None, "{language?: auto|en|uk|es|ca|gl|eu|it|fr|de|pl}"),

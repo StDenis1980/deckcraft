@@ -241,6 +241,8 @@ fn app_icon() -> Option<egui::IconData> {
 fn main() -> eframe::Result {
     // Tinta Office: this app shows the Tinta look (tests and examples keep the classic one).
     deckcraft_ui_egui::tinta_theme::allow();
+    // Tinta Office: the What's new window opens once after an update (it remembers in the settings).
+    deckcraft_ui_egui::tinta_whats_new::enable(config_dir().filter(|_| std::env::var_os("DECKCRAFT_NO_PREFS").is_none()));
     // First, so every start-up record (and the engine's panic hook, installed with the first
     // Session) is captured; see `logging`.
     let logger = logging::install();
