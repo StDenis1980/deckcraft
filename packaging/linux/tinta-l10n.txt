@@ -1,0 +1,101 @@
+# Tinta Office: translations of the desktop entry and AppStream metadata (packaging/linux/tinta-l10n.py).
+# language<TAB>release's English, exactly as in the files<TAB>translation. AI-made (Claude), not reviewed by native speakers.
+
+uk	Presentation	Презентації
+es	Presentation	Presentaciones
+pl	Presentation	Prezentacje
+de	Presentation	Präsentation
+fr	Presentation	Présentation
+it	Presentation	Presentazioni
+ro	Presentation	Prezentări
+cs	Presentation	Prezentace
+lt	Presentation	Pateiktys
+ca	Presentation	Presentacions
+ca@valencia	Presentation	Presentacions
+gl	Presentation	Presentacións
+eu	Presentation	Aurkezpenak
+pt	Presentation	Apresentações
+uk	Create and present slide decks	Створюйте й показуйте презентації
+es	Create and present slide decks	Crea y presenta diapositivas
+pl	Create and present slide decks	Twórz i wyświetlaj prezentacje
+de	Create and present slide decks	Foliensätze erstellen und vorführen
+fr	Create and present slide decks	Créer et présenter des diaporamas
+it	Create and present slide decks	Crea e presenta diapositive
+ro	Create and present slide decks	Creați și prezentați seturi de diapozitive
+cs	Create and present slide decks	Vytvářejte a promítejte prezentace
+lt	Create and present slide decks	Kurkite ir rodykite skaidrių pateiktis
+ca	Create and present slide decks	Creeu i presenteu diapositives
+ca@valencia	Create and present slide decks	Creeu i presenteu diapositives
+gl	Create and present slide decks	Crea e presenta diapositivas
+eu	Create and present slide decks	Sortu eta aurkeztu diapositiba-multzoak
+pt	Create and present slide decks	Crie e apresente diapositivos
+uk	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	презентація;слайди;показ слайдів;доповідь;pptx;odp;powerpoint;
+es	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	presentación;diapositivas;proyección;pptx;odp;powerpoint;
+pl	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	prezentacja;slajdy;pokaz slajdów;pptx;odp;powerpoint;
+de	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	präsentation;folien;bildschirmpräsentation;vortrag;pptx;odp;powerpoint;
+fr	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	présentation;diapositives;diaporama;pptx;odp;powerpoint;
+it	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	presentazione;diapositive;presentazione di diapositive;pptx;odp;powerpoint;
+ro	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	prezentare;diapozitive;expunere diapozitive;pptx;odp;powerpoint;
+cs	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	prezentace;snímky;promítání;pptx;odp;powerpoint;
+lt	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	pateiktis;skaidrės;skaidrių demonstravimas;pptx;odp;powerpoint;
+ca	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	presentació;diapositives;projecció;pptx;odp;powerpoint;
+ca@valencia	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	presentació;diapositives;projecció;pptx;odp;powerpoint;
+gl	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	presentación;diapositivas;proxección;pptx;odp;powerpoint;
+eu	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	aurkezpena;diapositibak;diapositiba-aurkezpena;pptx;odp;powerpoint;
+pt	presentation;slides;slide show;deck;pptx;keynote;powerpoint;	apresentação;diapositivos;slides;pptx;odp;powerpoint;
+uk	Slide editor with thumbnails, a process diagram and notes	Редактор слайдів з мініатюрами, схемою процесу й нотатками
+es	Slide editor with thumbnails, a process diagram and notes	Editor de diapositivas con miniaturas, un diagrama de proceso y notas
+pl	Slide editor with thumbnails, a process diagram and notes	Edytor slajdów z miniaturami, diagramem procesu i notatkami
+de	Slide editor with thumbnails, a process diagram and notes	Folieneditor mit Miniaturen, einem Prozessdiagramm und Notizen
+fr	Slide editor with thumbnails, a process diagram and notes	Éditeur de diapositives avec miniatures, un diagramme de processus et des notes
+it	Slide editor with thumbnails, a process diagram and notes	Editor di diapositive con miniature, un diagramma di processo e note
+ro	Slide editor with thumbnails, a process diagram and notes	Editorul de diapozitive cu miniaturi, o diagramă de proces și note
+cs	Slide editor with thumbnails, a process diagram and notes	Editor snímků s miniaturami, diagramem procesu a poznámkami
+lt	Slide editor with thumbnails, a process diagram and notes	Skaidrių rengyklė su miniatiūromis, proceso diagrama ir pastabomis
+ca	Slide editor with thumbnails, a process diagram and notes	Editor de diapositives amb miniatures, un diagrama de procés i notes
+ca@valencia	Slide editor with thumbnails, a process diagram and notes	Editor de diapositives amb miniatures, un diagrama de procés i notes
+gl	Slide editor with thumbnails, a process diagram and notes	Editor de diapositivas con miniaturas, un diagrama de proceso e notas
+eu	Slide editor with thumbnails, a process diagram and notes	Diapositiba-editorea, miniaturekin, prozesu-diagrama batekin eta oharrekin
+pt	Slide editor with thumbnails, a process diagram and notes	Editor de diapositivos com miniaturas, um diagrama de processo e notas
+uk	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta створює презентації й показ слайдів: теми, макети, фігури, зображення, таблиці, діаграми, переходи й анімації. Програма відкриває й зберігає файли PowerPoint (.pptx) і показує їх на весь екран з режимом доповідача.
+es	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crea presentaciones y proyecciones de diapositivas: temas, diseños, formas, imágenes, tablas, gráficos, transiciones y animaciones. Abre y guarda archivos de PowerPoint (.pptx) y los presenta a pantalla completa con vista del moderador.
+pl	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta tworzy prezentacje i pokazy slajdów: motywy, układy, kształty, obrazy, tabele, wykresy, przejścia i animacje. Otwiera i zapisuje pliki PowerPoint (.pptx) oraz wyświetla je na pełnym ekranie z widokiem prezentera.
+de	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta erstellt Präsentationen und Bildschirmpräsentationen: Designs, Layouts, Formen, Bilder, Tabellen, Diagramme, Übergänge und Animationen. Es öffnet und speichert PowerPoint-Dateien (.pptx) und führt sie im Vollbild mit Referentenansicht vor.
+fr	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crée des présentations et des diaporamas : thèmes, dispositions, formes, images, tableaux, graphiques, transitions et animations. Il ouvre et enregistre les fichiers PowerPoint (.pptx) et les présente en plein écran avec un mode présentateur.
+it	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crea presentazioni e proiezioni di diapositive: temi, layout, forme, immagini, tabelle, grafici, transizioni e animazioni. Apre e salva file PowerPoint (.pptx) e li presenta a schermo intero con la visualizzazione relatore.
+ro	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta creează prezentări și expuneri de diapozitive: teme, aspecte, forme, imagini, tabele, diagrame, tranziții și animații. Deschide și salvează fișiere PowerPoint (.pptx) și le prezintă pe tot ecranul, cu vizualizare pentru prezentator.
+cs	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta vytváří prezentace a promítání: motivy, rozložení, tvary, obrázky, tabulky, grafy, přechody a animace. Otevírá a ukládá soubory PowerPoint (.pptx) a promítá je na celou obrazovku se zobrazením pro přednášejícího.
+lt	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta kuria pateiktis ir skaidrių demonstracijas: temos, maketai, figūros, paveikslėliai, lentelės, diagramos, perėjimai ir animacijos. Ji atveria ir įrašo PowerPoint (.pptx) failus ir rodo juos visame ekrane su pranešėjo rodiniu.
+ca	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crea presentacions i projeccions de diapositives: temes, dissenys, formes, imatges, taules, gràfics, transicions i animacions. Obre i desa fitxers de PowerPoint (.pptx) i els presenta a pantalla completa amb la vista del presentador.
+ca@valencia	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crea presentacions i projeccions de diapositives: temes, dissenys, formes, imatges, taules, gràfics, transicions i animacions. Obri i guarda fitxers de PowerPoint (.pptx) i els presenta a pantalla completa amb la vista del presentador.
+gl	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presenta crea presentacións e proxeccións de diapositivas: temas, deseños, formas, imaxes, táboas, gráficos, transicións e animacións. Abre e garda ficheiros de PowerPoint (.pptx) e preséntaos a pantalla completa coa vista do presentador.
+eu	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	Tinta Presentak aurkezpenak eta diapositiba-aurkezpenak sortzen ditu: gaiak, diseinuak, formak, irudiak, taulak, diagramak, trantsizioak eta animazioak. PowerPoint (.pptx) fitxategiak ireki eta gordetzen ditu, eta pantaila osoan aurkezten ditu aurkezlearen ikuspegiarekin.
+pt	DeckCraft builds presentations and slide shows: themes, layouts, shapes, pictures, tables, charts, transitions and animations. It opens and saves PowerPoint (.pptx) files and presents them full screen with a presenter view.	O Tinta Presenta cria apresentações e projeções de diapositivos: temas, esquemas, formas, imagens, tabelas, gráficos, transições e animações. Abre e guarda ficheiros do PowerPoint (.pptx) e apresenta-os em ecrã inteiro com a vista de apresentador.
+uk	Every action is also a command that the command line and AI agents (through MCP) can drive.	Кожна дія — це також команда, яку можна виконати з командного рядка або доручити ШІ-агентам (через MCP).
+es	Every action is also a command that the command line and AI agents (through MCP) can drive.	Cada acción es también un comando que pueden ejecutar la línea de comandos y los agentes de IA (mediante MCP).
+pl	Every action is also a command that the command line and AI agents (through MCP) can drive.	Każda czynność jest też poleceniem, które można wywołać z wiersza poleceń lub przez agentów AI (przez MCP).
+de	Every action is also a command that the command line and AI agents (through MCP) can drive.	Jede Aktion ist auch ein Befehl, den die Befehlszeile und KI-Agenten (über MCP) ausführen können.
+fr	Every action is also a command that the command line and AI agents (through MCP) can drive.	Chaque action est aussi une commande que la ligne de commande et les agents d’IA (via MCP) peuvent piloter.
+it	Every action is also a command that the command line and AI agents (through MCP) can drive.	Ogni azione è anche un comando che la riga di comando e gli agenti di IA (tramite MCP) possono eseguire.
+ro	Every action is also a command that the command line and AI agents (through MCP) can drive.	Fiecare acțiune este și o comandă pe care o pot executa linia de comandă și agenții AI (prin MCP).
+cs	Every action is also a command that the command line and AI agents (through MCP) can drive.	Každá akce je zároveň příkaz, který lze spustit z příkazového řádku nebo jej mohou ovládat agenti AI (přes MCP).
+lt	Every action is also a command that the command line and AI agents (through MCP) can drive.	Kiekvienas veiksmas taip pat yra komanda, kurią gali vykdyti komandų eilutė ir DI agentai (per MCP).
+ca	Every action is also a command that the command line and AI agents (through MCP) can drive.	Cada acció és també una ordre que poden executar la línia d’ordres i els agents d’IA (per mitjà de MCP).
+ca@valencia	Every action is also a command that the command line and AI agents (through MCP) can drive.	Cada acció és també una ordre que poden executar la línia d’ordres i els agents d’IA (per mitjà de MCP).
+gl	Every action is also a command that the command line and AI agents (through MCP) can drive.	Cada acción é tamén unha orde que poden executar a liña de ordes e os axentes de IA (mediante MCP).
+eu	Every action is also a command that the command line and AI agents (through MCP) can drive.	Ekintza bakoitza komando bat ere bada, komando-lerroak eta AA agenteek (MCP bidez) exekuta dezaketena.
+pt	Every action is also a command that the command line and AI agents (through MCP) can drive.	Cada ação é também um comando que a linha de comandos e os agentes de IA (através do MCP) podem executar.
+uk	presentation;slides;slide show;pptx;	презентація;слайди;показ слайдів;pptx;
+es	presentation;slides;slide show;pptx;	presentación;diapositivas;proyección;pptx;
+pl	presentation;slides;slide show;pptx;	prezentacja;slajdy;pokaz slajdów;pptx;
+de	presentation;slides;slide show;pptx;	präsentation;folien;bildschirmpräsentation;pptx;
+fr	presentation;slides;slide show;pptx;	présentation;diapositives;diaporama;pptx;
+it	presentation;slides;slide show;pptx;	presentazione;diapositive;proiezione;pptx;
+ro	presentation;slides;slide show;pptx;	prezentare;diapozitive;expunere;pptx;
+cs	presentation;slides;slide show;pptx;	prezentace;snímky;promítání;pptx;
+lt	presentation;slides;slide show;pptx;	pateiktis;skaidrės;skaidrių demonstravimas;pptx;
+ca	presentation;slides;slide show;pptx;	presentació;diapositives;projecció;pptx;
+ca@valencia	presentation;slides;slide show;pptx;	presentació;diapositives;projecció;pptx;
+gl	presentation;slides;slide show;pptx;	presentación;diapositivas;proxección;pptx;
+eu	presentation;slides;slide show;pptx;	aurkezpena;diapositibak;diapositiba-aurkezpena;pptx;
+pt	presentation;slides;slide show;pptx;	apresentação;diapositivos;slides;pptx;
