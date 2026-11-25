@@ -216,13 +216,19 @@ fn text_with_levels(text: &str) -> TextBody {
 
 /// A new presentation filled with `name`'s slides. `size` is the slide size in points.
 pub fn build(name: &str, size: Size) -> Result<Presentation> {
+    build_in(name, size, "")
+}
+
+/// [`build`], with the slide text in `lang` (a language code) where the starter has it
+/// (Tinta Office: the Tinta starters, `crate::tinta_templates`); English otherwise.
+pub fn build_in(name: &str, size: Size, lang: &str) -> Result<Presentation> {
     let starter = find(name).ok_or_else(|| {
         let names = starters().iter().map(|t| t.name).collect::<Vec<_>>().join(", ");
         bad("file.new", format!("no template `{name}`; use {names}"))
     })?;
     let theme = theme_of(starter).ok_or_else(|| bad("file.new", format!("template `{}` names a missing theme `{}`", starter.name, starter.theme)))?;
     let mut doc = defaults::blank_presentation(size, theme, false);
-    for seed in starter.slides {
+    for seed in crate::tinta_templates::slides(starter.name, lang).unwrap_or(starter.slides) {
         let key = Value::String(seed.layout.to_string());
         let layout = find_layout(&doc, &key, 0)
             .ok_or_else(|| bad("file.new", format!("template `{}` uses an unknown layout `{}`", starter.name, seed.layout)))?;

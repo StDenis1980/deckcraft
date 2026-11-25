@@ -17,7 +17,7 @@ pub fn specs() -> Vec<CommandSpec> {
             "New Presentation",
             ["File"],
             Some("Cmd+N"),
-            "{theme?: name, template?: starter name, size?: [w,h] pt, blank?: bool}",
+            "{theme?: name, template?: starter name, lang?: language code for a starter's text, size?: [w,h] pt, blank?: bool}",
             always,
             new
         ),
@@ -110,7 +110,7 @@ fn new(s: &mut Session, p: &Value) -> Result<Value> {
     }
     let size = slide_size(p);
     let (doc, template_name) = if let Some(name) = template {
-        let doc = crate::templates::build(name, size)?;
+        let doc = crate::templates::build_in(name, size, str_param(p, "lang").unwrap_or(""))?;
         let chosen = crate::templates::find(name).map(|t| t.name);
         (doc, chosen)
     } else {

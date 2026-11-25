@@ -6,6 +6,8 @@
 //! work (see `ATTRIBUTION.md`); nothing is copied from another product's templates or from a
 //! photograph of real tiles.
 //!
+//! The slide text is English, Spanish or Ukrainian: `file.new` takes the UI language as `lang`.
+//!
 //! The tiles take their colours from the theme's scheme slots (accent 1 and 2, background 1), so
 //! a later Design › Themes or Variants change recolours them. They are marked decorative, so
 //! screen readers skip them.
@@ -140,6 +142,267 @@ pub const STARTERS: &[Starter] = &[
         ],
     },
 ];
+
+/// A Tinta starter's text in another language: the same layouts, slide for slide.
+struct Local {
+    lang: &'static str,
+    name: &'static str,
+    summary: &'static str,
+    slides: &'static [SlideSeed],
+}
+
+/// Spanish and Ukrainian text of the Tinta starters, written from the meaning of the English
+/// (AI-assisted, native-speaker review pending, as for the UI translations).
+const LOCAL: &[Local] = &[
+    Local {
+        lang: "es",
+        name: "Azulejo Talk",
+        summary: "Una charla o presentación con una idea clara, enmarcada en azulejos cobalto",
+        slides: &[
+            seed("title", "Una idea clara, bien contada", &["Su nombre · Lugar · Fecha"], "Diga quién es y por qué esto importa a quien le escucha."),
+            seed(
+                "titleAndContent",
+                "Lo que se llevará",
+                &["Una idea que pueda repetir mañana\n\tCon sus propias palabras\nUn ejemplo que la muestre\nAlgo que probar esta semana"],
+                "",
+            ),
+            seed("sectionHeader", "La idea", &["Dicha con sencillez, antes de los detalles"], ""),
+            seed(
+                "twoContent",
+                "Antes y después",
+                &["Antes\n\tLo que se hace hoy\n\tLo que cuesta", "Después\n\tLo que cambia\n\tCómo se notará"],
+                "",
+            ),
+            seed("title", "Gracias", &["Preguntas, y dónde encontrarnos"], "Deje esta diapositiva a la vista mientras responde a las preguntas."),
+        ],
+    },
+    Local {
+        lang: "es",
+        name: "Azulejo Report",
+        summary: "Un informe trimestral o anual de ingresos, trabajo y próximos pasos, en azulejos ocre",
+        slides: &[
+            seed("title", "Informe trimestral", &["Actividad, ingresos y próximos pasos"], ""),
+            seed(
+                "titleAndContent",
+                "De un vistazo",
+                &[
+                    "Ingresos\n\tComparados con el mismo trimestre del año pasado\nClientes nuevos\n\tY los que volvieron\nTrabajos entregados a tiempo",
+                ],
+                "Tres titulares. Los detalles vienen después.",
+            ),
+            seed("sectionHeader", "Las cifras", &["Solo las que cambian una decisión"], ""),
+            seed(
+                "comparison",
+                "Plan y resultado",
+                &["Previsto", "Lo que nos propusimos\nEl presupuesto acordado", "Conseguido", "Lo que se hizo\nLo que costó de verdad"],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Próximo trimestre",
+                &["Mantener\n\tLo que funcionó y se paga solo\nCambiar\n\tLo único que nos frenó\nDejar\n\tEl trabajo que nadie pidió"],
+                "",
+            ),
+            seed("title", "Preguntas", &["Gracias por su atención"], ""),
+        ],
+    },
+    Local {
+        lang: "es",
+        name: "Azulejo Proposal",
+        summary: "Una propuesta para un cliente: la necesidad, el trabajo, los plazos y el precio, en azulejos verdes",
+        slides: &[
+            seed("title", "Propuesta para Nombre del cliente", &["Preparada por Su negocio · Fecha"], ""),
+            seed(
+                "titleAndContent",
+                "Lo que necesita",
+                &[
+                    "El problema, en sus palabras\n\tTal como lo entendimos en la primera conversación\nCómo sería un buen resultado\nPara cuándo lo necesita",
+                ],
+                "Revise primero esta diapositiva con el cliente: si la necesidad no es la correcta, el resto tampoco.",
+            ),
+            seed(
+                "twoContent",
+                "Nuestra propuesta",
+                &[
+                    "Nosotros\n\tEstudiaremos lo que tiene hoy\n\tHaremos el trabajo por etapas claras\n\tLe mostraremos cada etapa",
+                    "Usted recibe\n\tEl trabajo terminado\n\tUna guía breve para usarlo\n\tUn mes de soporte",
+                ],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Calendario",
+                &[
+                    "Semana 1\n\tInicio y acuerdo de los detalles\nSemanas 2 a 4\n\tEl trabajo, con una revisión cada semana\nSemana 5\n\tEntrega y traspaso",
+                ],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Precio y condiciones",
+                &[
+                    "Un precio cerrado por el trabajo descrito\n\tEl IVA aparece aparte en la factura\nPago\n\tLa mitad al empezar, la mitad a la entrega\nEsta propuesta es válida durante 30 días",
+                ],
+                "",
+            ),
+            seed("title", "Siguiente paso", &["Responda a esta propuesta y empezamos en la fecha que usted elija"], ""),
+        ],
+    },
+    Local {
+        lang: "es",
+        name: "Azulejo Workshop",
+        summary: "Una clase o taller práctico sobre fondo oscuro con azulejos azul noche",
+        slides: &[
+            seed("title", "Título del taller", &["Una sesión práctica · dos horas"], ""),
+            seed(
+                "titleAndContent",
+                "Hoy",
+                &[
+                    "Por qué importa\n\tDiez minutos\nPrimero lo vemos, luego lo prueba\n\tUna hora, por parejas\nQué hará después\n\tDiez minutos, al final",
+                ],
+                "",
+            ),
+            seed("sectionHeader", "Primera parte", &["Primero mire, luego hágalo usted"], ""),
+            seed(
+                "titleAndContent",
+                "Su turno",
+                &["Trabajen por parejas\n\tUno hace, el otro observa y pregunta\nCambien a los diez minutos\nApunte el paso que le sorprendió"],
+                "Pase por las mesas mientras trabajan.",
+            ),
+            seed("title", "Antes de irse", &["Una cosa que probará esta semana, escrita en una tarjeta"], ""),
+        ],
+    },
+    Local {
+        lang: "uk",
+        name: "Azulejo Talk",
+        summary: "Виступ або презентація з однією ясною ідеєю в рамці з кобальтових плиток",
+        slides: &[
+            seed("title", "Ясна ідея, добре розказана", &["Ваше ім'я · Місце · Дата"], "Скажіть, хто ви і чому це важливо для слухачів."),
+            seed(
+                "titleAndContent",
+                "Що ви винесете",
+                &[
+                    "Одну ідею, яку завтра зможете повторити\n\tСвоїми словами\nОдин приклад, що її показує\nОдну річ, яку варто спробувати цього тижня",
+                ],
+                "",
+            ),
+            seed("sectionHeader", "Ідея", &["Просто, перед подробицями"], ""),
+            seed(
+                "twoContent",
+                "До і після",
+                &["До\n\tЩо люди роблять сьогодні\n\tЧого це їм коштує", "Після\n\tЩо зміниться\n\tЯк вони це помітять"],
+                "",
+            ),
+            seed("title", "Дякую", &["Запитання й де нас знайти"], "Залиште цей слайд на екрані, поки відповідаєте на запитання."),
+        ],
+    },
+    Local {
+        lang: "uk",
+        name: "Azulejo Report",
+        summary: "Квартальний чи річний звіт про доходи, роботу й наступні кроки, у вохристих плитках",
+        slides: &[
+            seed("title", "Квартальний звіт", &["Діяльність, доходи й наступні кроки"], ""),
+            seed(
+                "titleAndContent",
+                "Коротко",
+                &["Доходи\n\tПорівняно з тим самим кварталом торік\nНові клієнти\n\tІ ті, хто повернувся\nРоботи, здані вчасно"],
+                "Три головні речі. Подробиці далі.",
+            ),
+            seed("sectionHeader", "Цифри", &["Лише ті, що змінюють рішення"], ""),
+            seed(
+                "comparison",
+                "План і результат",
+                &["Заплановано", "Що ми збиралися зробити\nБюджет, про який домовилися", "Досягнуто", "Що зроблено\nСкільки це коштувало насправді"],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Наступний квартал",
+                &[
+                    "Залишаємо\n\tТе, що спрацювало й окупається\nЗмінюємо\n\tТе одне, що нас гальмувало\nПрипиняємо\n\tРоботу, про яку ніхто не просив",
+                ],
+                "",
+            ),
+            seed("title", "Запитання", &["Дякуємо за увагу"], ""),
+        ],
+    },
+    Local {
+        lang: "uk",
+        name: "Azulejo Proposal",
+        summary: "Пропозиція клієнтові: потреба, робота, терміни й ціна, у зелених плитках",
+        slides: &[
+            seed("title", "Пропозиція для «Назва клієнта»", &["Підготувала Ваша компанія · Дата"], ""),
+            seed(
+                "titleAndContent",
+                "Що вам потрібно",
+                &["Проблема вашими словами\n\tЯк ми її почули під час першої розмови\nЯким має бути добрий результат\nКоли вам це потрібно"],
+                "Спершу перевірте цей слайд із клієнтом: якщо потребу описано неправильно, решта теж буде хибною.",
+            ),
+            seed(
+                "twoContent",
+                "Наша пропозиція",
+                &[
+                    "Ми\n\tВивчимо, що у вас є зараз\n\tЗробимо роботу чіткими етапами\n\tПокажемо вам кожен етап",
+                    "Ви отримаєте\n\tГотову роботу\n\tКоротку інструкцію до неї\n\tМісяць підтримки",
+                ],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Графік",
+                &["Тиждень 1\n\tСтарт і узгодження деталей\nТижні 2–4\n\tРобота з перевіркою щотижня\nТиждень 5\n\tЗдача й передання"],
+                "",
+            ),
+            seed(
+                "titleAndContent",
+                "Ціна й умови",
+                &[
+                    "Фіксована ціна за описану роботу\n\tПодатки окремим рядком у рахунку\nОплата\n\tПоловина на початку, половина після здачі\nПропозиція дійсна 30 днів",
+                ],
+                "",
+            ),
+            seed("title", "Наступний крок", &["Дайте відповідь на цю пропозицію, і ми почнемо в обраний вами день"], ""),
+        ],
+    },
+    Local {
+        lang: "uk",
+        name: "Azulejo Workshop",
+        summary: "Практичне заняття чи майстер-клас на темному тлі з нічно-синіми плитками",
+        slides: &[
+            seed("title", "Назва майстер-класу", &["Практичне заняття · дві години"], ""),
+            seed(
+                "titleAndContent",
+                "Сьогодні",
+                &["Чому це важливо\n\tДесять хвилин\nПоказуємо, потім пробуєте\n\tГодина, у парах\nЩо робитимете далі\n\tДесять хвилин наприкінці"],
+                "",
+            ),
+            seed("sectionHeader", "Частина перша", &["Спершу дивіться, потім робіть самі"], ""),
+            seed(
+                "titleAndContent",
+                "Ваша черга",
+                &["Працюйте в парах\n\tОдин робить, другий дивиться й питає\nЗа десять хвилин поміняйтеся\nЗапишіть крок, який вас здивував"],
+                "Ходіть між учасниками, поки вони працюють.",
+            ),
+            seed("title", "Перед тим як піти", &["Одна річ, яку спробуєте цього тижня, записана на картці"], ""),
+        ],
+    },
+];
+
+/// The text of `starter` in `lang` (`es`, `uk`, or a tag starting with one, such as `es-ES`).
+fn local(starter: &str, lang: &str) -> Option<&'static Local> {
+    let lang = lang.trim().to_ascii_lowercase();
+    LOCAL.iter().find(|l| l.name == starter && (lang == l.lang || lang.strip_prefix(l.lang).is_some_and(|rest| rest.starts_with(['-', '_']))))
+}
+
+/// The slides of the Tinta starter `starter` in `lang`, when it has that language.
+pub fn slides(starter: &str, lang: &str) -> Option<&'static [SlideSeed]> {
+    local(starter, lang).map(|l| l.slides)
+}
+
+/// The gallery summary of the Tinta starter `starter` in `lang`, when it has that language.
+pub fn summary(starter: &str, lang: &str) -> Option<&'static str> {
+    local(starter, lang).map(|l| l.summary)
+}
 
 fn hex(s: &str) -> Rgba {
     Rgba::from_hex(s).unwrap_or(Rgba::BLACK)
@@ -447,5 +710,41 @@ mod tests {
         let doc = templates::build("Briefing", defaults::WIDE).unwrap();
         assert!(decor(&doc.masters[0].shapes).is_empty());
         assert!(doc.masters[0].layouts.iter().all(|l| decor(&l.shapes).is_empty() && l.show_master_shapes));
+    }
+
+    #[test]
+    fn spanish_and_ukrainian_text_fills_the_same_slides() {
+        for lang in ["es", "uk", "es-ES"] {
+            for starter in STARTERS {
+                let local = slides(starter.name, lang).unwrap_or_else(|| panic!("{} has no {lang} text", starter.name));
+                assert_eq!(local.len(), starter.slides.len(), "{} {lang}", starter.name);
+                for (en, other) in starter.slides.iter().zip(local) {
+                    assert_eq!(other.layout, en.layout, "{} {lang}", starter.name);
+                    assert_eq!(other.bodies.len(), en.bodies.len(), "{} {lang}: {}", starter.name, other.title);
+                    let levels = |t: &str| t.lines().map(|l| l.chars().take_while(|c| *c == '\t').count()).collect::<Vec<_>>();
+                    for (a, b) in en.bodies.iter().zip(other.bodies) {
+                        assert_eq!(levels(b), levels(a), "{} {lang}: outline of {b:?}", starter.name);
+                    }
+                    assert_eq!(other.notes.is_empty(), en.notes.is_empty(), "{} {lang}: notes of {}", starter.name, other.title);
+                }
+                assert!(summary(starter.name, lang).is_some());
+                let doc = templates::build_in(starter.name, defaults::WIDE, lang).unwrap();
+                assert_eq!(doc.slides[0].title(), local[0].title);
+                assert_ne!(doc.slides[0].title(), starter.slides[0].title, "{} {lang} is translated", starter.name);
+            }
+        }
+    }
+
+    #[test]
+    fn other_languages_and_upstream_starters_stay_english() {
+        for lang in ["", "en", "fr", "esperanto", "ukr"] {
+            let doc = templates::build_in("Azulejo Report", defaults::WIDE, lang).unwrap();
+            assert_eq!(doc.slides[0].title(), STARTERS[1].slides[0].title, "{lang:?}");
+        }
+        let briefing = templates::build_in("Briefing", defaults::WIDE, "es").unwrap();
+        assert_eq!(briefing.slides[0].title(), "Weekly briefing");
+        let mut s = crate::Session::new();
+        s.execute("file.new", &serde_json::json!({"template": "Azulejo Talk", "lang": "uk"})).unwrap();
+        assert_eq!(s.active().unwrap().doc.slides[0].title(), "Ясна ідея, добре розказана");
     }
 }
