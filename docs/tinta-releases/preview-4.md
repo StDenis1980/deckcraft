@@ -2,7 +2,7 @@
 
 > **Status:** 2026-11-17 · draft for the Preview 4 release (10 December 2026), version 0.19.0, with
 > the 16 November upstream sync · **Revision history:** 2026-11-16 created (changes from Preview 3,
-> 12 November, to #36); 2026-11-17 added the Tinta Office look (#38). Updated at each weekly sync until the freeze on 7 December.
+> 12 November, to #36); 2026-11-17 added the Tinta Office look (#38); 2026-11-25 the Tinta templates (#40). Updated at each weekly sync until the freeze on 7 December.
 
 Release notes for the GitHub release and the site, in Spanish, Ukrainian and English. Changes since
 Preview 3 (v0.15.0, 12 November 2026). Before publishing: build the Windows installers with
@@ -23,6 +23,8 @@ Novedades:
   de grupos funciona como en PowerPoint.
 - **Asistentes y automatización:** cada comando indica qué puede hacer, y una sesión puede limitarse
   a ciertos comandos.
+- **Plantillas de Tinta:** cuatro presentaciones de inicio con azulejos (charla, informe, propuesta
+  para un cliente y taller), con temas propios de Tinta, en Archivo ▸ Nuevo.
 - **Aspecto de Tinta Office:** los colores y la forma de los controles de Tinta Correo (gris suave
   con un toque ocre, esquinas más redondas), en claro y oscuro; un botón en la pestaña Vista vuelve al aspecto clásico.
 - Del proyecto original (DeckCraft): muchas correcciones de gráficos, imágenes y revisión ortográfica.
@@ -46,6 +48,8 @@ necesita FFmpeg instalado.
   групах працюють як у PowerPoint.
 - **Асистенти й автоматизація:** кожна команда повідомляє, що вона може робити, а сеанс можна
   обмежити певними командами.
+- **Шаблони Tinta:** чотири готові презентації з азулежу (виступ, звіт, пропозиція клієнтові й
+  майстер-клас) з власними темами Tinta, у «Файл ▸ Створити».
 - **Вигляд Tinta Office:** кольори й форма елементів як у Tinta Correo (м'який сірий з вохристим
   відтінком, заокругленіші кути), у світлій і темній темі; кнопка на вкладці «Вигляд» повертає класичний вигляд.
 - З основного проєкту (DeckCraft): багато виправлень діаграм, зображень і перевірки правопису.
@@ -69,6 +73,8 @@ What's new:
   works as in PowerPoint.
 - **Assistants and automation:** every command says what it may do, and a session can be limited
   to some commands.
+- **Tinta templates:** four starter decks with azulejo tiles (talk, report, client proposal and
+  workshop) on Tinta's own themes, in File ▸ New.
 - **Tinta Office look:** Tinta Correo's colours and control shapes (soft grey with a touch of ochre,
   rounder corners), light and dark; a button on the View tab switches back to the classic look.
 - From the original project (DeckCraft): many chart, picture and spelling fixes.
