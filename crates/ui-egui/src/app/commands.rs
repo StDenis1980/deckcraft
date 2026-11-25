@@ -242,6 +242,10 @@ impl SlideApp {
             "app.about" => self.dialog = Some(dialogs::Dialog::new("about")),
             // Tinta Office: the dialog opens on the next frame.
             "app.feedback" => self.tinta_feedback.request(),
+            "app.shareTinta" => {
+                self.tinta_share.request();
+                return Ok(json!({"url": crate::tinta_share::URL}));
+            }
             // Tinta Office: the What's new window opens on the next frame.
             "app.whatsNew" => {
                 if !crate::tinta_whats_new::request() {

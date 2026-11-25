@@ -58,6 +58,7 @@ mod state;
 pub mod tinta_convert;
 pub mod tinta_feedback;
 mod tinta_reports_ui;
+pub mod tinta_share;
 pub mod tinta_theme;
 pub mod tinta_whats_new;
 
@@ -158,6 +159,7 @@ pub const UI_COMMANDS: &[(&str, &str, Option<&str>, &str)] = &[
     ("app.about", "About DeckCraft", None, "{}"),
     ("app.checkUpdates", "Check for Updates…", None, "{}"),
     ("app.feedback", "Send Feedback…", None, "{} — Tinta Office: opens the feedback dialog when this build can send"),
+    ("app.shareTinta", "Share Tinta Office", None, "{} → {url} — Tinta Office: copies the website's link to the clipboard on the next frame"),
     ("app.whatsNew", "What's New", None, "{} — Tinta Office: opens the What's new window (an error where this build has none)"),
     ("app.palette", "Command Palette", Some("Cmd+Shift+P"), "{}"),
     ("app.preferences", "Preferences…", Some("Cmd+,"), "{}"),
@@ -252,6 +254,8 @@ pub struct SlideApp {
     pub dialog: Option<dialogs::Dialog>,
     /// Tinta Office: the Send feedback dialog ([`tinta_feedback`]); the desktop app sends.
     pub tinta_feedback: tinta_feedback::Feedback,
+    /// Tinta Office: File › Info › Share Tinta Office copies the website's link ([`tinta_share`]).
+    pub tinta_share: tinta_share::Share,
     /// Tinta Presenta: converting clips this build can't play to WebM ([`tinta_convert`]).
     pub tinta_convert: tinta_convert::Converter,
     /// The word looked up in the Thesaurus pane.

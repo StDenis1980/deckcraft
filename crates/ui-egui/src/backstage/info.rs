@@ -242,6 +242,11 @@ pub(super) fn about(app: &mut SlideApp, ui: &mut Ui) {
                     app.tinta_feedback.request();
                 }
             }
+            // Tinta Office: copies the link to the website, to send to someone.
+            let share = crate::tinta_share::tr(crate::i18n::current().code(), crate::tinta_share::MENU);
+            if task(ui, Icon::Share, share, share, "tintaoffice.com", true) {
+                let _ = app.run("app.shareTinta", json!({}));
+            }
             if crate::tinta_whats_new::available() {
                 let lang = crate::i18n::current().code();
                 let title = crate::tinta_whats_new::tr(lang, crate::tinta_whats_new::MENU);
