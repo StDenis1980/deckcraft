@@ -189,6 +189,9 @@ pub struct Backstage {
     pub export: ExportTask,
     /// Export › Change File Type / Save As: the chosen type (an [`SAVE_TYPES`] id).
     pub file_type: &'static str,
+    /// Save As: the file name typed, without its extension; None until the page first shows,
+    /// when it starts as the presentation's title.
+    pub file_name: Option<String>,
     pub handouts_per_page: u8,
     pub pdf_hidden: bool,
     /// Export › Change File Type › PNG: leave the slide background out (#784).
@@ -215,6 +218,7 @@ impl Backstage {
             preview_page: 0,
             export: ExportTask::Pdf,
             file_type: "pptx",
+            file_name: None,
             handouts_per_page: 3,
             pdf_hidden: false,
             png_transparent: false,

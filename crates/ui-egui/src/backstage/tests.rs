@@ -288,6 +288,37 @@ fn open_lists_recent_files_and_opens_one() {
     let _ = std::fs::remove_dir_all(&dir);
 }
 
+/// Save As has a file name field, as in PowerPoint: it starts as the title, and the name typed
+/// there is what the save picker suggests, for the presentation and for another file type.
+#[test]
+fn save_as_takes_the_file_name_typed_on_the_page() {
+    let dir = temp_dir("saveas-name");
+    let (services, asked) = saving_into(&dir);
+    let mut h = harness(SlideApp::new(Session::with_new(), services));
+    let title = h.state().session.active().unwrap().title();
+    h.state_mut().run("app.backstage", json!({"page": "saveAs"})).unwrap();
+    h.run_steps(3);
+    assert_eq!(h.state().backstage.as_ref().and_then(|b| b.file_name.clone()), Some(title));
+    h.state_mut().backstage.as_mut().unwrap().file_name = Some("Informe trimestral".into());
+    h.run_steps(2);
+    click_on_page(&h, "Save");
+    h.run_steps(3);
+    assert_eq!(asked.borrow().last().map(String::as_str), Some("Informe trimestral.pptx"));
+    assert!(dir.join("Informe trimestral.pptx").is_file());
+
+    // Another type keeps the name; an extension typed with it is not doubled.
+    h.state_mut().run("app.backstage", json!({"page": "saveAs"})).unwrap();
+    h.run_steps(3);
+    let bs = h.state_mut().backstage.as_mut().unwrap();
+    bs.file_type = "pdf";
+    bs.file_name = Some("Copia.pdf".into());
+    h.run_steps(2);
+    click_on_page(&h, "Save");
+    h.run_steps(3);
+    assert_eq!(asked.borrow().last().map(String::as_str), Some("Copia.pdf"));
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
 /// Save As saves through the Save dialog and the presentation takes the new file; Export writes
 /// copies (PDF, another file type) and leaves the presentation's own file alone.
 #[test]
